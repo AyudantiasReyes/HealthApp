@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#129946</color>
+    <color name="colorPrimaryLight">#1fd164</color>
+    <color name="colorPrimaryDark">#129946</color>
+    <color name="colorPrimaryFaded">#20129946</color>
+    <!--<color name="colorPrimaryDark">#0b7835</color>-->
+    <color name="colorAccent">#FF4081</color>
+    <color name="texBackgroundColor">#33000000</color>
+</resources>

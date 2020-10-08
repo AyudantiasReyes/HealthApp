@@ -1,1 +1,1 @@
-# HealthApp
+# LabelScan

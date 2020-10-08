@@ -1,0 +1,191 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.google.firebase.codelab.mlkitUABC"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission
+12-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:6:5-8:38
+13        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+13-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:7:9-65
+14        android:maxSdkVersion="18" />
+14-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:8:9-35
+15
+16    <uses-feature
+16-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:10:5-12:35
+17        android:name="android.hardware.camera"
+17-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:11:9-47
+18        android:required="true" />
+18-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:12:9-32
+19
+20    <uses-permission
+20-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:14:5-16:38
+21        android:name="android.permission.READ_EXTERNAL_STORAGE"
+21-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:15:9-64
+22        android:maxSdkVersion="18" />
+22-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:16:9-35
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:22:5-79
+23-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:22:22-76
+24    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+24-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:5-68
+24-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:22-65
+25    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:5-82
+25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:22-79
+26
+27    <application
+27-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:18:5-38:19
+28        android:allowBackup="true"
+28-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:19:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.1.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\73bea0db4e541b08f67a4ed7275bada1\core-1.1.0\AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:icon="@mipmap/ic_launcher"
+31-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:20:9-43
+32        android:label="@string/app_name"
+32-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:21:9-41
+33        android:roundIcon="@mipmap/ic_launcher_round"
+33-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:22:9-54
+34        android:supportsRtl="true"
+34-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:23:9-35
+35        android:testOnly="true"
+36        android:theme="@style/AppTheme" >
+36-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:24:9-40
+37        <activity android:name="com.google.firebase.codelab.labelScannerUABC.ProductListActivity" />
+37-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:25:9-66
+37-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:25:19-54
+38        <activity android:name="com.google.firebase.codelab.labelScannerUABC.DataEntryActivity" />
+38-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:26:9-55
+38-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:26:19-52
+39        <activity android:name="com.google.firebase.codelab.mlkitUABC.NutrientsActivity" />
+39-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:27:9-92
+39-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:27:19-89
+40        <activity
+40-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:28:9-37:20
+41            android:name="com.google.firebase.codelab.labelScannerUABC.MainMenuActivity"
+41-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:29:13-45
+42            android:configChanges="keyboardHidden|orientation|screenSize"
+42-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:30:13-74
+43            android:screenOrientation="portrait" >
+43-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:31:13-49
+44            <intent-filter>
+44-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:32:13-36:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:33:17-69
+45-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:33:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:35:17-77
+47-->C:\Users\aoran\Desktop\LabelScan\vision\final\app\src\main\AndroidManifest.xml:35:27-74
+48            </intent-filter>
+49        </activity>
+50        <activity
+50-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+51            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+51-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+52            android:excludeFromRecents="true"
+52-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+53            android:exported="true"
+53-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+54            android:launchMode="singleTask"
+54-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+55            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+55-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+56            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+56-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+57
+58        <service
+58-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:33:9-39:19
+59            android:name="com.google.firebase.components.ComponentDiscoveryService"
+59-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:34:13-84
+60            android:directBootAware="true"
+60-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+61            android:exported="false" >
+61-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:35:13-37
+62            <meta-data
+62-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+63                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+63-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+64                android:value="com.google.firebase.components.ComponentRegistrar" />
+64-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\ad62a1dcb72e01394877b2591694dc23\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+65            <meta-data
+65-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:32:13-34:85
+66                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+66-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:33:17-96
+67                android:value="com.google.firebase.components.ComponentRegistrar" />
+67-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:34:17-82
+68        </service>
+69
+70        <receiver
+70-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:37:9-44:20
+71            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+71-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:38:13-78
+72            android:exported="true"
+72-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:39:13-36
+73            android:permission="com.google.android.c2dm.permission.SEND" >
+73-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:40:13-73
+74            <intent-filter>
+74-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:41:13-43:29
+75                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+75-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:17-81
+75-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:25-78
+76            </intent-filter>
+77        </receiver>
+78        <!--
+79             FirebaseInstanceIdService performs security checks at runtime,
+80             no need for explicit permissions despite exported="true"
+81        -->
+82        <service
+82-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:50:9-56:19
+83            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+83-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:51:13-77
+84            android:exported="true" >
+84-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:52:13-36
+85            <intent-filter android:priority="-500" >
+85-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:13-55:29
+85-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:28-51
+86                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+86-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:17-80
+86-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\5445eaab506dbb01fdb665f8375ea993\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:25-77
+87            </intent-filter>
+88        </service>
+89
+90        <activity
+90-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\91be48bba53e619ede42f41e27006076\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+91-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\91be48bba53e619ede42f41e27006076\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+92            android:exported="false"
+92-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\91be48bba53e619ede42f41e27006076\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+93-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\91be48bba53e619ede42f41e27006076\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+94
+95        <provider
+95-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+96            android:name="com.google.firebase.provider.FirebaseInitProvider"
+96-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+97            android:authorities="com.google.firebase.codelab.mlkitUABC.firebaseinitprovider"
+97-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+98            android:exported="false"
+98-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+99            android:initOrder="100" />
+99-->[com.google.firebase:firebase-common:19.3.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\c61836f948419c194df185fed8b07691\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+100
+101        <meta-data
+101-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\e9d2e4c5987040023d6d16771717d5d0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+102            android:name="com.google.android.gms.version"
+102-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\e9d2e4c5987040023d6d16771717d5d0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+103            android:value="@integer/google_play_services_version" />
+103-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\aoran\.gradle\caches\transforms-2\files-2.1\e9d2e4c5987040023d6d16771717d5d0\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+104    </application>
+105
+106</manifest>
