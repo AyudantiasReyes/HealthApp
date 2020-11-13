@@ -159,134 +159,155 @@ public final class ActivityDataEntryBinding implements ViewBinding {
   public static ActivityDataEntryBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
-    String missingId;
+    int id;
     missingId: {
-      FloatingActionButton acceptButton = rootView.findViewById(R.id.acceptButton);
+      id = R.id.acceptButton;
+      FloatingActionButton acceptButton = rootView.findViewById(id);
       if (acceptButton == null) {
-        missingId = "acceptButton";
         break missingId;
       }
-      EditText azucarEditText = rootView.findViewById(R.id.azucarEditText);
+
+      id = R.id.azucarEditText;
+      EditText azucarEditText = rootView.findViewById(id);
       if (azucarEditText == null) {
-        missingId = "azucarEditText";
         break missingId;
       }
-      ImageButton backButton = rootView.findViewById(R.id.backButton);
+
+      id = R.id.backButton;
+      ImageButton backButton = rootView.findViewById(id);
       if (backButton == null) {
-        missingId = "backButton";
         break missingId;
       }
-      EditText caloriasEditText = rootView.findViewById(R.id.caloriasEditText);
+
+      id = R.id.caloriasEditText;
+      EditText caloriasEditText = rootView.findViewById(id);
       if (caloriasEditText == null) {
-        missingId = "caloriasEditText";
         break missingId;
       }
-      EditText carbsEditText = rootView.findViewById(R.id.carbsEditText);
+
+      id = R.id.carbsEditText;
+      EditText carbsEditText = rootView.findViewById(id);
       if (carbsEditText == null) {
-        missingId = "carbsEditText";
         break missingId;
       }
-      EditText lipidosEditText = rootView.findViewById(R.id.lipidosEditText);
+
+      id = R.id.lipidosEditText;
+      EditText lipidosEditText = rootView.findViewById(id);
       if (lipidosEditText == null) {
-        missingId = "lipidosEditText";
         break missingId;
       }
-      EditText nombreEditText = rootView.findViewById(R.id.nombreEditText);
+
+      id = R.id.nombreEditText;
+      EditText nombreEditText = rootView.findViewById(id);
       if (nombreEditText == null) {
-        missingId = "nombreEditText";
         break missingId;
       }
-      TextView nombreTitle = rootView.findViewById(R.id.nombreTitle);
+
+      id = R.id.nombreTitle;
+      TextView nombreTitle = rootView.findViewById(id);
       if (nombreTitle == null) {
-        missingId = "nombreTitle";
         break missingId;
       }
-      TextView nombreTitle10 = rootView.findViewById(R.id.nombreTitle10);
+
+      id = R.id.nombreTitle10;
+      TextView nombreTitle10 = rootView.findViewById(id);
       if (nombreTitle10 == null) {
-        missingId = "nombreTitle10";
         break missingId;
       }
-      TextView nombreTitle11 = rootView.findViewById(R.id.nombreTitle11);
+
+      id = R.id.nombreTitle11;
+      TextView nombreTitle11 = rootView.findViewById(id);
       if (nombreTitle11 == null) {
-        missingId = "nombreTitle11";
         break missingId;
       }
-      TextView nombreTitle6 = rootView.findViewById(R.id.nombreTitle6);
+
+      id = R.id.nombreTitle6;
+      TextView nombreTitle6 = rootView.findViewById(id);
       if (nombreTitle6 == null) {
-        missingId = "nombreTitle6";
         break missingId;
       }
-      TextView nombreTitle7 = rootView.findViewById(R.id.nombreTitle7);
+
+      id = R.id.nombreTitle7;
+      TextView nombreTitle7 = rootView.findViewById(id);
       if (nombreTitle7 == null) {
-        missingId = "nombreTitle7";
         break missingId;
       }
-      TextView nombreTitle8 = rootView.findViewById(R.id.nombreTitle8);
+
+      id = R.id.nombreTitle8;
+      TextView nombreTitle8 = rootView.findViewById(id);
       if (nombreTitle8 == null) {
-        missingId = "nombreTitle8";
         break missingId;
       }
-      TextView nombreTitle9 = rootView.findViewById(R.id.nombreTitle9);
+
+      id = R.id.nombreTitle9;
+      TextView nombreTitle9 = rootView.findViewById(id);
       if (nombreTitle9 == null) {
-        missingId = "nombreTitle9";
         break missingId;
       }
-      EditText numeroPorcionesEditText = rootView.findViewById(R.id.numeroPorcionesEditText);
+
+      id = R.id.numeroPorcionesEditText;
+      EditText numeroPorcionesEditText = rootView.findViewById(id);
       if (numeroPorcionesEditText == null) {
-        missingId = "numeroPorcionesEditText";
         break missingId;
       }
-      TextView numeroPorcionesTitle = rootView.findViewById(R.id.numeroPorcionesTitle);
+
+      id = R.id.numeroPorcionesTitle;
+      TextView numeroPorcionesTitle = rootView.findViewById(id);
       if (numeroPorcionesTitle == null) {
-        missingId = "numeroPorcionesTitle";
         break missingId;
       }
-      EditText porcionEditText = rootView.findViewById(R.id.porcionEditText);
+
+      id = R.id.porcionEditText;
+      EditText porcionEditText = rootView.findViewById(id);
       if (porcionEditText == null) {
-        missingId = "porcionEditText";
         break missingId;
       }
-      TextView porcionTitle = rootView.findViewById(R.id.porcionTitle);
+
+      id = R.id.porcionTitle;
+      TextView porcionTitle = rootView.findViewById(id);
       if (porcionTitle == null) {
-        missingId = "porcionTitle";
         break missingId;
       }
-      EditText proteinaEditText = rootView.findViewById(R.id.proteinaEditText);
+
+      id = R.id.proteinaEditText;
+      EditText proteinaEditText = rootView.findViewById(id);
       if (proteinaEditText == null) {
-        missingId = "proteinaEditText";
         break missingId;
       }
-      ConstraintLayout root = rootView.findViewById(R.id.root);
-      if (root == null) {
-        missingId = "root";
-        break missingId;
-      }
-      ScrollView scrollView2 = rootView.findViewById(R.id.scrollView2);
+
+      ConstraintLayout root = (ConstraintLayout) rootView;
+
+      id = R.id.scrollView2;
+      ScrollView scrollView2 = rootView.findViewById(id);
       if (scrollView2 == null) {
-        missingId = "scrollView2";
         break missingId;
       }
-      EditText sodioEditText = rootView.findViewById(R.id.sodioEditText);
+
+      id = R.id.sodioEditText;
+      EditText sodioEditText = rootView.findViewById(id);
       if (sodioEditText == null) {
-        missingId = "sodioEditText";
         break missingId;
       }
-      TextView titleTextView = rootView.findViewById(R.id.titleTextView);
+
+      id = R.id.titleTextView;
+      TextView titleTextView = rootView.findViewById(id);
       if (titleTextView == null) {
-        missingId = "titleTextView";
         break missingId;
       }
-      ConstraintLayout topBarLayout = rootView.findViewById(R.id.topBarLayout);
+
+      id = R.id.topBarLayout;
+      ConstraintLayout topBarLayout = rootView.findViewById(id);
       if (topBarLayout == null) {
-        missingId = "topBarLayout";
         break missingId;
       }
+
       return new ActivityDataEntryBinding((ConstraintLayout) rootView, acceptButton, azucarEditText,
           backButton, caloriasEditText, carbsEditText, lipidosEditText, nombreEditText, nombreTitle,
           nombreTitle10, nombreTitle11, nombreTitle6, nombreTitle7, nombreTitle8, nombreTitle9,
           numeroPorcionesEditText, numeroPorcionesTitle, porcionEditText, porcionTitle,
           proteinaEditText, root, scrollView2, sodioEditText, titleTextView, topBarLayout);
     }
+    String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

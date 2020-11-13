@@ -46,6 +46,7 @@ public final class SpinnerItemBinding implements ViewBinding {
     if (rootView == null) {
       throw new NullPointerException("rootView");
     }
+
     return new SpinnerItemBinding((TextView) rootView);
   }
 }

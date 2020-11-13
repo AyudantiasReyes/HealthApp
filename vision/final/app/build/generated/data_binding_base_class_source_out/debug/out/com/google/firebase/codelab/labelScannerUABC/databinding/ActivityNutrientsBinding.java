@@ -291,273 +291,322 @@ public final class ActivityNutrientsBinding implements ViewBinding {
   public static ActivityNutrientsBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
-    String missingId;
+    int id;
     missingId: {
-      TextView azucarAmount = rootView.findViewById(R.id.azucarAmount);
+      id = R.id.azucarAmount;
+      TextView azucarAmount = rootView.findViewById(id);
       if (azucarAmount == null) {
-        missingId = "azucarAmount";
         break missingId;
       }
-      CircularProgressBar azucarBar = rootView.findViewById(R.id.azucarBar);
+
+      id = R.id.azucarBar;
+      CircularProgressBar azucarBar = rootView.findViewById(id);
       if (azucarBar == null) {
-        missingId = "azucarBar";
         break missingId;
       }
-      ConstraintLayout azucarLayout = rootView.findViewById(R.id.azucarLayout);
+
+      id = R.id.azucarLayout;
+      ConstraintLayout azucarLayout = rootView.findViewById(id);
       if (azucarLayout == null) {
-        missingId = "azucarLayout";
         break missingId;
       }
-      TextView azucarNotes = rootView.findViewById(R.id.azucarNotes);
+
+      id = R.id.azucarNotes;
+      TextView azucarNotes = rootView.findViewById(id);
       if (azucarNotes == null) {
-        missingId = "azucarNotes";
         break missingId;
       }
-      TextView azucarPercentage = rootView.findViewById(R.id.azucarPercentage);
+
+      id = R.id.azucarPercentage;
+      TextView azucarPercentage = rootView.findViewById(id);
       if (azucarPercentage == null) {
-        missingId = "azucarPercentage";
         break missingId;
       }
-      TextView azucarTextView = rootView.findViewById(R.id.azucarTextView);
+
+      id = R.id.azucarTextView;
+      TextView azucarTextView = rootView.findViewById(id);
       if (azucarTextView == null) {
-        missingId = "azucarTextView";
         break missingId;
       }
-      TextView azucarUnit = rootView.findViewById(R.id.azucarUnit);
+
+      id = R.id.azucarUnit;
+      TextView azucarUnit = rootView.findViewById(id);
       if (azucarUnit == null) {
-        missingId = "azucarUnit";
         break missingId;
       }
-      ImageButton backButton = rootView.findViewById(R.id.backButton);
+
+      id = R.id.backButton;
+      ImageButton backButton = rootView.findViewById(id);
       if (backButton == null) {
-        missingId = "backButton";
         break missingId;
       }
-      TextView caloriasAmount = rootView.findViewById(R.id.caloriasAmount);
+
+      id = R.id.caloriasAmount;
+      TextView caloriasAmount = rootView.findViewById(id);
       if (caloriasAmount == null) {
-        missingId = "caloriasAmount";
         break missingId;
       }
-      CircularProgressBar caloriasBar = rootView.findViewById(R.id.caloriasBar);
+
+      id = R.id.caloriasBar;
+      CircularProgressBar caloriasBar = rootView.findViewById(id);
       if (caloriasBar == null) {
-        missingId = "caloriasBar";
         break missingId;
       }
-      ConstraintLayout caloriasLayout = rootView.findViewById(R.id.caloriasLayout);
+
+      id = R.id.caloriasLayout;
+      ConstraintLayout caloriasLayout = rootView.findViewById(id);
       if (caloriasLayout == null) {
-        missingId = "caloriasLayout";
         break missingId;
       }
-      TextView caloriasNotes = rootView.findViewById(R.id.caloriasNotes);
+
+      id = R.id.caloriasNotes;
+      TextView caloriasNotes = rootView.findViewById(id);
       if (caloriasNotes == null) {
-        missingId = "caloriasNotes";
         break missingId;
       }
-      TextView caloriasPercentage = rootView.findViewById(R.id.caloriasPercentage);
+
+      id = R.id.caloriasPercentage;
+      TextView caloriasPercentage = rootView.findViewById(id);
       if (caloriasPercentage == null) {
-        missingId = "caloriasPercentage";
         break missingId;
       }
-      TextView caloriasTextView = rootView.findViewById(R.id.caloriasTextView);
+
+      id = R.id.caloriasTextView;
+      TextView caloriasTextView = rootView.findViewById(id);
       if (caloriasTextView == null) {
-        missingId = "caloriasTextView";
         break missingId;
       }
-      TextView caloriasUnit = rootView.findViewById(R.id.caloriasUnit);
+
+      id = R.id.caloriasUnit;
+      TextView caloriasUnit = rootView.findViewById(id);
       if (caloriasUnit == null) {
-        missingId = "caloriasUnit";
         break missingId;
       }
-      EditText cantidadEditText = rootView.findViewById(R.id.cantidadEditText);
+
+      id = R.id.cantidadEditText;
+      EditText cantidadEditText = rootView.findViewById(id);
       if (cantidadEditText == null) {
-        missingId = "cantidadEditText";
         break missingId;
       }
-      TextView carbsAmount = rootView.findViewById(R.id.carbsAmount);
+
+      id = R.id.carbsAmount;
+      TextView carbsAmount = rootView.findViewById(id);
       if (carbsAmount == null) {
-        missingId = "carbsAmount";
         break missingId;
       }
-      CircularProgressBar carbsBar = rootView.findViewById(R.id.carbsBar);
+
+      id = R.id.carbsBar;
+      CircularProgressBar carbsBar = rootView.findViewById(id);
       if (carbsBar == null) {
-        missingId = "carbsBar";
         break missingId;
       }
-      ConstraintLayout carbsLayout = rootView.findViewById(R.id.carbsLayout);
+
+      id = R.id.carbsLayout;
+      ConstraintLayout carbsLayout = rootView.findViewById(id);
       if (carbsLayout == null) {
-        missingId = "carbsLayout";
         break missingId;
       }
-      TextView carbsNotes = rootView.findViewById(R.id.carbsNotes);
+
+      id = R.id.carbsNotes;
+      TextView carbsNotes = rootView.findViewById(id);
       if (carbsNotes == null) {
-        missingId = "carbsNotes";
         break missingId;
       }
-      TextView carbsPercentage = rootView.findViewById(R.id.carbsPercentage);
+
+      id = R.id.carbsPercentage;
+      TextView carbsPercentage = rootView.findViewById(id);
       if (carbsPercentage == null) {
-        missingId = "carbsPercentage";
         break missingId;
       }
-      TextView carbsTextView = rootView.findViewById(R.id.carbsTextView);
+
+      id = R.id.carbsTextView;
+      TextView carbsTextView = rootView.findViewById(id);
       if (carbsTextView == null) {
-        missingId = "carbsTextView";
         break missingId;
       }
-      TextView carbsUnit = rootView.findViewById(R.id.carbsUnit);
+
+      id = R.id.carbsUnit;
+      TextView carbsUnit = rootView.findViewById(id);
       if (carbsUnit == null) {
-        missingId = "carbsUnit";
         break missingId;
       }
-      FloatingActionButton editButton = rootView.findViewById(R.id.editButton);
+
+      id = R.id.editButton;
+      FloatingActionButton editButton = rootView.findViewById(id);
       if (editButton == null) {
-        missingId = "editButton";
         break missingId;
       }
-      TextView lipidosAmount = rootView.findViewById(R.id.lipidosAmount);
+
+      id = R.id.lipidosAmount;
+      TextView lipidosAmount = rootView.findViewById(id);
       if (lipidosAmount == null) {
-        missingId = "lipidosAmount";
         break missingId;
       }
-      CircularProgressBar lipidosBar = rootView.findViewById(R.id.lipidosBar);
+
+      id = R.id.lipidosBar;
+      CircularProgressBar lipidosBar = rootView.findViewById(id);
       if (lipidosBar == null) {
-        missingId = "lipidosBar";
         break missingId;
       }
-      ConstraintLayout lipidosLayout = rootView.findViewById(R.id.lipidosLayout);
+
+      id = R.id.lipidosLayout;
+      ConstraintLayout lipidosLayout = rootView.findViewById(id);
       if (lipidosLayout == null) {
-        missingId = "lipidosLayout";
         break missingId;
       }
-      TextView lipidosNotes = rootView.findViewById(R.id.lipidosNotes);
+
+      id = R.id.lipidosNotes;
+      TextView lipidosNotes = rootView.findViewById(id);
       if (lipidosNotes == null) {
-        missingId = "lipidosNotes";
         break missingId;
       }
-      TextView lipidosPercentage = rootView.findViewById(R.id.lipidosPercentage);
+
+      id = R.id.lipidosPercentage;
+      TextView lipidosPercentage = rootView.findViewById(id);
       if (lipidosPercentage == null) {
-        missingId = "lipidosPercentage";
         break missingId;
       }
-      TextView lipidosTextView = rootView.findViewById(R.id.lipidosTextView);
+
+      id = R.id.lipidosTextView;
+      TextView lipidosTextView = rootView.findViewById(id);
       if (lipidosTextView == null) {
-        missingId = "lipidosTextView";
         break missingId;
       }
-      TextView lipidosUnit = rootView.findViewById(R.id.lipidosUnit);
+
+      id = R.id.lipidosUnit;
+      TextView lipidosUnit = rootView.findViewById(id);
       if (lipidosUnit == null) {
-        missingId = "lipidosUnit";
         break missingId;
       }
-      TextView nombreAlimento = rootView.findViewById(R.id.nombreAlimento);
+
+      id = R.id.nombreAlimento;
+      TextView nombreAlimento = rootView.findViewById(id);
       if (nombreAlimento == null) {
-        missingId = "nombreAlimento";
         break missingId;
       }
-      Spinner porcionSpinner = rootView.findViewById(R.id.porcionSpinner);
+
+      id = R.id.porcionSpinner;
+      Spinner porcionSpinner = rootView.findViewById(id);
       if (porcionSpinner == null) {
-        missingId = "porcionSpinner";
         break missingId;
       }
-      TextView proteinaAmount = rootView.findViewById(R.id.proteinaAmount);
+
+      id = R.id.proteinaAmount;
+      TextView proteinaAmount = rootView.findViewById(id);
       if (proteinaAmount == null) {
-        missingId = "proteinaAmount";
         break missingId;
       }
-      CircularProgressBar proteinaBar = rootView.findViewById(R.id.proteinaBar);
+
+      id = R.id.proteinaBar;
+      CircularProgressBar proteinaBar = rootView.findViewById(id);
       if (proteinaBar == null) {
-        missingId = "proteinaBar";
         break missingId;
       }
-      ConstraintLayout proteinaLayout = rootView.findViewById(R.id.proteinaLayout);
+
+      id = R.id.proteinaLayout;
+      ConstraintLayout proteinaLayout = rootView.findViewById(id);
       if (proteinaLayout == null) {
-        missingId = "proteinaLayout";
         break missingId;
       }
-      TextView proteinaNotes = rootView.findViewById(R.id.proteinaNotes);
+
+      id = R.id.proteinaNotes;
+      TextView proteinaNotes = rootView.findViewById(id);
       if (proteinaNotes == null) {
-        missingId = "proteinaNotes";
         break missingId;
       }
-      TextView proteinaPercentage = rootView.findViewById(R.id.proteinaPercentage);
+
+      id = R.id.proteinaPercentage;
+      TextView proteinaPercentage = rootView.findViewById(id);
       if (proteinaPercentage == null) {
-        missingId = "proteinaPercentage";
         break missingId;
       }
-      TextView proteinaTextView = rootView.findViewById(R.id.proteinaTextView);
+
+      id = R.id.proteinaTextView;
+      TextView proteinaTextView = rootView.findViewById(id);
       if (proteinaTextView == null) {
-        missingId = "proteinaTextView";
         break missingId;
       }
-      TextView proteinaUnit = rootView.findViewById(R.id.proteinaUnit);
+
+      id = R.id.proteinaUnit;
+      TextView proteinaUnit = rootView.findViewById(id);
       if (proteinaUnit == null) {
-        missingId = "proteinaUnit";
         break missingId;
       }
-      FrameLayout roleSpinnerFrame = rootView.findViewById(R.id.roleSpinnerFrame);
+
+      id = R.id.roleSpinnerFrame;
+      FrameLayout roleSpinnerFrame = rootView.findViewById(id);
       if (roleSpinnerFrame == null) {
-        missingId = "roleSpinnerFrame";
         break missingId;
       }
-      ConstraintLayout root = rootView.findViewById(R.id.root);
-      if (root == null) {
-        missingId = "root";
-        break missingId;
-      }
-      TextView sodioAmount = rootView.findViewById(R.id.sodioAmount);
+
+      ConstraintLayout root = (ConstraintLayout) rootView;
+
+      id = R.id.sodioAmount;
+      TextView sodioAmount = rootView.findViewById(id);
       if (sodioAmount == null) {
-        missingId = "sodioAmount";
         break missingId;
       }
-      CircularProgressBar sodioBar = rootView.findViewById(R.id.sodioBar);
+
+      id = R.id.sodioBar;
+      CircularProgressBar sodioBar = rootView.findViewById(id);
       if (sodioBar == null) {
-        missingId = "sodioBar";
         break missingId;
       }
-      ConstraintLayout sodioLayout = rootView.findViewById(R.id.sodioLayout);
+
+      id = R.id.sodioLayout;
+      ConstraintLayout sodioLayout = rootView.findViewById(id);
       if (sodioLayout == null) {
-        missingId = "sodioLayout";
         break missingId;
       }
-      TextView sodioNotes = rootView.findViewById(R.id.sodioNotes);
+
+      id = R.id.sodioNotes;
+      TextView sodioNotes = rootView.findViewById(id);
       if (sodioNotes == null) {
-        missingId = "sodioNotes";
         break missingId;
       }
-      TextView sodioPercentage = rootView.findViewById(R.id.sodioPercentage);
+
+      id = R.id.sodioPercentage;
+      TextView sodioPercentage = rootView.findViewById(id);
       if (sodioPercentage == null) {
-        missingId = "sodioPercentage";
         break missingId;
       }
-      TextView sodioTextView = rootView.findViewById(R.id.sodioTextView);
+
+      id = R.id.sodioTextView;
+      TextView sodioTextView = rootView.findViewById(id);
       if (sodioTextView == null) {
-        missingId = "sodioTextView";
         break missingId;
       }
-      TextView sodioUnit = rootView.findViewById(R.id.sodioUnit);
+
+      id = R.id.sodioUnit;
+      TextView sodioUnit = rootView.findViewById(id);
       if (sodioUnit == null) {
-        missingId = "sodioUnit";
         break missingId;
       }
-      TextView textView2 = rootView.findViewById(R.id.textView2);
+
+      id = R.id.textView2;
+      TextView textView2 = rootView.findViewById(id);
       if (textView2 == null) {
-        missingId = "textView2";
         break missingId;
       }
-      TextView textView3 = rootView.findViewById(R.id.textView3);
+
+      id = R.id.textView3;
+      TextView textView3 = rootView.findViewById(id);
       if (textView3 == null) {
-        missingId = "textView3";
         break missingId;
       }
-      TextView titleTextView = rootView.findViewById(R.id.titleTextView);
+
+      id = R.id.titleTextView;
+      TextView titleTextView = rootView.findViewById(id);
       if (titleTextView == null) {
-        missingId = "titleTextView";
         break missingId;
       }
-      ConstraintLayout topBarLayout = rootView.findViewById(R.id.topBarLayout);
+
+      id = R.id.topBarLayout;
+      ConstraintLayout topBarLayout = rootView.findViewById(id);
       if (topBarLayout == null) {
-        missingId = "topBarLayout";
         break missingId;
       }
+
       return new ActivityNutrientsBinding((ConstraintLayout) rootView, azucarAmount, azucarBar,
           azucarLayout, azucarNotes, azucarPercentage, azucarTextView, azucarUnit, backButton,
           caloriasAmount, caloriasBar, caloriasLayout, caloriasNotes, caloriasPercentage,
@@ -569,6 +618,7 @@ public final class ActivityNutrientsBinding implements ViewBinding {
           sodioAmount, sodioBar, sodioLayout, sodioNotes, sodioPercentage, sodioTextView, sodioUnit,
           textView2, textView3, titleTextView, topBarLayout);
     }
+    String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

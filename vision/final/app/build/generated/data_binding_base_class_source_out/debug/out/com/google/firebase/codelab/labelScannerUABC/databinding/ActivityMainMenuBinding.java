@@ -80,46 +80,50 @@ public final class ActivityMainMenuBinding implements ViewBinding {
   public static ActivityMainMenuBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
-    String missingId;
+    int id;
     missingId: {
-      ImageButton cameraButton = rootView.findViewById(R.id.cameraButton);
+      id = R.id.cameraButton;
+      ImageButton cameraButton = rootView.findViewById(id);
       if (cameraButton == null) {
-        missingId = "cameraButton";
         break missingId;
       }
-      ConstraintLayout constraintLayout2 = rootView.findViewById(R.id.constraintLayout2);
+
+      id = R.id.constraintLayout2;
+      ConstraintLayout constraintLayout2 = rootView.findViewById(id);
       if (constraintLayout2 == null) {
-        missingId = "constraintLayout2";
         break missingId;
       }
-      ImageButton galleryButton = rootView.findViewById(R.id.galleryButton);
+
+      id = R.id.galleryButton;
+      ImageButton galleryButton = rootView.findViewById(id);
       if (galleryButton == null) {
-        missingId = "galleryButton";
         break missingId;
       }
-      ImageButton inputButton = rootView.findViewById(R.id.inputButton);
+
+      id = R.id.inputButton;
+      ImageButton inputButton = rootView.findViewById(id);
       if (inputButton == null) {
-        missingId = "inputButton";
         break missingId;
       }
-      ConstraintLayout menuLayout = rootView.findViewById(R.id.menuLayout);
+
+      id = R.id.menuLayout;
+      ConstraintLayout menuLayout = rootView.findViewById(id);
       if (menuLayout == null) {
-        missingId = "menuLayout";
         break missingId;
       }
-      Button productoButton = rootView.findViewById(R.id.productoButton);
+
+      id = R.id.productoButton;
+      Button productoButton = rootView.findViewById(id);
       if (productoButton == null) {
-        missingId = "productoButton";
         break missingId;
       }
-      ConstraintLayout root = rootView.findViewById(R.id.root);
-      if (root == null) {
-        missingId = "root";
-        break missingId;
-      }
+
+      ConstraintLayout root = (ConstraintLayout) rootView;
+
       return new ActivityMainMenuBinding((ConstraintLayout) rootView, cameraButton,
           constraintLayout2, galleryButton, inputButton, menuLayout, productoButton, root);
     }
+    String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

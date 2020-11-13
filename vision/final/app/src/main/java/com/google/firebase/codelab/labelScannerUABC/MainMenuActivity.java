@@ -235,12 +235,14 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         Matcher matcher = pattern.matcher(s);
 
         while (matcher.find()) {
-            if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule"))
-                foodItem.setCalories(Float.valueOf(matcher.group(4))*0.239006f);
-            else
-                foodItem.setCalories(Float.valueOf(matcher.group(4)));
-            System.out.println(matcher.group(6).toLowerCase());
-            System.out.println("calorías: " + foodItem.getCalories());
+            if(matcher.group(6)!=null){
+                if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule"))
+                    foodItem.setCalories(Float.valueOf(matcher.group(4))*0.239006f);
+                else
+                    foodItem.setCalories(Float.valueOf(matcher.group(4)));
+                System.out.println(matcher.group(6).toLowerCase());
+                System.out.println("calorías: " + foodItem.getCalories());
+            }
         }
 
         String regex_porcion = "(?i)(por porción|la porción|por porcion|la porcion|por ración|por racion)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";

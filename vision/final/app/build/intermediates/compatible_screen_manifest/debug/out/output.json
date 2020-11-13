@@ -1,1 +1,6 @@
-[]
+{
+  "version": 1,
+  "applicationId": "com.google.firebase.codelab.mlkitUABC",
+  "variantType": "BASE_APK",
+  "elements": []
+}

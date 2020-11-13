@@ -82,46 +82,50 @@ public final class ActivityProductListBinding implements ViewBinding {
   public static ActivityProductListBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
-    String missingId;
+    int id;
     missingId: {
-      ConstraintLayout buttonLayout = rootView.findViewById(R.id.buttonLayout);
+      id = R.id.buttonLayout;
+      ConstraintLayout buttonLayout = rootView.findViewById(id);
       if (buttonLayout == null) {
-        missingId = "buttonLayout";
         break missingId;
       }
-      ConstraintLayout constraintLayout = rootView.findViewById(R.id.constraintLayout);
+
+      id = R.id.constraintLayout;
+      ConstraintLayout constraintLayout = rootView.findViewById(id);
       if (constraintLayout == null) {
-        missingId = "constraintLayout";
         break missingId;
       }
-      RecyclerView myRecyclerView = rootView.findViewById(R.id.my_recycler_view);
+
+      id = R.id.my_recycler_view;
+      RecyclerView myRecyclerView = rootView.findViewById(id);
       if (myRecyclerView == null) {
-        missingId = "myRecyclerView";
         break missingId;
       }
-      Spinner porcionSpinner = rootView.findViewById(R.id.porcionSpinner);
+
+      id = R.id.porcionSpinner;
+      Spinner porcionSpinner = rootView.findViewById(id);
       if (porcionSpinner == null) {
-        missingId = "porcionSpinner";
         break missingId;
       }
-      FrameLayout roleSpinnerFrame = rootView.findViewById(R.id.roleSpinnerFrame);
+
+      id = R.id.roleSpinnerFrame;
+      FrameLayout roleSpinnerFrame = rootView.findViewById(id);
       if (roleSpinnerFrame == null) {
-        missingId = "roleSpinnerFrame";
         break missingId;
       }
-      ConstraintLayout root = rootView.findViewById(R.id.root);
-      if (root == null) {
-        missingId = "root";
-        break missingId;
-      }
-      TextView textView = rootView.findViewById(R.id.textView);
+
+      ConstraintLayout root = (ConstraintLayout) rootView;
+
+      id = R.id.textView;
+      TextView textView = rootView.findViewById(id);
       if (textView == null) {
-        missingId = "textView";
         break missingId;
       }
+
       return new ActivityProductListBinding((ConstraintLayout) rootView, buttonLayout,
           constraintLayout, myRecyclerView, porcionSpinner, roleSpinnerFrame, root, textView);
     }
+    String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

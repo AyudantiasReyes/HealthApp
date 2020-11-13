@@ -71,36 +71,42 @@ public final class ListItemBinding implements ViewBinding {
   public static ListItemBinding bind(@NonNull View rootView) {
     // The body of this method is generated in a way you would not otherwise write.
     // This is done to optimize the compiled bytecode for size and performance.
-    String missingId;
+    int id;
     missingId: {
-      CardView cv = rootView.findViewById(R.id.cv);
+      id = R.id.cv;
+      CardView cv = rootView.findViewById(id);
       if (cv == null) {
-        missingId = "cv";
         break missingId;
       }
-      TextView dateAdded = rootView.findViewById(R.id.dateAdded);
+
+      id = R.id.dateAdded;
+      TextView dateAdded = rootView.findViewById(id);
       if (dateAdded == null) {
-        missingId = "dateAdded";
         break missingId;
       }
-      ImageButton deleteButton = rootView.findViewById(R.id.deleteButton);
+
+      id = R.id.deleteButton;
+      ImageButton deleteButton = rootView.findViewById(id);
       if (deleteButton == null) {
-        missingId = "deleteButton";
         break missingId;
       }
-      TextView nameTextView = rootView.findViewById(R.id.nameTextView);
+
+      id = R.id.nameTextView;
+      TextView nameTextView = rootView.findViewById(id);
       if (nameTextView == null) {
-        missingId = "nameTextView";
         break missingId;
       }
-      TextView sizeTextView = rootView.findViewById(R.id.sizeTextView);
+
+      id = R.id.sizeTextView;
+      TextView sizeTextView = rootView.findViewById(id);
       if (sizeTextView == null) {
-        missingId = "sizeTextView";
         break missingId;
       }
+
       return new ListItemBinding((LinearLayout) rootView, cv, dateAdded, deleteButton, nameTextView,
           sizeTextView);
     }
+    String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
