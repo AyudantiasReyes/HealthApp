@@ -22,7 +22,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProductListActivity"></activity>
+        <activity android:name="com.google.firebase.codelab.UI.RegisterActivity"></activity>
+        <activity android:name=".ProductListActivity" />
         <activity android:name=".DataEntryActivity" />
         <activity android:name="com.google.firebase.codelab.mlkitUABC.NutrientsActivity" />
         <activity
