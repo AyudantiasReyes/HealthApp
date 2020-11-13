@@ -34,6 +34,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.google.firebase.codelab.UI.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.google.firebase.codelab.UI.RegisterActivity" />
         <activity android:name="com.google.firebase.codelab.labelScannerUABC.ProductListActivity" />
         <activity android:name="com.google.firebase.codelab.labelScannerUABC.DataEntryActivity" />
         <activity android:name="com.google.firebase.codelab.mlkitUABC.NutrientsActivity" />
@@ -41,11 +49,6 @@
             android:name="com.google.firebase.codelab.labelScannerUABC.MainMenuActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
