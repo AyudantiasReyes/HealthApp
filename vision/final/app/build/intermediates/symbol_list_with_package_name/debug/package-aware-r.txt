@@ -1,4 +1,4 @@
-com.google.firebase.codelab.mlkitUABC
+com.google.firebase.codelab.labelScannerUABC
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom

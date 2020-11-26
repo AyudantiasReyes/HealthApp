@@ -1,4 +1,4 @@
-#Wed Nov 25 18:20:07 PST 2020
-base.0=C\:\\Users\\caudi\\Documents\\UABC\\Semestre8\\HealthApp\\vision\\final\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed Nov 25 22:29:17 PST 2020
+base.0=C\:\\Users\\israe\\Desktop\\Proyectos\\HealthApp1\\vision\\final\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
