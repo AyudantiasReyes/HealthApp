@@ -1,9 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-ml-vision-face-model:17.0.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68756368489724353eae0c3d228cd657/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68756368489724353eae0c3d228cd657/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/68756368489724353eae0c3d228cd657/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82cf2241dd5a54d0ee9d080d7e8bffec/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d98038196c8d0dbddff6fcb4cbf3b9f/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
