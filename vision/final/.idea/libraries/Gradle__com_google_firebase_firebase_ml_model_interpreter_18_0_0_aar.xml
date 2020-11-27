@@ -1,13 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-ml-model-interpreter:18.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35a0b2e4313ef0cdc4f914db91db5877/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35a0b2e4313ef0cdc4f914db91db5877/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35a0b2e4313ef0cdc4f914db91db5877/jetified-firebase-ml-model-interpreter-18.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d8c23be62d96cdda5d9909c7fbfbb50f/jetified-firebase-ml-model-interpreter-18.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-model-interpreter/18.0.0/8dd4ca5e6ecdc0d649a65619532aa04e47179ac8/firebase-ml-model-interpreter-18.0.0-javadoc.jar!/" />

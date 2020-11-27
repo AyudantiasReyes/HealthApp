@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.google.firebase.codelab.labelScannerUABC.labelscanner.MainMenuActivity">
+    tools:context="com.google.firebase.codelab.labelScannerUABC.MainMenuActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"

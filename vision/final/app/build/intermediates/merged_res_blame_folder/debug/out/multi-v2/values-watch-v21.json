@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp1\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
+            "outputFile": "C:\\Users\\caudi\\Documents\\UABC\\Semestre8\\Ayundatias\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\israe\\.gradle\\caches\\transforms-2\\files-2.1\\ad525ede16da6824b142e21592f4b575\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\caudi\\.gradle\\caches\\transforms-2\\files-2.1\\ad525ede16da6824b142e21592f4b575\\appcompat-1.1.0\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

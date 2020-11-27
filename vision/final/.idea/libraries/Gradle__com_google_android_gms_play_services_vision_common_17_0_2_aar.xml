@@ -1,13 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.gms:play-services-vision-common:17.0.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0e2ba2e82971ad4e4f43ee615a3e726d/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0e2ba2e82971ad4e4f43ee615a3e726d/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0e2ba2e82971ad4e4f43ee615a3e726d/jetified-play-services-vision-common-17.0.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bfaac18c89f683a7311700d33415b7ae/jetified-play-services-vision-common-17.0.2/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-vision-common/17.0.2/60ff750d6bcc69d8447735711ca788eb3cdfbf39/play-services-vision-common-17.0.2-javadoc.jar!/" />
