@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
                 email = edtEmail.getText().toString();
                 pass = edtPass.getText().toString();
                 if(name.isEmpty() || lastname.isEmpty() || email.isEmpty() || pass.isEmpty())
-                    Toast.makeText(RegisterActivity.this,"Llenar todos los campos",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else
                     RegisterUser();
             }
@@ -58,11 +58,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(response.equals("true")){
-                    Toast.makeText(RegisterActivity.this,"Usuario registrado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.msjRegister,Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 else
-                    Toast.makeText(RegisterActivity.this,"Error, correo ya registrado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.msjRegister1,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override

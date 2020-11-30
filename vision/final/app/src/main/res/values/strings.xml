@@ -1,18 +1,32 @@
 <resources>
-
-    <string name="app_name" translatable="false">LabelScanner</string>
-    <string name="select_image_for_text_recognition" translatable="false">Select image for text recognition</string>
-    <string name="find_text_button" translatable="false">Find text</string>
-    <string name="find_face_contour_button" translatable="false">Find face contour</string>
-    <string name="find_text_cloud_button" translatable="false">Find text (cloud)</string>
-    <string name="find_objects_button" translatable="false">Find objects</string>
+    <string name="app_name">LabelScanner</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="email1">Enter your email</string>
+    <string name="pass">Password</string>
+    <string name="pass1">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="lastname">Last name</string>
+    <string name="name1">Enter your name</string>
+    <string name="lastname1">Enter your last name</string>
+    <string name="error1">Complete the fields</string>
+    <string name="errorUser">Incorrect email or password</string>
+    <string name="msjRegister">Registered user</string>
+    <string name="msjRegister1">Error, already registered mail</string>
+    <string name="select_image_for_text_recognition">Select image for text recognition</string>
+    <string name="find_text_button">Find text</string>
+    <string name="find_face_contour_button">Find face contour</string>
+    <string name="find_text_cloud_button">Find text (cloud)</string>
+    <string name="find_objects_button">Find objects</string>
 
     //nutrientes
-    <string name="carbohidratos" translatable="false">Carbohidratos</string>
-    <string name="calorias" translatable="false">Calorías</string>
-    <string name="proteina" translatable="false">Proteína</string>
-    <string name="lipidos" translatable="false">Lípidos</string>
-    <string name="colesterol" translatable="false">Colesterol</string>
+    <string name="carbohidratos">Carbohidratos</string>
+    <string name="calorias">Calorías</string>
+    <string name="proteina">Proteína</string>
+    <string name="lipidos">Lípidos</string>
+    <string name="colesterol">Colesterol</string>
     <string name="vitamina_a">Vitamina A</string>
     <string name="sodio">Sodio</string>
     <string name="azucares">Azúcares</string>

@@ -12,5 +12,9 @@
     <string name="lastname">Apellido</string>
     <string name="name1">Ingrese su nombre</string>
     <string name="lastname1">Ingrese su apellido</string>
+    <string name="error1">Completar todos los campos</string>
+    <string name="errorUser">Correo o contraseña incorrecto</string>
+    <string name="msjRegister">Usuario registrado</string>
+    <string name="msjRegister1">Error, correo ya registrado</string>
 
 </resources>

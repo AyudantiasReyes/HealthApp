@@ -8,13 +8,8 @@ com/google/firebase/codelab/labelScannerUABC/LabelGraphic.java
  com.google.firebase.codelab.labelScannerUABC.LabelGraphic
 com/google/firebase/codelab/labelScannerUABC/DBHelper.java
  com.google.firebase.codelab.labelScannerUABC.DBHelper
-com/google/firebase/codelab/UI/LoginActivity.java
- com.google.firebase.codelab.UI.LoginActivity
- com.google.firebase.codelab.UI.LoginActivity$1
- com.google.firebase.codelab.UI.LoginActivity$2
- com.google.firebase.codelab.UI.LoginActivity$3
- com.google.firebase.codelab.UI.LoginActivity$4
- com.google.firebase.codelab.UI.LoginActivity$5
+com/google/firebase/codelab/labelScannerUABC/databinding/SpinnerItemBinding.java
+ com.google.firebase.codelab.labelScannerUABC.databinding.SpinnerItemBinding
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityProductListBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding
 com/google/firebase/codelab/labelScannerUABC/FoodItem.java
@@ -45,6 +40,8 @@ com/google/firebase/codelab/labelScannerUABC/TipoPorcion.java
  com.google.firebase.codelab.labelScannerUABC.TipoPorcion
 com/google/firebase/codelab/labelScannerUABC/labelscanner/ImagePicker.java
  com.google.firebase.codelab.labelScannerUABC.labelscanner.ImagePicker
+com/google/firebase/codelab/labelScannerUABC/Class/User.java
+ com.google.firebase.codelab.labelScannerUABC.Class.User
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityLoginBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityLoginBinding
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityRegisterBinding.java
@@ -61,13 +58,18 @@ com/google/firebase/codelab/labelScannerUABC/ProductListActivity.java
  com.google.firebase.codelab.labelScannerUABC.ProductListActivity$1
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityDataEntryBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding
+com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
+ com.google.firebase.codelab.labelScannerUABC.TextGraphic
 com/google/firebase/codelab/UI/RegisterActivity.java
  com.google.firebase.codelab.UI.RegisterActivity
  com.google.firebase.codelab.UI.RegisterActivity$1
  com.google.firebase.codelab.UI.RegisterActivity$2
  com.google.firebase.codelab.UI.RegisterActivity$3
  com.google.firebase.codelab.UI.RegisterActivity$4
-com/google/firebase/codelab/labelScannerUABC/databinding/SpinnerItemBinding.java
- com.google.firebase.codelab.labelScannerUABC.databinding.SpinnerItemBinding
-com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
- com.google.firebase.codelab.labelScannerUABC.TextGraphic
+com/google/firebase/codelab/UI/LoginActivity.java
+ com.google.firebase.codelab.UI.LoginActivity
+ com.google.firebase.codelab.UI.LoginActivity$1
+ com.google.firebase.codelab.UI.LoginActivity$2
+ com.google.firebase.codelab.UI.LoginActivity$3
+ com.google.firebase.codelab.UI.LoginActivity$4
+ com.google.firebase.codelab.UI.LoginActivity$5

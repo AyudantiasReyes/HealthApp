@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 pass = edt_pass.getText().toString();
                 //Verificar campos vacios
                 if(email.isEmpty() || pass.isEmpty())
-                    Toast.makeText(LoginActivity.this,"Llenar todos los campos",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else
                     ValidateUser();
             }
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(!response.isEmpty())                                                         //response contiene json de la consulta en bd
                     startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                 else
-                    Toast.makeText(LoginActivity.this,"Correo o contraseña invalido",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,R.string.errorUser,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override

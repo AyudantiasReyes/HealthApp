@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LabelScanner</string>
+    <string name="email">Correo electrónico</string>
+    <string name="email1">Ingrese su correo electrónico</string>
+    <string name="error1">Completar todos los campos</string>
+    <string name="errorUser">Correo o contraseña incorrecto</string>
+    <string name="lastname">Apellido</string>
+    <string name="lastname1">Ingrese su apellido</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="msjRegister">Usuario registrado</string>
+    <string name="msjRegister1">Error, correo ya registrado</string>
+    <string name="name">Nombre</string>
+    <string name="name1">Ingrese su nombre</string>
+    <string name="pass">Contraseña</string>
+    <string name="pass1">Ingrese su contraseña</string>
+    <string name="register">Registrarte</string>
+    <string name="welcome">Bienvenido</string>
+</resources>

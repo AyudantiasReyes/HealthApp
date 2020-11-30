@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rMX\\values-es-rMX.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\src\\main\\res\\values-es-rMX\\strings.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,14,15,-1,-1,-1,16,17,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,4,4,-1,-1,-1,4,4,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,678,741,-1,-1,-1,811,871,-1,-1,-1,-1,-1,-1",
+                        "endColumns": "-1,-1,-1,61,68,-1,-1,-1,58,68,-1,-1,-1,-1,-1,-1",
+                        "endOffsets": "-1,-1,-1,735,805,-1,-1,-1,865,935,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,105,158,223,285,354,400,458,507,566,635,675,727,771,827,876",
+                        "endColumns": "49,52,64,61,68,45,57,48,58,68,39,51,43,55,48,46",
+                        "endOffsets": "100,153,218,280,349,395,453,502,561,630,670,722,766,822,871,918"
+                    }
+                }
+            ]
+        }
+    ]
+}
