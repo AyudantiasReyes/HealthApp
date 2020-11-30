@@ -10,21 +10,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -52,16 +48,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        Intent intent;
         switch (view.getId()) {
             case R.id.productoButton:
-                intent = new Intent(this, ProductListActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), ProductListActivity.class));
                 break;
-                case R.id.inputButton:
-                    intent = new Intent(this, DataEntryActivity.class);
-                    startActivity(intent);
-                    break;
+            case R.id.inputButton:
+                startActivity(new Intent(getApplicationContext(), DataEntryActivity.class));
+                break;
             case R.id.cameraButton:
                 dispatchTakePictureIntent();
                 break;

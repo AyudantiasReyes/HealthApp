@@ -5,15 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.Date;
 import java.util.ArrayList;
-
 import java.util.HashMap;
 import android.database.DatabaseUtils;
 
 public class DBHelper extends SQLiteOpenHelper {
-
     public static final String DATABASE_NAME = "LabelScannerDB.db";
     public static final String FOOD_TABLE_NAME = "food";
     public static final String FOOD_COLUMN_ID = "id";
@@ -29,7 +26,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String FOOD_COLUMN_PROTEIN = "protein";
     public static final String FOOD_COLUMN_DATE_ADDED = "date_added";
     public static final String FOOD_COLUMN_DATE_MODIFIED = "date_modified";
-
     public static final int ALPHABETICAL = 1;
     public static final int ALPHABETICAL_INVERTED = 2;
     public static final int DATE_MODIFIED_RECENT = 3;

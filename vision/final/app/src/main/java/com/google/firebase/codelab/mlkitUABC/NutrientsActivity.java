@@ -13,10 +13,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityNutrientsBinding;

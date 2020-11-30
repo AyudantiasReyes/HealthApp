@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {             //parametros que se envian con metodo POST
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("email",edt_email.getText().toString());
-                parametros.put("pass",edt_pass.getText().toString());
+                parametros.put("email",email);
+                parametros.put("pass",pass);
                 return parametros;
             }
         };

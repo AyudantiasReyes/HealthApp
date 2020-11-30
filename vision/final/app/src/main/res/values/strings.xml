@@ -1,18 +1,18 @@
 <resources>
 
-    <string name="app_name">LabelScanner</string>
-    <string name="select_image_for_text_recognition">Select image for text recognition</string>
-    <string name="find_text_button">Find text</string>
-    <string name="find_face_contour_button">Find face contour</string>
-    <string name="find_text_cloud_button">Find text (cloud)</string>
-    <string name="find_objects_button">Find objects</string>
+    <string name="app_name" translatable="false">LabelScanner</string>
+    <string name="select_image_for_text_recognition" translatable="false">Select image for text recognition</string>
+    <string name="find_text_button" translatable="false">Find text</string>
+    <string name="find_face_contour_button" translatable="false">Find face contour</string>
+    <string name="find_text_cloud_button" translatable="false">Find text (cloud)</string>
+    <string name="find_objects_button" translatable="false">Find objects</string>
 
     //nutrientes
-    <string name="carbohidratos">Carbohidratos</string>
-    <string name="calorias">Calorías</string>
-    <string name="proteina">Proteína</string>
-    <string name="lipidos">Lípidos</string>
-    <string name="colesterol">Colesterol</string>
+    <string name="carbohidratos" translatable="false">Carbohidratos</string>
+    <string name="calorias" translatable="false">Calorías</string>
+    <string name="proteina" translatable="false">Proteína</string>
+    <string name="lipidos" translatable="false">Lípidos</string>
+    <string name="colesterol" translatable="false">Colesterol</string>
     <string name="vitamina_a">Vitamina A</string>
     <string name="sodio">Sodio</string>
     <string name="azucares">Azúcares</string>

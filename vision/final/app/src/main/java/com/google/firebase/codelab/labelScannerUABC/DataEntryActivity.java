@@ -1,7 +1,6 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -10,12 +9,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityNutrientsBinding;
 import com.google.firebase.codelab.mlkitUABC.NutrientsActivity;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 

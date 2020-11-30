@@ -18,10 +18,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-
 import com.google.firebase.codelab.labelScannerUABC.GraphicOverlay.Graphic;
 import com.google.firebase.ml.vision.document.FirebaseVisionDocumentText;
-
 import java.util.List;
 
 /**
