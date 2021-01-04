@@ -1,0 +1,296 @@
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"1.8\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/compiler.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/compiler.xml	(date 1609648021215)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="1.8" />
++    <bytecodeTargetLevel target="15" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_phenotype_16_0_0_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.android.gms:play-services-phenotype:16.0.0@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0942bd3744ed1f3aeac041210b4fd9ee/jetified-play-services-phenotype-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed0774d4d031c0460bee340e6c2ec49b/jetified-play-services-phenotype-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c053bc4b5f989bea74b98c5b538ecf00/jetified-play-services-phenotype-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c053bc4b5f989bea74b98c5b538ecf00/jetified-play-services-phenotype-16.0.0/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c053bc4b5f989bea74b98c5b538ecf00/jetified-play-services-phenotype-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/AndroidManifest.xml\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_phenotype_16_0_0_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_phenotype_16_0_0_aar.xml	(date 1609311783542)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9ff5895c998b61a1300992392d86ee76/jetified-play-services-phenotype-16.0.0/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58158d2ed2f9e83f8d368cdadf184022/jetified-play-services-phenotype-16.0.0/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58158d2ed2f9e83f8d368cdadf184022/jetified-play-services-phenotype-16.0.0/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/58158d2ed2f9e83f8d368cdadf184022/jetified-play-services-phenotype-16.0.0/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_ml_model_interpreter_18_0_0_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-ml-model-interpreter:18.0.0@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/35a0b2e4313ef0cdc4f914db91db5877/jetified-firebase-ml-model-interpreter-18.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d8c23be62d96cdda5d9909c7fbfbb50f/jetified-firebase-ml-model-interpreter-18.0.0/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/981d47b25cfc3329ab3668f8fc5a15b2/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/res\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-model-interpreter/18.0.0/8dd4ca5e6ecdc0d649a65619532aa04e47179ac8/firebase-ml-model-interpreter-18.0.0-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_ml_model_interpreter_18_0_0_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_ml_model_interpreter_18_0_0_aar.xml	(date 1609311783613)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5c9939249d4fb7b53f98cfbfb2d8edb9/jetified-firebase-ml-model-interpreter-18.0.0/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c8fcf8e5406e166f0aa8181c127115d1/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c8fcf8e5406e166f0aa8181c127115d1/jetified-firebase-ml-model-interpreter-18.0.0/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c8fcf8e5406e166f0aa8181c127115d1/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-model-interpreter/18.0.0/8dd4ca5e6ecdc0d649a65619532aa04e47179ac8/firebase-ml-model-interpreter-18.0.0-javadoc.jar!/" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/misc.xml	(date 1609701380948)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_image_label_model_17_0_2_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-ml-vision-image-label-model:17.0.2@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/33e7df54eb74d3480f1ce184245989d7/jetified-firebase-ml-vision-image-label-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/80abe69e82cc898a5534a2b1e0307b68/jetified-firebase-ml-vision-image-label-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30d9e8910fab241d313bae2aee0e68aa/jetified-firebase-ml-vision-image-label-model-17.0.2/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30d9e8910fab241d313bae2aee0e68aa/jetified-firebase-ml-vision-image-label-model-17.0.2/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/30d9e8910fab241d313bae2aee0e68aa/jetified-firebase-ml-vision-image-label-model-17.0.2/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/AndroidManifest.xml\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_image_label_model_17_0_2_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_image_label_model_17_0_2_aar.xml	(date 1609311783637)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ac5e847466333b042f338b841c1bdb70/jetified-firebase-ml-vision-image-label-model-17.0.2/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38487f10d73e069223b195f2e89f9c5c/jetified-firebase-ml-vision-image-label-model-17.0.2/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38487f10d73e069223b195f2e89f9c5c/jetified-firebase-ml-vision-image-label-model-17.0.2/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38487f10d73e069223b195f2e89f9c5c/jetified-firebase-ml-vision-image-label-model-17.0.2/jars/classes.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: local.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>## This file must *NOT* be checked into Version Control Systems,\r\n# as it contains information specific to your local configuration.\r\n#\r\n# Location of the SDK. This is only used by Gradle.\r\n# For customization when using a Version Control System, please read the\r\n# header note.\r\n#Thu Nov 26 21:38:29 PST 2020\r\nsdk.dir=C\\:\\\\Users\\\\caudi\\\\AppData\\\\Local\\\\Android\\\\Sdk\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- local.properties	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ local.properties	(date 1609311567199)
+@@ -4,5 +4,5 @@
+ # Location of the SDK. This is only used by Gradle.
+ # For customization when using a Version Control System, please read the
+ # header note.
+-#Thu Nov 26 21:38:29 PST 2020
+-sdk.dir=C\:\\Users\\caudi\\AppData\\Local\\Android\\Sdk
++#Tue Dec 29 22:59:27 PST 2020
++sdk.dir=C\:\\Users\\israe\\AppData\\Local\\Android\\Sdk
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_16_0_0_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.android.gms:play-services-auth-base:16.0.0@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fbc0912f3d43a635de5fc18da268e837/jetified-play-services-auth-base-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a734150de19068d3842d0aa166c0ef1/jetified-play-services-auth-base-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad133a858aca80a125ec18a252741d51/jetified-play-services-auth-base-16.0.0/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad133a858aca80a125ec18a252741d51/jetified-play-services-auth-base-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad133a858aca80a125ec18a252741d51/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/res\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_16_0_0_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_16_0_0_aar.xml	(date 1609311783526)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d09ca68954ff83fac35996c57c81ff98/jetified-play-services-auth-base-16.0.0/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d74b21e62d029452d00ec0b3fbddfa4e/jetified-play-services-auth-base-16.0.0/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d74b21e62d029452d00ec0b3fbddfa4e/jetified-play-services-auth-base-16.0.0/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d74b21e62d029452d00ec0b3fbddfa4e/jetified-play-services-auth-base-16.0.0/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_19_0_3_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-ml-vision:19.0.3@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/12c79f3c28054fb881e4dd4979039219/jetified-firebase-ml-vision-19.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fac5c1b243e23b728ffc9828d9ed9e35/jetified-firebase-ml-vision-19.0.3/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/296c77810730277e79e440c2e704ffc7/jetified-firebase-ml-vision-19.0.3/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/296c77810730277e79e440c2e704ffc7/jetified-firebase-ml-vision-19.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/296c77810730277e79e440c2e704ffc7/jetified-firebase-ml-vision-19.0.3/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/jars/classes.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-vision/19.0.3/4a12ea1fbaac3e4e9ae2191000333ee1e2cd61a5/firebase-ml-vision-19.0.3-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_19_0_3_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_19_0_3_aar.xml	(date 1609311783621)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be05bfd367a5530dc2e3c528a27d17a2/jetified-firebase-ml-vision-19.0.3/jars/classes.jar!/" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6ff6fa7ef09551724522f0bb8359d000/jetified-firebase-ml-vision-19.0.3/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6ff6fa7ef09551724522f0bb8359d000/jetified-firebase-ml-vision-19.0.3/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6ff6fa7ef09551724522f0bb8359d000/jetified-firebase-ml-vision-19.0.3/res" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-vision/19.0.3/4a12ea1fbaac3e4e9ae2191000333ee1e2cd61a5/firebase-ml-vision-19.0.3-javadoc.jar!/" />
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_vision_common_17_0_2_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.android.gms:play-services-vision-common:17.0.2@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0e2ba2e82971ad4e4f43ee615a3e726d/jetified-play-services-vision-common-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bfaac18c89f683a7311700d33415b7ae/jetified-play-services-vision-common-17.0.2/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31a5eb07d2ca348dac5dfae058a2efc5/jetified-play-services-vision-common-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/res\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-vision-common/17.0.2/60ff750d6bcc69d8447735711ca788eb3cdfbf39/play-services-vision-common-17.0.2-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_vision_common_17_0_2_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_vision_common_17_0_2_aar.xml	(date 1609311783558)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2220e3fb0068fdf52699e81929e7dd09/jetified-play-services-vision-common-17.0.2/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ea7e8e575675406fc4d19ccf96aff32c/jetified-play-services-vision-common-17.0.2/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ea7e8e575675406fc4d19ccf96aff32c/jetified-play-services-vision-common-17.0.2/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ea7e8e575675406fc4d19ccf96aff32c/jetified-play-services-vision-common-17.0.2/res" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-vision-common/17.0.2/60ff750d6bcc69d8447735711ca788eb3cdfbf39/play-services-vision-common-17.0.2-javadoc.jar!/" />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_iid_17_0_3_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-iid:17.0.3@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/06f29807322d75119d72ffce3cb90285/jetified-firebase-iid-17.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7dfe0fdc3ff1a70077ef5e0785433121/jetified-firebase-iid-17.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1857582365cf54bba1a075591bc53d02/jetified-firebase-iid-17.0.3/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1857582365cf54bba1a075591bc53d02/jetified-firebase-iid-17.0.3/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1857582365cf54bba1a075591bc53d02/jetified-firebase-iid-17.0.3/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/AndroidManifest.xml\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-iid/17.0.3/f75ec044e44b868f2a037e753b0287889e224837/firebase-iid-17.0.3-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_iid_17_0_3_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_iid_17_0_3_aar.xml	(date 1609311783566)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/res" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/90775c3283f56953d20dd1e0d2977a94/jetified-firebase-iid-17.0.3/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aec321017ab8f84f198b6c4ae837b5c2/jetified-firebase-iid-17.0.3/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aec321017ab8f84f198b6c4ae837b5c2/jetified-firebase-iid-17.0.3/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aec321017ab8f84f198b6c4ae837b5c2/jetified-firebase-iid-17.0.3/jars/classes.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-iid/17.0.3/f75ec044e44b868f2a037e753b0287889e224837/firebase-iid-17.0.3-javadoc.jar!/" />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_face_model_17_0_2_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-ml-vision-face-model:17.0.2@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/82cf2241dd5a54d0ee9d080d7e8bffec/jetified-firebase-ml-vision-face-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d98038196c8d0dbddff6fcb4cbf3b9f/jetified-firebase-ml-vision-face-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/44a0fab0d08a397333bbeadfa7d5ad5b/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_face_model_17_0_2_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_ml_vision_face_model_17_0_2_aar.xml	(date 1609311783629)
+@@ -9,6 +9,9 @@
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b7fbaed43f1440a469f18d179cb6e21/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b7fbaed43f1440a469f18d179cb6e21/jetified-firebase-ml-vision-face-model-17.0.2/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b7fbaed43f1440a469f18d179cb6e21/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: ../../.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"PLATFORM\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"JDK\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveModulePerSourceSet\" value=\"false\" />\r\n        <option name=\"useQualifiedModuleNames\" value=\"true\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../../.idea/gradle.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ ../../.idea/gradle.xml	(date 1609311527432)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_ml_common_17_0_0_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-ml-common:17.0.0@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/acf3b0355603d4b8389a92c5d82b5d73/jetified-firebase-ml-common-17.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7b726509e12810bdf0d48702f0ff9756/jetified-firebase-ml-common-17.0.0/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/eca9e6ce513903fbfb694b9c08a1e7d5/jetified-firebase-ml-common-17.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/eca9e6ce513903fbfb694b9c08a1e7d5/jetified-firebase-ml-common-17.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/eca9e6ce513903fbfb694b9c08a1e7d5/jetified-firebase-ml-common-17.0.0/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/res\" />\r\n    </CLASSES>\r\n    <JAVADOC>\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-common/17.0.0/b884044d2f8732260837f470f4ed231a876cb2e3/firebase-ml-common-17.0.0-javadoc.jar!/\" />\r\n    </JAVADOC>\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_ml_common_17_0_0_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_ml_common_17_0_0_aar.xml	(date 1609311783598)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c73cf99cee10c2c9c527de173fe7679/jetified-firebase-ml-common-17.0.0/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615b6e0c27538e2f595d80660d7e9de6/jetified-firebase-ml-common-17.0.0/res" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615b6e0c27538e2f595d80660d7e9de6/jetified-firebase-ml-common-17.0.0/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/615b6e0c27538e2f595d80660d7e9de6/jetified-firebase-ml-common-17.0.0/jars/classes.jar!/" />
+     </CLASSES>
+     <JAVADOC>
+       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-common/17.0.0/b884044d2f8732260837f470f4ed231a876cb2e3/firebase-ml-common-17.0.0-javadoc.jar!/" />
+Index: .idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_1_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.firebase:firebase-iid-interop:16.0.1@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca99e5667556f7d0179af0b482d4a65b/jetified-firebase-iid-interop-16.0.1/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20566c84e4b1584891c0d9f1b1d4975e/jetified-firebase-iid-interop-16.0.1/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9342641d5325c0e8cc1c93d8613a5c32/jetified-firebase-iid-interop-16.0.1/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9342641d5325c0e8cc1c93d8613a5c32/jetified-firebase-iid-interop-16.0.1/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9342641d5325c0e8cc1c93d8613a5c32/jetified-firebase-iid-interop-16.0.1/jars/classes.jar!/\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/AndroidManifest.xml\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_1_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_1_aar.xml	(date 1609311783590)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/res" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a714835dec71a981bb5915c3caf95da/jetified-firebase-iid-interop-16.0.1/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5de94f47fdf6299b95a0537f803573d6/jetified-firebase-iid-interop-16.0.1/AndroidManifest.xml" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5de94f47fdf6299b95a0537f803573d6/jetified-firebase-iid-interop-16.0.1/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5de94f47fdf6299b95a0537f803573d6/jetified-firebase-iid-interop-16.0.1/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_stats_16_0_1_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.android.gms:play-services-stats:16.0.1@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76b0fd584bdb771e9b6cf573c4f50dcc/jetified-play-services-stats-16.0.1/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0449389a85a033ad6ce9d8d2bddaba24/jetified-play-services-stats-16.0.1/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cc6357ce5a6118aaa9876af1299cb77/jetified-play-services-stats-16.0.1/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cc6357ce5a6118aaa9876af1299cb77/jetified-play-services-stats-16.0.1/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cc6357ce5a6118aaa9876af1299cb77/jetified-play-services-stats-16.0.1/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/res\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_stats_16_0_1_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_stats_16_0_1_aar.xml	(date 1609311783550)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2eaa1204369e8c7cbf77b83a0f4a9bcd/jetified-play-services-stats-16.0.1/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f3e224819c22294354d4162872290b5/jetified-play-services-stats-16.0.1/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f3e224819c22294354d4162872290b5/jetified-play-services-stats-16.0.1/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f3e224819c22294354d4162872290b5/jetified-play-services-stats-16.0.1/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />
+Index: .idea/libraries/Gradle__com_google_android_gms_play_services_clearcut_16_0_0_aar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"libraryTable\">\r\n  <library name=\"Gradle: com.google.android.gms:play-services-clearcut:16.0.0@aar\">\r\n    <CLASSES>\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd7adbe8c1adbbc42208b46a49526163/jetified-play-services-clearcut-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/788044b9894c52c3405b236ff5e8ef2b/jetified-play-services-clearcut-16.0.0/res\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09a9dd72bdf8094112dd85888cb4c11e/jetified-play-services-clearcut-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09a9dd72bdf8094112dd85888cb4c11e/jetified-play-services-clearcut-16.0.0/res\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/09a9dd72bdf8094112dd85888cb4c11e/jetified-play-services-clearcut-16.0.0/AndroidManifest.xml\" />\r\n      <root url=\"jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/jars/classes.jar!/\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/AndroidManifest.xml\" />\r\n      <root url=\"file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/res\" />\r\n    </CLASSES>\r\n    <JAVADOC />\r\n    <SOURCES />\r\n  </library>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/Gradle__com_google_android_gms_play_services_clearcut_16_0_0_aar.xml	(revision 2319f322d66b04a5156956858c2c2bda7fe3f95c)
++++ .idea/libraries/Gradle__com_google_android_gms_play_services_clearcut_16_0_0_aar.xml	(date 1609311783534)
+@@ -9,6 +9,9 @@
+       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/jars/classes.jar!/" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/AndroidManifest.xml" />
+       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/86fcd2d013ed06ad4e23cf72ab796cd9/jetified-play-services-clearcut-16.0.0/res" />
++      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75931cb791391b1f9cf3af16c6286c87/jetified-play-services-clearcut-16.0.0/jars/classes.jar!/" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75931cb791391b1f9cf3af16c6286c87/jetified-play-services-clearcut-16.0.0/AndroidManifest.xml" />
++      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75931cb791391b1f9cf3af16c6286c87/jetified-play-services-clearcut-16.0.0/res" />
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />

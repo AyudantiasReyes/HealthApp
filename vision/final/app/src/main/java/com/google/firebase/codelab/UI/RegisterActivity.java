@@ -1,8 +1,10 @@
 package com.google.firebase.codelab.UI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,14 +16,21 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.R;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText edtName, edtLastName, edtEmail, edtPass;
-    Button btnRegister;
-    String name, lastname, email, pass;
+    private EditText edtName, edtLastName, edtEmail, edtPass;
+    private Button btnRegister;
+    private String id, name, lastname, email, pass;
+    private static final String URL = "http://conisoft.org/HealthApp/registerUser.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +55,28 @@ public class RegisterActivity extends AppCompatActivity {
                 pass = edtPass.getText().toString();
                 if(name.isEmpty() || lastname.isEmpty() || email.isEmpty() || pass.isEmpty())
                     Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
-                else
-                    RegisterUser();
+                else{
+                    if(pass.length() >= 8){
+                        if(isValidEmail(email))
+                            RegisterUser(name,lastname,email,pass);
+                        else
+                            Toast.makeText(RegisterActivity.this,R.string.msjRegister1,Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(RegisterActivity.this, R.string.msjRegister3, Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }
 
-    private void RegisterUser(){
-        String URL = "http://conisoft.org/HealthApp/registerUser.php";
+    public final static boolean isValidEmail(CharSequence email) {
+        if (email == null)
+            return false;
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void RegisterUser(final String name, final String lastname, final String email, final String password){
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -62,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 else
-                    Toast.makeText(RegisterActivity.this,R.string.msjRegister1,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.msjRegister2,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -76,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                 parametros.put("name",name);
                 parametros.put("lastname",lastname);
                 parametros.put("email",email);
-                parametros.put("pass",pass);
+                parametros.put("pass",password);
                 return parametros;
             }
         };

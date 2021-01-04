@@ -1,8 +1,11 @@
 package com.google.firebase.codelab.UI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,15 +17,32 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText edt_email, edt_pass;
-    Button login_button, register_button;
-    String email, pass;
+    private EditText edt_email, edt_pass;
+    private Button login_button, register_button;
+    private String email, pass;
+    private static final String URL = "http://conisoft.org/HealthApp/validateUser.php";
+    private static final String namePreference = "SettingsHealthApp";
+    private static final String KeyId = "idUser";
+    private static final String KeyName = "name";
+    private static final String KeyLastname = "lastname";
+    private static final String KeyEmail = "email";
+    private static final String KeyPassword = "password";
+    private SharedPreferences preferences;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +57,14 @@ public class LoginActivity extends AppCompatActivity {
         login_button = findViewById(R.id.button_login);
         register_button = findViewById(R.id.button_register);
 
+        preferences = getSharedPreferences(namePreference, MODE_PRIVATE);
+        email = preferences.getString(KeyEmail,null);
+        pass = preferences.getString(KeyPassword,null);
+
+        if(email != null && pass != null){
+            startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
+        }
+
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,8 +73,9 @@ public class LoginActivity extends AppCompatActivity {
                 //Verificar campos vacios
                 if(email.isEmpty() || pass.isEmpty())
                     Toast.makeText(LoginActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
-                else
+                else{
                     ValidateUser();
+                }
             }
         });
 
@@ -59,12 +88,32 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void ValidateUser(){
-        String URL = "http://conisoft.org/HealthApp/validateUser.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(!response.isEmpty())                                                         //response contiene json de la consulta en bd
-                    startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
+                if(!response.isEmpty()) {
+                    try {
+                        JSONObject jsonObj = new JSONObject(response);
+                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
+
+                        SharedPreferences.Editor edit = preferences.edit();
+                        edit.putString(KeyId,user.getId());
+                        Log.d("id",user.getId());
+                        edit.putString(KeyName,user.getName());
+                        Log.d("name",user.getName());
+                        edit.putString(KeyLastname,user.getLastname());
+                        Log.d("lastname",user.getLastname());
+                        edit.putString(KeyEmail,user.getEmail());
+                        Log.d("email",user.getEmail());
+                        edit.putString(KeyPassword,user.getPassword());
+                        Log.d("pass",user.getPassword());
+                        edit.commit();
+                        startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
+                        finish();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
                 else
                     Toast.makeText(LoginActivity.this,R.string.errorUser,Toast.LENGTH_SHORT).show();
             }

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\src\\main\\res\\font\\montserrat_bold.ttf"
     },
     {
-        "merged": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
-    },
-    {
         "merged": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_green_rounded_rectangle.xml.flat",
         "source": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\green_rounded_rectangle.xml"
+    },
+    {
+        "merged": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\israe\\Desktop\\Proyectos\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",

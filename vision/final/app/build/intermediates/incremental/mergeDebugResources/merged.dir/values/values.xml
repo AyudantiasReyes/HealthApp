@@ -875,6 +875,8 @@
     <string name="miligramos">miligramos</string>
     <string name="msjRegister">Registered user</string>
     <string name="msjRegister1">Error, already registered mail</string>
+    <string name="msjRegister2">Error, correo registrado</string>
+    <string name="msjRegister3">Error, contraseña debe ser mayor a 8 caracteres</string>
     <string description="Content description for new notification (no number count) [CHAR_LIMIT=NONE]" name="mtrl_badge_numberless_content_description">New notification</string>
     <string description="Content description for a close icon that lets the user remove content from the screen" name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
     <string name="mtrl_exceed_max_badge_number_suffix" translatable="false"><ns1:g example="999" id="maximum number">%1$d</ns1:g><ns1:g example="+" id="suffix">%2$s</ns1:g></string>

@@ -2127,6 +2127,8 @@ string mg
 string miligramos
 string msjRegister
 string msjRegister1
+string msjRegister2
+string msjRegister3
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
