@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\caudi\\Documents\\UABC\\Semestre8\\Ayundatias\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+            "outputFile": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\caudi\\.gradle\\caches\\transforms-2\\files-2.1\\a22ae1627135c3d9d78144728bc7206f\\material-1.1.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "/Users/navarro/.gradle/caches/transforms-2/files-2.1/a22ae1627135c3d9d78144728bc7206f/material-1.1.0/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",

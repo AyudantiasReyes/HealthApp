@@ -9,6 +9,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bf2b9439d53e40d2839640562dc0fcd/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2bc07691b5cdd2888da4c8d5c531e5d/jetified-firebase-ml-vision-face-model-17.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2bc07691b5cdd2888da4c8d5c531e5d/jetified-firebase-ml-vision-face-model-17.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c2bc07691b5cdd2888da4c8d5c531e5d/jetified-firebase-ml-vision-face-model-17.0.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -230,13 +230,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         // nutriente -> numero -> unidad.
         foodItem = new FoodItem();
         System.out.println(s);
-        String regex_cal = "(?i)(calorias|calorías|calories|calories\\/calorías|calories\\/calorias|contenido energético|contenido energetico)(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)(kcal|cal|kJ|kj|kilojoule)?";
+        String regex_cal = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)(kcal|cal|kJ|kj|kl|kilojoule)?";
         Pattern pattern = Pattern.compile(regex_cal);
         Matcher matcher = pattern.matcher(s);
 
         while (matcher.find()) {
             if(matcher.group(6)!=null){
-                if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule"))
+                if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule")||matcher.group(6).toLowerCase().equals("kl"))
                     foodItem.setCalories(Float.valueOf(matcher.group(4))*0.239006f);
                 else
                     foodItem.setCalories(Float.valueOf(matcher.group(4)));
@@ -245,7 +245,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             }
         }
 
-        String regex_porcion = "(?i)(por porción|la porción|por porcion|la porcion|por ración|por racion)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_porcion = "(?i)(por porci[oó]n|la porci[oó]n|por raci[oó]n|porcióön|de porci[oó]n)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_porcion);
         matcher = pattern.matcher(s);
 
@@ -257,7 +257,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("tamaño de porcion: " + foodItem.getPortion_size());
         }
 
-        String regex_numPorciones = "(?i)(porciones por envase|porciones por empaque|porciones por paquete|raciones por envase|raciones por empaque|porciones totales)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_numPorciones = "(?i)(porciones por envase|porciones por empaque|porciones por paquete|raciones por envase|raciones por empaque|porciones totales|porciones por sobre)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_numPorciones);
         matcher = pattern.matcher(s);
 
@@ -272,7 +272,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("numero de porciones: " + foodItem.getPortions());
         }
 
-        String regex_azucar = "(?i)(az[uú]car|az[uú]cares)(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_azucar = "(?i)(az[uú]car|az[uú]cares)(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_azucar);
         matcher = pattern.matcher(s);
 
@@ -284,7 +284,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("Azucar: " + foodItem.getSugar());
         }
 
-        String regex_carbs = "(?i)(carbohidratos|hidratos de carbono|carbohidratos \\(hidratos de carbono\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_carbs = "(?i)(carbohidratos|hidratos de carbono|carbohidratos \\(hidratos de carbono\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_carbs);
         matcher = pattern.matcher(s);
 
@@ -296,7 +296,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("calorías: " + foodItem.getCalories());
         }
 
-        String regex_proteina = "(?i)(prote[ií]na|prote[ií]nas)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_proteina = "(?i)(prote[ií]na|prote[ií]nas)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_proteina);
         matcher = pattern.matcher(s);
 
@@ -308,7 +308,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("calorías: " + foodItem.getCalories());
         }
 
-        String regex_lipidos = "(?i)(grasas|grasa|l[ií]pidos|grasas \\(l[ií]pidos\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
+        String regex_lipidos = "(?i)(grasas|grasa|l[ií]pidos|grasas \\(l[ií]pidos\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
         pattern = Pattern.compile(regex_lipidos);
         matcher = pattern.matcher(s);
 
@@ -320,7 +320,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             System.out.println("calorías: " + foodItem.getCalories());
         }
 
-        String regex_sodio = "(?i)(sodio|sodium)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(mg|\\smg)?";
+        String regex_sodio = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(mg|\\smg)?";
         pattern = Pattern.compile(regex_sodio);
         matcher = pattern.matcher(s);
 
