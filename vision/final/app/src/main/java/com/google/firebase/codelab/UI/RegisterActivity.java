@@ -19,9 +19,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText edtName, edtLastName, edtEmail, edtPass;
-    Button btnRegister;
-    String name, lastname, email, pass;
+    private EditText edtName, edtLastName, edtEmail, edtPass;
+    private Button btnRegister;
+    private String id, name, lastname, email, pass;
+    private static final String URL = "http://conisoft.org/HealthApp/registerUser.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +46,38 @@ public class RegisterActivity extends AppCompatActivity {
                 email = edtEmail.getText().toString();
                 pass = edtPass.getText().toString();
                 if(name.isEmpty() || lastname.isEmpty() || email.isEmpty() || pass.isEmpty())
-                    Toast.makeText(RegisterActivity.this,"Llenar todos los campos",Toast.LENGTH_SHORT).show();
-                else
-                    RegisterUser();
+                    Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
+                else{
+                    if(pass.length() >= 8){
+                        if(isValidEmail(email))
+                            RegisterUser(name,lastname,email,pass);
+                        else
+                            Toast.makeText(RegisterActivity.this,R.string.msjRegister1,Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                        Toast.makeText(RegisterActivity.this, R.string.msjRegister3, Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
     }
 
-    private void RegisterUser(){
-        String URL = "http://conisoft.org/HealthApp/registerUser.php";
+    public final static boolean isValidEmail(CharSequence email) {
+        if (email == null)
+            return false;
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void RegisterUser(final String name, final String lastname, final String email, final String password){
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if(response.equals("true")){
-                    Toast.makeText(RegisterActivity.this,"Usuario registrado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.msjRegister,Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 else
-                    Toast.makeText(RegisterActivity.this,"Error, correo ya registrado",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,R.string.msjRegister2,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -73,10 +88,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("name",edtName.getText().toString());
-                parametros.put("lastname",edtLastName.getText().toString());
-                parametros.put("email",edtEmail.getText().toString());
-                parametros.put("pass",edtPass.getText().toString());
+                parametros.put("name",name);
+                parametros.put("lastname",lastname);
+                parametros.put("email",email);
+                parametros.put("pass",password);
                 return parametros;
             }
         };

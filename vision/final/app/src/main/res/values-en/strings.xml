@@ -1,27 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LabelScanner</string>
-    <string name="welcome">Bienvenido</string>
-    <string name="email">Correo electrónico</string>
-    <string name="email1">Ingrese su correo electrónico</string>
-    <string name="pass">Contraseña</string>
-    <string name="pass1">Ingrese su contraseña</string>
-    <string name="login">Iniciar sesión</string>
-    <string name="register">Registrarte</string>
-    <string name="name">Nombre</string>
-    <string name="lastname">Apellido</string>
-    <string name="name1">Ingrese su nombre</string>
-    <string name="lastname1">Ingrese su apellido</string>
-    <string name="error1">Completar todos los campos</string>
-    <string name="errorUser">Correo o contraseña incorrecto</string>
-    <string name="msjRegister">Usuario registrado</string>
-    <string name="msjRegister1">Error, correo invalido</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="email1">Enter your email</string>
+    <string name="pass">Password</string>
+    <string name="pass1">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="lastname">Last name</string>
+    <string name="name1">Enter your name</string>
+    <string name="lastname1">Enter your last name</string>
+    <string name="error1">Complete the fields</string>
+    <string name="errorUser">Incorrect email or password</string>
+    <string name="msjRegister">Registered user</string>
     <string name="msjRegister2">Error, correo registrado</string>
+    <string name="msjRegister3">Error, contraseña debe ser mayor a 8 caracteres</string>
+    <string name="msjRegister1">Error, already registered mail</string>
     <string name="select_image_for_text_recognition">Select image for text recognition</string>
     <string name="find_text_button">Find text</string>
     <string name="find_face_contour_button">Find face contour</string>
     <string name="find_text_cloud_button">Find text (cloud)</string>
     <string name="find_objects_button">Find objects</string>
-    <string name="msjRegister3">Error, contraseña debe ser mayor a 8 caracteres</string>
 
     //nutrientes
     <string name="carbohidratos">Carbohidratos</string>
@@ -69,5 +70,4 @@
 
     //titulos de actividades
     <string name="info">Información Nutrimental</string>
-
 </resources>
