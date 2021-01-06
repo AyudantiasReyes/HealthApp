@@ -79,10 +79,10 @@ public class TextProcessor {
         //parseText(content);
         return content;
     }
-
+/*
     private static FoodItem parseText(String s) {
         FoodItem food = new FoodItem();
-        String regex_cal = "(Calories\\/Calorias|CALORIAS|Calorias|calorias|Calorías|calorías|Calories\\/Calorías|Calories\\/Calorias)([\\s]+)?(?<calorias>\\d+)([\\s]+?)(kj|kJ|kcal)?";
+        String regex_cal = "()([\\s]+)?(?<calorias>\\d+)([\\s]+?)(kj|kJ|kcal)?";
         Pattern pattern = Pattern.compile(regex_cal);
         Matcher matcher = pattern.matcher(s);
 
@@ -91,7 +91,7 @@ public class TextProcessor {
             System.out.println("calorías: " +food.getCalories());
         }
 
-        String regex_protein = "(Sodio|sodio|\\/Sodio)([\\s]+)?(?<calorias>\\d+)([\\s]+?)(g|G|gr|Gr|mg|Mg|MG)?";
+        String regex_protein = "()([\\s]+)?(?<calorias>\\d+)([\\s]+?)(g|G|gr|Gr|mg|Mg|MG)?";
         pattern = Pattern.compile(regex_protein);
         matcher = pattern.matcher(s);
         System.out.println("i");
@@ -102,5 +102,5 @@ public class TextProcessor {
         }
         return food;
     }
-
+*/
 }

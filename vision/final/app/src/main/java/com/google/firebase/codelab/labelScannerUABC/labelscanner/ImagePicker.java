@@ -78,7 +78,7 @@ public class ImagePicker {
         int i = 0;
         do {
             bm = decodeBitmap(context, selectedImage, sampleSizes[i]);
-            Log.d(TAG, "resizer: new bitmap width = " + bm.getWidth());
+            //Log.d(TAG, "resizer: new bitmap width = " + bm.getWidth());
             i++;
         } while (bm.getWidth() < minWidthQuality && i < sampleSizes.length);
         return bm;
