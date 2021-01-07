@@ -35,7 +35,7 @@ public class ProductListActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityProductListBinding.inflate(getLayoutInflater());
-        setContentView(binding.root);
+        setContentView(binding.root4);
         mydb = new DBHelper(this);
         porcionSpinner = binding.porcionSpinner;
         recyclerView = binding.myRecyclerView;

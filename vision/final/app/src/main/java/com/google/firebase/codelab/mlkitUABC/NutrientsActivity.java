@@ -5,13 +5,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,12 +17,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityNutrientsBinding;
-import com.google.firebase.codelab.labelScannerUABC.FoodItem;
+import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Porciones;
 import com.google.firebase.codelab.labelScannerUABC.TipoPorcion;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
-
-import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -65,9 +60,9 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         }
 
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
-        setContentView(binding.root);
+        setContentView(binding.root3);
         SpinnerValues();
-        binding.root.setOnClickListener(this);
+        binding.root3.setOnClickListener(this);
         binding.cantidadEditText.setText("1");
         binding.porcionSpinner.setOnItemSelectedListener(this);
         binding.porcionSpinner.setSelection(3);

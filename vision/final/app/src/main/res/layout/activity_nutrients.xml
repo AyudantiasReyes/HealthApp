@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root"
+    android:id="@+id/root3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NutrientsActivity">
+    tools:context="com.google.firebase.codelab.mlkitUABC.NutrientsActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.google.firebase.codelab.labelScannerUABC;
+package com.google.firebase.codelab.labelScannerUABC.Class;
 
 import java.io.Serializable;
 import java.util.Calendar;

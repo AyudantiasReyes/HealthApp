@@ -7,19 +7,17 @@ package com.google.firebase.codelab.labelScannerUABC;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.mlkitUABC.NutrientsActivity;
 
 import java.io.Serializable;

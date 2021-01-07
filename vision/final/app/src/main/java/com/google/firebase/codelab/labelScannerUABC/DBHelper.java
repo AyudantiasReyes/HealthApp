@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import android.database.DatabaseUtils;
 
+import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "LabelScannerDB.db";
