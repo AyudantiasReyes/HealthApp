@@ -4,16 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding;
-import com.google.firebase.codelab.labelScannerUABC.TipoPorcion;
-
 import java.util.ArrayList;
 
 public class ProductListActivity extends AppCompatActivity{
@@ -31,7 +27,6 @@ public class ProductListActivity extends AppCompatActivity{
     DBHelper mydb;
     FoodAdapter foodAdapter;
     Spinner porcionSpinner;
-    ArrayList<FoodItem> foodItems;
     ActivityProductListBinding binding;
     ArrayAdapter<String> spinnerAdapter;
     RecyclerView recyclerView;

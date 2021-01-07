@@ -68,6 +68,8 @@
     <string name="vita_hint">Vitamina A porción</string>
     <string name="porciones_hint">Porciones</string>
 
+    <string name="logout">Logout</string>
+
     //titulos de actividades
     <string name="info">Información Nutrimental</string>
 </resources>

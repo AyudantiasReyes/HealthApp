@@ -1,6 +1,7 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -15,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.codelab.UI.LoginActivity;
+import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
+import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
@@ -29,21 +33,29 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
-    Bitmap img;
-    int PICK_IMAGE_REQUEST=1;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    ActivityMainMenuBinding binding;
-    FoodItem foodItem;
+    private Bitmap img;
+    private final int PICK_IMAGE_REQUEST=1;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
+        preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
+        User user = LoadSharedPreferences();
+
+        Log.d("name",user.getName());
+        Log.d("email",user.getEmail());
+
+        com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.root);
         binding.productoButton.setOnClickListener(this);
         binding.cameraButton.setOnClickListener(this);
         binding.inputButton.setOnClickListener(this);
         binding.galleryButton.setOnClickListener(this);
+        binding.buttonLogout.setOnClickListener(this);
+        binding.textView14.setText(user.getEmail());
+        binding.textView15.setText(user.getName());
     }
 
     @Override
@@ -63,6 +75,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.galleryButton:
                 getImage();
+                break;
+            case R.id.button_logout:
+                logout();
                 break;
         }
     }
@@ -224,7 +239,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private void parseText(String s) {
         // Expresiones regulares que analizan el texto obtenido de FirebaseVision y busca cada una de las frases indicadas, por lo general
         // nutriente -> numero -> unidad.
-        foodItem = new FoodItem();
+        FoodItem foodItem = new FoodItem();
         System.out.println(s);
         String regex_cal = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)(kcal|cal|kJ|kj|kl|kilojoule)?";
         Pattern pattern = Pattern.compile(regex_cal);
@@ -339,5 +354,20 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
+    private void logout(){
+        preferences.edit().clear().apply();
+        startActivity(new Intent(MainMenuActivity.this, LoginActivity.class));
+        finish();
+    }
 
+    private User LoadSharedPreferences(){
+        String name, lastname, email, id, pass;
+        name = preferences.getString(SharedPreference.KeyName,null);
+        lastname = preferences.getString(SharedPreference.KeyLastname,null);
+        email = preferences.getString(SharedPreference.KeyEmail,null);
+        id = preferences.getString(SharedPreference.KeyName,null);
+        pass = preferences.getString(SharedPreference.KeyLastname,null);
+        User useA = new User(id,name,lastname,email,pass);
+        return useA;
+    }
 }
