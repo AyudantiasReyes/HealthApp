@@ -1,6 +1,7 @@
 package com.google.firebase.codelab.mlkitUABC;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -10,11 +11,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
+import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityNutrientsBinding;
 import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
@@ -24,11 +34,13 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.view.View.GONE;
 
 public class NutrientsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-
+    private static final String URL = "http://conisoft.org/HealthApp/insertFood.php";
     private ActivityNutrientsBinding binding;
     private FoodItem foodItem;
     private String cantidadBajaString = "Este alimento contiene una cantidad baja de este nutriente";
@@ -42,6 +54,8 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                     //gramos            //kcal                  //gramos            //gramos                //gramos            //gramos
 
     ArrayAdapter<TipoPorcion> spinnerAdapter;
+    private SharedPreferences preferences;
+    String id;
 
 
     @Override
@@ -59,6 +73,9 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
             // and get whatever type user account id is
         }
 
+        preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
+        id = preferences.getString(SharedPreference.KeyId,null);
+
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
         setContentView(binding.root3);
         SpinnerValues();
@@ -68,6 +85,7 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         binding.porcionSpinner.setSelection(3);
         binding.backButton.setOnClickListener(this);
         binding.editButton.setOnClickListener(this);
+        binding.acceptButton.setOnClickListener(this);
         binding.cantidadEditText.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -261,7 +279,46 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                 System.out.println(foodItem.getProduct_name());
                 startActivity(intent);
                 break;
+            case R.id.acceptButton:
+                insertFood(foodItem);
+                startActivity(new Intent(NutrientsActivity.this, MainMenuActivity.class));
+                finish();
         }
+    }
+
+    private void insertFood(final FoodItem food){
+        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(response.equals("true"))
+                    Toast.makeText(NutrientsActivity.this,R.string.add,Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(NutrientsActivity.this,R.string.update,Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(NutrientsActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String,String> parameter = new HashMap<>();
+                parameter.put("id",id);
+                parameter.put("name",food.getProduct_name());
+                parameter.put("tamano",String.valueOf(food.getPortion_size()));
+                parameter.put("porcion",String.valueOf(food.getPortions()));
+                parameter.put("caloria",String.valueOf(food.getCalories()));
+                parameter.put("azucar",String.valueOf(food.getSugar()));
+                parameter.put("carbohidrato",String.valueOf(food.getCarbs()));
+                parameter.put("proteina",String.valueOf(food.getProtein()));
+                parameter.put("lipido",String.valueOf(food.getFat()));
+                parameter.put("sodio",String.valueOf(food.getSodium()));
+                return parameter;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
     }
 
 }

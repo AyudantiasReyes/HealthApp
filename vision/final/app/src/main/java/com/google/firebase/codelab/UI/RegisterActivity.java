@@ -125,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
         edit.putString(SharedPreference.KeyName,user.getName());
         edit.putString(SharedPreference.KeyLastname,user.getLastname());
         edit.putString(SharedPreference.KeyEmail,user.getEmail());
-        edit.putString(SharedPreference.KeyEmail,user.getEmail());
+        edit.putString(SharedPreference.KeyPassword,user.getPassword());
         edit.apply();
     }
 }
