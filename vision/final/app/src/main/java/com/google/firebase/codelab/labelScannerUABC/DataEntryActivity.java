@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.codelab.UI.RegisterActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.*;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding;
 import com.google.firebase.codelab.mlkitUABC.*;
@@ -152,7 +153,10 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                if(response.equals("true"))
+                    Toast.makeText(DataEntryActivity.this,R.string.update,Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(DataEntryActivity.this,R.string.add,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
