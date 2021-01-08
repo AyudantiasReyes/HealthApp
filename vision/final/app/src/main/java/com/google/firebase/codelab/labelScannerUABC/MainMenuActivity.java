@@ -94,7 +94,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if ((requestCode == PICK_IMAGE_REQUEST || requestCode == REQUEST_IMAGE_CAPTURE) && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if ((requestCode == REQUEST_IMAGE_CAPTURE) && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
 
             try {
@@ -249,9 +249,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         while (matcher.find()) {
             if(matcher.group(6)!=null){
                 if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule")||matcher.group(6).toLowerCase().equals("kl"))
-                    foodItem.setCalories(Float.valueOf(matcher.group(4))*0.239006f);
+                    foodItem.setCalories(Float.parseFloat(matcher.group(4))*0.239006f);
                 else
-                    foodItem.setCalories(Float.valueOf(matcher.group(4)));
+                    foodItem.setCalories(Float.parseFloat(matcher.group(4)));
                 System.out.println(matcher.group(6).toLowerCase());
                 System.out.println("calorías: " + foodItem.getCalories());
             }
@@ -263,9 +263,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setPortion_size(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setPortion_size(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setPortion_size(Float.valueOf(matcher.group(4)));
+                foodItem.setPortion_size(Float.parseFloat(matcher.group(4)));
             System.out.println("tamaño de porcion: " + foodItem.getPortion_size());
         }
 
@@ -277,10 +277,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             //System.out.println("ERRRRRROR" + matcher.group(4));
             if(matcher.group(5)!=null) {
                 String temp = matcher.group(5).replaceAll(",",".");
-                foodItem.setPortions(Float.valueOf(matcher.group(4) + temp));
+                foodItem.setPortions(Float.parseFloat(matcher.group(4) + temp));
             }
             else
-                foodItem.setPortions(Float.valueOf(matcher.group(4)));
+                foodItem.setPortions(Float.parseFloat(matcher.group(4)));
             System.out.println("numero de porciones: " + foodItem.getPortions());
         }
 
@@ -290,9 +290,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setSugar(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setSugar(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setSugar(Float.valueOf(matcher.group(4)));
+                foodItem.setSugar(Float.parseFloat(matcher.group(4)));
             System.out.println("Azucar: " + foodItem.getSugar());
         }
 
@@ -302,9 +302,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setCarbs(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setCarbs(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setCarbs(Float.valueOf(matcher.group(4)));
+                foodItem.setCarbs(Float.parseFloat(matcher.group(4)));
             System.out.println("carbs: " + foodItem.getCarbs());
         }
 
@@ -314,9 +314,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setProtein(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setProtein(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setProtein(Float.valueOf(matcher.group(4)));
+                foodItem.setProtein(Float.parseFloat(matcher.group(4)));
             System.out.println("proteina: " + foodItem.getProtein());
         }
 
@@ -326,9 +326,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setFat(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setFat(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setFat(Float.valueOf(matcher.group(4)));
+                foodItem.setFat(Float.parseFloat(matcher.group(4)));
             System.out.println("grasas: " + foodItem.getFat());
         }
 
@@ -338,9 +338,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         while (matcher.find()) {
             if(matcher.group(5)!=null)
-                foodItem.setSodium(Float.valueOf(matcher.group(4)+matcher.group(5)));
+                foodItem.setSodium(Float.parseFloat(matcher.group(4)+matcher.group(5)));
             else
-                foodItem.setSodium(Float.valueOf(matcher.group(4)));
+                foodItem.setSodium(Float.parseFloat(matcher.group(4)));
             System.out.println("sodio: " + foodItem.getSodium());
         }
 
@@ -368,7 +368,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         email = preferences.getString(SharedPreference.KeyEmail,null);
         id = preferences.getString(SharedPreference.KeyName,null);
         pass = preferences.getString(SharedPreference.KeyLastname,null);
-        User useA = new User(id,name,lastname,email,pass);
-        return useA;
+        return new User(id,name,lastname,email,pass);
     }
 }
