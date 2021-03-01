@@ -25,6 +25,9 @@ public final class ActivityNutrientsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final FloatingActionButton acceptButton;
+
+  @NonNull
   public final TextView azucarAmount;
 
   @NonNull
@@ -148,7 +151,7 @@ public final class ActivityNutrientsBinding implements ViewBinding {
   public final FrameLayout roleSpinnerFrame;
 
   @NonNull
-  public final ConstraintLayout root;
+  public final ConstraintLayout root3;
 
   @NonNull
   public final TextView sodioAmount;
@@ -184,33 +187,35 @@ public final class ActivityNutrientsBinding implements ViewBinding {
   public final ConstraintLayout topBarLayout;
 
   private ActivityNutrientsBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView azucarAmount, @NonNull CircularProgressBar azucarBar,
-      @NonNull ConstraintLayout azucarLayout, @NonNull TextView azucarNotes,
-      @NonNull TextView azucarPercentage, @NonNull TextView azucarTextView,
-      @NonNull TextView azucarUnit, @NonNull ImageButton backButton,
-      @NonNull TextView caloriasAmount, @NonNull CircularProgressBar caloriasBar,
-      @NonNull ConstraintLayout caloriasLayout, @NonNull TextView caloriasNotes,
-      @NonNull TextView caloriasPercentage, @NonNull TextView caloriasTextView,
-      @NonNull TextView caloriasUnit, @NonNull EditText cantidadEditText,
-      @NonNull TextView carbsAmount, @NonNull CircularProgressBar carbsBar,
-      @NonNull ConstraintLayout carbsLayout, @NonNull TextView carbsNotes,
-      @NonNull TextView carbsPercentage, @NonNull TextView carbsTextView,
-      @NonNull TextView carbsUnit, @NonNull FloatingActionButton editButton,
-      @NonNull TextView lipidosAmount, @NonNull CircularProgressBar lipidosBar,
-      @NonNull ConstraintLayout lipidosLayout, @NonNull TextView lipidosNotes,
-      @NonNull TextView lipidosPercentage, @NonNull TextView lipidosTextView,
-      @NonNull TextView lipidosUnit, @NonNull TextView nombreAlimento,
-      @NonNull Spinner porcionSpinner, @NonNull TextView proteinaAmount,
-      @NonNull CircularProgressBar proteinaBar, @NonNull ConstraintLayout proteinaLayout,
-      @NonNull TextView proteinaNotes, @NonNull TextView proteinaPercentage,
-      @NonNull TextView proteinaTextView, @NonNull TextView proteinaUnit,
-      @NonNull FrameLayout roleSpinnerFrame, @NonNull ConstraintLayout root,
-      @NonNull TextView sodioAmount, @NonNull CircularProgressBar sodioBar,
-      @NonNull ConstraintLayout sodioLayout, @NonNull TextView sodioNotes,
-      @NonNull TextView sodioPercentage, @NonNull TextView sodioTextView,
-      @NonNull TextView sodioUnit, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull TextView titleTextView, @NonNull ConstraintLayout topBarLayout) {
+      @NonNull FloatingActionButton acceptButton, @NonNull TextView azucarAmount,
+      @NonNull CircularProgressBar azucarBar, @NonNull ConstraintLayout azucarLayout,
+      @NonNull TextView azucarNotes, @NonNull TextView azucarPercentage,
+      @NonNull TextView azucarTextView, @NonNull TextView azucarUnit,
+      @NonNull ImageButton backButton, @NonNull TextView caloriasAmount,
+      @NonNull CircularProgressBar caloriasBar, @NonNull ConstraintLayout caloriasLayout,
+      @NonNull TextView caloriasNotes, @NonNull TextView caloriasPercentage,
+      @NonNull TextView caloriasTextView, @NonNull TextView caloriasUnit,
+      @NonNull EditText cantidadEditText, @NonNull TextView carbsAmount,
+      @NonNull CircularProgressBar carbsBar, @NonNull ConstraintLayout carbsLayout,
+      @NonNull TextView carbsNotes, @NonNull TextView carbsPercentage,
+      @NonNull TextView carbsTextView, @NonNull TextView carbsUnit,
+      @NonNull FloatingActionButton editButton, @NonNull TextView lipidosAmount,
+      @NonNull CircularProgressBar lipidosBar, @NonNull ConstraintLayout lipidosLayout,
+      @NonNull TextView lipidosNotes, @NonNull TextView lipidosPercentage,
+      @NonNull TextView lipidosTextView, @NonNull TextView lipidosUnit,
+      @NonNull TextView nombreAlimento, @NonNull Spinner porcionSpinner,
+      @NonNull TextView proteinaAmount, @NonNull CircularProgressBar proteinaBar,
+      @NonNull ConstraintLayout proteinaLayout, @NonNull TextView proteinaNotes,
+      @NonNull TextView proteinaPercentage, @NonNull TextView proteinaTextView,
+      @NonNull TextView proteinaUnit, @NonNull FrameLayout roleSpinnerFrame,
+      @NonNull ConstraintLayout root3, @NonNull TextView sodioAmount,
+      @NonNull CircularProgressBar sodioBar, @NonNull ConstraintLayout sodioLayout,
+      @NonNull TextView sodioNotes, @NonNull TextView sodioPercentage,
+      @NonNull TextView sodioTextView, @NonNull TextView sodioUnit, @NonNull TextView textView2,
+      @NonNull TextView textView3, @NonNull TextView titleTextView,
+      @NonNull ConstraintLayout topBarLayout) {
     this.rootView = rootView;
+    this.acceptButton = acceptButton;
     this.azucarAmount = azucarAmount;
     this.azucarBar = azucarBar;
     this.azucarLayout = azucarLayout;
@@ -252,7 +257,7 @@ public final class ActivityNutrientsBinding implements ViewBinding {
     this.proteinaTextView = proteinaTextView;
     this.proteinaUnit = proteinaUnit;
     this.roleSpinnerFrame = roleSpinnerFrame;
-    this.root = root;
+    this.root3 = root3;
     this.sodioAmount = sodioAmount;
     this.sodioBar = sodioBar;
     this.sodioLayout = sodioLayout;
@@ -293,6 +298,12 @@ public final class ActivityNutrientsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.acceptButton;
+      FloatingActionButton acceptButton = rootView.findViewById(id);
+      if (acceptButton == null) {
+        break missingId;
+      }
+
       id = R.id.azucarAmount;
       TextView azucarAmount = rootView.findViewById(id);
       if (azucarAmount == null) {
@@ -539,7 +550,7 @@ public final class ActivityNutrientsBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout root = (ConstraintLayout) rootView;
+      ConstraintLayout root3 = (ConstraintLayout) rootView;
 
       id = R.id.sodioAmount;
       TextView sodioAmount = rootView.findViewById(id);
@@ -607,16 +618,16 @@ public final class ActivityNutrientsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityNutrientsBinding((ConstraintLayout) rootView, azucarAmount, azucarBar,
-          azucarLayout, azucarNotes, azucarPercentage, azucarTextView, azucarUnit, backButton,
-          caloriasAmount, caloriasBar, caloriasLayout, caloriasNotes, caloriasPercentage,
-          caloriasTextView, caloriasUnit, cantidadEditText, carbsAmount, carbsBar, carbsLayout,
-          carbsNotes, carbsPercentage, carbsTextView, carbsUnit, editButton, lipidosAmount,
-          lipidosBar, lipidosLayout, lipidosNotes, lipidosPercentage, lipidosTextView, lipidosUnit,
-          nombreAlimento, porcionSpinner, proteinaAmount, proteinaBar, proteinaLayout,
-          proteinaNotes, proteinaPercentage, proteinaTextView, proteinaUnit, roleSpinnerFrame, root,
-          sodioAmount, sodioBar, sodioLayout, sodioNotes, sodioPercentage, sodioTextView, sodioUnit,
-          textView2, textView3, titleTextView, topBarLayout);
+      return new ActivityNutrientsBinding((ConstraintLayout) rootView, acceptButton, azucarAmount,
+          azucarBar, azucarLayout, azucarNotes, azucarPercentage, azucarTextView, azucarUnit,
+          backButton, caloriasAmount, caloriasBar, caloriasLayout, caloriasNotes,
+          caloriasPercentage, caloriasTextView, caloriasUnit, cantidadEditText, carbsAmount,
+          carbsBar, carbsLayout, carbsNotes, carbsPercentage, carbsTextView, carbsUnit, editButton,
+          lipidosAmount, lipidosBar, lipidosLayout, lipidosNotes, lipidosPercentage,
+          lipidosTextView, lipidosUnit, nombreAlimento, porcionSpinner, proteinaAmount, proteinaBar,
+          proteinaLayout, proteinaNotes, proteinaPercentage, proteinaTextView, proteinaUnit,
+          roleSpinnerFrame, root3, sodioAmount, sodioBar, sodioLayout, sodioNotes, sodioPercentage,
+          sodioTextView, sodioUnit, textView2, textView3, titleTextView, topBarLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

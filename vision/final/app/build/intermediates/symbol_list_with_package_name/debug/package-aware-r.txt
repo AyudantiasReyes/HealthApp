@@ -802,6 +802,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color cream
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -1553,6 +1554,7 @@ id button
 id buttonLayout
 id buttonPanel
 id button_login
+id button_logout
 id button_register
 id caloriasAmount
 id caloriasBar
@@ -1761,6 +1763,9 @@ id right_side
 id right_to_left
 id roleSpinnerFrame
 id root
+id root1
+id root3
+id root4
 id rounded
 id save_non_transition_alpha
 id save_overlay_view
@@ -1838,6 +1843,9 @@ id textView
 id textView10
 id textView11
 id textView12
+id textView13
+id textView14
+id textView15
 id textView2
 id textView3
 id textView4
@@ -2053,6 +2061,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add
 string app_name
 string appbar_scrolling_view_behavior
 string azucares
@@ -2092,6 +2101,10 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string default_web_client_id
+string email
+string email1
+string error1
+string errorUser
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2113,11 +2126,19 @@ string icon_content_description
 string info
 string kCal
 string kilocalorias
+string lastname
+string lastname1
 string lipidos
 string lipidos_hint
 string lipidos_porcion
+string login
+string logout
 string mg
 string miligramos
+string msjRegister
+string msjRegister1
+string msjRegister2
+string msjRegister3
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
@@ -2152,8 +2173,12 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string name
+string name1
 string nombre_hint
 string nombre_producto
+string pass
+string pass1
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2165,6 +2190,7 @@ string project_id
 string proteina
 string proteinas_hint
 string proteinas_porcion
+string register
 string search_menu_title
 string select_image_for_text_recognition
 string sodio
@@ -2173,9 +2199,11 @@ string sodio_porcion
 string status_bar_notification_info_overflow
 string tamaño_hint
 string tamaño_porción
+string update
 string vita_hint
 string vita_porcion
 string vitamina_a
+string welcome
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

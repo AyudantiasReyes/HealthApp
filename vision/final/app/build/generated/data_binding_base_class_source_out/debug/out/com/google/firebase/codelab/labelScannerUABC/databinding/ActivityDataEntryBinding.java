@@ -80,7 +80,7 @@ public final class ActivityDataEntryBinding implements ViewBinding {
   public final EditText proteinaEditText;
 
   @NonNull
-  public final ConstraintLayout root;
+  public final ConstraintLayout root1;
 
   @NonNull
   public final ScrollView scrollView2;
@@ -104,7 +104,7 @@ public final class ActivityDataEntryBinding implements ViewBinding {
       @NonNull TextView nombreTitle8, @NonNull TextView nombreTitle9,
       @NonNull EditText numeroPorcionesEditText, @NonNull TextView numeroPorcionesTitle,
       @NonNull EditText porcionEditText, @NonNull TextView porcionTitle,
-      @NonNull EditText proteinaEditText, @NonNull ConstraintLayout root,
+      @NonNull EditText proteinaEditText, @NonNull ConstraintLayout root1,
       @NonNull ScrollView scrollView2, @NonNull EditText sodioEditText,
       @NonNull TextView titleTextView, @NonNull ConstraintLayout topBarLayout) {
     this.rootView = rootView;
@@ -127,7 +127,7 @@ public final class ActivityDataEntryBinding implements ViewBinding {
     this.porcionEditText = porcionEditText;
     this.porcionTitle = porcionTitle;
     this.proteinaEditText = proteinaEditText;
-    this.root = root;
+    this.root1 = root1;
     this.scrollView2 = scrollView2;
     this.sodioEditText = sodioEditText;
     this.titleTextView = titleTextView;
@@ -275,7 +275,7 @@ public final class ActivityDataEntryBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout root = (ConstraintLayout) rootView;
+      ConstraintLayout root1 = (ConstraintLayout) rootView;
 
       id = R.id.scrollView2;
       ScrollView scrollView2 = rootView.findViewById(id);
@@ -305,7 +305,7 @@ public final class ActivityDataEntryBinding implements ViewBinding {
           backButton, caloriasEditText, carbsEditText, lipidosEditText, nombreEditText, nombreTitle,
           nombreTitle10, nombreTitle11, nombreTitle6, nombreTitle7, nombreTitle8, nombreTitle9,
           numeroPorcionesEditText, numeroPorcionesTitle, porcionEditText, porcionTitle,
-          proteinaEditText, root, scrollView2, sodioEditText, titleTextView, topBarLayout);
+          proteinaEditText, root1, scrollView2, sodioEditText, titleTextView, topBarLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

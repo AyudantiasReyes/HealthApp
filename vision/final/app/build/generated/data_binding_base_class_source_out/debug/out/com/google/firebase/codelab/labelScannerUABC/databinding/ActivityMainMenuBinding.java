@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -18,6 +19,9 @@ import java.lang.String;
 public final class ActivityMainMenuBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final Button buttonLogout;
 
   @NonNull
   public final ImageButton cameraButton;
@@ -40,12 +44,23 @@ public final class ActivityMainMenuBinding implements ViewBinding {
   @NonNull
   public final ConstraintLayout root;
 
-  private ActivityMainMenuBinding(@NonNull ConstraintLayout rootView,
+  @NonNull
+  public final TextView textView13;
+
+  @NonNull
+  public final TextView textView14;
+
+  @NonNull
+  public final TextView textView15;
+
+  private ActivityMainMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonLogout,
       @NonNull ImageButton cameraButton, @NonNull ConstraintLayout constraintLayout2,
       @NonNull ImageButton galleryButton, @NonNull ImageButton inputButton,
       @NonNull ConstraintLayout menuLayout, @NonNull Button productoButton,
-      @NonNull ConstraintLayout root) {
+      @NonNull ConstraintLayout root, @NonNull TextView textView13, @NonNull TextView textView14,
+      @NonNull TextView textView15) {
     this.rootView = rootView;
+    this.buttonLogout = buttonLogout;
     this.cameraButton = cameraButton;
     this.constraintLayout2 = constraintLayout2;
     this.galleryButton = galleryButton;
@@ -53,6 +68,9 @@ public final class ActivityMainMenuBinding implements ViewBinding {
     this.menuLayout = menuLayout;
     this.productoButton = productoButton;
     this.root = root;
+    this.textView13 = textView13;
+    this.textView14 = textView14;
+    this.textView15 = textView15;
   }
 
   @Override
@@ -82,6 +100,12 @@ public final class ActivityMainMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_logout;
+      Button buttonLogout = rootView.findViewById(id);
+      if (buttonLogout == null) {
+        break missingId;
+      }
+
       id = R.id.cameraButton;
       ImageButton cameraButton = rootView.findViewById(id);
       if (cameraButton == null) {
@@ -120,8 +144,27 @@ public final class ActivityMainMenuBinding implements ViewBinding {
 
       ConstraintLayout root = (ConstraintLayout) rootView;
 
-      return new ActivityMainMenuBinding((ConstraintLayout) rootView, cameraButton,
-          constraintLayout2, galleryButton, inputButton, menuLayout, productoButton, root);
+      id = R.id.textView13;
+      TextView textView13 = rootView.findViewById(id);
+      if (textView13 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = rootView.findViewById(id);
+      if (textView14 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView15;
+      TextView textView15 = rootView.findViewById(id);
+      if (textView15 == null) {
+        break missingId;
+      }
+
+      return new ActivityMainMenuBinding((ConstraintLayout) rootView, buttonLogout, cameraButton,
+          constraintLayout2, galleryButton, inputButton, menuLayout, productoButton, root,
+          textView13, textView14, textView15);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -112,8 +112,11 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
                     Intent intent = new Intent(this, NutrientsActivity.class);
                     foodItem = new FoodItem();
                     foodItem.setProduct_name(binding.nombreEditText.getText().toString());
-                    if(binding.porcionEditText.getText().toString().length() > 0)
+                    if(binding.porcionEditText.getText().toString().length() > 0){
+
                         foodItem.setPortion_size(Float.parseFloat(binding.porcionEditText.getText().toString()));
+                        System.out.println("*******TEST:"+binding.porcionEditText.getText().toString());
+                    }
                     if(binding.numeroPorcionesEditText.getText().toString().length() > 0)
                         foodItem.setPortions(Float.parseFloat(binding.numeroPorcionesEditText.getText().toString()));
                     if(binding.caloriasEditText.getText().toString().length() > 0)

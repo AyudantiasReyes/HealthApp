@@ -37,7 +37,7 @@ public final class ActivityProductListBinding implements ViewBinding {
   public final FrameLayout roleSpinnerFrame;
 
   @NonNull
-  public final ConstraintLayout root;
+  public final ConstraintLayout root4;
 
   @NonNull
   public final TextView textView;
@@ -45,7 +45,7 @@ public final class ActivityProductListBinding implements ViewBinding {
   private ActivityProductListBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout buttonLayout, @NonNull ConstraintLayout constraintLayout,
       @NonNull RecyclerView myRecyclerView, @NonNull Spinner porcionSpinner,
-      @NonNull FrameLayout roleSpinnerFrame, @NonNull ConstraintLayout root,
+      @NonNull FrameLayout roleSpinnerFrame, @NonNull ConstraintLayout root4,
       @NonNull TextView textView) {
     this.rootView = rootView;
     this.buttonLayout = buttonLayout;
@@ -53,7 +53,7 @@ public final class ActivityProductListBinding implements ViewBinding {
     this.myRecyclerView = myRecyclerView;
     this.porcionSpinner = porcionSpinner;
     this.roleSpinnerFrame = roleSpinnerFrame;
-    this.root = root;
+    this.root4 = root4;
     this.textView = textView;
   }
 
@@ -114,7 +114,7 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
-      ConstraintLayout root = (ConstraintLayout) rootView;
+      ConstraintLayout root4 = (ConstraintLayout) rootView;
 
       id = R.id.textView;
       TextView textView = rootView.findViewById(id);
@@ -123,7 +123,7 @@ public final class ActivityProductListBinding implements ViewBinding {
       }
 
       return new ActivityProductListBinding((ConstraintLayout) rootView, buttonLayout,
-          constraintLayout, myRecyclerView, porcionSpinner, roleSpinnerFrame, root, textView);
+          constraintLayout, myRecyclerView, porcionSpinner, roleSpinnerFrame, root4, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
