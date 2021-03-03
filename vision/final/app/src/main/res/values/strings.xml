@@ -72,5 +72,6 @@
 
     //titulos de actividades
     <string name="info">Información Nutrimental</string>
+    <string name="contrasena">Contraseña</string>
 
 </resources>

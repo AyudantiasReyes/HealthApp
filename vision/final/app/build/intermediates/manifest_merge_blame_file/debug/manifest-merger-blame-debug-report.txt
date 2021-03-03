@@ -40,11 +40,11 @@
 24        android:maxSdkVersion="18" />
 24-->C:\Users\caudi\Documents\UABC\Semestre8\ingenieria-req\HealthApp\vision\final\app\src\main\AndroidManifest.xml:18:9-35
 25    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:5-68
-25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:22-65
+25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:5-68
+25-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:24:22-65
 26    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-26-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:5-82
-26-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:22-79
+26-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:5-82
+26-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:26:22-79
 27
 28    <application
 28-->C:\Users\caudi\Documents\UABC\Semestre8\ingenieria-req\HealthApp\vision\final\app\src\main\AndroidManifest.xml:20:5-45:19
@@ -131,26 +131,26 @@
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
 69-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\57733ce04404da9bb12bfcc75663a971\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
 70            <meta-data
-70-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:32:13-34:85
+70-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:32:13-34:85
 71                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-71-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:33:17-96
+71-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:33:17-96
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:34:17-82
+72-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:34:17-82
 73        </service>
 74
 75        <receiver
-75-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:37:9-44:20
+75-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:37:9-44:20
 76            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-76-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:38:13-78
+76-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:38:13-78
 77            android:exported="true"
-77-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:39:13-36
+77-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:39:13-36
 78            android:permission="com.google.android.c2dm.permission.SEND" >
-78-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:40:13-73
+78-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:40:13-73
 79            <intent-filter>
-79-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:41:13-43:29
+79-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:41:13-43:29
 80                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-80-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:17-81
-80-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:25-78
+80-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:17-81
+80-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:42:25-78
 81            </intent-filter>
 82        </receiver>
 83        <!--
@@ -158,17 +158,17 @@
 85             no need for explicit permissions despite exported="true"
 86        -->
 87        <service
-87-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:50:9-56:19
+87-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:50:9-56:19
 88            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-88-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:51:13-77
+88-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:51:13-77
 89            android:exported="true" >
-89-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:52:13-36
+89-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:52:13-36
 90            <intent-filter android:priority="-500" >
-90-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:13-55:29
-90-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:28-51
+90-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:13-55:29
+90-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:28-51
 91                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-91-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:17-80
-91-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\cc81d4f65da8cec8395c6600397c96a8\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:25-77
+91-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:17-80
+91-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\caudi\.gradle\caches\transforms-2\files-2.1\48c788cd49228b30ab099bdd9aba9e18\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:25-77
 92            </intent-filter>
 93        </service>
 94

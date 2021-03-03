@@ -7,6 +7,9 @@
     <!--<color name="colorPrimaryDark">#0b7835</color>-->
     <color name="colorAccent">#FF4081</color>
     <color name="texBackgroundColor">#33000000</color>
+    <color name="airForce">#588BAE</color>
+    <color name="sky">#95C8D8</color>
+    <color name="white">#FFF</color>
 
     <!-- Color of UI register-->
     <color name="charcoal">#2F4858</color>
