@@ -73,5 +73,7 @@
     //titulos de actividades
     <string name="info">Información Nutrimental</string>
     <string name="contrasena">Contraseña</string>
+    <string name="password">Password</string>
+    <string name="type_yout_lastname">Type yout lastname</string>
 
 </resources>

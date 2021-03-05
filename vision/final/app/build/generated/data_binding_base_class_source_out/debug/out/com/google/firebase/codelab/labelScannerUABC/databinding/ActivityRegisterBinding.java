@@ -36,6 +36,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final EditText editTextTextPersonName2;
 
   @NonNull
+  public final ConstraintLayout registerContainer;
+
+  @NonNull
   public final TextView textView4;
 
   @NonNull
@@ -53,14 +56,16 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull Button button,
       @NonNull EditText editTextTextEmailAddress, @NonNull EditText editTextTextPassword,
       @NonNull EditText editTextTextPersonName, @NonNull EditText editTextTextPersonName2,
-      @NonNull TextView textView4, @NonNull TextView textView5, @NonNull TextView textView6,
-      @NonNull TextView textView7, @NonNull TextView textView8) {
+      @NonNull ConstraintLayout registerContainer, @NonNull TextView textView4,
+      @NonNull TextView textView5, @NonNull TextView textView6, @NonNull TextView textView7,
+      @NonNull TextView textView8) {
     this.rootView = rootView;
     this.button = button;
     this.editTextTextEmailAddress = editTextTextEmailAddress;
     this.editTextTextPassword = editTextTextPassword;
     this.editTextTextPersonName = editTextTextPersonName;
     this.editTextTextPersonName2 = editTextTextPersonName2;
+    this.registerContainer = registerContainer;
     this.textView4 = textView4;
     this.textView5 = textView5;
     this.textView6 = textView6;
@@ -125,6 +130,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.register_container;
+      ConstraintLayout registerContainer = rootView.findViewById(id);
+      if (registerContainer == null) {
+        break missingId;
+      }
+
       id = R.id.textView4;
       TextView textView4 = rootView.findViewById(id);
       if (textView4 == null) {
@@ -157,7 +168,8 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
       return new ActivityRegisterBinding((ConstraintLayout) rootView, button,
           editTextTextEmailAddress, editTextTextPassword, editTextTextPersonName,
-          editTextTextPersonName2, textView4, textView5, textView6, textView7, textView8);
+          editTextTextPersonName2, registerContainer, textView4, textView5, textView6, textView7,
+          textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

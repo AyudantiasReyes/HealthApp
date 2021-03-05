@@ -1762,6 +1762,7 @@ id proteinaPercentage
 id proteinaTextView
 id proteinaUnit
 id radio
+id register_container
 id right
 id right_icon
 id right_side
@@ -2185,6 +2186,7 @@ string nombre_hint
 string nombre_producto
 string pass
 string pass1
+string password
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2205,6 +2207,7 @@ string sodio_porcion
 string status_bar_notification_info_overflow
 string tamaño_hint
 string tamaño_porción
+string type_yout_lastname
 string update
 string vita_hint
 string vita_porcion
