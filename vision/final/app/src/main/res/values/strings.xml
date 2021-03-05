@@ -75,5 +75,6 @@
     <string name="contrasena">Contraseña</string>
     <string name="password">Password</string>
     <string name="type_yout_lastname">Type yout lastname</string>
+    <string name="mis_productos">Mis productos</string>
 
 </resources>
