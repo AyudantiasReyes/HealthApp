@@ -1558,6 +1558,7 @@ id bottom_to_top
 id button
 id buttonLayout
 id buttonPanel
+id button_container
 id button_login
 id button_logout
 id button_register
@@ -1649,6 +1650,7 @@ id galleryButton
 id ghost_view
 id ghost_view_holder
 id gone
+id greeting_container
 id group_divider
 id groups
 id hideable
@@ -2142,6 +2144,7 @@ string login
 string logout
 string mg
 string miligramos
+string mis_productos
 string msjRegister
 string msjRegister1
 string msjRegister2

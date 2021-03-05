@@ -18,6 +18,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b185afc2ec4f90e6855dcae6c453dc3/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b185afc2ec4f90e6855dcae6c453dc3/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0b185afc2ec4f90e6855dcae6c453dc3/jetified-firebase-ml-model-interpreter-18.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93e4ca376d34714f7f745ed103f00261/jetified-firebase-ml-model-interpreter-18.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93e4ca376d34714f7f745ed103f00261/jetified-firebase-ml-model-interpreter-18.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/93e4ca376d34714f7f745ed103f00261/jetified-firebase-ml-model-interpreter-18.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-ml-model-interpreter/18.0.0/8dd4ca5e6ecdc0d649a65619532aa04e47179ac8/firebase-ml-model-interpreter-18.0.0-javadoc.jar!/" />

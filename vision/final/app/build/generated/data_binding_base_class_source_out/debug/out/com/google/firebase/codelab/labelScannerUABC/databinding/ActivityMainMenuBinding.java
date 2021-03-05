@@ -21,6 +21,9 @@ public final class ActivityMainMenuBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final ConstraintLayout buttonContainer;
+
+  @NonNull
   public final Button buttonLogout;
 
   @NonNull
@@ -31,6 +34,9 @@ public final class ActivityMainMenuBinding implements ViewBinding {
 
   @NonNull
   public final ImageButton galleryButton;
+
+  @NonNull
+  public final ConstraintLayout greetingContainer;
 
   @NonNull
   public final ImageButton inputButton;
@@ -53,17 +59,20 @@ public final class ActivityMainMenuBinding implements ViewBinding {
   @NonNull
   public final TextView textView15;
 
-  private ActivityMainMenuBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonLogout,
+  private ActivityMainMenuBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ConstraintLayout buttonContainer, @NonNull Button buttonLogout,
       @NonNull ImageButton cameraButton, @NonNull ConstraintLayout constraintLayout2,
-      @NonNull ImageButton galleryButton, @NonNull ImageButton inputButton,
-      @NonNull ConstraintLayout menuLayout, @NonNull Button productoButton,
-      @NonNull ConstraintLayout root, @NonNull TextView textView13, @NonNull TextView textView14,
-      @NonNull TextView textView15) {
+      @NonNull ImageButton galleryButton, @NonNull ConstraintLayout greetingContainer,
+      @NonNull ImageButton inputButton, @NonNull ConstraintLayout menuLayout,
+      @NonNull Button productoButton, @NonNull ConstraintLayout root, @NonNull TextView textView13,
+      @NonNull TextView textView14, @NonNull TextView textView15) {
     this.rootView = rootView;
+    this.buttonContainer = buttonContainer;
     this.buttonLogout = buttonLogout;
     this.cameraButton = cameraButton;
     this.constraintLayout2 = constraintLayout2;
     this.galleryButton = galleryButton;
+    this.greetingContainer = greetingContainer;
     this.inputButton = inputButton;
     this.menuLayout = menuLayout;
     this.productoButton = productoButton;
@@ -100,6 +109,12 @@ public final class ActivityMainMenuBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button_container;
+      ConstraintLayout buttonContainer = rootView.findViewById(id);
+      if (buttonContainer == null) {
+        break missingId;
+      }
+
       id = R.id.button_logout;
       Button buttonLogout = rootView.findViewById(id);
       if (buttonLogout == null) {
@@ -121,6 +136,12 @@ public final class ActivityMainMenuBinding implements ViewBinding {
       id = R.id.galleryButton;
       ImageButton galleryButton = rootView.findViewById(id);
       if (galleryButton == null) {
+        break missingId;
+      }
+
+      id = R.id.greeting_container;
+      ConstraintLayout greetingContainer = rootView.findViewById(id);
+      if (greetingContainer == null) {
         break missingId;
       }
 
@@ -162,9 +183,9 @@ public final class ActivityMainMenuBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainMenuBinding((ConstraintLayout) rootView, buttonLogout, cameraButton,
-          constraintLayout2, galleryButton, inputButton, menuLayout, productoButton, root,
-          textView13, textView14, textView15);
+      return new ActivityMainMenuBinding((ConstraintLayout) rootView, buttonContainer, buttonLogout,
+          cameraButton, constraintLayout2, galleryButton, greetingContainer, inputButton,
+          menuLayout, productoButton, root, textView13, textView14, textView15);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

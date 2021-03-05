@@ -29,7 +29,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtName, edtLastName, edtEmail, edtPass;
     private String name, lastname, email, pass;
-    private static final String URL = "http://conisoft.org/HealthApp/registerUser.php";
+    private static final String URL = "http://conisoft.org/HealthApp/App/RegisterUser.php";
     private SharedPreferences preferences;
     private User user;
 

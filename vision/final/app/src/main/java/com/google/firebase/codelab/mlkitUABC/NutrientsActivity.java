@@ -40,7 +40,7 @@ import java.util.Map;
 import static android.view.View.GONE;
 
 public class NutrientsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    private static final String URL = "http://conisoft.org/HealthApp/insertFood.php";
+    private static final String URL = "http://conisoft.org/HealthApp/App/insertFood.php";
     private ActivityNutrientsBinding binding;
     private FoodItem foodItem;
     private String cantidadBajaString = "Este alimento contiene una cantidad baja de este nutriente";

@@ -27,7 +27,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private EditText edt_email, edt_pass;
     private String email, pass;
-    private static final String URL = "http://conisoft.org/HealthApp/validateUser.php";
+    private static final String URL = "http://conisoft.org/HealthApp/App/LoginUser.php";
     private SharedPreferences preferences;
     private User user;
 
