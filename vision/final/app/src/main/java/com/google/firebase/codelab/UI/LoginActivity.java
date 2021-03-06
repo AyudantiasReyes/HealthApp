@@ -1,9 +1,13 @@
 package com.google.firebase.codelab.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String URL = "http://conisoft.org/HealthApp/App/LoginUser.php";
     private SharedPreferences preferences;
     private User user;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,17 @@ public class LoginActivity extends AppCompatActivity {
                 if(email.isEmpty() || pass.isEmpty())
                     Toast.makeText(LoginActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else{
-                    ValidateUser();
+                    progressDialog = new ProgressDialog(LoginActivity.this);
+                    progressDialog.show();
+                    progressDialog.setContentView(R.layout.progress_layout);
+                    progressDialog.setCancelable(false);
+                    progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ValidateUser();
+                        }
+                    },1000);
                 }
             }
         });
@@ -89,11 +104,13 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }
                 else
-                    Toast.makeText(LoginActivity.this,R.string.errorUser,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, R.string.errorUser, Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){

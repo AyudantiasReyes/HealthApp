@@ -67,10 +67,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 intent = new Intent(this, ProductListActivity.class);
                 startActivity(intent);
                 break;
-                case R.id.inputButton:
-                    intent = new Intent(this, DataEntryActivity.class);
-                    startActivity(intent);
-                    break;
+            case R.id.inputButton:
+                intent = new Intent(this, DataEntryActivity.class);
+                startActivity(intent);
+                break;
             case R.id.cameraButton:
                 dispatchTakePictureIntent();
                 break;

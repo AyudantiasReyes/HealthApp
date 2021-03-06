@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context="com.google.firebase.codelab.UI.LoginActivity">
 
-
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
@@ -61,11 +60,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-
             android:ems="10"
             android:hint="Ingrese su correo electrónico"
             android:inputType="textEmailAddress"
             android:textSize="16sp"
+            android:imeOptions="actionNext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +92,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:ems="10"
+            android:imeOptions="actionDone"
             android:hint="Ingrese su contraseña"
             android:inputType="textPassword"
             android:textSize="16sp"

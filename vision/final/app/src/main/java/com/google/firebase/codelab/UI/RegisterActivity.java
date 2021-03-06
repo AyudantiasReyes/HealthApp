@@ -1,9 +1,13 @@
 package com.google.firebase.codelab.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String URL = "http://conisoft.org/HealthApp/App/RegisterUser.php";
     private SharedPreferences preferences;
     private User user;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +65,19 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else{
                     if(pass.length() >= 8){
-                        if(isValidEmail(email))
-                            RegisterUser(name,lastname,email,pass);
+                        if(isValidEmail(email)) {
+                            progressDialog = new ProgressDialog(RegisterActivity.this);
+                            progressDialog.show();
+                            progressDialog.setContentView(R.layout.progress_layout);
+                            progressDialog.setCancelable(false);
+                            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    RegisterUser(name,lastname,email,pass);
+                                }
+                            }, 1000);
+                        }
                         else
                             Toast.makeText(RegisterActivity.this,R.string.msjRegister1,Toast.LENGTH_SHORT).show();
                     }
@@ -98,10 +114,12 @@ public class RegisterActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+                progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){

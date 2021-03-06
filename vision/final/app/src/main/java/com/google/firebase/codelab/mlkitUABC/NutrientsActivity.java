@@ -1,9 +1,12 @@
 package com.google.firebase.codelab.mlkitUABC;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -22,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.codelab.UI.LoginActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
@@ -55,8 +59,8 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
     ArrayAdapter<TipoPorcion> spinnerAdapter;
     private SharedPreferences preferences;
+    private ProgressDialog progressDialog;
     String id;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -280,9 +284,18 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intent);
                 break;
             case R.id.acceptButton:
-                insertFood(foodItem);
-                startActivity(new Intent(NutrientsActivity.this, MainMenuActivity.class));
-                finish();
+                progressDialog = new ProgressDialog(NutrientsActivity.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_layout);
+                progressDialog.setCancelable(false);
+                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        insertFood(foodItem);
+                    }
+                },1000);
+
         }
     }
 
@@ -290,21 +303,26 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(response.equals("true"))
-                    Toast.makeText(NutrientsActivity.this,R.string.add,Toast.LENGTH_SHORT).show();
+                if(response.equals("true")) {
+                    Toast.makeText(NutrientsActivity.this, "nuevo registro", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(NutrientsActivity.this, MainMenuActivity.class));
+                    finish();
+                }
                 else
-                    Toast.makeText(NutrientsActivity.this,R.string.update,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NutrientsActivity.this,"Ya existe",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 Toast.makeText(NutrientsActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
             protected Map<String, String> getParams() {
                 Map<String,String> parameter = new HashMap<>();
-                parameter.put("id",id);
+                parameter.put("id_user",id);
                 parameter.put("name",food.getProduct_name());
                 parameter.put("tamano",String.valueOf(food.getPortion_size()));
                 parameter.put("porcion",String.valueOf(food.getPortions()));
@@ -320,5 +338,4 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
-
 }

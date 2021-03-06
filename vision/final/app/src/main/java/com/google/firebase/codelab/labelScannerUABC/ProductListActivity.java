@@ -4,13 +4,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding;
+import com.google.firebase.codelab.mlkitUABC.NutrientsActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ProductListActivity extends AppCompatActivity{
 
@@ -18,7 +38,7 @@ public class ProductListActivity extends AppCompatActivity{
     public static final int ALPHABETICAL_INVERTED = 2;
     public static final int DATE_MODIFIED_RECENT = 3;
     public static final int DATE_MODIFIED_OLDER = 4;
-
+    private static final String URL = "http://conisoft.org/HealthApp/App/allProduct.php";
     public static final String A_TO_Z = "A→Z";
     public static final String Z_TO_A = "Z→A";
     public static final String RECENT = "Recientes";
@@ -30,6 +50,8 @@ public class ProductListActivity extends AppCompatActivity{
     ActivityProductListBinding binding;
     ArrayAdapter<String> spinnerAdapter;
     RecyclerView recyclerView;
+    private List<FoodItem> foodItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +59,18 @@ public class ProductListActivity extends AppCompatActivity{
         binding = ActivityProductListBinding.inflate(getLayoutInflater());
         setContentView(binding.root4);
         mydb = new DBHelper(this);
-        porcionSpinner = binding.porcionSpinner;
+        //porcionSpinner = binding.porcionSpinner;
         recyclerView = binding.myRecyclerView;
 
         //test insertions
         //FoodItem foodItem = new FoodItem("AntiChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
         //FoodItem foodItem2 = new FoodItem("BetaChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
         //FoodItem foodItem3 = new FoodItem("ChocoChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
-        //foodItems = new ArrayList<FoodItem>();
+        foodItems = new ArrayList<FoodItem>();
         //mydb.insertFood(foodItem);
         //mydb.insertFood(foodItem2);
         //mydb.insertFood(foodItem3);
-
+        allProduct();
         updateRecyclerView(DATE_MODIFIED_RECENT);
         SpinnerValues();
     }
@@ -58,7 +80,7 @@ public class ProductListActivity extends AppCompatActivity{
     {  // After a pause OR at startup
         super.onResume();
         //Refresh your stuff here
-        updateRecyclerView(DATE_MODIFIED_RECENT);
+        //updateRecyclerView(DATE_MODIFIED_RECENT);
     }
 
     public void updateRecyclerView(int orderBy){
@@ -112,5 +134,45 @@ public class ProductListActivity extends AppCompatActivity{
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+
+    private void allProduct(){
+        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(response.equals("false"))
+                    Toast.makeText(ProductListActivity.this,"No se han agregado productos",Toast.LENGTH_SHORT).show();
+                else {
+                    try {
+                        JSONObject jsonObj = new JSONObject(response);
+                        JSONArray publication = jsonObj.getJSONArray("Publication");
+                        for (int i = 0; i < publication.length(); i++) {
+                            JSONObject catObj = (JSONObject) publication.get(i);
+                           // FoodItem food = new FoodItem(catObj.getString("title"),catObj.getString("phone"),catObj.getString("description"),catObj.getString("fecha"));
+                            //foodItems.add(food);
+                        }
+                        /*LinearLayoutManager managerPublicacion = new LinearLayoutManager(getContext());
+                        rvPublicacion.setLayoutManager(managerPublicacion);
+                        AdapterPublication adapterPublicacion = new AdapterPublication(publicacionList);
+                        rvPublicacion.setAdapter(adapterPublicacion);*/
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ProductListActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String,String> parameter = new HashMap<>();
+                return parameter;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
     }
 }
