@@ -1,18 +1,31 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.net.Uri;
-import android.provider.MediaStore;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.util.SparseIntArray;
+import android.view.Surface;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -21,29 +34,61 @@ import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
+import com.google.firebase.codelab.parserActivity.TextElements;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.text.Text;
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
+
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Bitmap img;
     private final int PICK_IMAGE_REQUEST= 1;
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int REQUEST_IMAGE_CAPTURE = 2;
     private SharedPreferences preferences;
 
+
+   //*******************************************//
+    private ArrayList<TextElements> elements;
+
+    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+
+    static {
+        ORIENTATIONS.append(Surface.ROTATION_0, 0);
+        ORIENTATIONS.append(Surface.ROTATION_90, 90);
+        ORIENTATIONS.append(Surface.ROTATION_180, 180);
+        ORIENTATIONS.append(Surface.ROTATION_270, 270);
+    }
+
+    //****************************************//
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
+
+        //*********************************************//
+        elements = new ArrayList<>();
+        //Checamos permisos de la camara
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            //Pedimos permiso si no lo tenemos
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
+        }
+
+        //********************************************//
 
         Log.d("name",user.getName());
         Log.d("email",user.getEmail());
@@ -59,6 +104,16 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.textView15.setText(user.getName());
     }
 
+    //**************************************************//
+    public void openCamera(View view) {
+        //Abrimos la camara
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+    }
+
+
+    //***********************************************///
+
     @Override
     public void onClick(View view) {
         Intent intent;
@@ -72,7 +127,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 break;
             case R.id.cameraButton:
-                dispatchTakePictureIntent();
+                //*******************************//
+                openCamera(view);
+                //*****************************//
+
+                //dispatchTakePictureIntent();
                 break;
             case R.id.galleryButton:
                 getImage();
@@ -111,8 +170,174 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 //userIcon.setImageBitmap(img);
             }
         }
+        //**********************************************************//
+        if(requestCode == REQUEST_IMAGE_CAPTURE){
+            assert data != null;
+            Bundle bundle = data.getExtras();   //De bundle, extraer imagen
+            Bitmap bitmap = (Bitmap) bundle.get("data"); //Los datos byte se convierten a un bitmap
+
+
+            InputImage image = null; //Creamos una Imagen para ser procesada
+            try {
+                int degree = getRotationCompensation(getCameraid(), this, false);
+                Log.d("RESULTADO", String.valueOf(degree));
+
+                image = InputImage.fromBitmap(bitmap, degree - 90);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+            TextRecognizer recognizer = TextRecognition.getClient(); //Obtener reconocedor de texto
+
+
+            //a
+            Task<Text> result =
+                    recognizer.process(image) //Procesar la Imagen para obtener texto
+                            .addOnSuccessListener(new OnSuccessListener<Text>() {
+                                @RequiresApi(api = Build.VERSION_CODES.N)
+                                @Override
+                                public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
+
+                                    extractText(visionText);
+                                }
+                            })
+                            .addOnFailureListener(
+                                    new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            // Task failed with an exception
+                                            // ...
+                                        }
+                                    });
+        }
+
+        //***************************************************///
     }
 
+
+    //*************************************************//
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private int getRotationCompensation(String cameraId, Activity activity, boolean isFrontFacing) //Metodo para obtener la rotacion del dispositivo
+            throws CameraAccessException {
+        // Get the device's current rotation relative to its "native" orientation.
+        // Then, from the ORIENTATIONS table, look up the angle the image must be
+        // rotated to compensate for the device's rotation.
+        int deviceRotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+        int rotationCompensation = ORIENTATIONS.get(deviceRotation);
+
+        // Get the device's sensor orientation.
+        CameraManager cameraManager = (CameraManager) activity.getSystemService(CAMERA_SERVICE);
+        int sensorOrientation = cameraManager
+                .getCameraCharacteristics(cameraId)
+                .get(CameraCharacteristics.SENSOR_ORIENTATION);
+
+        if (isFrontFacing) {
+            rotationCompensation = (sensorOrientation + rotationCompensation) % 360;
+        } else { // back-facing
+            rotationCompensation = (sensorOrientation - rotationCompensation + 360) % 360;
+        }
+        return rotationCompensation;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void extractText(Text result) {
+        String resultText = result.getText();
+        for (Text.TextBlock block : result.getTextBlocks()) {
+            String blockText = block.getText();
+            Point[] blockCornerPoints = block.getCornerPoints();
+            Rect blockFrame = block.getBoundingBox();
+            for (Text.Line line : block.getLines()) {
+                String lineText = line.getText();
+                Point[] lineCornerPoints = line.getCornerPoints();
+                Rect lineFrame = line.getBoundingBox();
+                for (Text.Element element : line.getElements()) {
+                    String elementText = element.getText();
+                    Point[] elementCornerPoints = element.getCornerPoints();
+                    Rect elementFrame = element.getBoundingBox();
+
+                    elements.add(new TextElements(elementText, elementFrame)); //añadir elementos al arreglo elements
+                }
+            }
+        }
+        sortElements(); //Se ordenan los resultados
+
+        for (TextElements element : elements) { //Imprimir resultados de los elementos
+
+            Log.d("RESULTADO", element.getText() + " | " + element.getFrame());
+        }
+
+        elements.clear();
+    }
+
+    private String getCameraid(){ //Metodo para obtener el id de la cámara
+        int cameraId = -1;
+        int numberOfCameras = Camera.getNumberOfCameras();
+        for (int i = 0; i < numberOfCameras; i++) {
+            Camera.CameraInfo info = new Camera.CameraInfo();
+            Camera.getCameraInfo(i, info);
+            if (info.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                Log.d("RESULTADO", "Camera found " + i);
+                cameraId = i;
+                break;
+            }
+        }
+
+        return String.valueOf(cameraId);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void sortElements() {
+        int i = 0;
+        TextElements aux;
+        ArrayList<TextElements> group = new ArrayList<>(); //arraylist para guardar pequeños renglones
+        ArrayList<TextElements> sortedGroups = new ArrayList<>();//arraylist para guardar los grupos ordenados
+        StringBuilder builder = new StringBuilder();
+
+        elements.sort((o1, o2) -> Integer.compare(o1.getFrame().top, o2.getFrame().top)); //ordenamiento por Y a los elementos
+        /*
+            Funcion lambda, o1 y o2 son objetos tipo TextElement y se agrega la condicion de que quieres comparar
+            En este caso se esta tomando el top del rect de ambos objetos para que el arraylist los ordene usando QuickSort
+        */
+
+        while(i < elements.size() - 1){
+            Log.d("SALIDA", "PRIMER WHILE ");
+            aux = elements.get(i);
+            group.add(aux);
+
+            try{
+                int resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
+                Log.d("SALIDA", "RESTA = " + resta);
+                if(resta <= 5){
+                    do{
+                        Log.d("SALIDA", "DENTRO DEL DO WHILE ");
+                        group.add(elements.get(i + 1));
+                        i++;
+                        resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
+                    }while (resta <= 5);
+                    i++;
+
+                    group.sort((o1, o2) -> Integer.compare(o1.getFrame().left, o2.getFrame().left)); //ordenamiento por X a los elementos
+                    sortedGroups.addAll(group);
+                    group.clear();
+                }
+                else
+                    i++;
+
+            }catch (Exception e){
+
+            }
+
+
+            Log.d("SALIDA", "size = " + elements.size() + " i = " + i);
+
+        }
+
+        elements.clear();
+        elements.addAll(sortedGroups);
+        Log.d("SALIDA", "AWEBO ");
+
+    }
+
+    //************************************************//
 
 
     private void runCloudTextRecognition() {
