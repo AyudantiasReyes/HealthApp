@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Bitmap img;
-    private final int PICK_IMAGE_REQUEST=1;
+    private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private SharedPreferences preferences;
 
@@ -114,30 +114,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private void runTextRecognition() {
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(img);
-        FirebaseVisionTextRecognizer recognizer = FirebaseVision.getInstance()
-                .getOnDeviceTextRecognizer();
-        //mTextButton.setEnabled(false);
-        recognizer.processImage(image)
-                .addOnSuccessListener(
-                        new OnSuccessListener<FirebaseVisionText>() {
-                            @Override
-                            public void onSuccess(FirebaseVisionText texts) {
-                                //mTextButton.setEnabled(true);
-                                processTextRecognitionResult(texts);
-                            }
-                        })
-                .addOnFailureListener(
-                        new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Task failed with an exception
-                                //mTextButton.setEnabled(true);
-                                e.printStackTrace();
-                            }
-                        });
-    }
 
     private void runCloudTextRecognition() {
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(img);
@@ -190,51 +166,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    private void processTextRecognitionResult(FirebaseVisionText texts) {
-        String content = "";
-        List<FirebaseVisionText.TextBlock> blocks = texts.getTextBlocks();
-        if (blocks.size() == 0) {
-            showToast("No text found");
-            return;
-        }
-        //mGraphicOverlay.clear();
-        for (int i = 0; i < blocks.size(); i++) {
-            List<FirebaseVisionText.Line> lines = blocks.get(i).getLines();
-            for (int j = 0; j < lines.size(); j++) {
-                List<FirebaseVisionText.Element> elements = lines.get(j).getElements();
-                for (int k = 0; k < elements.size(); k++) {
-                    content = content + " " + elements.get(k).getText();
-                    //return;
-                }
-            }
-        }
-
-        System.out.println(content);
-        parseText(content);
-    }
-
-    private void processCloudTextRecognitionResult(FirebaseVisionText texts) {
-        String content = "";
-        List<FirebaseVisionText.TextBlock> blocks = texts.getTextBlocks();
-        if (blocks.size() == 0) {
-            showToast("No text found");
-            return;
-        }
-        //mGraphicOverlay.clear();
-        for (int i = 0; i < blocks.size(); i++) {
-            List<FirebaseVisionText.Line> lines = blocks.get(i).getLines();
-            for (int j = 0; j < lines.size(); j++) {
-                List<FirebaseVisionText.Element> elements = lines.get(j).getElements();
-                for (int k = 0; k < elements.size(); k++) {
-                    content = content + " " + elements.get(k).getText();
-                    //return;
-                }
-            }
-        }
-
-        System.out.println(content);
-        parseText(content);
-    }
 
 
     private void parseText(String s) {

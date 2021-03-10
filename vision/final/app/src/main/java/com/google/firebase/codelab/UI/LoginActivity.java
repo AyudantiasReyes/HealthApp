@@ -103,8 +103,9 @@ public class LoginActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                else
+                else {
                     Toast.makeText(LoginActivity.this, R.string.errorUser, Toast.LENGTH_SHORT).show();
+                }
                 progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {

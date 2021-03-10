@@ -4,9 +4,6 @@ package com.google.firebase.codelab.labelScannerUABC.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.Spinner;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -31,30 +28,16 @@ public final class ActivityProductListBinding implements ViewBinding {
   public final RecyclerView myRecyclerView;
 
   @NonNull
-  public final Spinner porcionSpinner;
-
-  @NonNull
-  public final FrameLayout roleSpinnerFrame;
-
-  @NonNull
   public final ConstraintLayout root4;
-
-  @NonNull
-  public final TextView textView;
 
   private ActivityProductListBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout buttonLayout, @NonNull ConstraintLayout constraintLayout,
-      @NonNull RecyclerView myRecyclerView, @NonNull Spinner porcionSpinner,
-      @NonNull FrameLayout roleSpinnerFrame, @NonNull ConstraintLayout root4,
-      @NonNull TextView textView) {
+      @NonNull RecyclerView myRecyclerView, @NonNull ConstraintLayout root4) {
     this.rootView = rootView;
     this.buttonLayout = buttonLayout;
     this.constraintLayout = constraintLayout;
     this.myRecyclerView = myRecyclerView;
-    this.porcionSpinner = porcionSpinner;
-    this.roleSpinnerFrame = roleSpinnerFrame;
     this.root4 = root4;
-    this.textView = textView;
   }
 
   @Override
@@ -102,28 +85,10 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.porcionSpinner;
-      Spinner porcionSpinner = rootView.findViewById(id);
-      if (porcionSpinner == null) {
-        break missingId;
-      }
-
-      id = R.id.roleSpinnerFrame;
-      FrameLayout roleSpinnerFrame = rootView.findViewById(id);
-      if (roleSpinnerFrame == null) {
-        break missingId;
-      }
-
       ConstraintLayout root4 = (ConstraintLayout) rootView;
 
-      id = R.id.textView;
-      TextView textView = rootView.findViewById(id);
-      if (textView == null) {
-        break missingId;
-      }
-
       return new ActivityProductListBinding((ConstraintLayout) rootView, buttonLayout,
-          constraintLayout, myRecyclerView, porcionSpinner, roleSpinnerFrame, root4, textView);
+          constraintLayout, myRecyclerView, root4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
