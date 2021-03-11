@@ -61,7 +61,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
    //*******************************************//
     private ArrayList<TextElements> elements;
-
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
     static {
@@ -127,11 +126,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 break;
             case R.id.cameraButton:
-                //*******************************//
                 openCamera(view);
-                //*****************************//
-
-                //dispatchTakePictureIntent();
                 break;
             case R.id.galleryButton:
                 getImage();
