@@ -34,7 +34,8 @@ import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
-import com.google.firebase.codelab.parserPackage.TextElements;
+import com.google.firebase.codelab.textExtractor.LabelCleaner;
+import com.google.firebase.codelab.textExtractor.TextElements;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
@@ -51,6 +52,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private Bitmap img;
@@ -189,9 +192,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                                 @RequiresApi(api = Build.VERSION_CODES.N)
                                 @Override
                                 public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
+                                    String text = extractText(visionText);
 
-                                    Log.d("SUPER_TEXTO", extractText(visionText));
-
+                                    Log.d("SUPER_TEXTO", text);
+                                    analizeString(text);
 
                                 }
                             })
@@ -207,6 +211,17 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         //***************************************************///
     }
+
+    //*************************************//
+    public void analizeString(String labelText){
+        LabelCleaner analyst = new LabelCleaner(labelText);
+
+        analyst.getInformation();
+
+    }
+
+    //********************************//
+
 
 
     //*************************************************//
@@ -321,13 +336,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             }
         }
 
-
-/*        for(int k = 0; k < elements.size(); k++){
-            Log.d("INS", k + " " + elements.get(k).getText());
-        }
-
-        Log.d("INS", "Valor i = " + i);*/
-
         elements.clear();
         elements.addAll(sortedGroups);
         Log.d("SALIDA", "AWEBO ");
@@ -398,6 +406,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         String regex_cal = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)(kcal|cal|kJ|kj|kl|kilojoule)?";
         Pattern pattern = Pattern.compile(regex_cal);
         Matcher matcher = pattern.matcher(s);
+
 
         while (matcher.find()) {
             if(matcher.group(6)!=null){
