@@ -4,6 +4,10 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_data_entry.xml"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/layout_screen.xml",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/layout_screen.xml"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_nutrients.xml",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_nutrients.xml"
     },
@@ -30,5 +34,9 @@
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/list_item.xml",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/list_item.xml"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_intro.xml",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_intro.xml"
     }
 ]

@@ -8,8 +8,16 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/round_button2.xml"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_activity_intro.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_intro.xml"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_activity_main_menu.xml.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_main_menu.xml"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_indicator_selected.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/indicator_selected.xml"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
@@ -24,6 +32,10 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_star.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/star.png"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-hdpi/ic_launcher_background.png"
     },
@@ -36,16 +48,40 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/spinner_item.xml"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-ldpi/ic_baseline_arrow_forward_ios_24.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_layout_screen.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/layout_screen.xml"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_tick.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/tick.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_baseline_arrow_forward_ios_24.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_arrow_forward_ios_24.xml"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_green_rounded_rectangle.xml.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/green_rounded_rectangle.xml"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-hdpi/ic_baseline_arrow_forward_ios_24.png"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_baseline_arrow_forward_ios_24.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_arrow_forward_ios_24.png"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -54,6 +90,10 @@
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_indicator_selector.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/indicator_selector.xml"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
@@ -84,6 +124,10 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/anim_button_animation.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/anim/button_animation.xml"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_background.png"
     },
@@ -92,12 +136,24 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/bin.png"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_indicator_default.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/indicator_default.xml"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_gradient_bg.xml.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/gradient_bg.xml"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-mdpi/ic_baseline_arrow_forward_ios_24.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_btn_gradient_style.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/btn_gradient_style.xml"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
@@ -124,6 +180,10 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/font/montserrat_bold.ttf"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_baseline_arrow_forward_ios_24.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_baseline_arrow_forward_ios_24.png"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_activity_product_list.xml.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_product_list.xml"
     },
@@ -144,12 +204,12 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_myrect.xml.flat",
-        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/myrect.xml"
-    },
-    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/layout_activity_data_entry.xml.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/layout/activity_data_entry.xml"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_myrect.xml.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/myrect.xml"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -168,8 +228,16 @@
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/edit.png"
     },
     {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable-v24_camera.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable-v24/camera.png"
+    },
+    {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_gallery.png.flat",
         "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/gallery.png"
+    },
+    {
+        "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/drawable_diet.png.flat",
+        "source": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/src/main/res/drawable/diet.png"
     },
     {
         "merged": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
