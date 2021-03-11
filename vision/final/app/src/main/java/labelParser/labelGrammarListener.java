@@ -37,4 +37,44 @@ public interface labelGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#carbs_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCarbs_statement(labelGrammarParser.Carbs_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#carbs_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCarbs_statement(labelGrammarParser.Carbs_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#azucar_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterAzucar_statement(labelGrammarParser.Azucar_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#azucar_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#sodio_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSodio_statement(labelGrammarParser.Sodio_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#sodio_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSodio_statement(labelGrammarParser.Sodio_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#proteina_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterProteina_statement(labelGrammarParser.Proteina_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#proteina_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitProteina_statement(labelGrammarParser.Proteina_statementContext ctx);
 }

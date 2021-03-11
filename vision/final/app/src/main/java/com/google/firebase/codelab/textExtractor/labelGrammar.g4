@@ -14,7 +14,7 @@ statements : grasaTotal_statement
 grasaTotal_statement : GRASA TOTAL NUMERO G?
                      ;
 
-carbs_statement : CARBOHIDRATOS NUMERO G?
+carbs_statement : CARBOHIDRATOS TOTALES? NUMERO G?
                 ;
 
 azucar_statement : AZUCARES NUMERO G?
@@ -29,10 +29,11 @@ proteina_statement : PROTEINAS NUMERO G?
 
 NUMERO :  [0-9]+ ;
 GRASA : [G|g]'rasa';
+TOTALES : [T|t]'otales' ;
 TOTAL : [T|t]'otal' ;
-PROTEINAS : [P|p]'roteinas' ;
+PROTEINAS : [P|p]'rote'[i|í]'nas' ;
 CARBOHIDRATOS : [C|c]'arbohidratos' ;
-AZUCARES : [A|a]'zucares' ;
+AZUCARES : [A|a]'z'[u|ú]'cares' | [A|a][z][a-z|ú]*;
 G : ([m]?)'g' ;
 SODIO : [S|s]'odio' ;
 

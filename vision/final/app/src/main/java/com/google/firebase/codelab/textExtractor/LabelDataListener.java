@@ -53,6 +53,53 @@ public class LabelDataListener extends labelGrammarBaseListener {
         }
     }
 
+    @Override
+    public void enterCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) {
+        super.enterCarbs_statement(ctx);
+        if(ctx.G() == null){
+            int numero = Integer.parseInt(ctx.NUMERO().getText()) / 10;
+            Log.d("FOUND_NU", "CARBS:" + numero + "g");
+
+        }
+        else{
+            Log.d("FOUND_NU", "CARBS: " + ctx.NUMERO().getText() + "g");
+        }
+    }
+
+    @Override
+    public void exitCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) {
+        super.exitCarbs_statement(ctx);
+    }
+
+    @Override
+    public void enterAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) {
+        super.enterAzucar_statement(ctx);
+    }
+
+    @Override
+    public void exitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) {
+        super.exitAzucar_statement(ctx);
+    }
+
+    @Override
+    public void enterSodio_statement(labelGrammarParser.Sodio_statementContext ctx) {
+        super.enterSodio_statement(ctx);
+    }
+
+    @Override
+    public void exitSodio_statement(labelGrammarParser.Sodio_statementContext ctx) {
+        super.exitSodio_statement(ctx);
+    }
+
+    @Override
+    public void enterProteina_statement(labelGrammarParser.Proteina_statementContext ctx) {
+        super.enterProteina_statement(ctx);
+    }
+
+    @Override
+    public void exitProteina_statement(labelGrammarParser.Proteina_statementContext ctx) {
+        super.exitProteina_statement(ctx);
+    }
 
     @Override
     public void exitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx) {

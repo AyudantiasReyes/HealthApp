@@ -20,19 +20,10 @@ public class LabelCleaner {
     }
 
     public void getInformation(){
-        Log.d("FILTER", cleanLabelText());
-        /*
-        CharStream input = CharStreams.fromString(cleanLabelText()); //crear charstream
-        labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
-        CommonTokenStream tokens = new CommonTokenStream(lexer); //crear los tokens
-        labelGrammarParser parser = new labelGrammarParser(tokens); //crear analizador sintactico
-
-        ParseTree tree = parser.init();
-        LabelDataListener listener = new LabelDataListener();
-
-        ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(listener, tree);
-        */
+        String s = cleanLabelText();
+        Log.d("FILTER", s);
+        LabelAnalyzer analyzer = new LabelAnalyzer(s);
+        analyzer.analyze();
     }
 
     public String cleanLabelText(){
@@ -49,4 +40,5 @@ public class LabelCleaner {
 
         return filteredString.toString();
     }
+
 }

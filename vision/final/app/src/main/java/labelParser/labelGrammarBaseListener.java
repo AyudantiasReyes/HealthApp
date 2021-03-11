@@ -47,6 +47,54 @@ public class labelGrammarBaseListener implements labelGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSodio_statement(labelGrammarParser.Sodio_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSodio_statement(labelGrammarParser.Sodio_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterProteina_statement(labelGrammarParser.Proteina_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProteina_statement(labelGrammarParser.Proteina_statementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

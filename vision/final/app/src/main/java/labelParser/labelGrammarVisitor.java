@@ -28,4 +28,28 @@ public interface labelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#carbs_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCarbs_statement(labelGrammarParser.Carbs_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#azucar_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#sodio_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSodio_statement(labelGrammarParser.Sodio_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#proteina_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProteina_statement(labelGrammarParser.Proteina_statementContext ctx);
 }
