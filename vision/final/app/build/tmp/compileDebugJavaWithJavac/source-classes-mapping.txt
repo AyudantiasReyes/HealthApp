@@ -4,6 +4,8 @@ com/google/firebase/codelab/labelScannerUABC/databinding/ListItemBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ListItemBinding
 com/google/firebase/codelab/labelScannerUABC/Porciones.java
  com.google.firebase.codelab.labelScannerUABC.Porciones
+com/google/firebase/codelab/parserPackage/labelAnalizer.java
+ com.google.firebase.codelab.parserPackage.labelAnalizer
 com/google/firebase/codelab/labelScannerUABC/LabelGraphic.java
  com.google.firebase.codelab.labelScannerUABC.LabelGraphic
 com/google/firebase/codelab/labelScannerUABC/DBHelper.java
@@ -30,8 +32,6 @@ com/google/firebase/codelab/mlkitUABC/NutrientsActivity.java
 com/google/firebase/codelab/labelScannerUABC/GraphicOverlay.java
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay$Graphic
-com/google/firebase/codelab/parserActivity/labelAnalizer.java
- com.google.firebase.codelab.parserActivity.labelAnalizer
 com/google/firebase/codelab/labelScannerUABC/DataEntryActivity.java
  com.google.firebase.codelab.labelScannerUABC.DataEntryActivity
 com/google/firebase/codelab/labelScannerUABC/MainMenuActivity.java
@@ -69,8 +69,6 @@ com/google/firebase/codelab/labelScannerUABC/CloudTextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.CloudTextGraphic
 com/google/firebase/codelab/labelScannerUABC/databinding/ProgressLayoutBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ProgressLayoutBinding
-com/google/firebase/codelab/parserActivity/TextElements.java
- com.google.firebase.codelab.parserActivity.TextElements
 com/google/firebase/codelab/labelScannerUABC/ProductListActivity.java
  com.google.firebase.codelab.labelScannerUABC.ProductListActivity
  com.google.firebase.codelab.labelScannerUABC.ProductListActivity$1
@@ -90,3 +88,25 @@ com/google/firebase/codelab/labelScannerUABC/databinding/SpinnerItemBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.SpinnerItemBinding
 com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.TextGraphic
+com/google/firebase/codelab/parserPackage/TextElements.java
+ com.google.firebase.codelab.parserPackage.TextElements
+labelParser/labelParserBaseListener.java
+ labelParser.labelParserBaseListener
+labelParser/labelParserBaseVisitor.java
+ labelParser.labelParserBaseVisitor
+labelParser/labelParserVisitor.java
+ labelParser.labelParserVisitor
+labelParser/labelParserLexer.java
+ labelParser.labelParserLexer
+labelParser/labelParserListener.java
+ labelParser.labelParserListener
+labelParser/labelParserParser.java
+ labelParser.labelParserParser
+ labelParser.labelParserParser$Azucares_statementContext
+ labelParser.labelParserParser$Carbohidratos_statementContext
+ labelParser.labelParserParser$GrasaTotal_statementContext
+ labelParser.labelParserParser$InitContext
+ labelParser.labelParserParser$Proteinas_statementContext
+ labelParser.labelParserParser$Sodio_statementContext
+ labelParser.labelParserParser$StatementContext
+ labelParser.labelParserParser$StatementsContext

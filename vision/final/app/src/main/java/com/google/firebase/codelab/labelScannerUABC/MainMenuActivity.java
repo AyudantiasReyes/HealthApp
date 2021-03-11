@@ -34,7 +34,7 @@ import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
-import com.google.firebase.codelab.parserActivity.TextElements;
+import com.google.firebase.codelab.parserPackage.TextElements;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
@@ -60,7 +60,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
 
    //*******************************************//
-    private ArrayList<TextElements> elements;
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
     static {
@@ -80,7 +79,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         User user = LoadSharedPreferences();
 
         //*********************************************//
-        elements = new ArrayList<>();
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //Pedimos permiso si no lo tenemos
@@ -192,7 +190,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
 
-                                    extractText(visionText);
+                                    Log.d("SUPER_TEXTO", extractText(visionText));
+
+
                                 }
                             })
                             .addOnFailureListener(
@@ -234,7 +234,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void extractText(Text result) {
+    public String extractText(Text result) {
+
+        ArrayList<TextElements> elements = new ArrayList<>();
+        StringBuilder extractedText = new StringBuilder();
+
         String resultText = result.getText();
         for (Text.TextBlock block : result.getTextBlocks()) {
             String blockText = block.getText();
@@ -253,14 +257,14 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 }
             }
         }
-        sortElements(); //Se ordenan los resultados
+        sortElements(elements); //Se ordenan los resultados
 
         for (TextElements element : elements) { //Imprimir resultados de los elementos
-
+            extractedText.append(element.getText()).append(";");
             Log.d("RESULTADO", element.getText() + " | " + element.getFrame());
         }
 
-        elements.clear();
+        return extractedText.toString();
     }
 
     private String getCameraid(){ //Metodo para obtener el id de la cámara
@@ -280,12 +284,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void sortElements() {
+    private void sortElements(ArrayList<TextElements> elements) {
         int i = 0;
         TextElements aux;
         ArrayList<TextElements> group = new ArrayList<>(); //arraylist para guardar pequeños renglones
         ArrayList<TextElements> sortedGroups = new ArrayList<>();//arraylist para guardar los grupos ordenados
-        StringBuilder builder = new StringBuilder();
 
         elements.sort((o1, o2) -> Integer.compare(o1.getFrame().top, o2.getFrame().top)); //ordenamiento por Y a los elementos
         /*
@@ -294,16 +297,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         */
 
         while(i < elements.size() - 1){
-            Log.d("SALIDA", "PRIMER WHILE ");
             aux = elements.get(i);
             group.add(aux);
 
             try{
                 int resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
-                Log.d("SALIDA", "RESTA = " + resta);
                 if(resta <= 5){
                     do{
-                        Log.d("SALIDA", "DENTRO DEL DO WHILE ");
                         group.add(elements.get(i + 1));
                         i++;
                         resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
@@ -318,13 +318,15 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                     i++;
 
             }catch (Exception e){
-
             }
-
-
-            Log.d("SALIDA", "size = " + elements.size() + " i = " + i);
-
         }
+
+
+/*        for(int k = 0; k < elements.size(); k++){
+            Log.d("INS", k + " " + elements.get(k).getText());
+        }
+
+        Log.d("INS", "Valor i = " + i);*/
 
         elements.clear();
         elements.addAll(sortedGroups);
