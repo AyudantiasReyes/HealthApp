@@ -34,8 +34,7 @@ import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
-import com.google.firebase.codelab.textExtractor.LabelCleaner;
-import com.google.firebase.codelab.textExtractor.TextElements;
+import com.google.firebase.codelab.textExtractor.groups.TextElements;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
@@ -214,9 +213,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
     //*************************************//
     public void analizeString(String labelText){
-        LabelCleaner analyst = new LabelCleaner(labelText);
+       // LabelCleaner analyst = new LabelCleaner(labelText);
 
-        analyst.getInformation();
+        //analyst.getInformation();
 
     }
 
