@@ -46,6 +46,19 @@ public class LabelDataListener extends labelGrammarBaseListener {
     }
 
     @Override
+    public void enterTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) {
+        super.enterTamanoPorcion_statement(ctx);
+
+        Log.d("ENTER_TAMANO", "enterTamanoPorcion_statement: ");
+
+    }
+
+    @Override
+    public void exitTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) {
+        super.exitTamanoPorcion_statement(ctx);
+    }
+
+    @Override
     public void enterGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx) {
         super.enterGrasaTotal_statement(ctx);
 
@@ -76,6 +89,12 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) {
         super.enterAzucar_statement(ctx);
+        if(ctx.G() == null){
+            azucares = Integer.parseInt(ctx.NUMERO().getText()) / 10;
+        }
+        else{
+            azucares = Integer.parseInt(ctx.NUMERO().getText());
+        }
     }
 
     @Override

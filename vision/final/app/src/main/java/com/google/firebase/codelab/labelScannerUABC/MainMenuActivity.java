@@ -62,8 +62,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     private SharedPreferences preferences;
 
-
-   //*******************************************//
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
 
     static {
@@ -73,7 +71,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         ORIENTATIONS.append(Surface.ROTATION_270, 270);
     }
 
-    //****************************************//
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -82,14 +79,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
 
-        //*********************************************//
+
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //Pedimos permiso si no lo tenemos
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
         }
 
-        //********************************************//
 
         Log.d("name",user.getName());
         Log.d("email",user.getEmail());
@@ -216,7 +212,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     //*************************************//
     public void analizeString(String labelText){
 
-        LabelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+        int[] nutrientes = LabelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+        Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+        dataEntryActivity.putExtra("nutrientes", nutrientes);
+        startActivity(dataEntryActivity);
 
     }
 

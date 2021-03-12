@@ -21,12 +21,17 @@ com/google/firebase/codelab/textExtractor/analyzer/LabelAnalyzer.java
 labelParser/labelGrammarParser.java
  labelParser.labelGrammarParser
  labelParser.labelGrammarParser$Azucar_statementContext
+ labelParser.labelGrammarParser$CaloriasDeGrasa_statemntContext
+ labelParser.labelGrammarParser$CaloriasStatemntContext
  labelParser.labelGrammarParser$Carbs_statementContext
  labelParser.labelGrammarParser$GrasaTotal_statementContext
  labelParser.labelGrammarParser$InitContext
+ labelParser.labelGrammarParser$PorcionesEmpaque_statementContext
  labelParser.labelGrammarParser$Proteina_statementContext
  labelParser.labelGrammarParser$Sodio_statementContext
  labelParser.labelGrammarParser$StatementsContext
+ labelParser.labelGrammarParser$TamanoPorcion_statementContext
+ labelParser.labelGrammarParser$ValoresDiarios_statementContext
 com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.TextGraphic
 com/google/firebase/codelab/labelScannerUABC/GraphicOverlay.java

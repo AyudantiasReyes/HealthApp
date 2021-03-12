@@ -1,5 +1,7 @@
 package com.google.firebase.codelab.textExtractor.analyzer;
 
+import android.util.Log;
+
 import com.google.firebase.codelab.textExtractor.listeners.LabelDataListener;
 
 import org.antlr.v4.runtime.CharStream;
@@ -41,6 +43,11 @@ public class LabelAnalyzer {
         cantidadNutrientes[AZUCARES] = listener.getAzucares();
         cantidadNutrientes[SODIO] = listener.getSodio();
 
+        Log.d("NUTRIENTES", "GRASAS = " + cantidadNutrientes[GRASAS]);
+        Log.d("NUTRIENTES", "CARBOHIDRATOS = " + cantidadNutrientes[CARBOHIDRATOS]);
+        Log.d("NUTRIENTES", "PROTEINAS = " + cantidadNutrientes[PROTEINAS]);
+        Log.d("NUTRIENTES", "AZUCARES = " + cantidadNutrientes[AZUCARES]);
+        Log.d("NUTRIENTES", "SODIO = " + cantidadNutrientes[SODIO]);
 
         return cantidadNutrientes;
     }

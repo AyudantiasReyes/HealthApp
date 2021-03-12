@@ -1,4 +1,4 @@
-// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -35,6 +35,66 @@ public class labelGrammarBaseListener implements labelGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatements(labelGrammarParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

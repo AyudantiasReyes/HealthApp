@@ -1,4 +1,4 @@
-// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -22,6 +22,36 @@ public interface labelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitStatements(labelGrammarParser.StatementsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#tamanoPorcion_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#porcionesEmpaque_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link labelGrammarParser#grasaTotal_statement}.
 	 * @param ctx the parse tree

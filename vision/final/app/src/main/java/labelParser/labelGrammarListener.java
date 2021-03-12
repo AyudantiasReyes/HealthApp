@@ -1,4 +1,4 @@
-// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -27,6 +27,56 @@ public interface labelGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStatements(labelGrammarParser.StatementsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#tamanoPorcion_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#tamanoPorcion_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#porcionesEmpaque_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#porcionesEmpaque_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * @param ctx the parse tree
+	 */
+	void enterCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * @param ctx the parse tree
+	 */
+	void exitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
+	 * @param ctx the parse tree
+	 */
+	void enterCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
+	 * @param ctx the parse tree
+	 */
+	void exitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link labelGrammarParser#grasaTotal_statement}.
 	 * @param ctx the parse tree
