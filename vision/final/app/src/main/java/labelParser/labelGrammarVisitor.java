@@ -35,23 +35,11 @@ public interface labelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * Visit a parse tree produced by {@link labelGrammarParser#caloriasStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
+	T visitCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link labelGrammarParser#grasaTotal_statement}.
 	 * @param ctx the parse tree

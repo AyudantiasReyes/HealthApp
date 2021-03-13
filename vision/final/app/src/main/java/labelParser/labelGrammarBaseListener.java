@@ -64,37 +64,13 @@ public class labelGrammarBaseListener implements labelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx) { }
+	@Override public void enterCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx) { }
+	@Override public void exitCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

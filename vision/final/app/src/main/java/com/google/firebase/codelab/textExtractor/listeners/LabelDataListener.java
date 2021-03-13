@@ -11,11 +11,14 @@ import labelParser.labelGrammarParser;
 
 public class LabelDataListener extends labelGrammarBaseListener {
 
-    private int grasas = 0;
-    private int sodio = 0;
-    private int carbohidratos = 0;
-    private int proteinas = 0;
-    private int azucares = 0;
+    private int tamanoPorcion = -1;
+    private int porciones = -1;
+    private int calorias = -1;
+    private int grasas = -1;
+    private int sodio = -1;
+    private int carbohidratos = -1;
+    private int proteinas = -1;
+    private int azucares = -1;
 
     public LabelDataListener() {
 
@@ -32,7 +35,8 @@ public class LabelDataListener extends labelGrammarBaseListener {
     public void exitInit(labelGrammarParser.InitContext ctx) {
         super.exitInit(ctx);
 
-
+        if(calorias != -1 && grasas != -1 && carbohidratos != -1 && proteinas == -1)
+            proteinas = (int) Math.ceil((float)(calorias - 9*grasas - 4*carbohidratos) / 4);
     }
 
     @Override
@@ -49,8 +53,35 @@ public class LabelDataListener extends labelGrammarBaseListener {
     public void enterTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) {
         super.enterTamanoPorcion_statement(ctx);
 
-        Log.d("ENTER_TAMANO", "enterTamanoPorcion_statement: ");
+        for(TerminalNode t : ctx.NUMERO()){
+            tamanoPorcion = (t.getText() != null ? Integer.parseInt(t.getText()) : -1);
+        }
 
+    }
+
+    @Override
+    public void enterPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx) {
+        super.enterPorcionesEmpaque_statement(ctx);
+
+        porciones = (ctx.NUMERO().getText() != null ? Integer.parseInt(ctx.NUMERO().getText()) : -1);
+
+    }
+
+    @Override
+    public void exitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx) {
+        super.exitPorcionesEmpaque_statement(ctx);
+    }
+
+    @Override
+    public void enterCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx) {
+        super.enterCaloriasStatement(ctx);
+        Log.d("ENTER", "enterCaloriasStatement: " + ctx.NUMERO().getText());
+        calorias = (ctx.NUMERO().getText() != null ? Integer.parseInt(ctx.NUMERO().getText()) : -1);
+
+    }
+    @Override
+    public void exitCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx) {
+        super.exitCaloriasStatement(ctx);
     }
 
     @Override
@@ -73,6 +104,7 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) {
         super.enterCarbs_statement(ctx);
+        Log.d("ENTER", "enterCarbsStatement: " + ctx.NUMERO().getText());
         if(ctx.G() == null){
             carbohidratos = Integer.parseInt(ctx.NUMERO().getText()) / 10;
         }
@@ -105,6 +137,10 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterSodio_statement(labelGrammarParser.Sodio_statementContext ctx) {
         super.enterSodio_statement(ctx);
+
+
+        sodio = (ctx.NUMERO() != null ? Integer.parseInt(ctx.NUMERO().getText()) : 0);
+
     }
 
     @Override
@@ -145,6 +181,18 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void visitErrorNode(ErrorNode node) {
         super.visitErrorNode(node);
+    }
+
+    public int getTamanoPorcion() {
+        return tamanoPorcion;
+    }
+
+    public int getPorciones() {
+        return porciones;
+    }
+
+    public int getCalorias() {
+        return calorias;
     }
 
     public int getGrasas() {

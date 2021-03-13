@@ -45,21 +45,7 @@ public class labelGrammarBaseVisitor<T> extends AbstractParseTreeVisitor<T> impl
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

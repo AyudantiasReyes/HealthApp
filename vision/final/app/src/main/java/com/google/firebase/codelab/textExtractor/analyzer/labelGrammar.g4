@@ -10,60 +10,47 @@ statements : grasaTotal_statement
            | proteina_statement
            | tamanoPorcion_statement
            | porcionesEmpaque_statement
-           | caloriasStatemnt
-           | caloriasDeGrasa_statemnt
-           | valoresDiarios_statement
+           | caloriasStatement
            ;
 
-tamanoPorcion_statement : TAMANO DELA? PORCION? NUMERO? OZ? NUMERO G?
+tamanoPorcion_statement : TAMANO NUMERO? OZ? NUMERO G?
                         ;
-porcionesEmpaque_statement : PORCION POR EMPAQUE NUMERO
+
+porcionesEmpaque_statement : EMPAQUE NUMERO
                            ;
 
-caloriasDeGrasa_statemnt : CALORIAS DE GRASA NUMERO
-                         ;
-
-valoresDiarios_statement : VALORES DIARIOS
-                         ;
-
-caloriasStatemnt : CALORIAS NUMERO
-                 ;
+caloriasStatement : CALORIAS NUMERO
+                  ;
 
 grasaTotal_statement : GRASA TOTAL NUMERO G?
                      ;
 
-carbs_statement : CARBOHIDRATOS TOTALES? NUMERO G?
+carbs_statement : CARBOHIDRATOS TOTAL? NUMERO G?
                 ;
 
 azucar_statement : AZUCARES NUMERO G?
                  ;
 
-sodio_statement : SODIO NUMERO G?
+sodio_statement : SODIO NUMERO? G?
                 ;
 
 proteina_statement : PROTEINAS NUMERO G?
                 ;
 
-TAMANO : [T|t][a]([a-z] | [ñ])*;
-DELA : 'dela' ;
-PORCION : [P|p]'orci'[o|ó]'n'('es')? ;
-OZ : ('oz' | 'az') ;
-POR : [P|p]'or' ;
-EMPAQUE : [E|e]'mp'[a-z]* ;
-CALORIAS : [C|c]('al' | 'AL') ;
-DE : 'DE' ;
-VALORES : [V|v]'i'?'al'[a-z]* ;
+TAMANO : [T|t][a-z]?'am'[a-zA-Z|ó]*;
+OZ : ('oz'|'az');
+EMPAQUE : [E|e][m|n][a-zA-Z]* ;
+CALORIAS : [C|c]('alo'|'ALO')[a-zA-Z|Í]* ;
+VALORES : [V|v][a-z]*;
 DIARIOS : [D|d]'i'([a-z])* ;
-NUMERO :  [0-9]+ ;
-GRASA : [G|g]'r'[a-z]*|[G|g]'R'[A-Z]*;
-TOTALES : [T|t]'otales' ;
-TOTAL : [T|t]'otal' ;
-PROTEINAS : [P|p]'rote'[i|í]'nas' ;
-CARBOHIDRATOS : [C|c]'arbohidratos';
-AZUCARES : [A|a]'z'[u|ú]'cares' | [A|a][z][a-z|ú]*;
+NUMERO :  [0-9]+;
+TOTAL : [T|t]'ot'[a-zA-Z]*;
+GRASA : [G|g]'ra'[a-z][a-z];
+PROTEINAS : [P|p]'ro'[a-zA-Z|í]*;
+CARBOHIDRATOS : [C|c]'arb'[a-z]*;
+AZUCARES : ([A|a]'z'[u|ú]'cares')|([A|a][z][a-z|ú]*);
 G : ([m]?)'g' ;
-SODIO : [S|s]'odio' ;
-
+SODIO : [S|s]'od'[a-zA-Z]*;
 WS : (' ' | '\r' | '\n' | '\t' | ':' | ';' | '%' | '-') -> skip;
 ANY : .+? -> skip;
 

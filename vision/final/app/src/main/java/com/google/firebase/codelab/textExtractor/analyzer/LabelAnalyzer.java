@@ -14,12 +14,15 @@ import labelParser.labelGrammarParser;
 
 public class LabelAnalyzer {
 
-    public final static int GRASAS = 0;
-    public final static int CARBOHIDRATOS = 1;
-    public final static int PROTEINAS = 2;
-    public final static int AZUCARES = 3;
-    public final static int SODIO = 4;
-    private final static int SIZE = 5;
+    public final static int TAM_PORCION = 0;
+    public final static int PORCIONES = 1;
+    public final static int CALORIAS = 2;
+    public final static int GRASAS = 3;
+    public final static int CARBOHIDRATOS = 4;
+    public final static int AZUCARES = 5;
+    public final static int SODIO = 6;
+    public final static int PROTEINAS = 7;
+    private final static int SIZE = 8;
 
 
     public static int[] analyze(String textFiltered){
@@ -37,12 +40,19 @@ public class LabelAnalyzer {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
         //obtener los nutrientes
+        cantidadNutrientes[TAM_PORCION] = listener.getTamanoPorcion();
+        cantidadNutrientes[CALORIAS] = listener.getCalorias();
+        cantidadNutrientes[PORCIONES] = listener.getPorciones();
         cantidadNutrientes[GRASAS] = listener.getGrasas();
         cantidadNutrientes[CARBOHIDRATOS] = listener.getCarbohidratos();
         cantidadNutrientes[PROTEINAS] = listener.getProteinas();
         cantidadNutrientes[AZUCARES] = listener.getAzucares();
         cantidadNutrientes[SODIO] = listener.getSodio();
+        cantidadNutrientes[PROTEINAS] = listener.getProteinas();
 
+        Log.d("NUTRIENTES", "TAM = " + cantidadNutrientes[TAM_PORCION]);
+        Log.d("NUTRIENTES", "PORCIONES = " + cantidadNutrientes[PORCIONES]);
+        Log.d("NUTRIENTES", "CALORIAS = " + cantidadNutrientes[CALORIAS]);
         Log.d("NUTRIENTES", "GRASAS = " + cantidadNutrientes[GRASAS]);
         Log.d("NUTRIENTES", "CARBOHIDRATOS = " + cantidadNutrientes[CARBOHIDRATOS]);
         Log.d("NUTRIENTES", "PROTEINAS = " + cantidadNutrientes[PROTEINAS]);

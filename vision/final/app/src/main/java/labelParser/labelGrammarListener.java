@@ -48,35 +48,15 @@ public interface labelGrammarListener extends ParseTreeListener {
 	 */
 	void exitPorcionesEmpaque_statement(labelGrammarParser.PorcionesEmpaque_statementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * Enter a parse tree produced by {@link labelGrammarParser#caloriasStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
+	void enterCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link labelGrammarParser#caloriasDeGrasa_statemnt}.
+	 * Exit a parse tree produced by {@link labelGrammarParser#caloriasStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCaloriasDeGrasa_statemnt(labelGrammarParser.CaloriasDeGrasa_statemntContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link labelGrammarParser#valoresDiarios_statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitValoresDiarios_statement(labelGrammarParser.ValoresDiarios_statementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
-	 * @param ctx the parse tree
-	 */
-	void enterCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link labelGrammarParser#caloriasStatemnt}.
-	 * @param ctx the parse tree
-	 */
-	void exitCaloriasStatemnt(labelGrammarParser.CaloriasStatemntContext ctx);
+	void exitCaloriasStatement(labelGrammarParser.CaloriasStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link labelGrammarParser#grasaTotal_statement}.
 	 * @param ctx the parse tree

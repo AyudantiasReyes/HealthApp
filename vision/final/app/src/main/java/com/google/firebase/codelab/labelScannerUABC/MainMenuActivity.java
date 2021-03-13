@@ -213,9 +213,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     public void analizeString(String labelText){
 
         int[] nutrientes = LabelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
-        Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
-        dataEntryActivity.putExtra("nutrientes", nutrientes);
-        startActivity(dataEntryActivity);
+        //Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+       // dataEntryActivity.putExtra("nutrientes", nutrientes);
+       // startActivity(dataEntryActivity);
+
 
     }
 
@@ -274,9 +275,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         sortElements(elements); //Se ordenan los resultados
 
         for (TextElements element : elements) { //Imprimir resultados de los elementos
-            extractedText.append(element.getText()).append(";");
+            extractedText.append(element.getText().replaceAll("([:|-])|([0-9]+%)", ""));
             Log.d("RESULTADO", element.getText() + " | " + element.getFrame());
         }
+
+
 
         return extractedText.toString();
     }
