@@ -49,7 +49,12 @@ public class CameraActivity extends AppCompatActivity {
         previewView = findViewById(R.id.previewView);
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         textView = findViewById(R.id.orientation);
-        labelAnalyzer = new LabelAnalyzer();
+
+        if(savedInstanceState == null)
+            labelAnalyzer = new LabelAnalyzer();
+        else
+            labelAnalyzer = (LabelAnalyzer) savedInstanceState.getSerializable("LabelAnalyzer");
+
         cameraProviderFuture.addListener(new Runnable() {
             @Override
             public void run() {
@@ -159,6 +164,14 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putSerializable("LabelAnalyzer", labelAnalyzer);
+
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void sortElements(ArrayList<TextElements> elements) {
         int i = 0;
@@ -204,7 +217,7 @@ public class CameraActivity extends AppCompatActivity {
     public void analizeString(String labelText){
 
         if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
-            labelAnalyzer.resetFilters();
+            //labelAnalyzer.resetFilters();
         }
            // Log.d("END", labelAnalyzer.toString());
 

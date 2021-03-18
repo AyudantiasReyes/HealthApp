@@ -56,8 +56,6 @@ public class LabelDataListener extends labelGrammarBaseListener {
     public void enterTamanoPorcion_statement(labelGrammarParser.TamanoPorcion_statementContext ctx) {
         super.enterTamanoPorcion_statement(ctx);
 
-        Log.d("TAM_STATE", "enterTamanoPorcion_statement: ");
-
         for(TerminalNode t : ctx.NUMERO()){
 
             if(ctx.G() == null){
@@ -186,8 +184,6 @@ public class LabelDataListener extends labelGrammarBaseListener {
         super.enterProteina_statement(ctx);
 
 
-
-
         if(ctx.G() == null){
             int proteinas = Integer.parseInt(ctx.NUMERO().getText());
             this.proteinas = proteinas > 10 ? proteinas / 10 : proteinas;
@@ -196,37 +192,6 @@ public class LabelDataListener extends labelGrammarBaseListener {
         else{
             proteinas = Integer.parseInt(ctx.NUMERO().getText());
         }
-
-    }
-
-    @Override
-    public void exitProteina_statement(labelGrammarParser.Proteina_statementContext ctx) {
-        super.exitProteina_statement(ctx);
-    }
-
-    @Override
-    public void exitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx) {
-        super.exitGrasaTotal_statement(ctx);
-    }
-
-    @Override
-    public void enterEveryRule(ParserRuleContext ctx) {
-        super.enterEveryRule(ctx);
-    }
-
-    @Override
-    public void exitEveryRule(ParserRuleContext ctx) {
-        super.exitEveryRule(ctx);
-    }
-
-    @Override
-    public void visitTerminal(TerminalNode node) {
-        super.visitTerminal(node);
-    }
-
-    @Override
-    public void visitErrorNode(ErrorNode node) {
-        super.visitErrorNode(node);
 
     }
 

@@ -10,12 +10,13 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import labelParser.labelGrammarLexer;
 import labelParser.labelGrammarParser;
 
-public class LabelAnalyzer {
+public class LabelAnalyzer implements Serializable {
 
     public final static int TAM_PORCION = 0;
     public final static int PORCIONES = 1;
@@ -72,7 +73,7 @@ public class LabelAnalyzer {
 
     public void labelChecker(int labelItem, int listenerData, String label){
         if(!blockNutrients[labelItem]){
-            if(listenerData != -1){
+            if(listenerData >= 0){
                 blockNutrients[labelItem] = true;
                 amountNutrients[labelItem] = listenerData;
                 Log.d("final_label_data", label  + amountNutrients[labelItem]);
