@@ -51,8 +51,17 @@ public class LabelAnalyzer {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
 
+        if(!blockNutrients[TAM_PORCION]){
+            if(listener.getTamanoPorcion() != -1){
+                blockNutrients[TAM_PORCION] = true;
+                amountNutrients[TAM_PORCION] = listener.getTamanoPorcion();
+                Log.d("NUTRIENTES_TAM", "TAM = " + amountNutrients[TAM_PORCION]);
+            }
+        }
+
+
         //obtener los nutrientes
-        amountNutrients[TAM_PORCION] = listener.getTamanoPorcion();
+
         amountNutrients[CALORIAS] = listener.getCalorias();
         amountNutrients[PORCIONES] = listener.getPorciones();
         amountNutrients[GRASAS] = listener.getGrasas();
@@ -64,7 +73,7 @@ public class LabelAnalyzer {
 
 
 
-        Log.d("NUTRIENTES_TAM", "TAM = " + amountNutrients[TAM_PORCION]);
+
         Log.d("NUTRIENTES_POR", "PORCIONES = " + amountNutrients[PORCIONES]);
         Log.d("NUTRIENTES_CAL", "CALORIAS = " + amountNutrients[CALORIAS]);
         Log.d("NUTRIENTES_GRA", "GRASAS = " + amountNutrients[GRASAS]);
@@ -74,7 +83,7 @@ public class LabelAnalyzer {
         Log.d("NUTRIENTES_SOD", "SODIO = " + amountNutrients[SODIO]);
 
 
-        return false;
+        return blockNutrients[TAM_PORCION];
 
     }
 

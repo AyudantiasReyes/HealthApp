@@ -41,7 +41,7 @@ NUMERO :  [0-9]+;
 
 VOWEL :  [a|e] | [i|o] | 'u' | [A|E] | [I|O] | 'U' ;
 
-TAMANODEPORCION : [T|t] VOWEL 'm' VOWEL [n|ñ] VOWEL 'd' VOWEL 'l' VOWEL [P|p] VOWEL 'rc' VOWEL VOWEL 'n' ;
+TAMANODEPORCION : [T|t] VOWEL 'm' VOWEL 'n' VOWEL 'd' VOWEL 'l' VOWEL [P|p] VOWEL 'rc' VOWEL VOWEL 'n' ;
 
 OZ : [oz] ;
 

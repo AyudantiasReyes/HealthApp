@@ -208,7 +208,10 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     public void analizeString(String labelText){
-        labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+
+        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
+            labelAnalyzer.resetFilters();
+        }
            // Log.d("END", labelAnalyzer.toString());
 
         //int[] nutrientes = labelAnalyzer.getAmountNutrients();
