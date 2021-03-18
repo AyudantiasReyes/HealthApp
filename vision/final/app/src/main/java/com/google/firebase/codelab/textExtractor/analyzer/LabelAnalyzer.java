@@ -44,20 +44,20 @@ public class LabelAnalyzer {
         cantidadNutrientes[CALORIAS] = listener.getCalorias();
         cantidadNutrientes[PORCIONES] = listener.getPorciones();
         cantidadNutrientes[GRASAS] = listener.getGrasas();
-        cantidadNutrientes[CARBOHIDRATOS] = listener.getCarbohidratos();
+        cantidadNutrientes[CARBOHIDRATOS] = listener.getCarbs();
         cantidadNutrientes[PROTEINAS] = listener.getProteinas();
         cantidadNutrientes[AZUCARES] = listener.getAzucares();
         cantidadNutrientes[SODIO] = listener.getSodio();
         cantidadNutrientes[PROTEINAS] = listener.getProteinas();
 
-        Log.d("NUTRIENTES", "TAM = " + cantidadNutrientes[TAM_PORCION]);
-        Log.d("NUTRIENTES", "PORCIONES = " + cantidadNutrientes[PORCIONES]);
-        Log.d("NUTRIENTES", "CALORIAS = " + cantidadNutrientes[CALORIAS]);
-        Log.d("NUTRIENTES", "GRASAS = " + cantidadNutrientes[GRASAS]);
-        Log.d("NUTRIENTES", "CARBOHIDRATOS = " + cantidadNutrientes[CARBOHIDRATOS]);
-        Log.d("NUTRIENTES", "PROTEINAS = " + cantidadNutrientes[PROTEINAS]);
-        Log.d("NUTRIENTES", "AZUCARES = " + cantidadNutrientes[AZUCARES]);
-        Log.d("NUTRIENTES", "SODIO = " + cantidadNutrientes[SODIO]);
+        Log.d("NUTRIENTES_TAM", "TAM = " + cantidadNutrientes[TAM_PORCION]);
+        Log.d("NUTRIENTES_POR", "PORCIONES = " + cantidadNutrientes[PORCIONES]);
+        Log.d("NUTRIENTES_CAL", "CALORIAS = " + cantidadNutrientes[CALORIAS]);
+        Log.d("NUTRIENTES_GRA", "GRASAS = " + cantidadNutrientes[GRASAS]);
+        Log.d("NUTRIENTES_CARB", "CARBOHIDRATOS = " + cantidadNutrientes[CARBOHIDRATOS]);
+        Log.d("NUTRIENTES_PRO", "PROTEINAS = " + cantidadNutrientes[PROTEINAS]);
+        Log.d("NUTRIENTES_AZU", "AZUCARES = " + cantidadNutrientes[AZUCARES]);
+        Log.d("NUTRIENTES_SOD", "SODIO = " + cantidadNutrientes[SODIO]);
 
         return cantidadNutrientes;
     }

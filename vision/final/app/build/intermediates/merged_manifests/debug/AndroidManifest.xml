@@ -8,6 +8,9 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="30" />
 
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -36,6 +39,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.google.firebase.codelab.textExtractor.analyzer.CameraActivity" />
         <activity android:name="com.google.firebase.codelab.UI.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,8 +54,7 @@
         <activity
             android:name="com.google.firebase.codelab.labelScannerUABC.MainMenuActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

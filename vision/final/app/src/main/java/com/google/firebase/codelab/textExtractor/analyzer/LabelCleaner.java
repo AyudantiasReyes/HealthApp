@@ -12,9 +12,7 @@ public class LabelCleaner {
     private static final String FILTRO_CALORIAS = "[C|c]([alo]|[ALO])[a-zA-Z|Í]*[0-9]+|" +
             "[C|c]([elo]|[ELO])[a-zA-Z|Í]*[0-9]+" ;
 
-    private static final String FILTRO_GRASAS = "[g|G]r[a|e|i|o|u]s[a|e|i|o|u][t|T|]ot[a|e|i|o|u]l[0-9][0-9]?g?|" +
-            "[g|G]r[a|e|i|o|u]s[a|e|i|o|u][t|T|]ot[a|e|i|o|u]l[O|D]?g?|" +
-            "[g|G]r[a|e|i|o|u]s[a|e|i|o|u][t|T|]ot[a|e|i|o|u][0-9][0-9]?g?" ;
+    private static final String FILTRO_GRASAS = "GrasaTotal[0-9][0-9]?g?" ;
 
     private static final String FILTRO_CARBS = "[C|c]arbohidratos[0-9][0-9]?g?|" +
             "[C|c]arbohidratostotales[0-9][0-9]?g?|" +

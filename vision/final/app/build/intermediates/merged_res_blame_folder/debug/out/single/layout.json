@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\spinner_item.xml"
     },
     {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_camera.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_camera.xml"
+    },
+    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item.xml",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\list_item.xml"
     },
