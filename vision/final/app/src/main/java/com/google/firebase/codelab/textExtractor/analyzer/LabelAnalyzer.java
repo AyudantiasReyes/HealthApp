@@ -39,6 +39,8 @@ public class LabelAnalyzer {
 
     public boolean analyze(String textFiltered){
 
+        boolean exitAnalyze = true;
+
         CharStream input = CharStreams.fromString(textFiltered); //crear charstream
         labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
         CommonTokenStream tokens = new CommonTokenStream(lexer); //crear los tokens
@@ -51,40 +53,31 @@ public class LabelAnalyzer {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
 
-        if(!blockNutrients[TAM_PORCION]){
-            if(listener.getTamanoPorcion() != -1){
-                blockNutrients[TAM_PORCION] = true;
-                amountNutrients[TAM_PORCION] = listener.getTamanoPorcion();
-                Log.d("NUTRIENTES_TAM", "TAM = " + amountNutrients[TAM_PORCION]);
-            }
+        labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
+        labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
+        labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
+        labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
+        labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
+        labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
+        labelChecker(SODIO, listener.getSodio(), "Sodio: ");
+        labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
+
+        for(boolean block : blockNutrients){
+            exitAnalyze &= block;
         }
 
+        return exitAnalyze;
 
-        //obtener los nutrientes
+    }
 
-        amountNutrients[CALORIAS] = listener.getCalorias();
-        amountNutrients[PORCIONES] = listener.getPorciones();
-        amountNutrients[GRASAS] = listener.getGrasas();
-        amountNutrients[CARBOHIDRATOS] = listener.getCarbs();
-        amountNutrients[PROTEINAS] = listener.getProteinas();
-        amountNutrients[AZUCARES] = listener.getAzucares();
-        amountNutrients[SODIO] = listener.getSodio();
-        amountNutrients[PROTEINAS] = listener.getProteinas();
-
-
-
-
-        Log.d("NUTRIENTES_POR", "PORCIONES = " + amountNutrients[PORCIONES]);
-        Log.d("NUTRIENTES_CAL", "CALORIAS = " + amountNutrients[CALORIAS]);
-        Log.d("NUTRIENTES_GRA", "GRASAS = " + amountNutrients[GRASAS]);
-        Log.d("NUTRIENTES_CARB", "CARBOHIDRATOS = " + amountNutrients[CARBOHIDRATOS]);
-        Log.d("NUTRIENTES_PRO", "PROTEINAS = " + amountNutrients[PROTEINAS]);
-        Log.d("NUTRIENTES_AZU", "AZUCARES = " + amountNutrients[AZUCARES]);
-        Log.d("NUTRIENTES_SOD", "SODIO = " + amountNutrients[SODIO]);
-
-
-        return blockNutrients[TAM_PORCION];
-
+    public void labelChecker(int labelItem, int listenerData, String label){
+        if(!blockNutrients[labelItem]){
+            if(listenerData != -1){
+                blockNutrients[labelItem] = true;
+                amountNutrients[labelItem] = listenerData;
+                Log.d("final_label_data", label  + amountNutrients[labelItem]);
+            }
+        }
     }
 
     public int[] getAmountNutrients() {

@@ -75,38 +75,32 @@ public class CameraActivity extends AppCompatActivity {
                 Image mediaImage = image.getImage();
 
                 if (mediaImage != null) {
-                    InputImage inputImage =
-                            InputImage.fromMediaImage(mediaImage, image.getImageInfo().getRotationDegrees());
+                    InputImage inputImage = InputImage.fromMediaImage(mediaImage, image.getImageInfo().getRotationDegrees());
+
                     // Pass image to an ML Kit Vision API
-                    // ...
+                    //Aplicacion ML Kit Vision API de la Firebase de Google
                     TextRecognizer recognizer = TextRecognition.getClient(); //Obtener reconocedor de texto
 
-
-                    //a
-                    Task<Text> result =
-                            recognizer.process(inputImage) //Procesar la Imagen para obtener texto
-                                    .addOnSuccessListener(new OnSuccessListener<Text>() {
-                                        @RequiresApi(api = Build.VERSION_CODES.N)
-                                        @Override
-                                        public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
-                                            String text = extractText(visionText);
-                                            Log.d("SuperTexto", text);
-                                            analizeString(text);
-                                            image.close();
-
-
-                                        }
-                                    })
-                                    .addOnFailureListener(
-                                            new OnFailureListener() {
-                                                @Override
-                                                public void onFailure(@NonNull Exception e) {
-                                                    // Task failed with an exception
-                                                    // ...
-                                                    Log.d("TEXTO_SALIDA", "lo intentamos pero no funciono :c");
-                                                }
-                                            });
-
+                    Task<Text> result = recognizer.process(inputImage)
+                        //Procesar la Imagen para obtener texto
+                        .addOnSuccessListener(new OnSuccessListener<Text>() {
+                            @RequiresApi(api = Build.VERSION_CODES.N)
+                            @Override
+                            public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
+                                String text = extractText(visionText);
+                                Log.d("SuperTexto", text);
+                                analizeString(text);
+                                image.close();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Task failed with an exception
+                                        // ...
+                                        Log.d("TEXTO_SALIDA", "lo intentamos pero no funciono :c");
+                                    }
+                        });
                 }
 
 

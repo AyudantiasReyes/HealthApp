@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class LabelCleaner {
 
-    // En vocales tomaremos la que sea debido a que los confunde mucho
+    // En vocales tomaremos la que sea debido a que las confunde mucho
     private static final String v = "([a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú])";
 
     private static final String FILTRO_TAM_PORCION = "[T|t]"+v+"m"+v+"[n|ñ]"+v+"d"+v+"l"+v+"[P|p]"+v+"rc"+v+v+"n[0-9]?[oz]?[0-9]+g?" ;
