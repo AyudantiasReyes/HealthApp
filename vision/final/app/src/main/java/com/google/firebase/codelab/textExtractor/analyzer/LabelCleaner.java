@@ -5,28 +5,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LabelCleaner {
-    private static final String FILTRO_TAM_PORCION = "[T|t][a-z]?am[a-zA-Z|ó|ñ]*([0-9]+)?(oz|az|o)?([0-9]+)g?" ;
 
-    private static final String FILTRO_PORCIONES = "[E|e][m|n][a-zA-Z]*[0-9]+" ;
+    // En vocales tomaremos la que sea debido a que los confunde mucho
+    private static final String v = "([a|e|i|o|u|á|é|í|ó|ú|A|E|I|O|U|Á|É|Í|Ó|Ú])";
 
-    private static final String FILTRO_CALORIAS = "[C|c]([alo]|[ALO])[a-zA-Z|Í]*[0-9]+|" +
-            "[C|c]([elo]|[ELO])[a-zA-Z|Í]*[0-9]+" ;
+    private static final String FILTRO_TAM_PORCION = "[T|t]"+v+"m"+v+"[n|ñ]"+v+"d"+v+"l"+v+"[P|p]"+v+"rc"+v+v+"n[0-9]?[oz]?[0-9]+g?" ;
 
-    private static final String FILTRO_GRASAS = "GrasaTotal[0-9][0-9]?g?" ;
+    private static final String FILTRO_PORCIONES = "[E|e]mp"+v+"q"+v+v+"[0-9]" ;
 
-    private static final String FILTRO_CARBS = "[C|c]arbohidratos[0-9][0-9]?g?|" +
-            "[C|c]arbohidratostotales[0-9][0-9]?g?|" +
-            "[C|c][a|e|o|i|u]rb[a-z]*[0-9][0-9]?g?|" +
-            "[C|c][a|e|o|i|u]rb[a-z]*[O|D][0-9]?g?" ;
+    private static final String FILTRO_CALORIAS = "[C|c]"+v+"[L|l]"+v+"[R|r]"+v+v+"[S|s][0-9]+" ;
 
-    private static final String FILTRO_AZUCAR = "[A|a][z][a-z|ú]*[0-9][0-9]?g?|" +
-            "Az[u|ú]cares[0-9][0-9]?g?|" +
-            "[A|a][z][a-z|ú]*[O|D][0-9]?g?|" +
-            "Az[u|ú]cares[O|D][0-9]?g?" ;
+    private static final String FILTRO_GRASAS = "[G|g]r"+v+"s"+v+"s?[T|t]"+v+"t"+v+"l[0-9]+g?" ;
 
-    private static final String FILTRO_SODIO = "[S|s]odio([0-9]+|O)m?g?" ;
+    private static final String FILTRO_CARBS = "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"s[0-9]+g?|" +
+                                               "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"st"+v+"t"+v+"l"+v+"s[0-9]+g?" ;
 
-    private static final String FILTRO_PROTEINA = "[P|p]rote[i|í]na[s]?[0-9][0-9]?g?" ;
+    private static final String FILTRO_AZUCAR = "[A|a][z|n]"+v+"c"+v+"r"+v+"s[0-9]+g?|" ;
+
+    private static final String FILTRO_SODIO = "[S|s]"+v+"d"+v+v+"[0-9]+m?g?" ;
+
+    private static final String FILTRO_PROTEINA = "[P|p]r"+v+"t"+v+v+"n"+v+"[0-9]+g?" ;
 
     private static final String[] FILTERS = {
             FILTRO_TAM_PORCION,

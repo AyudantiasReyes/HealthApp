@@ -22,19 +22,19 @@ porcionesEmpaque_statement : EMPAQUE NUMERO
 caloriasStatement : CALORIAS NUMERO
                   ;
 
-grasaTotal_statement : GRASA TOTAL NUMERO? G?
+grasaTotal_statement : GRASA TOTAL NUMERO G?
                      ;
 
-carbs_statement : CARBOHIDRATOS TOTAL? NUMERO? G?
+carbs_statement : CARBOHIDRATOS TOTAL? NUMERO G?
                 ;
 
-azucar_statement : AZUCARES NUMERO? G?
+azucar_statement : AZUCARES NUMERO G?
                  ;
 
-sodio_statement : SODIO NUMERO? G?
+sodio_statement : SODIO NUMERO G?
                 ;
 
-proteina_statement : PROTEINAS NUMERO? G?
+proteina_statement : PROTEINAS NUMERO G?
                 ;
 
 TAMANO : [T|t][a-z]?'am'[a-zA-Z|ó]*;
