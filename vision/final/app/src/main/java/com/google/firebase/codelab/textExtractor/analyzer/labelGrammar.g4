@@ -22,32 +22,32 @@ porcionesEmpaque_statement : EMPAQUE NUMERO
 caloriasStatement : CALORIAS NUMERO
                   ;
 
-grasaTotal_statement : GRASA TOTAL NUMERO G?
+grasaTotal_statement : GRASA TOTAL NUMERO? G?
                      ;
 
-carbs_statement : CARBOHIDRATOS TOTAL? NUMERO G?
+carbs_statement : CARBOHIDRATOS TOTAL? NUMERO? G?
                 ;
 
-azucar_statement : AZUCARES NUMERO G?
+azucar_statement : AZUCARES NUMERO? G?
                  ;
 
 sodio_statement : SODIO NUMERO? G?
                 ;
 
-proteina_statement : PROTEINAS NUMERO G?
+proteina_statement : PROTEINAS NUMERO? G?
                 ;
 
 TAMANO : [T|t][a-z]?'am'[a-zA-Z|ó]*;
 OZ : ('oz'|'az');
 EMPAQUE : [E|e][m|n][a-zA-Z]* ;
-CALORIAS : [C|c]('alo'|'ALO')[a-zA-Z|Í]* ;
+CALORIAS : [C|c]('alo'|'ALO'|'elo'|'ELO')[a-zA-Z|Í]* ;
 VALORES : [V|v][a-z]*;
 DIARIOS : [D|d]'i'([a-z])* ;
 NUMERO :  [0-9]+;
-TOTAL : [T|t]'ot'[a-zA-Z]*;
+TOTAL : [T|t]'ot'[a-z][a-z][a-z];
 GRASA : [G|g]'ra'[a-z][a-z];
 PROTEINAS : [P|p]'ro'[a-zA-Z|í]*;
-CARBOHIDRATOS : [C|c]'arb'[a-z]*;
+CARBOHIDRATOS : ([C|c]'arb'[a-z]*)|[C|c]'erb'[a-z]*;
 AZUCARES : ([A|a]'z'[u|ú]'cares')|([A|a][z][a-z|ú]*);
 G : ([m]?)'g' ;
 SODIO : [S|s]'od'[a-zA-Z]*;
