@@ -56,18 +56,15 @@ public class LabelDataListener extends labelGrammarBaseListener {
         System.out.println("Enter PortionSize");
 
         for(TerminalNode t : ctx.NUMERO()){
-            if(t.getText() != null){
-                if(ctx.G() == null){
-                    int grasas = Integer.parseInt(t.getText());
-                    tamanoPorcion = grasas > 10 ? grasas / 10 : grasas;
 
-                }
-                else{
-                    tamanoPorcion = Integer.parseInt(t.getText());
-                }
+            if(ctx.G() == null){
+                int grasas = Integer.parseInt(t.getText());
+                tamanoPorcion = grasas > 10 ? grasas / 10 : grasas;
+
             }
-            else
-                tamanoPorcion = -1;
+            else {
+                tamanoPorcion = Integer.parseInt(t.getText());
+            }
         }
 
     }
@@ -112,18 +109,17 @@ public class LabelDataListener extends labelGrammarBaseListener {
 
         System.out.println("Enter Grasas");
 
-        if(ctx.NUMERO() != null){
-            if(ctx.G() == null){
-                int grasas = Integer.parseInt(ctx.NUMERO().getText());
-                this.grasas = grasas > 10 ? grasas / 10 : grasas;
 
-            }
-            else{
-                grasas = Integer.parseInt(ctx.NUMERO().getText());
-            }
+        if(ctx.G() == null){
+            int grasas = Integer.parseInt(ctx.NUMERO().getText());
+            this.grasas = grasas > 10 ? grasas / 10 : grasas;
+
         }
-        else
-            grasas = 0;
+        else{
+            grasas = Integer.parseInt(ctx.NUMERO().getText());
+        }
+
+
     }
 
     @Override
@@ -132,18 +128,16 @@ public class LabelDataListener extends labelGrammarBaseListener {
 
         System.out.println("Enter Carbs");
 
-        if(ctx.NUMERO() != null){
-            if(ctx.G() == null){
-                int carbs = Integer.parseInt(ctx.NUMERO().getText());
-                this.carbs = carbs > 10 ? carbs / 10 : carbs;
 
-            }
-            else{
-                carbs = Integer.parseInt(ctx.NUMERO().getText());
-            }
+        if(ctx.G() == null){
+            int carbs = Integer.parseInt(ctx.NUMERO().getText());
+            this.carbs = carbs > 10 ? carbs / 10 : carbs;
+
         }
-        else
-            carbs = 0;
+        else{
+            carbs = Integer.parseInt(ctx.NUMERO().getText());
+        }
+
     }
 
     @Override
@@ -157,18 +151,15 @@ public class LabelDataListener extends labelGrammarBaseListener {
 
         System.out.println("Enter Sugar");
 
-        if(ctx.NUMERO() != null){
-            if(ctx.G() == null){
-                int azucar = Integer.parseInt(ctx.NUMERO().getText());
-                azucares = azucar > 10 ? azucar / 10 : azucar;
+        if(ctx.G() == null){
+            int azucar = Integer.parseInt(ctx.NUMERO().getText());
+            azucares = azucar > 10 ? azucar / 10 : azucar;
 
-            }
-            else{
-                azucares = Integer.parseInt(ctx.NUMERO().getText());
-            }
         }
-        else
-            azucares = 0;
+        else{
+            azucares = Integer.parseInt(ctx.NUMERO().getText());
+        }
+
 
     }
 
@@ -198,18 +189,16 @@ public class LabelDataListener extends labelGrammarBaseListener {
 
         System.out.println("Enter Protein");
 
-        if(ctx.NUMERO() != null){
-            if(ctx.G() == null){
-                int proteinas = Integer.parseInt(ctx.NUMERO().getText());
-                this.proteinas = proteinas > 10 ? proteinas / 10 : proteinas;
 
-            }
-            else{
-                proteinas = Integer.parseInt(ctx.NUMERO().getText());
-            }
+        if(ctx.G() == null){
+            int proteinas = Integer.parseInt(ctx.NUMERO().getText());
+            this.proteinas = proteinas > 10 ? proteinas / 10 : proteinas;
+
         }
-        else
-            proteinas = 0;
+        else{
+            proteinas = Integer.parseInt(ctx.NUMERO().getText());
+        }
+
     }
 
     @Override

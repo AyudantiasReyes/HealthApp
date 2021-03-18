@@ -39,6 +39,8 @@ public class CameraActivity extends AppCompatActivity {
     private PreviewView previewView;
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     private TextView textView;
+    private LabelAnalyzer labelAnalyzer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class CameraActivity extends AppCompatActivity {
         previewView = findViewById(R.id.previewView);
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
         textView = findViewById(R.id.orientation);
+        labelAnalyzer = new LabelAnalyzer();
         cameraProviderFuture.addListener(new Runnable() {
             @Override
             public void run() {
@@ -154,7 +157,7 @@ public class CameraActivity extends AppCompatActivity {
         sortElements(elements);
 
         for (TextElements element : elements) {
-            extractedText.append(element.getText().replaceAll("([:|-])|([0-9]+%)", ""));
+            extractedText.append(element.getText());
         }
 
         return extractedText.toString();
@@ -205,8 +208,10 @@ public class CameraActivity extends AppCompatActivity {
     }
 
     public void analizeString(String labelText){
+        labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+           // Log.d("END", labelAnalyzer.toString());
 
-        int[] nutrientes = LabelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+        //int[] nutrientes = labelAnalyzer.getAmountNutrients();
         //Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
         // dataEntryActivity.putExtra("nutrientes", nutrientes);
         // startActivity(dataEntryActivity);

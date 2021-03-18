@@ -20,7 +20,7 @@ public class LabelCleaner {
     private static final String FILTRO_CARBS = "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"s[0-9]+g?|" +
                                                "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"st"+v+"t"+v+"l"+v+"s[0-9]+g?" ;
 
-    private static final String FILTRO_AZUCAR = "[A|a][z|n]"+v+"c"+v+"r"+v+"s[0-9]+g?|" ;
+    private static final String FILTRO_AZUCAR = "[A|a][z|n]"+v+"c"+v+"r"+v+"s[0-9]+g?" ;
 
     private static final String FILTRO_SODIO = "[S|s]"+v+"d"+v+v+"[0-9]+m?g?" ;
 
@@ -41,12 +41,15 @@ public class LabelCleaner {
     public static String cleanLabelText(String labelText){
         StringBuilder filteredString = new StringBuilder();
 
+        //limpiar cadena
+        labelText = labelText.replaceAll("([:|-])|([0-9]+%)", "");
+
         for(String expression : FILTERS){
             Pattern pattern = Pattern.compile(expression);
             Matcher m = pattern.matcher(labelText);
 
             if(m.find()){
-               filteredString.append(m.group()).append(";\n\r");
+               filteredString.append(m.group()).append("\n\r");
             }
         }
         Log.d("FILTRADA", filteredString.toString() + "HERE");

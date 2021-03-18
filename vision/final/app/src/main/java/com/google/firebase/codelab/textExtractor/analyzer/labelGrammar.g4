@@ -13,8 +13,8 @@ statements : grasaTotal_statement
            | caloriasStatement
            ;
 
-tamanoPorcion_statement : TAMANO NUMERO? OZ? NUMERO G?
-                        ;
+tamanoPorcion_statement : TAMANODEPORCION NUMERO? OZ? NUMERO G?
+;
 
 porcionesEmpaque_statement : EMPAQUE NUMERO
                            ;
@@ -36,21 +36,35 @@ sodio_statement : SODIO NUMERO G?
 
 proteina_statement : PROTEINAS NUMERO G?
                 ;
-
-TAMANO : [T|t][a-z]?'am'[a-zA-Z|ó]*;
-OZ : ('oz'|'az');
-EMPAQUE : [E|e][m|n][a-zA-Z]* ;
-CALORIAS : [C|c]('alo'|'ALO'|'elo'|'ELO')[a-zA-Z|Í]* ;
-VALORES : [V|v][a-z]*;
-DIARIOS : [D|d]'i'([a-z])* ;
 NUMERO :  [0-9]+;
-TOTAL : [T|t]'ot'[a-z][a-z][a-z];
-GRASA : [G|g]'ra'[a-z][a-z];
-PROTEINAS : [P|p]'ro'[a-zA-Z|í]*;
-CARBOHIDRATOS : ([C|c]'arb'[a-z]*)|[C|c]'erb'[a-z]*;
-AZUCARES : ([A|a]'z'[u|ú]'cares')|([A|a][z][a-z|ú]*);
+ACCENT : [á|é] | [í|ó] | 'ú' | [Á|É] | [Í|Ó] | 'Ú' ;
+NOACCENT : [a|e] | [i|o] | 'u' | [A|E] | [I|O] | 'U' ;
+VOWEL :  ACCENT | NOACCENT ;
+
+TAMANODEPORCION : [T|t]VOWEL'm'VOWEL[n|ñ]VOWEL'd'VOWEL'l'VOWEL[P|p]VOWEL'rc'VOWEL VOWEL 'n' ;
+OZ : [oz] ;
+
+EMPAQUE : [E|e]'mp' VOWEL 'q' VOWEL VOWEL ;
+
+CALORIAS : [C|c] VOWEL [L|l] VOWEL [R|r] VOWEL VOWEL [S|s] ;
+
+
+GRASA : [G|g] 'r' VOWEL 's' VOWEL 's'? ;
+TOTAL : [T|t] VOWEL 't' VOWEL 'l' VOWEL?'s'? ;
+
+
+CARBOHIDRATOS : [C|c] VOWEL 'rb' VOWEL 'h' VOWEL 'dr' VOWEL 't' VOWEL 's' ;
+
+
+AZUCARES : [A|a][z|n] VOWEL 'c' VOWEL 'r' VOWEL 's' ;
+
+
+SODIO : [S|s] VOWEL 'd' VOWEL VOWEL;
+
+
+PROTEINAS : [P|p]'r' VOWEL 't' VOWEL VOWEL 'n' VOWEL ;
+
 G : ([m]?)'g' ;
-SODIO : [S|s]'od'[a-zA-Z]*;
 WS : (' ' | '\r' | '\n' | '\t' | ':' | ';' | '%' | '-') -> skip;
 ANY : .+? -> skip;
 

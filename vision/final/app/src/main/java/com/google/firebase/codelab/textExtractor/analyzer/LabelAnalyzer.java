@@ -9,6 +9,9 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
+
+import java.util.Arrays;
+
 import labelParser.labelGrammarLexer;
 import labelParser.labelGrammarParser;
 
@@ -24,9 +27,17 @@ public class LabelAnalyzer {
     public final static int PROTEINAS = 7;
     private final static int SIZE = 8;
 
+    private int[] amountNutrients;
+    private boolean[] blockNutrients;
 
-    public static int[] analyze(String textFiltered){
-        int [] cantidadNutrientes = new int[SIZE];
+    public LabelAnalyzer() {
+        amountNutrients = new int[SIZE];
+        blockNutrients = new boolean[SIZE];
+
+        resetFilters();
+    }
+
+    public boolean analyze(String textFiltered){
 
         CharStream input = CharStreams.fromString(textFiltered); //crear charstream
         labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
@@ -39,26 +50,41 @@ public class LabelAnalyzer {
         ParseTreeWalker walker = new ParseTreeWalker(); //crear un caminante
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
+
         //obtener los nutrientes
-        cantidadNutrientes[TAM_PORCION] = listener.getTamanoPorcion();
-        cantidadNutrientes[CALORIAS] = listener.getCalorias();
-        cantidadNutrientes[PORCIONES] = listener.getPorciones();
-        cantidadNutrientes[GRASAS] = listener.getGrasas();
-        cantidadNutrientes[CARBOHIDRATOS] = listener.getCarbs();
-        cantidadNutrientes[PROTEINAS] = listener.getProteinas();
-        cantidadNutrientes[AZUCARES] = listener.getAzucares();
-        cantidadNutrientes[SODIO] = listener.getSodio();
-        cantidadNutrientes[PROTEINAS] = listener.getProteinas();
+        amountNutrients[TAM_PORCION] = listener.getTamanoPorcion();
+        amountNutrients[CALORIAS] = listener.getCalorias();
+        amountNutrients[PORCIONES] = listener.getPorciones();
+        amountNutrients[GRASAS] = listener.getGrasas();
+        amountNutrients[CARBOHIDRATOS] = listener.getCarbs();
+        amountNutrients[PROTEINAS] = listener.getProteinas();
+        amountNutrients[AZUCARES] = listener.getAzucares();
+        amountNutrients[SODIO] = listener.getSodio();
+        amountNutrients[PROTEINAS] = listener.getProteinas();
 
-        Log.d("NUTRIENTES_TAM", "TAM = " + cantidadNutrientes[TAM_PORCION]);
-        Log.d("NUTRIENTES_POR", "PORCIONES = " + cantidadNutrientes[PORCIONES]);
-        Log.d("NUTRIENTES_CAL", "CALORIAS = " + cantidadNutrientes[CALORIAS]);
-        Log.d("NUTRIENTES_GRA", "GRASAS = " + cantidadNutrientes[GRASAS]);
-        Log.d("NUTRIENTES_CARB", "CARBOHIDRATOS = " + cantidadNutrientes[CARBOHIDRATOS]);
-        Log.d("NUTRIENTES_PRO", "PROTEINAS = " + cantidadNutrientes[PROTEINAS]);
-        Log.d("NUTRIENTES_AZU", "AZUCARES = " + cantidadNutrientes[AZUCARES]);
-        Log.d("NUTRIENTES_SOD", "SODIO = " + cantidadNutrientes[SODIO]);
 
-        return cantidadNutrientes;
+
+        Log.d("NUTRIENTES_TAM", "TAM = " + amountNutrients[TAM_PORCION]);
+        Log.d("NUTRIENTES_POR", "PORCIONES = " + amountNutrients[PORCIONES]);
+        Log.d("NUTRIENTES_CAL", "CALORIAS = " + amountNutrients[CALORIAS]);
+        Log.d("NUTRIENTES_GRA", "GRASAS = " + amountNutrients[GRASAS]);
+        Log.d("NUTRIENTES_CARB", "CARBOHIDRATOS = " + amountNutrients[CARBOHIDRATOS]);
+        Log.d("NUTRIENTES_PRO", "PROTEINAS = " + amountNutrients[PROTEINAS]);
+        Log.d("NUTRIENTES_AZU", "AZUCARES = " + amountNutrients[AZUCARES]);
+        Log.d("NUTRIENTES_SOD", "SODIO = " + amountNutrients[SODIO]);
+
+
+        return false;
+
+    }
+
+    public int[] getAmountNutrients() {
+        return amountNutrients;
+    }
+
+    public void resetFilters(){
+        for(int i = 0; i < SIZE; i++){
+            blockNutrients[i] = false;
+        }
     }
 }
