@@ -43,6 +43,15 @@ public class LabelCleaner {
 
         //limpiar cadena
         labelText = labelText.replaceAll("([:|-])|([0-9]+%)", "");
+        labelText = labelText.replaceAll("[á]", "a");
+        labelText = labelText.replaceAll("[é]", "e");
+        labelText = labelText.replaceAll("[í]", "i");
+        labelText = labelText.replaceAll("[ó]", "o");
+        labelText = labelText.replaceAll("[ú]", "u");
+        labelText = labelText.replaceAll("[Í]", "I");
+        labelText = labelText.replaceAll("[ñ]", "n");
+
+
 
         for(String expression : FILTERS){
             Pattern pattern = Pattern.compile(expression);

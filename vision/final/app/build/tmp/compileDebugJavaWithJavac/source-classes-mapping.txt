@@ -22,8 +22,8 @@ com/google/firebase/codelab/labelScannerUABC/databinding/ActivityProductListBind
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding
 labelParser/labelGrammarBaseListener.java
  labelParser.labelGrammarBaseListener
-com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
- com.google.firebase.codelab.labelScannerUABC.TextGraphic
+com/google/firebase/codelab/textExtractor/analyzer/LabelAnalyzer.java
+ com.google.firebase.codelab.textExtractor.analyzer.LabelAnalyzer
 labelParser/labelGrammarParser.java
  labelParser.labelGrammarParser
  labelParser.labelGrammarParser$Azucar_statementContext
@@ -85,8 +85,8 @@ com/google/firebase/codelab/textExtractor/listeners/LabelDataListener.java
  com.google.firebase.codelab.textExtractor.listeners.LabelDataListener
 com/google/firebase/codelab/labelScannerUABC/CloudTextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.CloudTextGraphic
-com/google/firebase/codelab/textExtractor/analyzer/LabelAnalyzer.java
- com.google.firebase.codelab.textExtractor.analyzer.LabelAnalyzer
+com/google/firebase/codelab/textExtractor/analyzer/LabelCleaner.java
+ com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner
 com/google/firebase/codelab/labelScannerUABC/databinding/ProgressLayoutBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ProgressLayoutBinding
 com/google/firebase/codelab/labelScannerUABC/ProductListActivity.java
@@ -121,5 +121,5 @@ com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$1
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$2
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$3
-com/google/firebase/codelab/textExtractor/analyzer/LabelCleaner.java
- com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner
+com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
+ com.google.firebase.codelab.labelScannerUABC.TextGraphic

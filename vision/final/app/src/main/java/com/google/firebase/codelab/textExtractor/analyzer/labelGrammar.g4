@@ -13,8 +13,7 @@ statements : grasaTotal_statement
            | caloriasStatement
            ;
 
-tamanoPorcion_statement : TAMANODEPORCION NUMERO? OZ? NUMERO G?
-;
+tamanoPorcion_statement : TAMANODEPORCION NUMERO? OZ? NUMERO? G? ;
 
 porcionesEmpaque_statement : EMPAQUE NUMERO
                            ;
@@ -36,12 +35,14 @@ sodio_statement : SODIO NUMERO G?
 
 proteina_statement : PROTEINAS NUMERO G?
                 ;
-NUMERO :  [0-9]+;
-ACCENT : [á|é] | [í|ó] | 'ú' | [Á|É] | [Í|Ó] | 'Ú' ;
-NOACCENT : [a|e] | [i|o] | 'u' | [A|E] | [I|O] | 'U' ;
-VOWEL :  ACCENT | NOACCENT ;
 
-TAMANODEPORCION : [T|t]VOWEL'm'VOWEL[n|ñ]VOWEL'd'VOWEL'l'VOWEL[P|p]VOWEL'rc'VOWEL VOWEL 'n' ;
+NUMERO :  [0-9]+;
+
+
+VOWEL :  [a|e] | [i|o] | 'u' | [A|E] | [I|O] | 'U' ;
+
+TAMANODEPORCION : [T|t] VOWEL 'm' VOWEL [n|ñ] VOWEL 'd' VOWEL 'l' VOWEL [P|p] VOWEL 'rc' VOWEL VOWEL 'n' ;
+
 OZ : [oz] ;
 
 EMPAQUE : [E|e]'mp' VOWEL 'q' VOWEL VOWEL ;
@@ -67,9 +68,3 @@ PROTEINAS : [P|p]'r' VOWEL 't' VOWEL VOWEL 'n' VOWEL ;
 G : ([m]?)'g' ;
 WS : (' ' | '\r' | '\n' | '\t' | ':' | ';' | '%' | '-') -> skip;
 ANY : .+? -> skip;
-
-
-
-//terminales
-
-
