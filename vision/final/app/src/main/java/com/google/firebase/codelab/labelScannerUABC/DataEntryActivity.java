@@ -79,8 +79,15 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
 
     //recibir los nutrientes capturados
     public void setDataFromCamaraCapture(int [] nutrientes){
-        binding.lipidosEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS]));
+        binding.porcionEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.TAM_PORCION]));
+        binding.numeroPorcionesEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.PORCIONES]));
+        binding.caloriasEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.CALORIAS]));
+        binding.azucarEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.AZUCARES]));
         binding.carbsEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.CARBOHIDRATOS]));
+        binding.proteinaEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.PROTEINAS]));
+        binding.lipidosEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS]));
+        binding.sodioEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.SODIO]));
+
 
         Log.d("SETDATA", "setDataFromCamaraCapture: ");
     }

@@ -158,6 +158,15 @@ public class labelGrammarParser extends Parser {
 	}
 
 	public static class StatementsContext extends ParserRuleContext {
+		public TamanoPorcion_statementContext tamanoPorcion_statement() {
+			return getRuleContext(TamanoPorcion_statementContext.class,0);
+		}
+		public PorcionesEmpaque_statementContext porcionesEmpaque_statement() {
+			return getRuleContext(PorcionesEmpaque_statementContext.class,0);
+		}
+		public CaloriasStatementContext caloriasStatement() {
+			return getRuleContext(CaloriasStatementContext.class,0);
+		}
 		public GrasaTotal_statementContext grasaTotal_statement() {
 			return getRuleContext(GrasaTotal_statementContext.class,0);
 		}
@@ -172,15 +181,6 @@ public class labelGrammarParser extends Parser {
 		}
 		public Proteina_statementContext proteina_statement() {
 			return getRuleContext(Proteina_statementContext.class,0);
-		}
-		public TamanoPorcion_statementContext tamanoPorcion_statement() {
-			return getRuleContext(TamanoPorcion_statementContext.class,0);
-		}
-		public PorcionesEmpaque_statementContext porcionesEmpaque_statement() {
-			return getRuleContext(PorcionesEmpaque_statementContext.class,0);
-		}
-		public CaloriasStatementContext caloriasStatement() {
-			return getRuleContext(CaloriasStatementContext.class,0);
 		}
 		public StatementsContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -208,60 +208,60 @@ public class labelGrammarParser extends Parser {
 			setState(34);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case GRASA:
+			case TAMANODEPORCION:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(26);
-				grasaTotal_statement();
-				}
-				break;
-			case CARBOHIDRATOS:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(27);
-				carbs_statement();
-				}
-				break;
-			case AZUCARES:
-				enterOuterAlt(_localctx, 3);
-				{
-				setState(28);
-				azucar_statement();
-				}
-				break;
-			case SODIO:
-				enterOuterAlt(_localctx, 4);
-				{
-				setState(29);
-				sodio_statement();
-				}
-				break;
-			case PROTEINAS:
-				enterOuterAlt(_localctx, 5);
-				{
-				setState(30);
-				proteina_statement();
-				}
-				break;
-			case TAMANODEPORCION:
-				enterOuterAlt(_localctx, 6);
-				{
-				setState(31);
 				tamanoPorcion_statement();
 				}
 				break;
 			case EMPAQUE:
-				enterOuterAlt(_localctx, 7);
+				enterOuterAlt(_localctx, 2);
 				{
-				setState(32);
+				setState(27);
 				porcionesEmpaque_statement();
 				}
 				break;
 			case CALORIAS:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(28);
+				caloriasStatement();
+				}
+				break;
+			case GRASA:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(29);
+				grasaTotal_statement();
+				}
+				break;
+			case CARBOHIDRATOS:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(30);
+				carbs_statement();
+				}
+				break;
+			case AZUCARES:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(31);
+				azucar_statement();
+				}
+				break;
+			case SODIO:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(32);
+				sodio_statement();
+				}
+				break;
+			case PROTEINAS:
 				enterOuterAlt(_localctx, 8);
 				{
 				setState(33);
-				caloriasStatement();
+				proteina_statement();
 				}
 				break;
 			default:
@@ -767,9 +767,9 @@ public class labelGrammarParser extends Parser {
 		"\13\3\13\2\2\f\2\4\6\b\n\f\16\20\22\24\2\2\2^\2\31\3\2\2\2\4$\3\2\2\2"+
 		"\6&\3\2\2\2\b\63\3\2\2\2\n\66\3\2\2\2\f9\3\2\2\2\16?\3\2\2\2\20G\3\2\2"+
 		"\2\22L\3\2\2\2\24Q\3\2\2\2\26\30\5\4\3\2\27\26\3\2\2\2\30\33\3\2\2\2\31"+
-		"\27\3\2\2\2\31\32\3\2\2\2\32\3\3\2\2\2\33\31\3\2\2\2\34%\5\f\7\2\35%\5"+
-		"\16\b\2\36%\5\20\t\2\37%\5\22\n\2 %\5\24\13\2!%\5\6\4\2\"%\5\b\5\2#%\5"+
-		"\n\6\2$\34\3\2\2\2$\35\3\2\2\2$\36\3\2\2\2$\37\3\2\2\2$ \3\2\2\2$!\3\2"+
+		"\27\3\2\2\2\31\32\3\2\2\2\32\3\3\2\2\2\33\31\3\2\2\2\34%\5\6\4\2\35%\5"+
+		"\b\5\2\36%\5\n\6\2\37%\5\f\7\2 %\5\16\b\2!%\5\20\t\2\"%\5\22\n\2#%\5\24"+
+		"\13\2$\34\3\2\2\2$\35\3\2\2\2$\36\3\2\2\2$\37\3\2\2\2$ \3\2\2\2$!\3\2"+
 		"\2\2$\"\3\2\2\2$#\3\2\2\2%\5\3\2\2\2&(\7\5\2\2\')\7\3\2\2(\'\3\2\2\2("+
 		")\3\2\2\2)+\3\2\2\2*,\7\6\2\2+*\3\2\2\2+,\3\2\2\2,.\3\2\2\2-/\7\3\2\2"+
 		".-\3\2\2\2./\3\2\2\2/\61\3\2\2\2\60\62\7\17\2\2\61\60\3\2\2\2\61\62\3"+

@@ -93,15 +93,12 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.textView15.setText(user.getName());
     }
 
-    //**************************************************//
     public void openCamera(View view) {
         //Abrimos la camara
         Intent intent = new Intent(this, CameraActivity.class);
         startActivity(intent);
     }
 
-
-    //***********************************************///
 
     @Override
     public void onClick(View view) {
@@ -202,15 +199,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
     }
-
-
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
 
 
     private void parseText(String s) {

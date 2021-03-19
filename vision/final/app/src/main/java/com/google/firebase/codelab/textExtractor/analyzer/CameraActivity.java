@@ -11,6 +11,7 @@ import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.media.Image;
@@ -25,6 +26,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
 import com.google.firebase.codelab.textExtractor.groups.TextElements;
 import com.google.mlkit.vision.common.InputImage;
@@ -33,6 +35,7 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class CameraActivity extends AppCompatActivity {
@@ -115,7 +118,7 @@ public class CameraActivity extends AppCompatActivity {
         OrientationEventListener orientationEventListener = new OrientationEventListener(this) {
             @Override
             public void onOrientationChanged(int orientation) {
-                textView.setText(Integer.toString(orientation));
+                textView.setText(String.format(Locale.getDefault(),"%d", orientation));
             }
         };
         orientationEventListener.enable();
@@ -218,14 +221,10 @@ public class CameraActivity extends AppCompatActivity {
 
         if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
             //labelAnalyzer.resetFilters();
+            Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+            dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
+            startActivity(dataEntryActivity);
+            labelAnalyzer.resetFilters();
         }
-           // Log.d("END", labelAnalyzer.toString());
-
-        //int[] nutrientes = labelAnalyzer.getAmountNutrients();
-        //Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
-        // dataEntryActivity.putExtra("nutrientes", nutrientes);
-        // startActivity(dataEntryActivity);
-
-
     }
 }

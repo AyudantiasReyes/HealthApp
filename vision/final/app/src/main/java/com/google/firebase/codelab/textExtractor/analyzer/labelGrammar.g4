@@ -52,7 +52,7 @@ GRASA : [G|g] 'r' VOWEL 's' VOWEL 's'? ;
 
 TOTAL : [T|t] VOWEL 't' VOWEL 'l' VOWEL?'s'? ;
 
-CARBOHIDRATOS : [C|c] VOWEL 'rb' VOWEL 'h' VOWEL 'dr' VOWEL 't' VOWEL 's' ;
+CARBOHIDRATOS : [C|c] VOWEL 'rb' (VOWEL 'h' VOWEL 'dr' VOWEL 't' VOWEL 's')? ;
 
 AZUCARES : [A|a][z|n] VOWEL 'c' VOWEL 'r' VOWEL 's' ;
 

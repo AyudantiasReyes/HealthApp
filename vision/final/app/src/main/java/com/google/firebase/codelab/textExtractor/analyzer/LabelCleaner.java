@@ -11,14 +11,15 @@ public class LabelCleaner {
 
     private static final String FILTRO_TAM_PORCION = "[T|t]"+v+"m"+v+"[n|ñ]"+v+"d"+v+"l"+v+"[P|p]"+v+"rc"+v+v+"n[0-9]?[oz]?[0-9]+g?" ;
 
-    private static final String FILTRO_PORCIONES = "[E|e]mp"+v+"q"+v+v+"[0-9]" ;
+    private static final String FILTRO_PORCIONES = "[E|e]mp"+v+"q"+v+v+"[0-9]|" ;
 
     private static final String FILTRO_CALORIAS = "[C|c]"+v+"[L|l]"+v+"[R|r]"+v+v+"[S|s][0-9]+" ;
 
     private static final String FILTRO_GRASAS = "[G|g]r"+v+"s"+v+"s?[T|t]"+v+"t"+v+"l[0-9]+g?" ;
 
     private static final String FILTRO_CARBS = "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"s[0-9]+g?|" +
-                                               "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"st"+v+"t"+v+"l"+v+"s[0-9]+g?" ;
+                                               "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"st"+v+"t"+v+"l"+v+"s[0-9]+g?|"+
+                                                "[C|c]"+v+"rb[0-9]+g?";
 
     private static final String FILTRO_AZUCAR = "[A|a][z|n]"+v+"c"+v+"r"+v+"s[0-9]+g?" ;
 
@@ -42,7 +43,7 @@ public class LabelCleaner {
         StringBuilder filteredString = new StringBuilder();
 
         //limpiar cadena
-        labelText = labelText.replaceAll("([:|-])|([0-9]+%)", "");
+        labelText = labelText.replaceAll("([:|-])|([0-9]+%)|(\\.)|(\\()|(\\))|(/)", "");
         labelText = labelText.replaceAll("[á]", "a");
         labelText = labelText.replaceAll("[é]", "e");
         labelText = labelText.replaceAll("[í]", "i");
