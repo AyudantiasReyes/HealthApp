@@ -40,7 +40,7 @@ public class LabelAnalyzer implements Serializable {
 
     public boolean analyze(String textFiltered){
 
-        boolean exitAnalyze = true;
+        boolean exitAnalyze = false;
 
         CharStream input = CharStreams.fromString(textFiltered); //crear charstream
         labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
@@ -71,9 +71,9 @@ public class LabelAnalyzer implements Serializable {
 
     }
 
-    public void labelChecker(int labelItem, int listenerData, String label){
+    private void labelChecker(int labelItem, int listenerData, String label){
         if(!blockNutrients[labelItem]){
-            if(listenerData >= 0){
+            if(listenerData != -1){
                 blockNutrients[labelItem] = true;
                 amountNutrients[labelItem] = listenerData;
                 Log.d("final_label_data", label  + amountNutrients[labelItem]);

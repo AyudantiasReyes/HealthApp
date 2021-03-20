@@ -30,8 +30,8 @@ labelParser/labelGrammarParser.java
  labelParser.labelGrammarParser$Sodio_statementContext
  labelParser.labelGrammarParser$StatementsContext
  labelParser.labelGrammarParser$TamanoPorcion_statementContext
-com/google/firebase/codelab/textExtractor/analyzer/LabelCleaner.java
- com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner
+com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
+ com.google.firebase.codelab.labelScannerUABC.TextGraphic
 com/google/firebase/codelab/labelScannerUABC/GraphicOverlay.java
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay$Graphic
@@ -72,8 +72,13 @@ com/google/firebase/codelab/textExtractor/listeners/LabelDataListener.java
  com.google.firebase.codelab.textExtractor.listeners.LabelDataListener
 com/google/firebase/codelab/labelScannerUABC/CloudTextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.CloudTextGraphic
-com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
- com.google.firebase.codelab.labelScannerUABC.TextGraphic
+com/google/firebase/codelab/UI/RegisterActivity.java
+ com.google.firebase.codelab.UI.RegisterActivity
+ com.google.firebase.codelab.UI.RegisterActivity$1
+ com.google.firebase.codelab.UI.RegisterActivity$1$1
+ com.google.firebase.codelab.UI.RegisterActivity$2
+ com.google.firebase.codelab.UI.RegisterActivity$3
+ com.google.firebase.codelab.UI.RegisterActivity$4
 com/google/firebase/codelab/labelScannerUABC/databinding/ProgressLayoutBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ProgressLayoutBinding
 com/google/firebase/codelab/labelScannerUABC/ProductListActivity.java
@@ -88,13 +93,14 @@ com/google/firebase/codelab/labelScannerUABC/databinding/ActivityCameraBinding.j
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityCameraBinding
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityDataEntryBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding
-com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$1
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$1
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$2
- com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$3
+com/google/firebase/codelab/UI/LoginActivity.java
+ com.google.firebase.codelab.UI.LoginActivity
+ com.google.firebase.codelab.UI.LoginActivity$1
+ com.google.firebase.codelab.UI.LoginActivity$1$1
+ com.google.firebase.codelab.UI.LoginActivity$2
+ com.google.firebase.codelab.UI.LoginActivity$3
+ com.google.firebase.codelab.UI.LoginActivity$4
+ com.google.firebase.codelab.UI.LoginActivity$5
 labelParser/labelGrammarBaseVisitor.java
  labelParser.labelGrammarBaseVisitor
 com/google/firebase/codelab/mlkitUABC/NutrientsActivity.java
@@ -104,22 +110,16 @@ com/google/firebase/codelab/mlkitUABC/NutrientsActivity.java
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$3
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$4
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$5
-com/google/firebase/codelab/UI/RegisterActivity.java
- com.google.firebase.codelab.UI.RegisterActivity
- com.google.firebase.codelab.UI.RegisterActivity$1
- com.google.firebase.codelab.UI.RegisterActivity$1$1
- com.google.firebase.codelab.UI.RegisterActivity$2
- com.google.firebase.codelab.UI.RegisterActivity$3
- com.google.firebase.codelab.UI.RegisterActivity$4
 com/google/firebase/codelab/labelScannerUABC/MainMenuActivity.java
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$1
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$2
-com/google/firebase/codelab/UI/LoginActivity.java
- com.google.firebase.codelab.UI.LoginActivity
- com.google.firebase.codelab.UI.LoginActivity$1
- com.google.firebase.codelab.UI.LoginActivity$1$1
- com.google.firebase.codelab.UI.LoginActivity$2
- com.google.firebase.codelab.UI.LoginActivity$3
- com.google.firebase.codelab.UI.LoginActivity$4
- com.google.firebase.codelab.UI.LoginActivity$5
+com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$1
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$1
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$2
+ com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$3
+com/google/firebase/codelab/textExtractor/analyzer/LabelCleaner.java
+ com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner

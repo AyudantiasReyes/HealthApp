@@ -1,24 +1,18 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.hardware.Camera;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraCharacteristics;
-import android.hardware.camera2.CameraManager;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.util.SparseIntArray;
-import android.view.Surface;
 import android.view.View;
 import android.widget.Toast;
 
@@ -58,10 +52,11 @@ import java.util.regex.Pattern;
 
 
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
-    private Bitmap img;
     private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     private SharedPreferences preferences;
+
+    private LabelAnalyzer labelAnalyzer;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -70,7 +65,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
-
+        labelAnalyzer = new LabelAnalyzer();
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -134,190 +129,134 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if ((requestCode == REQUEST_IMAGE_CAPTURE) && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        Log.d("EXITO", "onActivityResult: ENTER");
+        if ((requestCode == PICK_IMAGE_REQUEST) && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
 
             try {
-                img = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                showToast("Analizando");
-                runCloudTextRecognition();
-                //runTextRecognition();
+                InputImage image = InputImage.fromFilePath(this, filePath);
+                TextRecognizer recognizer = TextRecognition.getClient(); //Obtener reconocedor de texto
+
+
+                Log.d("EXITO", "onActivityResult: IMAGE");
+
+                Task<Text> result =
+                        recognizer.process(image)
+                                .addOnSuccessListener(new OnSuccessListener<Text>() {
+                                    @RequiresApi(api = Build.VERSION_CODES.N)
+                                    @Override
+                                    public void onSuccess(Text visionText) {
+                                        String text = extractText(visionText);
+                                        Log.d("SuperTexto", text);
+                                        analizeString(text);
+                                    }
+                                })
+                                .addOnFailureListener(
+                                        new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Task failed with an exception
+                                                // ...
+                                            }
+                                        });
+
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
 
-            if(img!= null) {
-                Log.i("IMAGE: ","Changing image!");
-                //userIcon.setImageBitmap(img);
-            }
+
         }
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public String extractText(Text result) {
+
+        ArrayList<TextElements> elements = new ArrayList<>();
+        StringBuilder extractedText = new StringBuilder();
+
+        String resultText = result.getText();
+        for (Text.TextBlock block : result.getTextBlocks()) {
+            String blockText = block.getText();
+            Point[] blockCornerPoints = block.getCornerPoints();
+            Rect blockFrame = block.getBoundingBox();
+            for (Text.Line line : block.getLines()) {
+                String lineText = line.getText();
+                Point[] lineCornerPoints = line.getCornerPoints();
+                Rect lineFrame = line.getBoundingBox();
+                for (Text.Element element : line.getElements()) {
+                    String elementText = element.getText();
+                    Point[] elementCornerPoints = element.getCornerPoints();
+                    Rect elementFrame = element.getBoundingBox();
 
 
-    private void runCloudTextRecognition() {
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(img);
-        FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance()
-                .getCloudTextRecognizer();
-        FirebaseVisionCloudTextRecognizerOptions options = new FirebaseVisionCloudTextRecognizerOptions.Builder()
-                .setLanguageHints(Arrays.asList("es"))
-                .build();
-        //mTextButton.setEnabled(false);
-        String text = "";
-        Task<FirebaseVisionText> result = detector.processImage(image)
-                .addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-                    @Override
-                    public void onSuccess(FirebaseVisionText result) {
-                        String text = "";
-                        // Task completed successfully
-                        // [START_EXCLUDE]
-                        // [START get_text_cloud]
-                        for (FirebaseVisionText.TextBlock block : result.getTextBlocks()) {
-                            Rect boundingBox = block.getBoundingBox();
-                            Point[] cornerPoints = block.getCornerPoints();
-                            text = text + " " + block.getText();
-                            //System.out.println(text);
-                            for (FirebaseVisionText.Line line: block.getLines()) {
-                                // ...
-                                for (FirebaseVisionText.Element element: line.getElements()) {
+                    elements.add(new TextElements(elementText, elementFrame));
+                }
+            }
+        }
 
-                                }
-                            }
-                        }
-                        parseText(text);
-                        // [END get_text_cloud]
-                        // [END_EXCLUDE]
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Task failed with an exception
-                        // ...
-                    }
-                });
+        sortElements(elements);
+
+        for (TextElements element : elements) {
+            extractedText.append(element.getText());
+        }
+
+        return extractedText.toString();
+
+
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void sortElements(ArrayList<TextElements> elements) {
+        int i = 0;
+        TextElements aux;
+        ArrayList<TextElements> group = new ArrayList<>(); //arraylist para guardar pequeños renglones
+        ArrayList<TextElements> sortedGroups = new ArrayList<>();//arraylist para guardar los grupos ordenados
 
-    private void parseText(String s) {
-        // Expresiones regulares que analizan el texto obtenido de FirebaseVision y busca cada una de las frases indicadas, por lo general
-        // nutriente -> numero -> unidad.
-        FoodItem foodItem = new FoodItem();
-        System.out.println(s);
-        String regex_cal = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)(kcal|cal|kJ|kj|kl|kilojoule)?";
-        Pattern pattern = Pattern.compile(regex_cal);
-        Matcher matcher = pattern.matcher(s);
+        elements.sort((o1, o2) -> Integer.compare(o1.getFrame().top, o2.getFrame().top)); //ordenamiento por Y a los elementos
+        /*
+            Funcion lambda, o1 y o2 son objetos tipo TextElement y se agrega la condicion de que quieres comparar
+            En este caso se esta tomando el top del rect de ambos objetos para que el arraylist los ordene usando QuickSort
+        */
 
+        while(i < elements.size() - 1){
+            aux = elements.get(i);
+            group.add(aux);
 
-        while (matcher.find()) {
-            if(matcher.group(6)!=null){
-                if(matcher.group(6).toLowerCase().equals("kj")||matcher.group(6).toLowerCase().equals("kilojoule")||matcher.group(6).toLowerCase().equals("kl"))
-                    foodItem.setCalories(Float.parseFloat(matcher.group(4))*0.239006f);
+            try{
+                int resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
+                if(resta <= 5){
+                    do{
+                        group.add(elements.get(i + 1));
+                        i++;
+                        resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
+                    }while (resta <= 5);
+                    i++;
+
+                    group.sort((o1, o2) -> Integer.compare(o1.getFrame().left, o2.getFrame().left)); //ordenamiento por X a los elementos
+                    sortedGroups.addAll(group);
+                    group.clear();
+                }
                 else
-                    foodItem.setCalories(Float.parseFloat(matcher.group(4)));
-                System.out.println(matcher.group(6).toLowerCase());
-                System.out.println("calorías: " + foodItem.getCalories());
+                    i++;
+
+            }catch (Exception ignored){
             }
         }
 
-        String regex_porcion = "(?i)(por porci[oó]n|la porci[oó]n|por raci[oó]n|porcióön|de porci[oó]n)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
-        pattern = Pattern.compile(regex_porcion);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setPortion_size(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setPortion_size(Float.parseFloat(matcher.group(4)));
-            System.out.println("tamaño de porcion: " + foodItem.getPortion_size());
-        }
-
-        String regex_numPorciones = "(?i)(porciones por envase|porciones por empaque|porciones por paquete|raciones por envase|raciones por empaque|porciones totales|porciones por sobre)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
-        pattern = Pattern.compile(regex_numPorciones);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            //System.out.println("ERRRRRROR" + matcher.group(4));
-            if(matcher.group(5)!=null) {
-                String temp = matcher.group(5).replaceAll(",",".");
-                foodItem.setPortions(Float.parseFloat(matcher.group(4) + temp));
-            }
-            else
-                foodItem.setPortions(Float.parseFloat(matcher.group(4)));
-            System.out.println("numero de porciones: " + foodItem.getPortions());
-        }
-
-        String regex_azucar = "(?i)(az[uú]car|az[uú]cares)(:|-)?([\\s]|[a-z])*(\\d+)([\\s+]?)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr)?";
-        pattern = Pattern.compile(regex_azucar);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setSugar(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setSugar(Float.parseFloat(matcher.group(4)));
-            System.out.println("Azucar: " + foodItem.getSugar());
-        }
-
-        String regex_carbs = "(?i)(carbohidratos|carbohidratos totales|hidratos de carbono|carbohidratos \\(hidratos de carbono\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
-        pattern = Pattern.compile(regex_carbs);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setCarbs(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setCarbs(Float.parseFloat(matcher.group(4)));
-            System.out.println("carbs: " + foodItem.getCarbs());
-        }
-
-        String regex_proteina = "(?i)(prote[ií]na|prote[ií]nas)(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
-        pattern = Pattern.compile(regex_proteina);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setProtein(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setProtein(Float.parseFloat(matcher.group(4)));
-            System.out.println("proteina: " + foodItem.getProtein());
-        }
-
-        String regex_lipidos = "(?i)(grasas|grasa|l[ií]pidos|grasas\\(l[ií]pidos\\))(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(gr|ml|g|\\sg|\\sgr|)?";
-        pattern = Pattern.compile(regex_lipidos);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setFat(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setFat(Float.parseFloat(matcher.group(4)));
-            System.out.println("grasas: " + foodItem.getFat());
-        }
-
-        String regex_sodio = "(?i)()(:|-)?([\\s]|[a-z])*(\\d+)([.,]\\d)?([\\s+]?)(mg|\\smg)?";
-        pattern = Pattern.compile(regex_sodio);
-        matcher = pattern.matcher(s);
-
-        while (matcher.find()) {
-            if(matcher.group(5)!=null)
-                foodItem.setSodium(Float.parseFloat(matcher.group(4)+matcher.group(5)));
-            else
-                foodItem.setSodium(Float.parseFloat(matcher.group(4)));
-            System.out.println("sodio: " + foodItem.getSodium());
-        }
-
-        Intent intent = new Intent(this, DataEntryActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        intent.putExtra("foodItem", (Serializable) foodItem);
-        System.out.println(foodItem.getProduct_name());
-        startActivity(intent);
+        elements.clear();
+        elements.addAll(sortedGroups);
     }
 
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    public void analizeString(String labelText){
+
+        labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
+        Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+        dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
+        startActivity(dataEntryActivity);
+        labelAnalyzer.resetFilters();
+
     }
 
     private void logout(){

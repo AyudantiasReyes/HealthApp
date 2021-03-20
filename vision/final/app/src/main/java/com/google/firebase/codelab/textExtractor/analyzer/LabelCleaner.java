@@ -48,6 +48,8 @@ public class LabelCleaner {
         labelText = labelText.replaceAll("[é]", "e");
         labelText = labelText.replaceAll("[í]", "i");
         labelText = labelText.replaceAll("[ó]", "o");
+        labelText = labelText.replaceAll("[o][o]", "o");
+
         labelText = labelText.replaceAll("[ú]", "u");
         labelText = labelText.replaceAll("[Í]", "I");
         labelText = labelText.replaceAll("[ñ]", "n");
