@@ -49,12 +49,11 @@ public class LabelCleaner {
         labelText = labelText.replaceAll("[í]", "i");
         labelText = labelText.replaceAll("[ó]", "o");
         labelText = labelText.replaceAll("[o][o]", "o");
-
         labelText = labelText.replaceAll("[ú]", "u");
         labelText = labelText.replaceAll("[Í]", "I");
         labelText = labelText.replaceAll("[ñ]", "n");
 
-
+        Log.d("FILTROS", labelText);
 
         for(String expression : FILTERS){
             Pattern pattern = Pattern.compile(expression);
@@ -64,7 +63,7 @@ public class LabelCleaner {
                filteredString.append(m.group()).append("\n\r");
             }
         }
-        Log.d("FILTRADA", filteredString.toString() + "HERE");
+        Log.d("STATEMENTS", filteredString.toString());
         return filteredString.toString();
     }
 

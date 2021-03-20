@@ -222,6 +222,7 @@ public class CameraActivity extends AppCompatActivity {
             //labelAnalyzer.resetFilters();
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
             dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
+
             startActivity(dataEntryActivity);
             labelAnalyzer.resetFilters();
         }

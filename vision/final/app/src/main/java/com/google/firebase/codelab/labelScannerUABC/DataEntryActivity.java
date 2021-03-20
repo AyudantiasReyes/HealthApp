@@ -38,7 +38,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_data_entry);
+        setContentView(R.layout.activity_data_entry);
         binding = ActivityDataEntryBinding.inflate(getLayoutInflater());
         setContentView(binding.root1);
 

@@ -1,6 +1,8 @@
 package com.google.firebase.codelab.textExtractor.groups;
 
-public class Occurrence {
+import java.io.Serializable;
+
+public class Occurrence implements Serializable {
     private int number = -1;
     private int ocurrences = 1;
 

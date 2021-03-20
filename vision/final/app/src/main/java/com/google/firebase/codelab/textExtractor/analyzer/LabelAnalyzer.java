@@ -18,7 +18,7 @@ import labelParser.labelGrammarParser;
 
 public class LabelAnalyzer implements Serializable {
 
-    private Occurrence occurrence[][] = new Occurrence[SIZE][5];
+
     public final static int TAM_PORCION = 0;
     public final static int PORCIONES = 1;
     public final static int CALORIAS = 2;
@@ -28,9 +28,15 @@ public class LabelAnalyzer implements Serializable {
     public final static int SODIO = 6;
     public final static int PROTEINAS = 7;
     private final static int SIZE = 8;
+    private final static int SIZE_OCCURRENCES = 5;
+    private final static int MAX_OCCURRENCES = 5;
+    private final static int NOT_FOUND = -1;
+
+
 
     private int[] amountNutrients;
     private boolean[] blockNutrients;
+    private Occurrence occurrence[][] = new Occurrence[SIZE][SIZE_OCCURRENCES];
 
     public LabelAnalyzer() {
         amountNutrients = new int[SIZE];
@@ -47,7 +53,7 @@ public class LabelAnalyzer implements Serializable {
 
     public boolean analyze(String textFiltered){
 
-        boolean exitAnalyze = false;
+        boolean exitAnalyze = true;
 
         CharStream input = CharStreams.fromString(textFiltered); //crear charstream
         labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
@@ -60,14 +66,17 @@ public class LabelAnalyzer implements Serializable {
         ParseTreeWalker walker = new ParseTreeWalker(); //crear un caminante
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
-        labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
-        labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
-        labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
-        labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
-        labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
-        labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
-        labelChecker(SODIO, listener.getSodio(), "Sodio: ");
-        labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
+
+
+        labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
+        labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
+        labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ");
+        labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ");
+        labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
+        labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ");
+        labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ");
+        labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ");
+
 
         for(boolean block : blockNutrients){
             exitAnalyze &= block;
@@ -90,11 +99,11 @@ public class LabelAnalyzer implements Serializable {
     private void labelCheckerV2(int labelItem, int listenerData, String label){
         if(!blockNutrients[labelItem]){
             // Si nos da un dato
-            if(listenerData != -1){
+            if(listenerData != NOT_FOUND){
                 //Checamos renglon de articulo correspondiente
-                for (int i = 0; i < 5; i++){
+                for (int i = 0; i < SIZE_OCCURRENCES; i++){
                     //si el numero dentro del renglon es -1, significa que esta vacio, entonces metemos el dato que nos llego y salimos del metodo
-                    if(occurrence[labelItem][i].getNumber() == -1){
+                    if(occurrence[labelItem][i].getNumber() == NOT_FOUND){
                         occurrence[labelItem][i].setNumber(listenerData);
                         return;
                     }
@@ -102,10 +111,10 @@ public class LabelAnalyzer implements Serializable {
                     else if(occurrence[labelItem][i].getNumber() == listenerData){
                         occurrence[labelItem][i].incrementOcurrencies();
                         //Si las ocurrencias son 3, bloqueamos nutriente, asignamos el valor, y retornamos
-                        if(occurrence[labelItem][i].getOcurrences() == 3){
+                        if(occurrence[labelItem][i].getOcurrences() >= MAX_OCCURRENCES){
                             blockNutrients[labelItem] = true;
                             amountNutrients[labelItem] = listenerData;
-                            Log.d("final_label_data", label  + amountNutrients[labelItem]);
+                            Log.d("final_label_data", label  + amountNutrients[labelItem] + " ocurrence = " + occurrence[labelItem][i].getOcurrences());
                             return;
                         }
                     }
