@@ -55,7 +55,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     private SharedPreferences preferences;
-
     private LabelAnalyzer labelAnalyzer;
 
 

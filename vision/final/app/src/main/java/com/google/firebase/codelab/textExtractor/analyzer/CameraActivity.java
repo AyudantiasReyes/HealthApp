@@ -44,7 +44,6 @@ public class CameraActivity extends AppCompatActivity {
     private TextView textView;
     private LabelAnalyzer labelAnalyzer;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
