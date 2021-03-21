@@ -1,10 +1,12 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import java.io.Serializable;
@@ -21,6 +23,7 @@ import com.google.firebase.codelab.UI.RegisterActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.*;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding;
 import com.google.firebase.codelab.mlkitUABC.*;
+import com.google.firebase.codelab.textExtractor.analyzer.LabelAnalyzer;
 /*
 *   Esta clase recibe los datos obtenidos de la etiqueta escaneada, o permite al usuario ingresar
 *   los datos de manera manual. Los campos se almacenan en un FoodItem que es enviado a NutrientsACtivity
@@ -35,18 +38,24 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_data_entry);
+        setContentView(R.layout.activity_data_entry);
         binding = ActivityDataEntryBinding.inflate(getLayoutInflater());
         setContentView(binding.root1);
 
         Bundle extras = getIntent().getExtras();
 
+        /*
         //Revisamos si nos llegó un extra de otra actividad.
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
             System.out.println(foodItem.getProduct_name());
             setData(foodItem);
         }
+        */
+
+        int [] nutrientes = getIntent().getIntArrayExtra("nutrientes");
+        if(nutrientes != null)
+            setDataFromCamaraCapture(nutrientes);
 
         binding.acceptButton.setOnClickListener(this);
         binding.backButton.setOnClickListener(this);
@@ -57,13 +66,37 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         super.onResume();
         Bundle extras = getIntent().getExtras();
 
+        /*
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
             System.out.println(foodItem.getProduct_name());
             setData(foodItem);
             // and get whatever type user account id is
         }
+        */
+
     }
+
+    //recibir los nutrientes capturados
+    public void setDataFromCamaraCapture(int [] nutrientes){
+        binding.porcionEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.TAM_PORCION]));
+        binding.numeroPorcionesEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.PORCIONES]));
+        binding.caloriasEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.CALORIAS]));
+        binding.azucarEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.AZUCARES]));
+        binding.carbsEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.CARBOHIDRATOS]));
+        binding.proteinaEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.PROTEINAS]));
+        binding.lipidosEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS]));
+        binding.sodioEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.SODIO]));
+
+
+        Log.d("SETDATA", "setDataFromCamaraCapture: ");
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
 
     //En caso de tener haber recibido un FoodItem, llenamos todas las TextBoxes posibles
     public void setData(FoodItem foodItem){
