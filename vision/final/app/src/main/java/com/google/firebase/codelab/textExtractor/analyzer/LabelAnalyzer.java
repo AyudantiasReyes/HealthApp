@@ -37,8 +37,10 @@ public class LabelAnalyzer implements Serializable {
     private int[] amountNutrients;
     private boolean[] blockNutrients;
     private Occurrence occurrence[][] = new Occurrence[SIZE][SIZE_OCCURRENCES];
+    private boolean multipleOcurrences;
 
-    public LabelAnalyzer() {
+    public LabelAnalyzer(boolean multipleOcurrences) {
+        this.multipleOcurrences = multipleOcurrences;
         amountNutrients = new int[SIZE];
         blockNutrients = new boolean[SIZE];
 
@@ -67,15 +69,28 @@ public class LabelAnalyzer implements Serializable {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
 
+        if(multipleOcurrences){
+            labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
+            labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
+            labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ");
+            labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ");
+            labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
+            labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ");
+            labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ");
+            labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ");
+        }
+        else{
+            labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
+            labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
+            labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
+            labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
+            labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
+            labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
+            labelChecker(SODIO, listener.getSodio(), "Sodio: ");
+            labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
 
-        labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
-        labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
-        labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ");
-        labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ");
-        labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
-        labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ");
-        labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ");
-        labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ");
+        }
+
 
 
         for(boolean block : blockNutrients){

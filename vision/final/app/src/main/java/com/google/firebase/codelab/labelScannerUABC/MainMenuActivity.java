@@ -64,7 +64,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
-        labelAnalyzer = new LabelAnalyzer();
+        labelAnalyzer = new LabelAnalyzer(false);
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -249,7 +249,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void analizeString(String labelText){
-
         labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText));
         Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
         dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());

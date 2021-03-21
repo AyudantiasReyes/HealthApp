@@ -42,17 +42,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         binding = ActivityDataEntryBinding.inflate(getLayoutInflater());
         setContentView(binding.root1);
 
-        Bundle extras = getIntent().getExtras();
-
-        /*
-        //Revisamos si nos llegó un extra de otra actividad.
-        if (extras != null) {
-            foodItem = (FoodItem) extras.getSerializable("foodItem");
-            System.out.println(foodItem.getProduct_name());
-            setData(foodItem);
-        }
-        */
-
         int [] nutrientes = getIntent().getIntArrayExtra("nutrientes");
         if(nutrientes != null)
             setDataFromCamaraCapture(nutrientes);
@@ -66,14 +55,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         super.onResume();
         Bundle extras = getIntent().getExtras();
 
-        /*
-        if (extras != null) {
-            foodItem = (FoodItem) extras.getSerializable("foodItem");
-            System.out.println(foodItem.getProduct_name());
-            setData(foodItem);
-            // and get whatever type user account id is
-        }
-        */
 
     }
 

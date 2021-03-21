@@ -53,7 +53,7 @@ public class CameraActivity extends AppCompatActivity {
         textView = findViewById(R.id.orientation);
 
         if(savedInstanceState == null)
-            labelAnalyzer = new LabelAnalyzer();
+            labelAnalyzer = new LabelAnalyzer(true);
         else
             labelAnalyzer = (LabelAnalyzer) savedInstanceState.getSerializable("LabelAnalyzer");
 
@@ -219,12 +219,12 @@ public class CameraActivity extends AppCompatActivity {
     public void analizeString(String labelText){
 
         if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
-            //labelAnalyzer.resetFilters();
+            labelAnalyzer.resetFilters();
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
             dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
 
             startActivity(dataEntryActivity);
-            labelAnalyzer.resetFilters();
+
         }
     }
 }
