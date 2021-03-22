@@ -50,7 +50,7 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
         previewView = findViewById(R.id.previewView);
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
-        textView = findViewById(R.id.orientation);
+        //textView = findViewById(R.id.orientation);
 
         if(savedInstanceState == null)
             labelAnalyzer = new LabelAnalyzer(true);
@@ -117,7 +117,7 @@ public class CameraActivity extends AppCompatActivity {
         OrientationEventListener orientationEventListener = new OrientationEventListener(this) {
             @Override
             public void onOrientationChanged(int orientation) {
-                textView.setText(String.format(Locale.getDefault(),"%d", orientation));
+                //textView.setText(String.format(Locale.getDefault(),"%d", orientation));
             }
         };
         orientationEventListener.enable();

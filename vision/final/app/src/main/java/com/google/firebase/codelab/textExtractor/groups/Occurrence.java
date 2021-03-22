@@ -9,6 +9,10 @@ public class Occurrence implements Serializable {
     public Occurrence(){
     }
 
+    public void setOcurrences(int ocurrences) {
+        this.ocurrences = ocurrences;
+    }
+
     public int getNumber() {
         return number;
     }
@@ -24,4 +28,5 @@ public class Occurrence implements Serializable {
     public void incrementOcurrencies() {
         this.ocurrences++;
     }
+
 }

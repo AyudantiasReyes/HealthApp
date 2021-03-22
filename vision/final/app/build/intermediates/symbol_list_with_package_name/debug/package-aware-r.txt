@@ -2138,7 +2138,6 @@ id numeroPorcionesEditText
 id numeroPorcionesTitle
 id off
 id on
-id orientation
 id outline
 id outward
 id packed
@@ -2161,6 +2160,7 @@ id position
 id postLayout
 id previewView
 id productoButton
+id progressBar
 id progress_circular
 id progress_horizontal
 id proteinaAmount

@@ -78,6 +78,13 @@ public class LabelAnalyzer implements Serializable {
             labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ");
             labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ");
             labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ");
+
+            for(boolean block : blockNutrients){
+                exitAnalyze &= block;
+            }
+
+            if(exitAnalyze)
+                clearOcurrences();
         }
         else{
             labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
@@ -92,10 +99,6 @@ public class LabelAnalyzer implements Serializable {
         }
 
 
-
-        for(boolean block : blockNutrients){
-            exitAnalyze &= block;
-        }
 
         return exitAnalyze;
 
@@ -134,6 +137,14 @@ public class LabelAnalyzer implements Serializable {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    public void clearOcurrences(){
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < 5; j++){
+                occurrence[i][j].setOcurrences(0);
             }
         }
     }

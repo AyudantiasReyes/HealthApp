@@ -6,34 +6,30 @@
     android:layout_height="match_parent"
     tools:context="com.google.firebase.codelab.textExtractor.analyzer.CameraActivity">
 
-
-<FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
         android:layout_width="match_parent"
-        android:layout_height="517dp">
+        android:layout_height="489dp"
+        android:layout_marginBottom="242dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.camera.view.PreviewView>
-    </FrameLayout>
 
-    <LinearLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/orientation"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#9999ff"
-            android:textSize="100sp" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/previewView"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
