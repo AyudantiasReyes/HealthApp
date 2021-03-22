@@ -23,6 +23,7 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+anim button_animation
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
@@ -1075,9 +1076,13 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gradient_end_color
+color gradient_start_color
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color honey_yellow
+color intro_description_color
+color intro_title_color
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1167,6 +1172,9 @@ color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
 color platinum
+color primAccent
+color primDark
+color primary
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1189,6 +1197,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tab_indicator_gray
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color texBackgroundColor
@@ -1685,10 +1694,12 @@ drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
 drawable btn_checkbox_unchecked_to_checked_mtrl_animation
+drawable btn_gradient_style
 drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable camera
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1714,6 +1725,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable diet
 drawable edit
 drawable gallery
 drawable googleg_disabled_color_18
@@ -1723,6 +1735,7 @@ drawable gray_rounded_rectangle
 drawable green_button_bg
 drawable green_circle
 drawable green_rounded_rectangle
+drawable ic_baseline_arrow_forward_ios_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1731,6 +1744,9 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable indicator_default
+drawable indicator_selected
+drawable indicator_selector
 drawable list_item_bg
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
@@ -1770,6 +1786,8 @@ drawable photo
 drawable round_button
 drawable round_button2
 drawable round_input_field
+drawable sign_up
+drawable star
 drawable test_custom_background
 drawable tick
 drawable tooltip_frame_dark
@@ -1878,6 +1896,9 @@ id blocking
 id bottom
 id bottom_to_top
 id bounce
+id btn_get_started
+id btn_next
+id btn_skip
 id button
 id buttonLayout
 id buttonPanel
@@ -2017,6 +2038,9 @@ id group_divider
 id grouping
 id groups
 id guideline
+id guideline3
+id guideline4
+id guideline5
 id header_title
 id hideable
 id home
@@ -2031,6 +2055,9 @@ id ignoreRequest
 id image
 id info
 id inputButton
+id intro_description
+id intro_img
+id intro_title
 id invisible
 id inward
 id italic
@@ -2193,6 +2220,7 @@ id save_overlay_view
 id sawtooth
 id scale
 id screen
+id screen_viewpager
 id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -2255,6 +2283,7 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
+id tab_indicator
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2395,6 +2424,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_camera
 layout activity_data_entry
+layout activity_intro
 layout activity_login
 layout activity_main_menu
 layout activity_nutrients
@@ -2416,6 +2446,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout layout_screen
 layout list_item
 layout material_chip_input_combo
 layout material_clock_display

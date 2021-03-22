@@ -39,14 +39,15 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.google.firebase.codelab.textExtractor.analyzer.CameraActivity" />
-        <activity android:name="com.google.firebase.codelab.UI.LoginActivity" >
+        <activity android:name="com.google.firebase.codelab.UI.IntroActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.google.firebase.codelab.UI.LoginActivity" />
+        <activity android:name="com.google.firebase.codelab.textExtractor.analyzer.CameraActivity" />
         <activity android:name="com.google.firebase.codelab.UI.RegisterActivity" />
         <activity android:name="com.google.firebase.codelab.labelScannerUABC.ProductListActivity" />
         <activity android:name="com.google.firebase.codelab.labelScannerUABC.DataEntryActivity" />
