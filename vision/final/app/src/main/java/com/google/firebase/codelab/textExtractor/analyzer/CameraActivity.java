@@ -56,7 +56,7 @@ public class CameraActivity extends AppCompatActivity {
         //textView = findViewById(R.id.orientation);
 
         progressBar = findViewById(R.id.progressBar);
-        progressBar.setMax(100);
+        progressBar.setMax(8);
         progressBar.setScaleY(2f);
 
 
@@ -69,7 +69,6 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    progressBar.setProgress(++progress, true);
                     ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
                     bindImageAnalysis(cameraProvider);
                 } catch (ExecutionException | InterruptedException e) {
@@ -226,20 +225,15 @@ public class CameraActivity extends AppCompatActivity {
         elements.addAll(sortedGroups);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void analyzeString(String labelText){
 
-        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
+        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText),progressBar, progress)){
             labelAnalyzer.resetFilters();
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
             dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
             startActivity(dataEntryActivity);
 
         }
-    }
-
-    private void progressAnitmation() {
-        ProgressBarAnimation progressAnimation = new ProgressBarAnimation(this, progressBar, 0, 100);
-        progressAnimation.setDuration(8000);
-        progressBar.setAnimation(progressAnimation);
     }
 }

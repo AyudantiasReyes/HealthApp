@@ -64,7 +64,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
-        labelAnalyzer = new LabelAnalyzer(false);
+        labelAnalyzer = new LabelAnalyzer();
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {

@@ -1,7 +1,10 @@
 package com.google.firebase.codelab.textExtractor.analyzer;
 
+import android.os.Build;
 import android.util.Log;
 import android.widget.ProgressBar;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.firebase.codelab.textExtractor.groups.Occurrence;
 import com.google.firebase.codelab.textExtractor.listeners.LabelDataListener;
@@ -33,15 +36,19 @@ public class LabelAnalyzer implements Serializable {
     private final static int MAX_OCCURRENCES = 5;
     private final static int NOT_FOUND = -1;
 
-
-
     private int[] amountNutrients;
     private boolean[] blockNutrients;
     private Occurrence occurrence[][] = new Occurrence[SIZE][SIZE_OCCURRENCES];
     private boolean multipleOcurrences;
 
+
+    public LabelAnalyzer() {
+        amountNutrients = new int[SIZE];
+        blockNutrients = new boolean[SIZE];
+        resetFilters();
+    }
+
     public LabelAnalyzer(boolean multipleOcurrences) {
-        this.multipleOcurrences = multipleOcurrences;
         amountNutrients = new int[SIZE];
         blockNutrients = new boolean[SIZE];
 
@@ -54,7 +61,7 @@ public class LabelAnalyzer implements Serializable {
         resetFilters();
     }
 
-    public boolean analyze(String textFiltered){
+    public void analyze(String textFiltered){
 
         boolean exitAnalyze = true;
 
@@ -70,39 +77,51 @@ public class LabelAnalyzer implements Serializable {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
 
-        if(multipleOcurrences){
-            labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
-            labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
-            labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ");
-            labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ");
-            labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
-            labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ");
-            labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ");
-            labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ");
+        labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
+        labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
+        labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
+        labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
+        labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
+        labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
+        labelChecker(SODIO, listener.getSodio(), "Sodio: ");
+        labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
 
-            for(boolean block : blockNutrients){
-                exitAnalyze &= block;
-            }
+    }
 
-            if(exitAnalyze)
-                clearOcurrences();
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public boolean analyze(String textFiltered, ProgressBar progressBar, int progress){
+
+        boolean exitAnalyze = true;
+
+        CharStream input = CharStreams.fromString(textFiltered); //crear charstream
+        labelGrammarLexer lexer = new labelGrammarLexer(input); //crear analizador lexico
+        CommonTokenStream tokens = new CommonTokenStream(lexer); //crear los tokens
+        labelGrammarParser parser = new labelGrammarParser(tokens); //crear analizador sintactico
+
+        ParseTree tree = parser.init(); //crear arbol para obtener nutrientes
+        LabelDataListener listener = new LabelDataListener(); //crear un listener para recorrer
+
+        ParseTreeWalker walker = new ParseTreeWalker(); //crear un caminante
+        walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
+
+
+        labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ", progressBar, progress);
+        labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ", progressBar, progress);
+        labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ", progressBar, progress);
+        labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ", progressBar, progress);
+        labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ", progressBar, progress);
+        labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ", progressBar, progress);
+        labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ", progressBar, progress);
+        labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ", progressBar, progress);
+
+        for(boolean block : blockNutrients){
+            exitAnalyze &= block;
         }
-        else{
-            labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
-            labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
-            labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
-            labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
-            labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
-            labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
-            labelChecker(SODIO, listener.getSodio(), "Sodio: ");
-            labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
 
-        }
-
-
+        if(exitAnalyze)
+            clearOcurrences();
 
         return exitAnalyze;
-
     }
 
     private void labelChecker(int labelItem, int listenerData, String label){
@@ -115,7 +134,8 @@ public class LabelAnalyzer implements Serializable {
         }
     }
 
-    private void labelCheckerV2(int labelItem, int listenerData, String label){
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void labelCheckerV2(int labelItem, int listenerData, String label, ProgressBar progressBar, int progress){
         if(!blockNutrients[labelItem]){
             // Si nos da un dato
             if(listenerData != NOT_FOUND){
@@ -133,6 +153,8 @@ public class LabelAnalyzer implements Serializable {
                         if(occurrence[labelItem][i].getOcurrences() >= MAX_OCCURRENCES){
                             blockNutrients[labelItem] = true;
                             amountNutrients[labelItem] = listenerData;
+                            progress++;
+                            progressBar.setProgress(progress, true);
                             Log.d("final_label_data", label  + amountNutrients[labelItem] + " ocurrence = " + occurrence[labelItem][i].getOcurrences());
                             return;
                         }
