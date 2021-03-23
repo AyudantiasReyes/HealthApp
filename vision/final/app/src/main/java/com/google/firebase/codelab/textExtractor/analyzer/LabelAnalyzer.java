@@ -1,6 +1,7 @@
 package com.google.firebase.codelab.textExtractor.analyzer;
 
 import android.util.Log;
+import android.widget.ProgressBar;
 
 import com.google.firebase.codelab.textExtractor.groups.Occurrence;
 import com.google.firebase.codelab.textExtractor.listeners.LabelDataListener;
@@ -158,4 +159,5 @@ public class LabelAnalyzer implements Serializable {
             blockNutrients[i] = false;
         }
     }
+
 }

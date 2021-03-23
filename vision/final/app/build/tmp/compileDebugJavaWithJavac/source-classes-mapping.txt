@@ -43,15 +43,15 @@ com/google/firebase/codelab/mlkitUABC/NutrientsActivity.java
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$3
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$4
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$5
+com/google/firebase/codelab/textExtractor/analyzer/ProgressBarAnimation.java
+ com.google.firebase.codelab.textExtractor.analyzer.ProgressBarAnimation
 com/google/firebase/codelab/labelScannerUABC/GraphicOverlay.java
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay
  com.google.firebase.codelab.labelScannerUABC.GraphicOverlay$Graphic
 com/google/firebase/codelab/labelScannerUABC/DataEntryActivity.java
  com.google.firebase.codelab.labelScannerUABC.DataEntryActivity
-com/google/firebase/codelab/labelScannerUABC/MainMenuActivity.java
- com.google.firebase.codelab.labelScannerUABC.MainMenuActivity
- com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$1
- com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$2
+com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
+ com.google.firebase.codelab.labelScannerUABC.TextGraphic
 com/google/firebase/codelab/labelScannerUABC/BuildConfig.java
  com.google.firebase.codelab.labelScannerUABC.BuildConfig
 com/google/firebase/codelab/textExtractor/groups/Occurrence.java
@@ -116,6 +116,10 @@ com/google/firebase/codelab/labelScannerUABC/databinding/SpinnerItemBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.SpinnerItemBinding
 labelParser/labelGrammarLexer.java
  labelParser.labelGrammarLexer
+com/google/firebase/codelab/labelScannerUABC/MainMenuActivity.java
+ com.google.firebase.codelab.labelScannerUABC.MainMenuActivity
+ com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$1
+ com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$2
 com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$1
@@ -123,5 +127,3 @@ com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$1
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$2
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$3
-com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
- com.google.firebase.codelab.labelScannerUABC.TextGraphic
