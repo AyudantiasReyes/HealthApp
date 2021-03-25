@@ -15,13 +15,19 @@ public class LabelCleaner {
 
     private static final String FILTRO_CALORIAS = "[C|c]"+v+"[L|l]"+v+"[R|r]"+v+v+"[S|s][0-9]+" ;
 
-    private static final String FILTRO_GRASAS = "[G|g]r"+v+"s"+v+"s?[T|t]"+v+"t"+v+"l[0-9]+g?" ;
+    private static final String FILTRO_GRASAS_TOTALES = "[G|g]r"+v+"s"+v+"s?[T|t]"+v+"t"+v+"l[0-9]+g?" ;
+
+    private static final String FILTRO_GRASAS_SATURADAS = "[G|g]r"+v+"s"+v+"s?[S|s]"+v+"t"+v+"r"+v+"d"+v+"s[0-9]+g?" ;
+
+    private static final String FILTRO_GRASAS_TRANS = "[G|g]r"+v+"s"+v+"s?[T|t]r"+v+"ns[0-9]+g?" ;
 
     private static final String FILTRO_CARBS = "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"s[0-9]+g?|" +
                                                "[C|c]"+v+"rb"+v+"h"+v+"dr"+v+"t"+v+"st"+v+"t"+v+"l"+v+"s[0-9]+g?|"+
                                                 "[C|c]"+v+"rb[0-9]+g?";
 
     private static final String FILTRO_AZUCAR = "[A|a][z|n]"+v+"c"+v+"r"+v+"s[0-9]+g?" ;
+
+    private static final String FILTRO_COLESTEROL = "C"+v+"l"+v+"st"+v+"r"+v+"l";
 
     private static final String FILTRO_SODIO = "[S|s]"+v+"d"+v+v+"[0-9]+m?g?" ;
 
@@ -31,9 +37,12 @@ public class LabelCleaner {
             FILTRO_TAM_PORCION,
             FILTRO_PORCIONES,
             FILTRO_CALORIAS,
-            FILTRO_GRASAS,
+            FILTRO_GRASAS_TOTALES,
+            FILTRO_GRASAS_SATURADAS,
+            FILTRO_GRASAS_TRANS,
             FILTRO_CARBS,
             FILTRO_AZUCAR,
+            FILTRO_COLESTEROL,
             FILTRO_SODIO,
             FILTRO_PROTEINA
     };

@@ -1,4 +1,4 @@
-// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/ricar/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -47,6 +47,18 @@ public interface labelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#grasaSaturada_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#grasaTrans_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link labelGrammarParser#carbs_statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -58,6 +70,12 @@ public interface labelGrammarVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link labelGrammarParser#colesterol_statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link labelGrammarParser#sodio_statement}.
 	 * @param ctx the parse tree

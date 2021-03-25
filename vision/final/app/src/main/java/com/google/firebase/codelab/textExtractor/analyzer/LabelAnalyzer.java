@@ -26,12 +26,15 @@ public class LabelAnalyzer implements Serializable {
     public final static int TAM_PORCION = 0;
     public final static int PORCIONES = 1;
     public final static int CALORIAS = 2;
-    public final static int GRASAS = 3;
-    public final static int CARBOHIDRATOS = 4;
-    public final static int AZUCARES = 5;
-    public final static int SODIO = 6;
-    public final static int PROTEINAS = 7;
-    private final static int SIZE = 8;
+    public final static int GRASAS_TOTALES = 3;
+    public final static int GRASAS_SATURADAS = 4;
+    public final static int GRASAS_TRANS = 5;
+    public final static int CARBOHIDRATOS = 6;
+    public final static int AZUCARES = 7;
+    public final static int COLESTEROL = 8;
+    public final static int SODIO = 9;
+    public final static int PROTEINAS = 10;
+    private final static int SIZE = 11;
     private final static int SIZE_OCCURRENCES = 5;
     private final static int MAX_OCCURRENCES = 5;
     private final static int NOT_FOUND = -1;
@@ -80,9 +83,12 @@ public class LabelAnalyzer implements Serializable {
         labelChecker(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ");
         labelChecker(PORCIONES, listener.getPorciones(), "Porciones por empaque: ");
         labelChecker(CALORIAS, listener.getCalorias(), "Calorias: ");
-        labelChecker(GRASAS, listener.getGrasas(), "Grasa Total: ");
+        labelChecker(GRASAS_TOTALES, listener.getGrasasTotales(), "Grasa Total: ");
+        labelChecker(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ");
+        labelChecker(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ");
         labelChecker(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ");
         labelChecker(AZUCARES, listener.getAzucares(), "Azucares: ");
+        labelChecker(COLESTEROL, listener.getColesterol(), "Colesterol: ");
         labelChecker(SODIO, listener.getSodio(), "Sodio: ");
         labelChecker(PROTEINAS, listener.getProteinas(), "Proteina: ");
 
@@ -108,9 +114,12 @@ public class LabelAnalyzer implements Serializable {
         labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ", progressBar, progress);
         labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ", progressBar, progress);
         labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ", progressBar, progress);
-        labelCheckerV2(GRASAS, listener.getGrasas(), "Grasa Total: ", progressBar, progress);
+        labelCheckerV2(GRASAS_TOTALES, listener.getGrasasTotales(), "Grasa Total: ", progressBar, progress);
+        labelChecker(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ");
+        labelChecker(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ");
         labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ", progressBar, progress);
         labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ", progressBar, progress);
+        labelChecker(COLESTEROL, listener.getColesterol(), "Colesterol: ");
         labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ", progressBar, progress);
         labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ", progressBar, progress);
 

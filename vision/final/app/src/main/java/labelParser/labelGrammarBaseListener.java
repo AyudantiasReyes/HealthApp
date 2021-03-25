@@ -1,4 +1,4 @@
-// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/ricar/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -88,6 +88,30 @@ public class labelGrammarBaseListener implements labelGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCarbs_statement(labelGrammarParser.Carbs_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -107,6 +131,18 @@ public class labelGrammarBaseListener implements labelGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

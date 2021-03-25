@@ -36,8 +36,8 @@
         <PerGrammarGenerationSettings>
           <option name="fileName" value="$PROJECT_DIR$/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer/labelGrammar.g4" />
           <option name="autoGen" value="true" />
-          <option name="outputDir" value="C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\java" />
-          <option name="libDir" value="C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\java" />
+          <option name="outputDir" value="C:\Users\ricar\Documents\GitHub\HealthApp\vision\final\app\src\main\java" />
+          <option name="libDir" value="C:\Users\ricar\Documents\GitHub\HealthApp\vision\final\app\src\main\java" />
           <option name="encoding" value="" />
           <option name="pkg" value="labelParser" />
           <option name="language" value="" />

@@ -3,23 +3,13 @@ package com.google.firebase.codelab.labelScannerUABC;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.firebase.codelab.UI.RegisterActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.*;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityDataEntryBinding;
 import com.google.firebase.codelab.mlkitUABC.*;
@@ -66,7 +56,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         binding.azucarEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.AZUCARES]));
         binding.carbsEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.CARBOHIDRATOS]));
         binding.proteinaEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.PROTEINAS]));
-        binding.lipidosEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS]));
+        binding.lipidosEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS_TOTALES]));
         binding.sodioEditText.setText(String.valueOf(nutrientes[LabelAnalyzer.SODIO]));
 
 
