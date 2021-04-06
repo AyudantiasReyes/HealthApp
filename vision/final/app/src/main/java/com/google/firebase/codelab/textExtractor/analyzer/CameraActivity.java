@@ -53,7 +53,6 @@ public class CameraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camera);
         previewView = findViewById(R.id.previewView);
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
-        //textView = findViewById(R.id.orientation);
 
         progressBar = findViewById(R.id.progressBar);
         progressBar.setMax(8);
@@ -202,7 +201,7 @@ public class CameraActivity extends AppCompatActivity {
 
             try{
                 int resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
-                if(resta <= 5){
+                if(resta <= 9){
                     do{
                         group.add(elements.get(i + 1));
                         i++;
@@ -228,12 +227,14 @@ public class CameraActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void analyzeString(String labelText){
 
-        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText),progressBar, progress)){
+        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText), progressBar, progress)){
             labelAnalyzer.resetFilters();
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
             dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
             startActivity(dataEntryActivity);
 
         }
+
+
     }
 }

@@ -34,6 +34,7 @@ public class LabelAnalyzer implements Serializable {
     public final static int COLESTEROL = 8;
     public final static int SODIO = 9;
     public final static int PROTEINAS = 10;
+
     private final static int SIZE = 11;
     private final static int SIZE_OCCURRENCES = 5;
     private final static int MAX_OCCURRENCES = 5;
@@ -42,7 +43,6 @@ public class LabelAnalyzer implements Serializable {
     private int[] amountNutrients;
     private boolean[] blockNutrients;
     private Occurrence occurrence[][] = new Occurrence[SIZE][SIZE_OCCURRENCES];
-    private boolean multipleOcurrences;
 
 
     public LabelAnalyzer() {
@@ -115,11 +115,11 @@ public class LabelAnalyzer implements Serializable {
         labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ", progressBar, progress);
         labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ", progressBar, progress);
         labelCheckerV2(GRASAS_TOTALES, listener.getGrasasTotales(), "Grasa Total: ", progressBar, progress);
-        labelChecker(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ");
-        labelChecker(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ");
+        labelCheckerV2(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ", progressBar, progress);
+        labelCheckerV2(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ", progressBar, progress);
         labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ", progressBar, progress);
         labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ", progressBar, progress);
-        labelChecker(COLESTEROL, listener.getColesterol(), "Colesterol: ");
+        labelCheckerV2(COLESTEROL, listener.getColesterol(), "Colesterol: ", progressBar, progress);
         labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ", progressBar, progress);
         labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ", progressBar, progress);
 

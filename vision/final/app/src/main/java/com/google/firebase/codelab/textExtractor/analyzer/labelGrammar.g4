@@ -30,7 +30,7 @@ grasaTotal_statement : GRASA TOTAL NUMERO G?
 grasaSaturada_statement : GRASA SATURADAS NUMERO G?
                   ;
 
-grasaTrans_statement : GRASA TRANS NUMERO G?
+grasaTrans_statement : GRASA TRANS NUMERO? G?
                      ;
 
 carbs_statement : CARBOHIDRATOS TOTAL? NUMERO G?
@@ -64,7 +64,7 @@ GRASA : [G|g] 'r' VOWEL 's' VOWEL 's'? ;
 
 TOTAL : [T|t] VOWEL 't' VOWEL 'l' VOWEL?'s'? ;
 
-SATURADAS : [S|s] VOWEL 't' VOWEL 'r' VOWEL 'd' VOWEL's' ;
+SATURADAS : [S|s]? VOWEL 't' VOWEL 'r' VOWEL 'd' VOWEL 's'? ;
 
 TRANS : [T|t] 'r' VOWEL 'ns' ;
 

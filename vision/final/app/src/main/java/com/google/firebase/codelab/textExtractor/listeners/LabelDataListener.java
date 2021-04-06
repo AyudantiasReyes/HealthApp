@@ -96,6 +96,8 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx) {
         super.enterGrasaSaturada_statement(ctx);
+
+        Log.d("De a peso", "enterGrasaSaturada_statement: ");
         if(ctx.G() == null){
             int grasas = Integer.parseInt(ctx.NUMERO().getText());
             grasasSaturadas = grasas > 10 ? grasas / 10 : grasas;
@@ -108,13 +110,17 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx) {
         super.enterGrasaTrans_statement(ctx);
-        if(ctx.G() == null){
-            int grasas = Integer.parseInt(ctx.NUMERO().getText());
-            grasasTrans = grasas > 10 ? grasas / 10 : grasas;
+
+        if(ctx.NUMERO() != null) {
+            if (ctx.G() == null) {
+                int grasas = Integer.parseInt(ctx.NUMERO().getText());
+                grasasTrans = grasas > 10 ? grasas / 10 : grasas;
+            } else {
+                grasasTrans = Integer.parseInt(ctx.NUMERO().getText());
+            }
         }
-        else{
-            grasasTrans = Integer.parseInt(ctx.NUMERO().getText());
-        }
+        else
+            grasasTrans = 0; // :)
     }
 
     @Override
@@ -144,12 +150,17 @@ public class LabelDataListener extends labelGrammarBaseListener {
     @Override
     public void enterColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx) {
         super.enterColesterol_statement(ctx);
+
         colesterol = (ctx.NUMERO() != null ? Integer.parseInt(ctx.NUMERO().getText()) : 0);
+
+
     }
 
     @Override
     public void enterSodio_statement(labelGrammarParser.Sodio_statementContext ctx) {
         super.enterSodio_statement(ctx);
+
+        sodio = (ctx.NUMERO() != null ? Integer.parseInt(ctx.NUMERO().getText()) : 0);
     }
 
     @Override

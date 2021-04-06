@@ -1,4 +1,4 @@
-// Generated from C:/Users/ricar/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
+// Generated from C:/Users/Omar Valdivia/Documents/GitHub/HealthApp/vision/final/app/src/main/java/com/google/firebase/codelab/textExtractor/analyzer\labelGrammar.g4 by ANTLR 4.9.1
 package labelParser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -643,14 +643,22 @@ public class labelGrammarParser extends Parser {
 			match(GRASA);
 			setState(77);
 			match(TRANS);
-			setState(78);
-			match(NUMERO);
-			setState(80);
+			setState(79);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==NUMERO) {
+				{
+				setState(78);
+				match(NUMERO);
+				}
+			}
+
+			setState(82);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(79);
+				setState(81);
 				match(G);
 				}
 			}
@@ -699,26 +707,26 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82);
-			match(CARBOHIDRATOS);
 			setState(84);
+			match(CARBOHIDRATOS);
+			setState(86);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==TOTAL) {
 				{
-				setState(83);
+				setState(85);
 				match(TOTAL);
 				}
 			}
 
-			setState(86);
-			match(NUMERO);
 			setState(88);
+			match(NUMERO);
+			setState(90);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(87);
+				setState(89);
 				match(G);
 				}
 			}
@@ -766,16 +774,16 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(90);
+			setState(92);
 			match(AZUCARES);
-			setState(91);
-			match(NUMERO);
 			setState(93);
+			match(NUMERO);
+			setState(95);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(92);
+				setState(94);
 				match(G);
 				}
 			}
@@ -823,16 +831,16 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(95);
+			setState(97);
 			match(COLESTEROL);
-			setState(96);
-			match(NUMERO);
 			setState(98);
+			match(NUMERO);
+			setState(100);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(97);
+				setState(99);
 				match(G);
 				}
 			}
@@ -880,16 +888,16 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(100);
+			setState(102);
 			match(SODIO);
-			setState(101);
-			match(NUMERO);
 			setState(103);
+			match(NUMERO);
+			setState(105);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(102);
+				setState(104);
 				match(G);
 				}
 			}
@@ -937,16 +945,16 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(105);
+			setState(107);
 			match(PROTEINAS);
-			setState(106);
-			match(NUMERO);
 			setState(108);
+			match(NUMERO);
+			setState(110);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(107);
+				setState(109);
 				match(G);
 				}
 			}
@@ -965,35 +973,35 @@ public class labelGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\24q\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\24s\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\3\3\3\3\3\3\3"+
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\5\4\62\n\4\3\4\5\4\65\n"+
 		"\4\3\4\5\48\n\4\3\4\5\4;\n\4\3\5\3\5\3\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\5"+
-		"\7G\n\7\3\b\3\b\3\b\3\b\5\bM\n\b\3\t\3\t\3\t\3\t\5\tS\n\t\3\n\3\n\5\n"+
-		"W\n\n\3\n\3\n\5\n[\n\n\3\13\3\13\3\13\5\13`\n\13\3\f\3\f\3\f\5\fe\n\f"+
-		"\3\r\3\r\3\r\5\rj\n\r\3\16\3\16\3\16\5\16o\n\16\3\16\2\2\17\2\4\6\b\n"+
-		"\f\16\20\22\24\26\30\32\2\2\2{\2\37\3\2\2\2\4-\3\2\2\2\6/\3\2\2\2\b<\3"+
-		"\2\2\2\n?\3\2\2\2\fB\3\2\2\2\16H\3\2\2\2\20N\3\2\2\2\22T\3\2\2\2\24\\"+
-		"\3\2\2\2\26a\3\2\2\2\30f\3\2\2\2\32k\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2"+
-		"\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2\".\5\6"+
-		"\4\2#.\5\b\5\2$.\5\n\6\2%.\5\f\7\2&.\5\16\b\2\'.\5\20\t\2(.\5\22\n\2)"+
-		".\5\24\13\2*.\5\26\f\2+.\5\30\r\2,.\5\32\16\2-\"\3\2\2\2-#\3\2\2\2-$\3"+
-		"\2\2\2-%\3\2\2\2-&\3\2\2\2-\'\3\2\2\2-(\3\2\2\2-)\3\2\2\2-*\3\2\2\2-+"+
-		"\3\2\2\2-,\3\2\2\2.\5\3\2\2\2/\61\7\5\2\2\60\62\7\3\2\2\61\60\3\2\2\2"+
-		"\61\62\3\2\2\2\62\64\3\2\2\2\63\65\7\6\2\2\64\63\3\2\2\2\64\65\3\2\2\2"+
-		"\65\67\3\2\2\2\668\7\3\2\2\67\66\3\2\2\2\678\3\2\2\28:\3\2\2\29;\7\22"+
-		"\2\2:9\3\2\2\2:;\3\2\2\2;\7\3\2\2\2<=\7\7\2\2=>\7\3\2\2>\t\3\2\2\2?@\7"+
-		"\b\2\2@A\7\3\2\2A\13\3\2\2\2BC\7\t\2\2CD\7\n\2\2DF\7\3\2\2EG\7\22\2\2"+
-		"FE\3\2\2\2FG\3\2\2\2G\r\3\2\2\2HI\7\t\2\2IJ\7\13\2\2JL\7\3\2\2KM\7\22"+
-		"\2\2LK\3\2\2\2LM\3\2\2\2M\17\3\2\2\2NO\7\t\2\2OP\7\f\2\2PR\7\3\2\2QS\7"+
-		"\22\2\2RQ\3\2\2\2RS\3\2\2\2S\21\3\2\2\2TV\7\r\2\2UW\7\n\2\2VU\3\2\2\2"+
-		"VW\3\2\2\2WX\3\2\2\2XZ\7\3\2\2Y[\7\22\2\2ZY\3\2\2\2Z[\3\2\2\2[\23\3\2"+
-		"\2\2\\]\7\16\2\2]_\7\3\2\2^`\7\22\2\2_^\3\2\2\2_`\3\2\2\2`\25\3\2\2\2"+
-		"ab\7\17\2\2bd\7\3\2\2ce\7\22\2\2dc\3\2\2\2de\3\2\2\2e\27\3\2\2\2fg\7\20"+
-		"\2\2gi\7\3\2\2hj\7\22\2\2ih\3\2\2\2ij\3\2\2\2j\31\3\2\2\2kl\7\21\2\2l"+
-		"n\7\3\2\2mo\7\22\2\2nm\3\2\2\2no\3\2\2\2o\33\3\2\2\2\21\37-\61\64\67:"+
-		"FLRVZ_din";
+		"\7G\n\7\3\b\3\b\3\b\3\b\5\bM\n\b\3\t\3\t\3\t\5\tR\n\t\3\t\5\tU\n\t\3\n"+
+		"\3\n\5\nY\n\n\3\n\3\n\5\n]\n\n\3\13\3\13\3\13\5\13b\n\13\3\f\3\f\3\f\5"+
+		"\fg\n\f\3\r\3\r\3\r\5\rl\n\r\3\16\3\16\3\16\5\16q\n\16\3\16\2\2\17\2\4"+
+		"\6\b\n\f\16\20\22\24\26\30\32\2\2\2~\2\37\3\2\2\2\4-\3\2\2\2\6/\3\2\2"+
+		"\2\b<\3\2\2\2\n?\3\2\2\2\fB\3\2\2\2\16H\3\2\2\2\20N\3\2\2\2\22V\3\2\2"+
+		"\2\24^\3\2\2\2\26c\3\2\2\2\30h\3\2\2\2\32m\3\2\2\2\34\36\5\4\3\2\35\34"+
+		"\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2"+
+		"\".\5\6\4\2#.\5\b\5\2$.\5\n\6\2%.\5\f\7\2&.\5\16\b\2\'.\5\20\t\2(.\5\22"+
+		"\n\2).\5\24\13\2*.\5\26\f\2+.\5\30\r\2,.\5\32\16\2-\"\3\2\2\2-#\3\2\2"+
+		"\2-$\3\2\2\2-%\3\2\2\2-&\3\2\2\2-\'\3\2\2\2-(\3\2\2\2-)\3\2\2\2-*\3\2"+
+		"\2\2-+\3\2\2\2-,\3\2\2\2.\5\3\2\2\2/\61\7\5\2\2\60\62\7\3\2\2\61\60\3"+
+		"\2\2\2\61\62\3\2\2\2\62\64\3\2\2\2\63\65\7\6\2\2\64\63\3\2\2\2\64\65\3"+
+		"\2\2\2\65\67\3\2\2\2\668\7\3\2\2\67\66\3\2\2\2\678\3\2\2\28:\3\2\2\29"+
+		";\7\22\2\2:9\3\2\2\2:;\3\2\2\2;\7\3\2\2\2<=\7\7\2\2=>\7\3\2\2>\t\3\2\2"+
+		"\2?@\7\b\2\2@A\7\3\2\2A\13\3\2\2\2BC\7\t\2\2CD\7\n\2\2DF\7\3\2\2EG\7\22"+
+		"\2\2FE\3\2\2\2FG\3\2\2\2G\r\3\2\2\2HI\7\t\2\2IJ\7\13\2\2JL\7\3\2\2KM\7"+
+		"\22\2\2LK\3\2\2\2LM\3\2\2\2M\17\3\2\2\2NO\7\t\2\2OQ\7\f\2\2PR\7\3\2\2"+
+		"QP\3\2\2\2QR\3\2\2\2RT\3\2\2\2SU\7\22\2\2TS\3\2\2\2TU\3\2\2\2U\21\3\2"+
+		"\2\2VX\7\r\2\2WY\7\n\2\2XW\3\2\2\2XY\3\2\2\2YZ\3\2\2\2Z\\\7\3\2\2[]\7"+
+		"\22\2\2\\[\3\2\2\2\\]\3\2\2\2]\23\3\2\2\2^_\7\16\2\2_a\7\3\2\2`b\7\22"+
+		"\2\2a`\3\2\2\2ab\3\2\2\2b\25\3\2\2\2cd\7\17\2\2df\7\3\2\2eg\7\22\2\2f"+
+		"e\3\2\2\2fg\3\2\2\2g\27\3\2\2\2hi\7\20\2\2ik\7\3\2\2jl\7\22\2\2kj\3\2"+
+		"\2\2kl\3\2\2\2l\31\3\2\2\2mn\7\21\2\2np\7\3\2\2oq\7\22\2\2po\3\2\2\2p"+
+		"q\3\2\2\2q\33\3\2\2\2\22\37-\61\64\67:FLQTX\\afkp";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
