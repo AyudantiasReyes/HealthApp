@@ -90,8 +90,8 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(FOOD_COLUMN_CALORIES, foodItem.getCalories());
         contentValues.put(FOOD_COLUMN_SODIUM, foodItem.getSodium());
         contentValues.put(FOOD_COLUMN_CARBS, foodItem.getCarbs());
-        contentValues.put(FOOD_COLUMN_FAT, foodItem.getFat());
-        contentValues.put(FOOD_COLUMN_TRANS_FAT, foodItem.getTransfat());
+        contentValues.put(FOOD_COLUMN_FAT, foodItem.getTotalFat());
+        contentValues.put(FOOD_COLUMN_TRANS_FAT, foodItem.getTransFat());
         contentValues.put(FOOD_COLUMN_SUGAR, foodItem.getSugar());
         contentValues.put(FOOD_COLUMN_PROTEIN, foodItem.getProtein());
         contentValues.put(FOOD_COLUMN_DATE_ADDED, System.currentTimeMillis());
@@ -121,8 +121,8 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(FOOD_COLUMN_CALORIES, foodItem.getCalories());
         contentValues.put(FOOD_COLUMN_SODIUM, foodItem.getSodium());
         contentValues.put(FOOD_COLUMN_CARBS, foodItem.getCarbs());
-        contentValues.put(FOOD_COLUMN_FAT, foodItem.getFat());
-        contentValues.put(FOOD_COLUMN_TRANS_FAT, foodItem.getTransfat());
+        contentValues.put(FOOD_COLUMN_FAT, foodItem.getTotalFat());
+        contentValues.put(FOOD_COLUMN_TRANS_FAT, foodItem.getTransFat());
         contentValues.put(FOOD_COLUMN_SUGAR, foodItem.getSugar());
         contentValues.put(FOOD_COLUMN_PROTEIN, foodItem.getProtein());
         contentValues.put(FOOD_COLUMN_DATE_ADDED, System.currentTimeMillis());
@@ -186,9 +186,9 @@ public class DBHelper extends SQLiteOpenHelper {
             foodItem.setCalories(res.getFloat(res.getColumnIndex(FOOD_COLUMN_CALORIES)));
             foodItem.setSodium(res.getFloat(res.getColumnIndex(FOOD_COLUMN_SODIUM)));
             foodItem.setCarbs(res.getFloat(res.getColumnIndex(FOOD_COLUMN_CARBS)));
-            foodItem.setFat(res.getFloat(res.getColumnIndex(FOOD_COLUMN_FAT)));
+            foodItem.setTotalFat(res.getFloat(res.getColumnIndex(FOOD_COLUMN_FAT)));
             foodItem.setSugar(res.getFloat(res.getColumnIndex(FOOD_COLUMN_SUGAR)));
-            foodItem.setTransfat(res.getFloat(res.getColumnIndex(FOOD_COLUMN_TRANS_FAT)));
+            foodItem.setTransFat(res.getFloat(res.getColumnIndex(FOOD_COLUMN_TRANS_FAT)));
             foodItem.setProtein(res.getFloat(res.getColumnIndex(FOOD_COLUMN_PROTEIN)));
             foodItem.setDateAdded(res.getLong(res.getColumnIndex(FOOD_COLUMN_DATE_ADDED)));
             foodItem.setDateModified(res.getLong(res.getColumnIndex(FOOD_COLUMN_DATE_MODIFIED)));
