@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
 MERGED from [androidx.databinding:viewbinding:4.1.2] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\5d36f28b609670c49f087b113ab486dd\jetified-viewbinding-4.1.2\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\30f3d7e69c3e82f5664db0fb04c2909f\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\8d19da51cd85fd307b8bb1d6e68ee8c0\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
@@ -92,20 +92,20 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Omar Valdivi
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\29c7c81ac69ed619bf7fa32accf21493\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [org.tensorflow:tensorflow-lite:1.13.1] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\b9c05c9e042758c7f1169481795a6d5a\jetified-tensorflow-lite-1.13.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\8ec02df2f68e8d20a136a010f1968955\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
 	package
 		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:3:5-59
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:1-50:12
 		INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:2:11-69
@@ -178,7 +178,7 @@ ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\sr
 	android:name
 		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:20:9-64
 application
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:23:5-47:19
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:23:5-48:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\30f3d7e69c3e82f5664db0fb04c2909f\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\30f3d7e69c3e82f5664db0fb04c2909f\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Omar Valdivia\.gradle\caches\transforms-2\files-2.1\8d19da51cd85fd307b8bb1d6e68ee8c0\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -267,48 +267,52 @@ MERGED from [org.tensorflow:tensorflow-lite:1.13.1] C:\Users\Omar Valdivia\.grad
 		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:29:9-40
 	android:usesCleartextTraffic
 		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:30:9-44
-activity#com.google.firebase.codelab.textExtractor.analyzer.CameraActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:31:9-111
+activity#com.google.firebase.codelab.UI.IntroActivity
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:31:9-37:20
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:31:19-99
-activity#com.google.firebase.codelab.UI.LoginActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:32:9-38:20
-	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:32:19-78
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:31:19-78
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:33:13-37:29
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:34:17-69
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:36:17-77
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:36:27-74
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:35:27-74
+activity#com.google.firebase.codelab.UI.LoginActivity
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:38:9-80
+	android:name
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:38:19-78
+activity#com.google.firebase.codelab.textExtractor.analyzer.CameraActivity
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:39:9-101
+	android:name
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:39:19-99
 activity#com.google.firebase.codelab.UI.RegisterActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:39:9-84
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:40:9-84
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:39:19-81
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:40:19-81
 activity#com.google.firebase.codelab.labelScannerUABC.ProductListActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:40:9-57
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:41:9-57
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:40:19-54
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:41:19-54
 activity#com.google.firebase.codelab.labelScannerUABC.DataEntryActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:41:9-55
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:42:9-55
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:41:19-52
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:42:19-52
 activity#com.google.firebase.codelab.mlkitUABC.NutrientsActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:42:9-92
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:43:9-92
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:42:19-89
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:43:19-89
 activity#com.google.firebase.codelab.labelScannerUABC.MainMenuActivity
-ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:43:9-46:52
+ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:44:9-47:52
 	android:screenOrientation
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:46:13-49
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:47:13-49
 	android:configChanges
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:45:13-74
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:46:13-74
 	android:name
-		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:44:13-45
+		ADDED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml:45:13-45
 uses-sdk
 INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Omar Valdivia\Documents\GitHub\HealthApp\vision\final\app\src\main\AndroidManifest.xml
