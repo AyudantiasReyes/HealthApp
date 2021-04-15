@@ -1994,6 +1994,7 @@ id easeIn
 id easeInOut
 id easeOut
 id editButton
+id editTextEdad
 id editTextTextEmailAddress
 id editTextTextPassword
 id editTextTextPersonName
@@ -2199,6 +2200,9 @@ id proteinaPercentage
 id proteinaTextView
 id proteinaUnit
 id radio
+id radioGroup
+id radio_hombre
+id radio_mujer
 id ratio
 id rectangles
 id register_container
@@ -2303,12 +2307,13 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textView10
 id textView11
-id textView12
 id textView13
 id textView14
 id textView15
+id textView16
 id textView2
 id textView3
 id textView4

@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(!response.isEmpty()) {
                     try {
                         JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
+                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"),jsonObj.getString("gen"));
                         SaveSharedPreferences();
                         startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                         finish();
@@ -134,6 +134,7 @@ public class LoginActivity extends AppCompatActivity {
         edit.putString(SharedPreference.KeyLastname,user.getLastname());
         edit.putString(SharedPreference.KeyEmail,user.getEmail());
         edit.putString(SharedPreference.KeyPassword,user.getPassword());
+        edit.putString(SharedPreference.KeyGen,user.getGen());
         edit.apply();
     }
 }

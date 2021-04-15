@@ -4,8 +4,12 @@ com/google/firebase/codelab/labelScannerUABC/databinding/ListItemBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ListItemBinding
 com/google/firebase/codelab/labelScannerUABC/Porciones.java
  com.google.firebase.codelab.labelScannerUABC.Porciones
-com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
- com.google.firebase.codelab.labelScannerUABC.TextGraphic
+com/google/firebase/codelab/UI/IntroActivity.java
+ com.google.firebase.codelab.UI.IntroActivity
+ com.google.firebase.codelab.UI.IntroActivity$1
+ com.google.firebase.codelab.UI.IntroActivity$2
+ com.google.firebase.codelab.UI.IntroActivity$3
+ com.google.firebase.codelab.UI.IntroActivity$4
 com/google/firebase/codelab/labelScannerUABC/LabelGraphic.java
  com.google.firebase.codelab.labelScannerUABC.LabelGraphic
 com/google/firebase/codelab/UI/LoginActivity.java
@@ -133,9 +137,5 @@ com/google/firebase/codelab/textExtractor/analyzer/CameraActivity.java
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$1
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$2$2
  com.google.firebase.codelab.textExtractor.analyzer.CameraActivity$3
-com/google/firebase/codelab/UI/IntroActivity.java
- com.google.firebase.codelab.UI.IntroActivity
- com.google.firebase.codelab.UI.IntroActivity$1
- com.google.firebase.codelab.UI.IntroActivity$2
- com.google.firebase.codelab.UI.IntroActivity$3
- com.google.firebase.codelab.UI.IntroActivity$4
+com/google/firebase/codelab/labelScannerUABC/TextGraphic.java
+ com.google.firebase.codelab.labelScannerUABC.TextGraphic
