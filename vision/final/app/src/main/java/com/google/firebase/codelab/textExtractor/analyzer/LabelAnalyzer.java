@@ -95,7 +95,7 @@ public class LabelAnalyzer implements Serializable {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public boolean analyze(String textFiltered, ProgressBar progressBar, int progress){
+    public boolean analyze(String textFiltered, ProgressBar progressBar){
 
         boolean exitAnalyze = true;
 
@@ -111,17 +111,17 @@ public class LabelAnalyzer implements Serializable {
         walker.walk(listener, tree); //recorrer el arbol para obtener los nutrientes
 
 
-        labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ", progressBar, progress);
-        labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ", progressBar, progress);
-        labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ", progressBar, progress);
-        labelCheckerV2(GRASAS_TOTALES, listener.getGrasasTotales(), "Grasa Total: ", progressBar, progress);
-        labelCheckerV2(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ", progressBar, progress);
-        labelCheckerV2(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ", progressBar, progress);
-        labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ", progressBar, progress);
-        labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ", progressBar, progress);
-        labelCheckerV2(COLESTEROL, listener.getColesterol(), "Colesterol: ", progressBar, progress);
-        labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ", progressBar, progress);
-        labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ", progressBar, progress);
+        labelCheckerV2(TAM_PORCION, listener.getTamanoPorcion(),"Tamano de la porcion: ", progressBar);
+        labelCheckerV2(PORCIONES, listener.getPorciones(), "Porciones por empaque: ", progressBar);
+        labelCheckerV2(CALORIAS, listener.getCalorias(), "Calorias: ", progressBar);
+        labelCheckerV2(GRASAS_TOTALES, listener.getGrasasTotales(), "Grasa Total: ", progressBar);
+        labelCheckerV2(GRASAS_SATURADAS, listener.getGrasasSaturadas(), "Grasa Saturada: ", progressBar);
+        labelCheckerV2(GRASAS_TRANS, listener.getGrasasTrans(), "Grasa Trans: ", progressBar);
+        labelCheckerV2(CARBOHIDRATOS, listener.getCarbs(), "Carbohidratos: ", progressBar);
+        labelCheckerV2(AZUCARES, listener.getAzucares(), "Azucares: ", progressBar);
+        labelCheckerV2(COLESTEROL, listener.getColesterol(), "Colesterol: ", progressBar);
+        labelCheckerV2(SODIO, listener.getSodio(), "Sodio: ", progressBar);
+        labelCheckerV2(PROTEINAS, listener.getProteinas(), "Proteina: ", progressBar);
 
         for(boolean block : blockNutrients){
             exitAnalyze &= block;
@@ -144,7 +144,7 @@ public class LabelAnalyzer implements Serializable {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void labelCheckerV2(int labelItem, int listenerData, String label, ProgressBar progressBar, int progress){
+    private void labelCheckerV2(int labelItem, int listenerData, String label, ProgressBar progressBar){
         if(!blockNutrients[labelItem]){
             // Si nos da un dato
             if(listenerData != NOT_FOUND){
@@ -162,8 +162,7 @@ public class LabelAnalyzer implements Serializable {
                         if(occurrence[labelItem][i].getOcurrences() >= MAX_OCCURRENCES){
                             blockNutrients[labelItem] = true;
                             amountNutrients[labelItem] = listenerData;
-                            progress++;
-                            progressBar.setProgress(progress, true);
+                            progressBar.setProgress(progressBar.getProgress() + 1, true);
                             Log.d("final_label_data", label  + amountNutrients[labelItem] + " ocurrence = " + occurrence[labelItem][i].getOcurrences());
                             return;
                         }
@@ -188,7 +187,12 @@ public class LabelAnalyzer implements Serializable {
     public void resetFilters(){
         for(int i = 0; i < SIZE; i++){
             blockNutrients[i] = false;
+            amountNutrients[i] = 0;
+
         }
     }
 
+    public static int getSIZE() {
+        return SIZE;
+    }
 }

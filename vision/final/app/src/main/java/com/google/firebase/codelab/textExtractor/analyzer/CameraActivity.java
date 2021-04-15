@@ -44,7 +44,6 @@ public class CameraActivity extends AppCompatActivity {
     private TextView textView;
     private LabelAnalyzer labelAnalyzer;
     private ProgressBar progressBar;
-    private int progress = 0;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -55,7 +54,7 @@ public class CameraActivity extends AppCompatActivity {
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
 
         progressBar = findViewById(R.id.progressBar);
-        progressBar.setMax(8);
+        progressBar.setMax(11);
         progressBar.setScaleY(2f);
 
 
@@ -104,7 +103,6 @@ public class CameraActivity extends AppCompatActivity {
                                 String text = extractText(visionText);
                                 Log.d("SuperTexto", text);
                                 analyzeString(text);
-                                Log.d("progressbar", String.valueOf(progress));
                                 image.close();
                             }
                         })
@@ -227,10 +225,18 @@ public class CameraActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void analyzeString(String labelText){
 
-        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText), progressBar, progress)){
-            labelAnalyzer.resetFilters();
+        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText), progressBar)){
+            int [] array = new int[LabelAnalyzer.getSIZE()];
+
+            for(int i = 0; i < array.length; i++){
+                array[i] = labelAnalyzer.getAmountNutrients()[i];
+            }
+
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
-            dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
+            dataEntryActivity.putExtra("nutrientes", array);
+
+            labelAnalyzer.resetFilters();
+            progressBar.setProgress(0, true);
             startActivity(dataEntryActivity);
 
         }

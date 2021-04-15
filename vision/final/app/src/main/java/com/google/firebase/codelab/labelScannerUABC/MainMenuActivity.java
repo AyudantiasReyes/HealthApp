@@ -28,6 +28,7 @@ import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding;
+import com.google.firebase.codelab.textExtractor.BarcodeAnalyzer.JsonParser;
 import com.google.firebase.codelab.textExtractor.analyzer.CameraActivity;
 import com.google.firebase.codelab.textExtractor.analyzer.LabelAnalyzer;
 import com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner;
@@ -56,6 +57,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     private SharedPreferences preferences;
     private LabelAnalyzer labelAnalyzer;
+    private JsonParser jsonParser;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -65,6 +67,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         User user = LoadSharedPreferences();
         labelAnalyzer = new LabelAnalyzer();
+
+        jsonParser = new JsonParser();
+        jsonParser.execute(this);
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
