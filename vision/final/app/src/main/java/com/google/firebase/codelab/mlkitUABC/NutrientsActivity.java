@@ -25,7 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.firebase.codelab.UI.LoginActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
@@ -330,7 +329,7 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                 parameter.put("azucar",String.valueOf(food.getSugar()));
                 parameter.put("carbohidrato",String.valueOf(food.getCarbs()));
                 parameter.put("proteina",String.valueOf(food.getProtein()));
-                parameter.put("lipido",String.valueOf(food.getFat()));
+                parameter.put("lipido",String.valueOf(food.getTotalFat()));
                 parameter.put("sodio",String.valueOf(food.getSodium()));
                 return parameter;
             }

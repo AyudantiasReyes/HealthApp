@@ -30,7 +30,9 @@
     <string name="carbohidratos">Carbohidratos</string>
     <string name="calorias">Calorías</string>
     <string name="proteina">Proteína</string>
-    <string name="lipidos">Lípidos</string>
+    <string name="grasaTotal">Grasa Total</string>
+    <string name="grasaSaturada">Grasa Saturada</string>
+    <string name="grasaTrans">Grasa Trans</string>
     <string name="colesterol">Colesterol</string>
     <string name="vitamina_a">Vitamina A</string>
     <string name="sodio">Sodio</string>
@@ -47,11 +49,13 @@
     //entrada de datos
     <string name="nombre_producto">Nombre del producto</string>
     <string name="tamaño_porción">Tamaño de porción (g/ml)</string>
-    <string name="carbs_porcion">Carbohidratos (gr)</string>
+    <string name="carbs_porcion">Carbohidratos (g)</string>
     <string name="calorias_porcion">Calorías (kCal)</string>
     <string name="proteinas_porcion">Proteína (g)</string>
-    <string name="lipidos_porcion">Lípidos (g)</string>
-    <string name="colesterol_porcion">Colesterol (g)</string>
+    <string name="grasaTotal_porcion">Grasa Total (g)</string>
+    <string name="grasaSaturada_porcion">Grasa Saturada (g)</string>
+    <string name="grasaTrans_porcion">Grasa Trans(g)</string>
+    <string name="colesterol_porcion">Colesterol (mg)</string>
     <string name="sodio_porcion">Sodio (mg)</string>
     <string name="azucares_porcion">Azúcares (g)</string>
     <string name="vita_porcion">Vitamina A (g)</string>
@@ -63,7 +67,9 @@
     <string name="carbs_hint">Carbohidratos por porción</string>
     <string name="calorias_hint">Calorías por porción</string>
     <string name="proteinas_hint">Proteína por porción</string>
-    <string name="lipidos_hint">Lípidos por porción</string>
+    <string name="grasaTotal_hint">Grasa total por porción</string>
+    <string name="grasaSaturada_hint">Grasa saturada por porción</string>
+    <string name="grasaTrans_hint">Grasa trans por porción</string>
     <string name="colesterol_hint">Colesterol por porción</string>
     <string name="sodio_hint">Sodio por porción</string>
     <string name="azucares_hint">Azúcares porción</string>

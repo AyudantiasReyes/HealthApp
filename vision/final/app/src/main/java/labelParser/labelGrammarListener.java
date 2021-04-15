@@ -68,6 +68,26 @@ public interface labelGrammarListener extends ParseTreeListener {
 	 */
 	void exitGrasaTotal_statement(labelGrammarParser.GrasaTotal_statementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#grasaSaturada_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#grasaSaturada_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitGrasaSaturada_statement(labelGrammarParser.GrasaSaturada_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#grasaTrans_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#grasaTrans_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitGrasaTrans_statement(labelGrammarParser.GrasaTrans_statementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link labelGrammarParser#carbs_statement}.
 	 * @param ctx the parse tree
 	 */
@@ -87,6 +107,16 @@ public interface labelGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAzucar_statement(labelGrammarParser.Azucar_statementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link labelGrammarParser#colesterol_statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link labelGrammarParser#colesterol_statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitColesterol_statement(labelGrammarParser.Colesterol_statementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link labelGrammarParser#sodio_statement}.
 	 * @param ctx the parse tree

@@ -1,38 +1,56 @@
 package com.google.firebase.codelab.labelScannerUABC.Class;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
 
 public class FoodItem implements Serializable {
-    private String product_name;
     private int id;
+    private String product_name;
     private float portion_size;
     private float portions;
     private float calories;
-    private float sodium;
+    private float totalFat;
+    private float saturatedFat;
+    private float transFat;
     private float carbs;
-    private float fat;
     private float sugar;
-    private float transfat;
+    private float choleresterol;
+    private float sodium;
     private float protein;
     private long dateAdded;
     private long dateModified;
 
-    public FoodItem(String product_name, float portion_size, float portions, float calories, float sodium, float carbs, float fat, float sugar, float transfat, float protein){
-        this.id = -1;  //valor temporal, no se almacena en la base de datos
+    public FoodItem(
+            int id,
+            String product_name,
+            float portion_size,
+            float portions,
+            float calories,
+            float totalFat,
+            float saturatedfat,
+            float transfat,
+            float carbs,
+            float sugar,
+            float choleresterol,
+            float sodium,
+            float protein,
+            long dateAdded,
+            long dateModified
+    ) {
+        this.id = id;
         this.product_name = product_name;
         this.portion_size = portion_size;
         this.portions = portions;
         this.calories = calories;
-        this.sodium = sodium;
+        this.totalFat = totalFat;
+        this.saturatedFat = saturatedfat;
+        this.transFat = transfat;
         this.carbs = carbs;
-        this.fat = fat;
         this.sugar = sugar;
-        this.transfat = transfat;
+        this.choleresterol = choleresterol;
+        this.sodium = sodium;
         this.protein = protein;
-        this.dateAdded = System.currentTimeMillis();
-        this.dateModified = System.currentTimeMillis();
+        this.dateAdded = dateAdded;
+        this.dateModified = dateModified;
     }
 
     public FoodItem(){
@@ -43,9 +61,9 @@ public class FoodItem implements Serializable {
         this.calories = 0;
         this.sodium = 0;
         this.carbs = 0;
-        this.fat = 0;
+        this.totalFat = 0;
         this.sugar = 0;
-        this.transfat = 0;
+        this.transFat = 0;
         this.protein = 0;
         this.dateAdded = System.currentTimeMillis();
         this.dateModified = System.currentTimeMillis();
@@ -105,12 +123,12 @@ public class FoodItem implements Serializable {
         this.carbs = carbs;
     }
 
-    public float getFat() {
-        return fat;
+    public float getTotalFat() {
+        return totalFat;
     }
 
-    public void setFat(float fat) {
-        this.fat = fat;
+    public void setTotalFat(float totalFat) {
+        this.totalFat = totalFat;
     }
 
     public float getSugar() {
@@ -121,12 +139,28 @@ public class FoodItem implements Serializable {
         this.sugar = sugar;
     }
 
-    public float getTransfat() {
-        return transfat;
+    public float getTransFat() {
+        return transFat;
     }
 
-    public void setTransfat(float transfat) {
-        this.transfat = transfat;
+    public void setTransFat(float transFat) {
+        this.transFat = transFat;
+    }
+
+    public float getSaturatedFat() {
+        return saturatedFat;
+    }
+
+    public void setSaturatedFat(float saturatedFat) {
+        this.saturatedFat = saturatedFat;
+    }
+
+    public float getCholeresterol() {
+        return choleresterol;
+    }
+
+    public void setCholeresterol(float choleresterol) {
+        this.choleresterol = choleresterol;
     }
 
     public float getProtein() {

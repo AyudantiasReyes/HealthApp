@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Size;
 import android.view.OrientationEventListener;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,7 +36,6 @@ import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class CameraActivity extends AppCompatActivity {
@@ -43,14 +43,20 @@ public class CameraActivity extends AppCompatActivity {
     private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
     private TextView textView;
     private LabelAnalyzer labelAnalyzer;
+    private ProgressBar progressBar;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         previewView = findViewById(R.id.previewView);
         cameraProviderFuture = ProcessCameraProvider.getInstance(this);
-        textView = findViewById(R.id.orientation);
+
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(11);
+        progressBar.setScaleY(2f);
+
 
         if(savedInstanceState == null)
             labelAnalyzer = new LabelAnalyzer(true);
@@ -96,7 +102,7 @@ public class CameraActivity extends AppCompatActivity {
                             public void onSuccess(Text visionText) { //visionText es el texto que regresa la app
                                 String text = extractText(visionText);
                                 Log.d("SuperTexto", text);
-                                analizeString(text);
+                                analyzeString(text);
                                 image.close();
                             }
                         })
@@ -117,7 +123,7 @@ public class CameraActivity extends AppCompatActivity {
         OrientationEventListener orientationEventListener = new OrientationEventListener(this) {
             @Override
             public void onOrientationChanged(int orientation) {
-                textView.setText(String.format(Locale.getDefault(),"%d", orientation));
+                //textView.setText(String.format(Locale.getDefault(),"%d", orientation));
             }
         };
         orientationEventListener.enable();
@@ -193,7 +199,7 @@ public class CameraActivity extends AppCompatActivity {
 
             try{
                 int resta = Math.abs(aux.getFrame().top - elements.get(i + 1).getFrame().top);
-                if(resta <= 5){
+                if(resta <= 9){
                     do{
                         group.add(elements.get(i + 1));
                         i++;
@@ -216,15 +222,25 @@ public class CameraActivity extends AppCompatActivity {
         elements.addAll(sortedGroups);
     }
 
-    public void analizeString(String labelText){
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void analyzeString(String labelText){
 
-        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText))){
-            labelAnalyzer.resetFilters();
+        if(labelAnalyzer.analyze(LabelCleaner.cleanLabelText(labelText), progressBar)){
+            int [] array = new int[LabelAnalyzer.getSIZE()];
+
+            for(int i = 0; i < array.length; i++){
+                array[i] = labelAnalyzer.getAmountNutrients()[i];
+            }
+
             Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
-            dataEntryActivity.putExtra("nutrientes", labelAnalyzer.getAmountNutrients());
+            dataEntryActivity.putExtra("nutrientes", array);
 
+            labelAnalyzer.resetFilters();
+            progressBar.setProgress(0, true);
             startActivity(dataEntryActivity);
 
         }
+
+
     }
 }

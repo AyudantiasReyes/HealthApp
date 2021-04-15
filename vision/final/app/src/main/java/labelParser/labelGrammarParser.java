@@ -18,17 +18,19 @@ public class labelGrammarParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		NUMERO=1, VOWEL=2, TAMANODEPORCION=3, OZ=4, EMPAQUE=5, CALORIAS=6, GRASA=7, 
-		TOTAL=8, CARBOHIDRATOS=9, AZUCARES=10, SODIO=11, PROTEINAS=12, G=13, WS=14, 
-		ANY=15;
+		TOTAL=8, SATURADAS=9, TRANS=10, CARBOHIDRATOS=11, AZUCARES=12, COLESTEROL=13, 
+		SODIO=14, PROTEINAS=15, G=16, WS=17, ANY=18;
 	public static final int
 		RULE_init = 0, RULE_statements = 1, RULE_tamanoPorcion_statement = 2, 
 		RULE_porcionesEmpaque_statement = 3, RULE_caloriasStatement = 4, RULE_grasaTotal_statement = 5, 
-		RULE_carbs_statement = 6, RULE_azucar_statement = 7, RULE_sodio_statement = 8, 
-		RULE_proteina_statement = 9;
+		RULE_grasaSaturada_statement = 6, RULE_grasaTrans_statement = 7, RULE_carbs_statement = 8, 
+		RULE_azucar_statement = 9, RULE_colesterol_statement = 10, RULE_sodio_statement = 11, 
+		RULE_proteina_statement = 12;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"init", "statements", "tamanoPorcion_statement", "porcionesEmpaque_statement", 
-			"caloriasStatement", "grasaTotal_statement", "carbs_statement", "azucar_statement", 
+			"caloriasStatement", "grasaTotal_statement", "grasaSaturada_statement", 
+			"grasaTrans_statement", "carbs_statement", "azucar_statement", "colesterol_statement", 
 			"sodio_statement", "proteina_statement"
 		};
 	}
@@ -42,8 +44,8 @@ public class labelGrammarParser extends Parser {
 	private static String[] makeSymbolicNames() {
 		return new String[] {
 			null, "NUMERO", "VOWEL", "TAMANODEPORCION", "OZ", "EMPAQUE", "CALORIAS", 
-			"GRASA", "TOTAL", "CARBOHIDRATOS", "AZUCARES", "SODIO", "PROTEINAS", 
-			"G", "WS", "ANY"
+			"GRASA", "TOTAL", "SATURADAS", "TRANS", "CARBOHIDRATOS", "AZUCARES", 
+			"COLESTEROL", "SODIO", "PROTEINAS", "G", "WS", "ANY"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -130,17 +132,17 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(23);
+			setState(29);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TAMANODEPORCION) | (1L << EMPAQUE) | (1L << CALORIAS) | (1L << GRASA) | (1L << CARBOHIDRATOS) | (1L << AZUCARES) | (1L << SODIO) | (1L << PROTEINAS))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << TAMANODEPORCION) | (1L << EMPAQUE) | (1L << CALORIAS) | (1L << GRASA) | (1L << CARBOHIDRATOS) | (1L << AZUCARES) | (1L << COLESTEROL) | (1L << SODIO) | (1L << PROTEINAS))) != 0)) {
 				{
 				{
-				setState(20);
+				setState(26);
 				statements();
 				}
 				}
-				setState(25);
+				setState(31);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -170,11 +172,20 @@ public class labelGrammarParser extends Parser {
 		public GrasaTotal_statementContext grasaTotal_statement() {
 			return getRuleContext(GrasaTotal_statementContext.class,0);
 		}
+		public GrasaSaturada_statementContext grasaSaturada_statement() {
+			return getRuleContext(GrasaSaturada_statementContext.class,0);
+		}
+		public GrasaTrans_statementContext grasaTrans_statement() {
+			return getRuleContext(GrasaTrans_statementContext.class,0);
+		}
 		public Carbs_statementContext carbs_statement() {
 			return getRuleContext(Carbs_statementContext.class,0);
 		}
 		public Azucar_statementContext azucar_statement() {
 			return getRuleContext(Azucar_statementContext.class,0);
+		}
+		public Colesterol_statementContext colesterol_statement() {
+			return getRuleContext(Colesterol_statementContext.class,0);
 		}
 		public Sodio_statementContext sodio_statement() {
 			return getRuleContext(Sodio_statementContext.class,0);
@@ -205,67 +216,86 @@ public class labelGrammarParser extends Parser {
 		StatementsContext _localctx = new StatementsContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_statements);
 		try {
-			setState(34);
+			setState(43);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case TAMANODEPORCION:
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(26);
+				setState(32);
 				tamanoPorcion_statement();
 				}
 				break;
-			case EMPAQUE:
+			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(27);
+				setState(33);
 				porcionesEmpaque_statement();
 				}
 				break;
-			case CALORIAS:
+			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(28);
+				setState(34);
 				caloriasStatement();
 				}
 				break;
-			case GRASA:
+			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(29);
+				setState(35);
 				grasaTotal_statement();
 				}
 				break;
-			case CARBOHIDRATOS:
+			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(30);
+				setState(36);
+				grasaSaturada_statement();
+				}
+				break;
+			case 6:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(37);
+				grasaTrans_statement();
+				}
+				break;
+			case 7:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(38);
 				carbs_statement();
 				}
 				break;
-			case AZUCARES:
-				enterOuterAlt(_localctx, 6);
+			case 8:
+				enterOuterAlt(_localctx, 8);
 				{
-				setState(31);
+				setState(39);
 				azucar_statement();
 				}
 				break;
-			case SODIO:
-				enterOuterAlt(_localctx, 7);
+			case 9:
+				enterOuterAlt(_localctx, 9);
 				{
-				setState(32);
+				setState(40);
+				colesterol_statement();
+				}
+				break;
+			case 10:
+				enterOuterAlt(_localctx, 10);
+				{
+				setState(41);
 				sodio_statement();
 				}
 				break;
-			case PROTEINAS:
-				enterOuterAlt(_localctx, 8);
+			case 11:
+				enterOuterAlt(_localctx, 11);
 				{
-				setState(33);
+				setState(42);
 				proteina_statement();
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -313,44 +343,44 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(36);
+			setState(45);
 			match(TAMANODEPORCION);
-			setState(38);
+			setState(47);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
 				{
-				setState(37);
+				setState(46);
 				match(NUMERO);
 				}
 				break;
 			}
-			setState(41);
+			setState(50);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==OZ) {
 				{
-				setState(40);
+				setState(49);
 				match(OZ);
 				}
 			}
 
-			setState(44);
+			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NUMERO) {
 				{
-				setState(43);
+				setState(52);
 				match(NUMERO);
 				}
 			}
 
-			setState(47);
+			setState(56);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(46);
+				setState(55);
 				match(G);
 				}
 			}
@@ -396,9 +426,9 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(58);
 			match(EMPAQUE);
-			setState(50);
+			setState(59);
 			match(NUMERO);
 			}
 		}
@@ -441,9 +471,9 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(52);
+			setState(61);
 			match(CALORIAS);
-			setState(53);
+			setState(62);
 			match(NUMERO);
 			}
 		}
@@ -489,18 +519,146 @@ public class labelGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(55);
+			setState(64);
 			match(GRASA);
-			setState(56);
+			setState(65);
 			match(TOTAL);
-			setState(57);
+			setState(66);
 			match(NUMERO);
-			setState(59);
+			setState(68);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(58);
+				setState(67);
+				match(G);
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class GrasaSaturada_statementContext extends ParserRuleContext {
+		public TerminalNode GRASA() { return getToken(labelGrammarParser.GRASA, 0); }
+		public TerminalNode SATURADAS() { return getToken(labelGrammarParser.SATURADAS, 0); }
+		public TerminalNode NUMERO() { return getToken(labelGrammarParser.NUMERO, 0); }
+		public TerminalNode G() { return getToken(labelGrammarParser.G, 0); }
+		public GrasaSaturada_statementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_grasaSaturada_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).enterGrasaSaturada_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).exitGrasaSaturada_statement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof labelGrammarVisitor ) return ((labelGrammarVisitor<? extends T>)visitor).visitGrasaSaturada_statement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final GrasaSaturada_statementContext grasaSaturada_statement() throws RecognitionException {
+		GrasaSaturada_statementContext _localctx = new GrasaSaturada_statementContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_grasaSaturada_statement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(70);
+			match(GRASA);
+			setState(71);
+			match(SATURADAS);
+			setState(72);
+			match(NUMERO);
+			setState(74);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==G) {
+				{
+				setState(73);
+				match(G);
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class GrasaTrans_statementContext extends ParserRuleContext {
+		public TerminalNode GRASA() { return getToken(labelGrammarParser.GRASA, 0); }
+		public TerminalNode TRANS() { return getToken(labelGrammarParser.TRANS, 0); }
+		public TerminalNode NUMERO() { return getToken(labelGrammarParser.NUMERO, 0); }
+		public TerminalNode G() { return getToken(labelGrammarParser.G, 0); }
+		public GrasaTrans_statementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_grasaTrans_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).enterGrasaTrans_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).exitGrasaTrans_statement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof labelGrammarVisitor ) return ((labelGrammarVisitor<? extends T>)visitor).visitGrasaTrans_statement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final GrasaTrans_statementContext grasaTrans_statement() throws RecognitionException {
+		GrasaTrans_statementContext _localctx = new GrasaTrans_statementContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_grasaTrans_statement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(76);
+			match(GRASA);
+			setState(77);
+			match(TRANS);
+			setState(79);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==NUMERO) {
+				{
+				setState(78);
+				match(NUMERO);
+				}
+			}
+
+			setState(82);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==G) {
+				{
+				setState(81);
 				match(G);
 				}
 			}
@@ -544,31 +702,31 @@ public class labelGrammarParser extends Parser {
 
 	public final Carbs_statementContext carbs_statement() throws RecognitionException {
 		Carbs_statementContext _localctx = new Carbs_statementContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_carbs_statement);
+		enterRule(_localctx, 16, RULE_carbs_statement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(61);
+			setState(84);
 			match(CARBOHIDRATOS);
-			setState(63);
+			setState(86);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==TOTAL) {
 				{
-				setState(62);
+				setState(85);
 				match(TOTAL);
 				}
 			}
 
-			setState(65);
+			setState(88);
 			match(NUMERO);
-			setState(67);
+			setState(90);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(66);
+				setState(89);
 				match(G);
 				}
 			}
@@ -611,21 +769,78 @@ public class labelGrammarParser extends Parser {
 
 	public final Azucar_statementContext azucar_statement() throws RecognitionException {
 		Azucar_statementContext _localctx = new Azucar_statementContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_azucar_statement);
+		enterRule(_localctx, 18, RULE_azucar_statement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(69);
+			setState(92);
 			match(AZUCARES);
-			setState(70);
+			setState(93);
 			match(NUMERO);
-			setState(72);
+			setState(95);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(71);
+				setState(94);
+				match(G);
+				}
+			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class Colesterol_statementContext extends ParserRuleContext {
+		public TerminalNode COLESTEROL() { return getToken(labelGrammarParser.COLESTEROL, 0); }
+		public TerminalNode NUMERO() { return getToken(labelGrammarParser.NUMERO, 0); }
+		public TerminalNode G() { return getToken(labelGrammarParser.G, 0); }
+		public Colesterol_statementContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_colesterol_statement; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).enterColesterol_statement(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof labelGrammarListener ) ((labelGrammarListener)listener).exitColesterol_statement(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof labelGrammarVisitor ) return ((labelGrammarVisitor<? extends T>)visitor).visitColesterol_statement(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Colesterol_statementContext colesterol_statement() throws RecognitionException {
+		Colesterol_statementContext _localctx = new Colesterol_statementContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_colesterol_statement);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(97);
+			match(COLESTEROL);
+			setState(98);
+			match(NUMERO);
+			setState(100);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==G) {
+				{
+				setState(99);
 				match(G);
 				}
 			}
@@ -668,21 +883,21 @@ public class labelGrammarParser extends Parser {
 
 	public final Sodio_statementContext sodio_statement() throws RecognitionException {
 		Sodio_statementContext _localctx = new Sodio_statementContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_sodio_statement);
+		enterRule(_localctx, 22, RULE_sodio_statement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(102);
 			match(SODIO);
-			setState(75);
+			setState(103);
 			match(NUMERO);
-			setState(77);
+			setState(105);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(76);
+				setState(104);
 				match(G);
 				}
 			}
@@ -725,21 +940,21 @@ public class labelGrammarParser extends Parser {
 
 	public final Proteina_statementContext proteina_statement() throws RecognitionException {
 		Proteina_statementContext _localctx = new Proteina_statementContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_proteina_statement);
+		enterRule(_localctx, 24, RULE_proteina_statement);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
+			setState(107);
 			match(PROTEINAS);
-			setState(80);
+			setState(108);
 			match(NUMERO);
-			setState(82);
+			setState(110);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==G) {
 				{
-				setState(81);
+				setState(109);
 				match(G);
 				}
 			}
@@ -758,28 +973,35 @@ public class labelGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21W\4\2\t\2\4\3\t"+
-		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\3"+
-		"\2\7\2\30\n\2\f\2\16\2\33\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3%\n"+
-		"\3\3\4\3\4\5\4)\n\4\3\4\5\4,\n\4\3\4\5\4/\n\4\3\4\5\4\62\n\4\3\5\3\5\3"+
-		"\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\5\7>\n\7\3\b\3\b\5\bB\n\b\3\b\3\b\5\bF"+
-		"\n\b\3\t\3\t\3\t\5\tK\n\t\3\n\3\n\3\n\5\nP\n\n\3\13\3\13\3\13\5\13U\n"+
-		"\13\3\13\2\2\f\2\4\6\b\n\f\16\20\22\24\2\2\2^\2\31\3\2\2\2\4$\3\2\2\2"+
-		"\6&\3\2\2\2\b\63\3\2\2\2\n\66\3\2\2\2\f9\3\2\2\2\16?\3\2\2\2\20G\3\2\2"+
-		"\2\22L\3\2\2\2\24Q\3\2\2\2\26\30\5\4\3\2\27\26\3\2\2\2\30\33\3\2\2\2\31"+
-		"\27\3\2\2\2\31\32\3\2\2\2\32\3\3\2\2\2\33\31\3\2\2\2\34%\5\6\4\2\35%\5"+
-		"\b\5\2\36%\5\n\6\2\37%\5\f\7\2 %\5\16\b\2!%\5\20\t\2\"%\5\22\n\2#%\5\24"+
-		"\13\2$\34\3\2\2\2$\35\3\2\2\2$\36\3\2\2\2$\37\3\2\2\2$ \3\2\2\2$!\3\2"+
-		"\2\2$\"\3\2\2\2$#\3\2\2\2%\5\3\2\2\2&(\7\5\2\2\')\7\3\2\2(\'\3\2\2\2("+
-		")\3\2\2\2)+\3\2\2\2*,\7\6\2\2+*\3\2\2\2+,\3\2\2\2,.\3\2\2\2-/\7\3\2\2"+
-		".-\3\2\2\2./\3\2\2\2/\61\3\2\2\2\60\62\7\17\2\2\61\60\3\2\2\2\61\62\3"+
-		"\2\2\2\62\7\3\2\2\2\63\64\7\7\2\2\64\65\7\3\2\2\65\t\3\2\2\2\66\67\7\b"+
-		"\2\2\678\7\3\2\28\13\3\2\2\29:\7\t\2\2:;\7\n\2\2;=\7\3\2\2<>\7\17\2\2"+
-		"=<\3\2\2\2=>\3\2\2\2>\r\3\2\2\2?A\7\13\2\2@B\7\n\2\2A@\3\2\2\2AB\3\2\2"+
-		"\2BC\3\2\2\2CE\7\3\2\2DF\7\17\2\2ED\3\2\2\2EF\3\2\2\2F\17\3\2\2\2GH\7"+
-		"\f\2\2HJ\7\3\2\2IK\7\17\2\2JI\3\2\2\2JK\3\2\2\2K\21\3\2\2\2LM\7\r\2\2"+
-		"MO\7\3\2\2NP\7\17\2\2ON\3\2\2\2OP\3\2\2\2P\23\3\2\2\2QR\7\16\2\2RT\7\3"+
-		"\2\2SU\7\17\2\2TS\3\2\2\2TU\3\2\2\2U\25\3\2\2\2\16\31$(+.\61=AEJOT";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\24s\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
+		"\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\5\4\62\n\4\3\4\5\4\65\n"+
+		"\4\3\4\5\48\n\4\3\4\5\4;\n\4\3\5\3\5\3\5\3\6\3\6\3\6\3\7\3\7\3\7\3\7\5"+
+		"\7G\n\7\3\b\3\b\3\b\3\b\5\bM\n\b\3\t\3\t\3\t\5\tR\n\t\3\t\5\tU\n\t\3\n"+
+		"\3\n\5\nY\n\n\3\n\3\n\5\n]\n\n\3\13\3\13\3\13\5\13b\n\13\3\f\3\f\3\f\5"+
+		"\fg\n\f\3\r\3\r\3\r\5\rl\n\r\3\16\3\16\3\16\5\16q\n\16\3\16\2\2\17\2\4"+
+		"\6\b\n\f\16\20\22\24\26\30\32\2\2\2~\2\37\3\2\2\2\4-\3\2\2\2\6/\3\2\2"+
+		"\2\b<\3\2\2\2\n?\3\2\2\2\fB\3\2\2\2\16H\3\2\2\2\20N\3\2\2\2\22V\3\2\2"+
+		"\2\24^\3\2\2\2\26c\3\2\2\2\30h\3\2\2\2\32m\3\2\2\2\34\36\5\4\3\2\35\34"+
+		"\3\2\2\2\36!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!\37\3\2\2\2"+
+		"\".\5\6\4\2#.\5\b\5\2$.\5\n\6\2%.\5\f\7\2&.\5\16\b\2\'.\5\20\t\2(.\5\22"+
+		"\n\2).\5\24\13\2*.\5\26\f\2+.\5\30\r\2,.\5\32\16\2-\"\3\2\2\2-#\3\2\2"+
+		"\2-$\3\2\2\2-%\3\2\2\2-&\3\2\2\2-\'\3\2\2\2-(\3\2\2\2-)\3\2\2\2-*\3\2"+
+		"\2\2-+\3\2\2\2-,\3\2\2\2.\5\3\2\2\2/\61\7\5\2\2\60\62\7\3\2\2\61\60\3"+
+		"\2\2\2\61\62\3\2\2\2\62\64\3\2\2\2\63\65\7\6\2\2\64\63\3\2\2\2\64\65\3"+
+		"\2\2\2\65\67\3\2\2\2\668\7\3\2\2\67\66\3\2\2\2\678\3\2\2\28:\3\2\2\29"+
+		";\7\22\2\2:9\3\2\2\2:;\3\2\2\2;\7\3\2\2\2<=\7\7\2\2=>\7\3\2\2>\t\3\2\2"+
+		"\2?@\7\b\2\2@A\7\3\2\2A\13\3\2\2\2BC\7\t\2\2CD\7\n\2\2DF\7\3\2\2EG\7\22"+
+		"\2\2FE\3\2\2\2FG\3\2\2\2G\r\3\2\2\2HI\7\t\2\2IJ\7\13\2\2JL\7\3\2\2KM\7"+
+		"\22\2\2LK\3\2\2\2LM\3\2\2\2M\17\3\2\2\2NO\7\t\2\2OQ\7\f\2\2PR\7\3\2\2"+
+		"QP\3\2\2\2QR\3\2\2\2RT\3\2\2\2SU\7\22\2\2TS\3\2\2\2TU\3\2\2\2U\21\3\2"+
+		"\2\2VX\7\r\2\2WY\7\n\2\2XW\3\2\2\2XY\3\2\2\2YZ\3\2\2\2Z\\\7\3\2\2[]\7"+
+		"\22\2\2\\[\3\2\2\2\\]\3\2\2\2]\23\3\2\2\2^_\7\16\2\2_a\7\3\2\2`b\7\22"+
+		"\2\2a`\3\2\2\2ab\3\2\2\2b\25\3\2\2\2cd\7\17\2\2df\7\3\2\2eg\7\22\2\2f"+
+		"e\3\2\2\2fg\3\2\2\2g\27\3\2\2\2hi\7\20\2\2ik\7\3\2\2jl\7\22\2\2kj\3\2"+
+		"\2\2kl\3\2\2\2l\31\3\2\2\2mn\7\21\2\2np\7\3\2\2oq\7\22\2\2po\3\2\2\2p"+
+		"q\3\2\2\2q\33\3\2\2\2\22\37-\61\64\67:FLQTX\\afkp";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

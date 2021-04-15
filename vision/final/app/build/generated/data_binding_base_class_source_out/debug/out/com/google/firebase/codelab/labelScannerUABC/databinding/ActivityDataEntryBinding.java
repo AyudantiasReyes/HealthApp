@@ -26,58 +26,43 @@ public final class ActivityDataEntryBinding implements ViewBinding {
   public final FloatingActionButton acceptButton;
 
   @NonNull
-  public final EditText azucarEditText;
-
-  @NonNull
   public final ImageButton backButton;
 
   @NonNull
-  public final EditText caloriasEditText;
+  public final EditText cuerpoAzucar;
 
   @NonNull
-  public final EditText carbsEditText;
+  public final EditText cuerpoCalorias;
 
   @NonNull
-  public final EditText lipidosEditText;
+  public final EditText cuerpoCarbohidratos;
 
   @NonNull
-  public final EditText nombreEditText;
+  public final EditText cuerpoColesterol;
 
   @NonNull
-  public final TextView nombreTitle;
+  public final EditText cuerpoGrasaSaturada;
 
   @NonNull
-  public final TextView nombreTitle10;
+  public final EditText cuerpoGrasaTotal;
 
   @NonNull
-  public final TextView nombreTitle11;
+  public final EditText cuerpoGrasaTrans;
 
   @NonNull
-  public final TextView nombreTitle6;
+  public final EditText cuerpoNombreProducto;
 
   @NonNull
-  public final TextView nombreTitle7;
+  public final EditText cuerpoPorciones;
 
   @NonNull
-  public final TextView nombreTitle8;
+  public final EditText cuerpoProteina;
 
   @NonNull
-  public final TextView nombreTitle9;
+  public final EditText cuerpoSodio;
 
   @NonNull
-  public final EditText numeroPorcionesEditText;
-
-  @NonNull
-  public final TextView numeroPorcionesTitle;
-
-  @NonNull
-  public final EditText porcionEditText;
-
-  @NonNull
-  public final TextView porcionTitle;
-
-  @NonNull
-  public final EditText proteinaEditText;
+  public final EditText cuerpoTamPorcion;
 
   @NonNull
   public final ConstraintLayout root1;
@@ -86,51 +71,93 @@ public final class ActivityDataEntryBinding implements ViewBinding {
   public final ScrollView scrollView2;
 
   @NonNull
-  public final EditText sodioEditText;
+  public final TextView titleTextView;
 
   @NonNull
-  public final TextView titleTextView;
+  public final TextView tituloAzucar;
+
+  @NonNull
+  public final TextView tituloCalorias;
+
+  @NonNull
+  public final TextView tituloCarbohidratos;
+
+  @NonNull
+  public final TextView tituloColesterol;
+
+  @NonNull
+  public final TextView tituloGrasaSaturada;
+
+  @NonNull
+  public final TextView tituloGrasaTotal;
+
+  @NonNull
+  public final TextView tituloGrasaTrans;
+
+  @NonNull
+  public final TextView tituloNombreProducto;
+
+  @NonNull
+  public final TextView tituloPorciones;
+
+  @NonNull
+  public final TextView tituloProteina;
+
+  @NonNull
+  public final TextView tituloSodio;
+
+  @NonNull
+  public final TextView tituloTamPorcion;
 
   @NonNull
   public final ConstraintLayout topBarLayout;
 
   private ActivityDataEntryBinding(@NonNull ConstraintLayout rootView,
-      @NonNull FloatingActionButton acceptButton, @NonNull EditText azucarEditText,
-      @NonNull ImageButton backButton, @NonNull EditText caloriasEditText,
-      @NonNull EditText carbsEditText, @NonNull EditText lipidosEditText,
-      @NonNull EditText nombreEditText, @NonNull TextView nombreTitle,
-      @NonNull TextView nombreTitle10, @NonNull TextView nombreTitle11,
-      @NonNull TextView nombreTitle6, @NonNull TextView nombreTitle7,
-      @NonNull TextView nombreTitle8, @NonNull TextView nombreTitle9,
-      @NonNull EditText numeroPorcionesEditText, @NonNull TextView numeroPorcionesTitle,
-      @NonNull EditText porcionEditText, @NonNull TextView porcionTitle,
-      @NonNull EditText proteinaEditText, @NonNull ConstraintLayout root1,
-      @NonNull ScrollView scrollView2, @NonNull EditText sodioEditText,
-      @NonNull TextView titleTextView, @NonNull ConstraintLayout topBarLayout) {
+      @NonNull FloatingActionButton acceptButton, @NonNull ImageButton backButton,
+      @NonNull EditText cuerpoAzucar, @NonNull EditText cuerpoCalorias,
+      @NonNull EditText cuerpoCarbohidratos, @NonNull EditText cuerpoColesterol,
+      @NonNull EditText cuerpoGrasaSaturada, @NonNull EditText cuerpoGrasaTotal,
+      @NonNull EditText cuerpoGrasaTrans, @NonNull EditText cuerpoNombreProducto,
+      @NonNull EditText cuerpoPorciones, @NonNull EditText cuerpoProteina,
+      @NonNull EditText cuerpoSodio, @NonNull EditText cuerpoTamPorcion,
+      @NonNull ConstraintLayout root1, @NonNull ScrollView scrollView2,
+      @NonNull TextView titleTextView, @NonNull TextView tituloAzucar,
+      @NonNull TextView tituloCalorias, @NonNull TextView tituloCarbohidratos,
+      @NonNull TextView tituloColesterol, @NonNull TextView tituloGrasaSaturada,
+      @NonNull TextView tituloGrasaTotal, @NonNull TextView tituloGrasaTrans,
+      @NonNull TextView tituloNombreProducto, @NonNull TextView tituloPorciones,
+      @NonNull TextView tituloProteina, @NonNull TextView tituloSodio,
+      @NonNull TextView tituloTamPorcion, @NonNull ConstraintLayout topBarLayout) {
     this.rootView = rootView;
     this.acceptButton = acceptButton;
-    this.azucarEditText = azucarEditText;
     this.backButton = backButton;
-    this.caloriasEditText = caloriasEditText;
-    this.carbsEditText = carbsEditText;
-    this.lipidosEditText = lipidosEditText;
-    this.nombreEditText = nombreEditText;
-    this.nombreTitle = nombreTitle;
-    this.nombreTitle10 = nombreTitle10;
-    this.nombreTitle11 = nombreTitle11;
-    this.nombreTitle6 = nombreTitle6;
-    this.nombreTitle7 = nombreTitle7;
-    this.nombreTitle8 = nombreTitle8;
-    this.nombreTitle9 = nombreTitle9;
-    this.numeroPorcionesEditText = numeroPorcionesEditText;
-    this.numeroPorcionesTitle = numeroPorcionesTitle;
-    this.porcionEditText = porcionEditText;
-    this.porcionTitle = porcionTitle;
-    this.proteinaEditText = proteinaEditText;
+    this.cuerpoAzucar = cuerpoAzucar;
+    this.cuerpoCalorias = cuerpoCalorias;
+    this.cuerpoCarbohidratos = cuerpoCarbohidratos;
+    this.cuerpoColesterol = cuerpoColesterol;
+    this.cuerpoGrasaSaturada = cuerpoGrasaSaturada;
+    this.cuerpoGrasaTotal = cuerpoGrasaTotal;
+    this.cuerpoGrasaTrans = cuerpoGrasaTrans;
+    this.cuerpoNombreProducto = cuerpoNombreProducto;
+    this.cuerpoPorciones = cuerpoPorciones;
+    this.cuerpoProteina = cuerpoProteina;
+    this.cuerpoSodio = cuerpoSodio;
+    this.cuerpoTamPorcion = cuerpoTamPorcion;
     this.root1 = root1;
     this.scrollView2 = scrollView2;
-    this.sodioEditText = sodioEditText;
     this.titleTextView = titleTextView;
+    this.tituloAzucar = tituloAzucar;
+    this.tituloCalorias = tituloCalorias;
+    this.tituloCarbohidratos = tituloCarbohidratos;
+    this.tituloColesterol = tituloColesterol;
+    this.tituloGrasaSaturada = tituloGrasaSaturada;
+    this.tituloGrasaTotal = tituloGrasaTotal;
+    this.tituloGrasaTrans = tituloGrasaTrans;
+    this.tituloNombreProducto = tituloNombreProducto;
+    this.tituloPorciones = tituloPorciones;
+    this.tituloProteina = tituloProteina;
+    this.tituloSodio = tituloSodio;
+    this.tituloTamPorcion = tituloTamPorcion;
     this.topBarLayout = topBarLayout;
   }
 
@@ -167,111 +194,81 @@ public final class ActivityDataEntryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.azucarEditText;
-      EditText azucarEditText = rootView.findViewById(id);
-      if (azucarEditText == null) {
-        break missingId;
-      }
-
       id = R.id.backButton;
       ImageButton backButton = rootView.findViewById(id);
       if (backButton == null) {
         break missingId;
       }
 
-      id = R.id.caloriasEditText;
-      EditText caloriasEditText = rootView.findViewById(id);
-      if (caloriasEditText == null) {
+      id = R.id.cuerpoAzucar;
+      EditText cuerpoAzucar = rootView.findViewById(id);
+      if (cuerpoAzucar == null) {
         break missingId;
       }
 
-      id = R.id.carbsEditText;
-      EditText carbsEditText = rootView.findViewById(id);
-      if (carbsEditText == null) {
+      id = R.id.cuerpoCalorias;
+      EditText cuerpoCalorias = rootView.findViewById(id);
+      if (cuerpoCalorias == null) {
         break missingId;
       }
 
-      id = R.id.lipidosEditText;
-      EditText lipidosEditText = rootView.findViewById(id);
-      if (lipidosEditText == null) {
+      id = R.id.cuerpoCarbohidratos;
+      EditText cuerpoCarbohidratos = rootView.findViewById(id);
+      if (cuerpoCarbohidratos == null) {
         break missingId;
       }
 
-      id = R.id.nombreEditText;
-      EditText nombreEditText = rootView.findViewById(id);
-      if (nombreEditText == null) {
+      id = R.id.cuerpoColesterol;
+      EditText cuerpoColesterol = rootView.findViewById(id);
+      if (cuerpoColesterol == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle;
-      TextView nombreTitle = rootView.findViewById(id);
-      if (nombreTitle == null) {
+      id = R.id.cuerpoGrasaSaturada;
+      EditText cuerpoGrasaSaturada = rootView.findViewById(id);
+      if (cuerpoGrasaSaturada == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle10;
-      TextView nombreTitle10 = rootView.findViewById(id);
-      if (nombreTitle10 == null) {
+      id = R.id.cuerpoGrasaTotal;
+      EditText cuerpoGrasaTotal = rootView.findViewById(id);
+      if (cuerpoGrasaTotal == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle11;
-      TextView nombreTitle11 = rootView.findViewById(id);
-      if (nombreTitle11 == null) {
+      id = R.id.cuerpoGrasaTrans;
+      EditText cuerpoGrasaTrans = rootView.findViewById(id);
+      if (cuerpoGrasaTrans == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle6;
-      TextView nombreTitle6 = rootView.findViewById(id);
-      if (nombreTitle6 == null) {
+      id = R.id.cuerpoNombreProducto;
+      EditText cuerpoNombreProducto = rootView.findViewById(id);
+      if (cuerpoNombreProducto == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle7;
-      TextView nombreTitle7 = rootView.findViewById(id);
-      if (nombreTitle7 == null) {
+      id = R.id.cuerpoPorciones;
+      EditText cuerpoPorciones = rootView.findViewById(id);
+      if (cuerpoPorciones == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle8;
-      TextView nombreTitle8 = rootView.findViewById(id);
-      if (nombreTitle8 == null) {
+      id = R.id.cuerpoProteina;
+      EditText cuerpoProteina = rootView.findViewById(id);
+      if (cuerpoProteina == null) {
         break missingId;
       }
 
-      id = R.id.nombreTitle9;
-      TextView nombreTitle9 = rootView.findViewById(id);
-      if (nombreTitle9 == null) {
+      id = R.id.cuerpoSodio;
+      EditText cuerpoSodio = rootView.findViewById(id);
+      if (cuerpoSodio == null) {
         break missingId;
       }
 
-      id = R.id.numeroPorcionesEditText;
-      EditText numeroPorcionesEditText = rootView.findViewById(id);
-      if (numeroPorcionesEditText == null) {
-        break missingId;
-      }
-
-      id = R.id.numeroPorcionesTitle;
-      TextView numeroPorcionesTitle = rootView.findViewById(id);
-      if (numeroPorcionesTitle == null) {
-        break missingId;
-      }
-
-      id = R.id.porcionEditText;
-      EditText porcionEditText = rootView.findViewById(id);
-      if (porcionEditText == null) {
-        break missingId;
-      }
-
-      id = R.id.porcionTitle;
-      TextView porcionTitle = rootView.findViewById(id);
-      if (porcionTitle == null) {
-        break missingId;
-      }
-
-      id = R.id.proteinaEditText;
-      EditText proteinaEditText = rootView.findViewById(id);
-      if (proteinaEditText == null) {
+      id = R.id.cuerpoTamPorcion;
+      EditText cuerpoTamPorcion = rootView.findViewById(id);
+      if (cuerpoTamPorcion == null) {
         break missingId;
       }
 
@@ -283,15 +280,81 @@ public final class ActivityDataEntryBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.sodioEditText;
-      EditText sodioEditText = rootView.findViewById(id);
-      if (sodioEditText == null) {
-        break missingId;
-      }
-
       id = R.id.titleTextView;
       TextView titleTextView = rootView.findViewById(id);
       if (titleTextView == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloAzucar;
+      TextView tituloAzucar = rootView.findViewById(id);
+      if (tituloAzucar == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloCalorias;
+      TextView tituloCalorias = rootView.findViewById(id);
+      if (tituloCalorias == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloCarbohidratos;
+      TextView tituloCarbohidratos = rootView.findViewById(id);
+      if (tituloCarbohidratos == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloColesterol;
+      TextView tituloColesterol = rootView.findViewById(id);
+      if (tituloColesterol == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloGrasaSaturada;
+      TextView tituloGrasaSaturada = rootView.findViewById(id);
+      if (tituloGrasaSaturada == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloGrasaTotal;
+      TextView tituloGrasaTotal = rootView.findViewById(id);
+      if (tituloGrasaTotal == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloGrasaTrans;
+      TextView tituloGrasaTrans = rootView.findViewById(id);
+      if (tituloGrasaTrans == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloNombreProducto;
+      TextView tituloNombreProducto = rootView.findViewById(id);
+      if (tituloNombreProducto == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloPorciones;
+      TextView tituloPorciones = rootView.findViewById(id);
+      if (tituloPorciones == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloProteina;
+      TextView tituloProteina = rootView.findViewById(id);
+      if (tituloProteina == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloSodio;
+      TextView tituloSodio = rootView.findViewById(id);
+      if (tituloSodio == null) {
+        break missingId;
+      }
+
+      id = R.id.tituloTamPorcion;
+      TextView tituloTamPorcion = rootView.findViewById(id);
+      if (tituloTamPorcion == null) {
         break missingId;
       }
 
@@ -301,11 +364,13 @@ public final class ActivityDataEntryBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDataEntryBinding((ConstraintLayout) rootView, acceptButton, azucarEditText,
-          backButton, caloriasEditText, carbsEditText, lipidosEditText, nombreEditText, nombreTitle,
-          nombreTitle10, nombreTitle11, nombreTitle6, nombreTitle7, nombreTitle8, nombreTitle9,
-          numeroPorcionesEditText, numeroPorcionesTitle, porcionEditText, porcionTitle,
-          proteinaEditText, root1, scrollView2, sodioEditText, titleTextView, topBarLayout);
+      return new ActivityDataEntryBinding((ConstraintLayout) rootView, acceptButton, backButton,
+          cuerpoAzucar, cuerpoCalorias, cuerpoCarbohidratos, cuerpoColesterol, cuerpoGrasaSaturada,
+          cuerpoGrasaTotal, cuerpoGrasaTrans, cuerpoNombreProducto, cuerpoPorciones, cuerpoProteina,
+          cuerpoSodio, cuerpoTamPorcion, root1, scrollView2, titleTextView, tituloAzucar,
+          tituloCalorias, tituloCarbohidratos, tituloColesterol, tituloGrasaSaturada,
+          tituloGrasaTotal, tituloGrasaTrans, tituloNombreProducto, tituloPorciones, tituloProteina,
+          tituloSodio, tituloTamPorcion, topBarLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

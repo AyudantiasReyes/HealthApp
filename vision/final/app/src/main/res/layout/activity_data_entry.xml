@@ -21,13 +21,13 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/nombreTitle"
+                android:id="@+id/tituloNombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/nombre_producto" />
 
             <EditText
-                android:id="@+id/nombreEditText"
+                android:id="@+id/cuerpoNombreProducto"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,14 +50,14 @@
                     android:paddingRight="8dp">
 
                     <TextView
-                        android:id="@+id/porcionTitle"
+                        android:id="@+id/tituloTamPorcion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="@string/tamaño_porción" />
 
                     <EditText
-                        android:id="@+id/porcionEditText"
+                        android:id="@+id/cuerpoTamPorcion"
                         style="@style/regular_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -78,14 +78,14 @@
                     android:paddingLeft="8dp">
 
                     <TextView
-                        android:id="@+id/numeroPorcionesTitle"
+                        android:id="@+id/tituloPorciones"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="@string/porciones_empaque" />
 
                     <EditText
-                        android:id="@+id/numeroPorcionesEditText"
+                        android:id="@+id/cuerpoPorciones"
                         style="@style/regular_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -101,14 +101,14 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/nombreTitle6"
+                android:id="@+id/tituloCalorias"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="@string/calorias_porcion" />
 
             <EditText
-                android:id="@+id/caloriasEditText"
+                android:id="@+id/cuerpoCalorias"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,32 +119,68 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nombreTitle7"
+                android:id="@+id/tituloGrasaTotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/azucares_porcion" />
+                android:text="@string/grasaTotal_porcion" />
 
             <EditText
-                android:id="@+id/azucarEditText"
+                android:id="@+id/cuerpoGrasaTotal"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/gray_rounded_rectangle"
-                android:hint="@string/azucares_hint"
+                android:hint="@string/grasaTotal_hint"
                 android:inputType="numberDecimal"
                 android:padding="5dp"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nombreTitle8"
+                android:id="@+id/tituloGrasaSaturada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/grasaSaturada_porcion" />
+
+            <EditText
+                android:id="@+id/cuerpoGrasaSaturada"
+                style="@style/regular_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:hint="@string/grasaSaturada_hint"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tituloGrasaTrans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/grasaTrans_porcion" />
+
+            <EditText
+                android:id="@+id/cuerpoGrasaTrans"
+                style="@style/regular_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:hint="@string/grasaTrans_hint"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tituloCarbohidratos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="@string/carbs_porcion" />
 
             <EditText
-                android:id="@+id/carbsEditText"
+                android:id="@+id/cuerpoCarbohidratos"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -155,55 +191,73 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nombreTitle9"
+                android:id="@+id/tituloAzucar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/proteinas_porcion" />
+                android:text="@string/azucares_porcion" />
 
             <EditText
-                android:id="@+id/proteinaEditText"
+                android:id="@+id/cuerpoAzucar"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/gray_rounded_rectangle"
-                android:hint="@string/proteinas_hint"
+                android:hint="@string/azucares_hint"
                 android:inputType="numberDecimal"
                 android:padding="5dp"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nombreTitle10"
+                android:id="@+id/tituloColesterol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="@string/lipidos_porcion" />
+                android:text="@string/colesterol_porcion" />
 
             <EditText
-                android:id="@+id/lipidosEditText"
+                android:id="@+id/cuerpoColesterol"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/gray_rounded_rectangle"
-                android:hint="@string/lipidos_hint"
+                android:hint="@string/colesterol_hint"
                 android:inputType="numberDecimal"
                 android:padding="5dp"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nombreTitle11"
+                android:id="@+id/tituloSodio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="@string/sodio_porcion" />
 
             <EditText
-                android:id="@+id/sodioEditText"
+                android:id="@+id/cuerpoSodio"
                 style="@style/regular_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/gray_rounded_rectangle"
                 android:hint="@string/sodio_hint"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tituloProteina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/proteinas_porcion" />
+
+            <EditText
+                android:id="@+id/cuerpoProteina"
+                style="@style/regular_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_rounded_rectangle"
+                android:hint="@string/proteinas_hint"
                 android:inputType="numberDecimal"
                 android:padding="5dp"
                 android:textSize="18sp" />
