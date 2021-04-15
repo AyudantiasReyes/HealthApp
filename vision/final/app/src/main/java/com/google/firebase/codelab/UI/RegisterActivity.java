@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,8 +33,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText edtName, edtLastName, edtEmail, edtPass;
-    private String name, lastname, email, pass;
+    private EditText edtName, edtLastName, edtEmail, edtPass, edtEdad;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+    private String name, lastname, email, pass, gen;
     private static final String URL = "http://conisoft.org/HealthApp/App/RegisterUser.php";
     private SharedPreferences preferences;
     private User user;
@@ -48,9 +52,15 @@ public class RegisterActivity extends AppCompatActivity {
         edtLastName = findViewById(R.id.editTextTextPersonName2);
         edtEmail = findViewById(R.id.editTextTextEmailAddress);
         edtPass = findViewById(R.id.editTextTextPassword);
+        edtEdad = findViewById(R.id.editTextEdad);
 
         //Get the BUTTONS from the Layout
         Button btnRegister = findViewById(R.id.button);
+
+        //Get the RadioGroup from the layout
+        radioGroup = findViewById(R.id.radioGroup);
+        radioButton = findViewById(R.id.radio_hombre);
+
 
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
 
@@ -61,6 +71,8 @@ public class RegisterActivity extends AppCompatActivity {
                 lastname = edtLastName.getText().toString();
                 email = edtEmail.getText().toString();
                 pass = edtPass.getText().toString();
+                gen = radioButton.getText().toString();
+                //Log.d("gen",gen + "onClick");
                 if(name.isEmpty() || lastname.isEmpty() || email.isEmpty() || pass.isEmpty())
                     Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else{
@@ -71,10 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
                             progressDialog.setContentView(R.layout.progress_layout);
                             progressDialog.setCancelable(false);
                             progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                            Log.d("gen",gen + "onClick");
                             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    RegisterUser(name,lastname,email,pass);
+                                    RegisterUser(name,lastname,email,pass,gen);
                                 }
                             }, 1000);
                         }
@@ -88,14 +101,21 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    public void checkButton(View v){
+        int radioId = radioGroup.getCheckedRadioButtonId();
+
+        radioButton = findViewById(radioId);
+    }
+
     public static boolean isValidEmail(CharSequence email) {
         if (email == null)
             return false;
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private void RegisterUser(final String name, final String lastname, final String email, final String password){
+    private void RegisterUser(final String name, final String lastname, final String email, final String password, final String gen){
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+
             @Override
             public void onResponse(String response) {
                 if(response.equals("false")){
@@ -105,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity {
                     try {
                         Log.d("response",response);
                         JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
+                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"),jsonObj.getString("gen"));
                         SaveSharedPreferences();
                         Toast.makeText(RegisterActivity.this,R.string.msjRegister,Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(RegisterActivity.this, MainMenuActivity.class));
@@ -130,6 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
                 parametros.put("lastname",lastname);
                 parametros.put("email",email);
                 parametros.put("pass",password);
+                parametros.put("gen",gen);
                 return parametros;
             }
         };
@@ -144,6 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
         edit.putString(SharedPreference.KeyLastname,user.getLastname());
         edit.putString(SharedPreference.KeyEmail,user.getEmail());
         edit.putString(SharedPreference.KeyPassword,user.getPassword());
+        edit.putString(SharedPreference.KeyGen,user.getGen());
         edit.apply();
     }
 }

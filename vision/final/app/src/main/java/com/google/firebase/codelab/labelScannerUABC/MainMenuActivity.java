@@ -269,12 +269,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private User LoadSharedPreferences(){
-        String name, lastname, email, id, pass;
+        String name, lastname, email, id, pass, gen;
         name = preferences.getString(SharedPreference.KeyName,null);
         lastname = preferences.getString(SharedPreference.KeyLastname,null);
         email = preferences.getString(SharedPreference.KeyEmail,null);
         id = preferences.getString(SharedPreference.KeyName,null);
         pass = preferences.getString(SharedPreference.KeyLastname,null);
-        return new User(id,name,lastname,email,pass);
+        gen = preferences.getString(SharedPreference.KeyGen,null);
+        return new User(id,name,lastname,email,pass,gen);
     }
 }

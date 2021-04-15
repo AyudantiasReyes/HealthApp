@@ -9,4 +9,5 @@ public class SharedPreference {
     public static final String KeyLastname = "lastname";
     public static final String KeyEmail = "email";
     public static final String KeyPassword = "password";
+    public static final String KeyGen = "gen";
 }
