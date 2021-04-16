@@ -42,6 +42,8 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -55,6 +57,8 @@ import java.util.regex.Pattern;
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
+    private final int REQUEST_BARCODE_CAPTURE = 3;
+
     private SharedPreferences preferences;
     private LabelAnalyzer labelAnalyzer;
     private JsonParser jsonParser;
@@ -67,8 +71,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         User user = LoadSharedPreferences();
         labelAnalyzer = new LabelAnalyzer();
 
-        jsonParser = new JsonParser();
-        jsonParser.start();
+        jsonParser = new JsonParser(this);
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -92,21 +95,17 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.textView15.setText(user.getName());
 
 
-        while(!jsonParser.isFinished()){
 
-        };
 
-        Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
-        dataEntryActivity.putExtra("nutrientes", jsonParser.getLabel_data());
-        startActivity(dataEntryActivity);
 
 
     }
 
     public void openCamera(View view) {
         //Abrimos la camara
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        new IntentIntegrator(this).initiateScan();//initialize camera bar scanner
+        //Intent intent = new Intent(this, CameraActivity.class);
+        //startActivity(intent);
     }
 
 
@@ -132,6 +131,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 logout();
                 break;
         }
+
     }
 
     void getImage(){
@@ -144,7 +144,10 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("EXITO", "onActivityResult: ENTER");
+
+        IntentResult resultBarcode = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);//get the bar code scanned
+
+
         if ((requestCode == PICK_IMAGE_REQUEST) && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
 
@@ -182,6 +185,28 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
 
         }
+
+        if(resultBarcode != null){//check if there's data in result
+            if(resultBarcode.getContents() != null){//check the data is not empty
+                //codigo de barras escaneado
+                Toast.makeText(this, resultBarcode.getContents(), Toast.LENGTH_LONG).show();
+
+                jsonParser.setBarUrl(resultBarcode.getContents());
+                jsonParser.start();
+
+
+
+
+
+            }
+
+            else{
+
+                Toast.makeText(this, "No se escaneo", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
     }
 
 

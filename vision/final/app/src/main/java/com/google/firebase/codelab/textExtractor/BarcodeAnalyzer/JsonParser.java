@@ -1,7 +1,11 @@
 package com.google.firebase.codelab.textExtractor.BarcodeAnalyzer;
 
+import android.content.Intent;
 import android.util.Log;
 import android.util.Size;
+
+import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
+import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +22,7 @@ public class JsonParser extends Thread{
 
     private String url;
     private volatile boolean isFinished;
-
+    private MainMenuActivity mainMenuActivity;
 
     public int TAMANO_PORCION = 0;
     public int PORCION = 1;
@@ -49,10 +53,10 @@ public class JsonParser extends Thread{
             "proteins_serving"
     };
 
-    public JsonParser(){
+    public JsonParser(MainMenuActivity mainMenuActivity){
         isFinished = false;
         label_data = new float[SIZE];
-        setBarUrl("7501030419037");
+        this.mainMenuActivity = mainMenuActivity;
 
     }
 
@@ -72,13 +76,18 @@ public class JsonParser extends Thread{
     @Override
     public void run() {
         super.run();
+        Log.d("NUTRIENT", "estoy en run");
         executeRequest(url);
         isFinished = true;
+
+        Intent dataEntryActivity = new Intent(mainMenuActivity, DataEntryActivity.class);
+        dataEntryActivity.putExtra("nutrientes", getLabel_data());
+        mainMenuActivity.startActivity(dataEntryActivity);
     }
 
     private void executeRequest(String url){
         JSONParser parser = new JSONParser();
-        Log.d("ESTADO", "BEGIN");
+
         try {
             URL oracle = new URL(url); // URL to Parse
             URLConnection yc = oracle.openConnection();
@@ -101,7 +110,6 @@ public class JsonParser extends Thread{
                         for(int i = 0; i < SIZE; i++){
                             if(fields[i].equals("serving_size") || fields[i].equals("serving_quantity")){
                                 Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], product));
-
                                 label_data[i] = getNutrient(fields[i], product);
                             }
                             else{
@@ -114,12 +122,12 @@ public class JsonParser extends Thread{
 
                     }
                     else{
-                        //los nutrientes no existen
+                        Log.d("NUTRIENT", "No existen los nutrientes");
                     }
 
                 }
                 else{
-                    //no existe el producto
+                    Log.d("NUTRIENT", "No existe el producto");
                 }
 
 
@@ -129,15 +137,20 @@ public class JsonParser extends Thread{
             isFinished = true;
 
         } catch (Exception e) {
-            Log.d("STR_RESPONSE", e.toString());
+            Log.d("NUTRIENT", "excepcion " + e.toString());
         }
     }
 
     private float getNutrient(String nutrient, JSONObject json){
 
-        if(json.get(nutrient) != null)
-            return Float.parseFloat(json.get(nutrient).toString().replace("g", ""));
-        else
-            return 0; //No se encontro el valor
+        try{
+            if(json.get(nutrient) != null)
+                return Float.parseFloat(json.get(nutrient).toString().replace("g", ""));
+            else
+                return 0; //No se encontro el valor
+        }catch (Exception e){
+            return -1;
+        }
+
     }
 }
