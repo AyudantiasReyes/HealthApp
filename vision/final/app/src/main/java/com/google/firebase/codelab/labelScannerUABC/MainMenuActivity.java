@@ -59,7 +59,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private LabelAnalyzer labelAnalyzer;
     private JsonParser jsonParser;
 
-
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,13 +68,14 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         labelAnalyzer = new LabelAnalyzer();
 
         jsonParser = new JsonParser();
-        jsonParser.execute(this);
+        jsonParser.start();
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //Pedimos permiso si no lo tenemos
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
         }
+
 
 
         Log.d("name",user.getName());
@@ -90,6 +90,17 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.buttonLogout.setOnClickListener(this);
         binding.textView14.setText(user.getEmail());
         binding.textView15.setText(user.getName());
+
+
+        while(!jsonParser.isFinished()){
+
+        };
+
+        Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+        dataEntryActivity.putExtra("nutrientes", jsonParser.getLabel_data());
+        startActivity(dataEntryActivity);
+
+
     }
 
     public void openCamera(View view) {
