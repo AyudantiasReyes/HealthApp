@@ -22,7 +22,6 @@ public class JsonParser extends Thread{
 
     private String url;
     private volatile boolean isFinished;
-    private MainMenuActivity mainMenuActivity;
 
     public int TAMANO_PORCION = 0;
     public int PORCION = 1;
@@ -53,10 +52,9 @@ public class JsonParser extends Thread{
             "proteins_serving"
     };
 
-    public JsonParser(MainMenuActivity mainMenuActivity){
+    public JsonParser(){
         isFinished = false;
         label_data = new float[SIZE];
-        this.mainMenuActivity = mainMenuActivity;
 
     }
 
@@ -80,9 +78,7 @@ public class JsonParser extends Thread{
         executeRequest(url);
         isFinished = true;
 
-        Intent dataEntryActivity = new Intent(mainMenuActivity, DataEntryActivity.class);
-        dataEntryActivity.putExtra("nutrientes", getLabel_data());
-        mainMenuActivity.startActivity(dataEntryActivity);
+
     }
 
     private void executeRequest(String url){
