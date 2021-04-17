@@ -74,7 +74,7 @@ public class JsonParser extends Thread{
     @Override
     public void run() {
         super.run();
-        Log.d("NUTRIENT", "estoy en run");
+        //Log.d("NUTRIENT", "estoy en run");
         executeRequest(url);
         isFinished = true;
 
@@ -105,12 +105,12 @@ public class JsonParser extends Thread{
                        //Los nutrientes existen
                         for(int i = 0; i < SIZE; i++){
                             if(fields[i].equals("serving_size") || fields[i].equals("serving_quantity")){
-                                Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], product));
+                                //Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], product));
                                 label_data[i] = getNutrient(fields[i], product);
                             }
                             else{
                                 assert nutriments != null;
-                                Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], nutriments));
+                                //Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], nutriments));
                                 label_data[i] = getNutrient(fields[i], nutriments);
                             }
                         }
@@ -119,11 +119,13 @@ public class JsonParser extends Thread{
                     }
                     else{
                         Log.d("NUTRIENT", "No existen los nutrientes");
+                        NoProductOrNutrients();
                     }
 
                 }
                 else{
                     Log.d("NUTRIENT", "No existe el producto");
+                    NoProductOrNutrients();
                 }
 
 
@@ -148,5 +150,11 @@ public class JsonParser extends Thread{
             return -1;
         }
 
+    }
+
+    private void NoProductOrNutrients(){
+        for(float nullMe : label_data){
+            nullMe = 0.0f;
+        }
     }
 }

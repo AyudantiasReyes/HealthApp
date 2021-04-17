@@ -49,7 +49,7 @@
     //entrada de datos
     <string name="nombre_producto">Nombre del producto</string>
     <string name="tamaño_porción">Tamaño de porción (g/ml)</string>
-    <string name="carbs_porcion">Carbohidratos (gr)</string>
+    <string name="carbs_porcion">Carbohidratos (g)</string>
     <string name="calorias_porcion">Calorías (kCal)</string>
     <string name="proteinas_porcion">Proteína (g)</string>
     <string name="grasaTotal_porcion">Grasa (g)</string>
@@ -67,7 +67,7 @@
     <string name="carbs_hint">Carbohidratos por porción</string>
     <string name="calorias_hint">Calorías por porción</string>
     <string name="proteinas_hint">Proteína por porción</string>
-    <string name="grasaTotal_hint">Lípidos por porción</string>
+    <string name="grasaTotal_hint">Grasa Total por porción</string>
     <string name="grasaSaturada_hint">Grasa saturada por porción</string>
     <string name="grasaTrans_hint">Grasa trans por porción</string>
     <string name="colesterol_hint">Colesterol por porción</string>

@@ -79,8 +79,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
         }
 
-
-
         Log.d("name",user.getName());
         Log.d("email",user.getEmail());
 
@@ -93,11 +91,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.buttonLogout.setOnClickListener(this);
         binding.textView14.setText(user.getEmail());
         binding.textView15.setText(user.getName());
-
-
-
-
-
 
     }
 
@@ -181,8 +174,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 e.printStackTrace();
 
             }
-
-
         }
 
         if(resultBarcode != null){//check if there's data in result
@@ -213,7 +204,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
-
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public String extractText(Text result) {

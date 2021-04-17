@@ -27,16 +27,16 @@
     <string name="msjRegister3">Error, contraseña debe ser mayor a 8 caracteres</string>
 
     //nutrientes
-    <string name="carbohidratos">Carbohidratos</string>
-    <string name="calorias">Calorías</string>
-    <string name="proteina">Proteína</string>
-    <string name="grasaTotal">Grasa Total</string>
-    <string name="grasaSaturada">Grasa Saturada</string>
-    <string name="grasaTrans">Grasa Trans</string>
-    <string name="colesterol">Colesterol</string>
-    <string name="vitamina_a">Vitamina A</string>
-    <string name="sodio">Sodio</string>
-    <string name="azucares">Azúcares</string>
+    <string name="carbohidratos">Carbohydrates</string>
+    <string name="calorias">Calories</string>
+    <string name="proteina">Protein</string>
+    <string name="grasaTotal">Total fat</string>
+    <string name="grasaSaturada">Saturated fat</string>
+    <string name="grasaTrans">Trans fat</string>
+    <string name="colesterol">Cholesterol</string>
+    <string name="vitamina_a">Vitamin A</string>
+    <string name="sodio">Sodium</string>
+    <string name="azucares">Sugar</string>
 
     //unidades
     <string name="g">g</string>
@@ -47,37 +47,37 @@
     <string name="kilocalorias">kilocalorías</string>
 
     //entrada de datos
-    <string name="nombre_producto">Nombre del producto</string>
-    <string name="tamaño_porción">Tamaño de porción (g/ml)</string>
-    <string name="carbs_porcion">Carbohidratos (g)</string>
-    <string name="calorias_porcion">Calorías (kCal)</string>
-    <string name="proteinas_porcion">Proteína (g)</string>
-    <string name="grasaTotal_porcion">Grasa Total (g)</string>
-    <string name="grasaSaturada_porcion">Grasa Saturada (g)</string>
-    <string name="grasaTrans_porcion">Grasa Trans(g)</string>
-    <string name="colesterol_porcion">Colesterol (mg)</string>
-    <string name="sodio_porcion">Sodio (mg)</string>
-    <string name="azucares_porcion">Azúcares (g)</string>
-    <string name="vita_porcion">Vitamina A (g)</string>
-    <string name="porciones_empaque">Porciones por empaque</string>
+    <string name="nombre_producto">Product`s name</string>
+    <string name="tamaño_porción">Portion size (g/ml)</string>
+    <string name="carbs_porcion">Carbohydrates (g)</string>
+    <string name="calorias_porcion">Calories (kCal)</string>
+    <string name="proteinas_porcion">Protein (g)</string>
+    <string name="grasaTotal_porcion">Total fat (g)</string>
+    <string name="grasaSaturada_porcion">Saturated fat (g)</string>
+    <string name="grasaTrans_porcion">Trans fat(g)</string>
+    <string name="colesterol_porcion">Cholesterol (mg)</string>
+    <string name="sodio_porcion">Sodium (mg)</string>
+    <string name="azucares_porcion">Sugar (g)</string>
+    <string name="vita_porcion">Vitamin A (g)</string>
+    <string name="porciones_empaque">Servings per container</string>
 
     //entrada de datos
-    <string name="nombre_hint">Nombre del producto</string>
+    <string name="nombre_hint">Product`s name</string>
     <string name="tamaño_hint">Tamaño de porción</string>
-    <string name="carbs_hint">Carbohidratos por porción</string>
-    <string name="calorias_hint">Calorías por porción</string>
-    <string name="proteinas_hint">Proteína por porción</string>
-    <string name="grasaTotal_hint">Grasa total por porción</string>
-    <string name="grasaSaturada_hint">Grasa saturada por porción</string>
-    <string name="grasaTrans_hint">Grasa trans por porción</string>
-    <string name="colesterol_hint">Colesterol por porción</string>
-    <string name="sodio_hint">Sodio por porción</string>
-    <string name="azucares_hint">Azúcares porción</string>
-    <string name="vita_hint">Vitamina A porción</string>
-    <string name="porciones_hint">Porciones</string>
+    <string name="carbs_hint">Carbohydrates per serving</string>
+    <string name="calorias_hint">Calories per serving</string>
+    <string name="proteinas_hint">Protein per serving</string>
+    <string name="grasaTotal_hint">Total fat per serving</string>
+    <string name="grasaSaturada_hint">Saturated fat per serving</string>
+    <string name="grasaTrans_hint">Trans fat per serving</string>
+    <string name="colesterol_hint">Cholesterol per serving</string>
+    <string name="sodio_hint">Sodium per serving</string>
+    <string name="azucares_hint">Sugar per serving</string>
+    <string name="vita_hint">Vitamin A per serving</string>
+    <string name="porciones_hint">Portions</string>
 
     //titulos de actividades
-    <string name="info">Información Nutrimental</string>
+    <string name="info">Nutritional Information</string>
     <string name="contrasena">Contraseña</string>
     <string name="password">Password</string>
     <string name="type_yout_lastname">Type yout lastname</string>
