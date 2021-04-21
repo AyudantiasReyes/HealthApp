@@ -49,9 +49,9 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
     private FoodItem foodItem;
 
 
-    private final String cantidadBajaString = "Este alimento contiene una cantidad baja de: ";
-    private final String cantidadRegularString = "Este alimento contiene una cantidad regular de: ";
-    private final String cantidadAltaString = "Este alimento contiene una cantidad alta de: ";
+    private final String cantidadBajaString = "Este alimento contiene una cantidad baja de ";
+    private final String cantidadRegularString = "Este alimento contiene una cantidad regular de ";
+    private final String cantidadAltaString = "Este alimento contiene una cantidad alta de ";
 
     private final String [] nutrimentNotes = new String[]{cantidadBajaString, cantidadRegularString, cantidadAltaString};
 
@@ -353,9 +353,15 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
 
     private void setBindingStatus(){
-        Log.d("FOOD_ITEM", "AZUCAR = " + foodItem.getSugar() + " | Porcion = " + foodItem.getPortion_size());
 
-        binding.azucarNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSugar(), foodItem.getPortion_size()), 10)]);
+        float servingSize = foodItem.getPortion_size();
+        float sodiumPerDay = 2300;
+
+        binding.lipidosNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getTotalFat(), servingSize), 20)]+"azucar.");
+        binding.carbsNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getCarbs(), servingSize), 49)]+"carbohidratos.");
+        binding.azucarNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSugar(), servingSize), 10)]+"azucar.");
+        binding.proteinaNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getProtein(), servingSize), 10)]+"proteina.");
+        binding.sodioNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSodium(), sodiumPerDay), 20)]+"proteina.");
 
     }
 
