@@ -98,7 +98,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
                     if(binding.cuerpoTamPorcion.getText().toString().length() > 0){
 
                         foodItem.setPortion_size(Float.parseFloat(binding.cuerpoTamPorcion.getText().toString()));
-                        System.out.println("*******TEST:"+binding.cuerpoTamPorcion.getText().toString());
                     }
                     if(binding.cuerpoPorciones.getText().toString().length() > 0)
                         foodItem.setPortions(Float.parseFloat(binding.cuerpoPorciones.getText().toString()));

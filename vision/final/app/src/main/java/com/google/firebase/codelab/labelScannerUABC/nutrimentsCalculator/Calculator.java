@@ -1,5 +1,7 @@
 package com.google.firebase.codelab.labelScannerUABC.nutrimentsCalculator;
 
+
+//para las calorias diarias de la PERSONA
 public class Calculator {
     private int[] caloriesPerNutrient;
     private int[] gramsPerNutrient;

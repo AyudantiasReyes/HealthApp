@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,9 +47,14 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
     private static final String URL = "http://conisoft.org/HealthApp/App/insertFood.php";
     private ActivityNutrientsBinding binding;
     private FoodItem foodItem;
-    private final String cantidadBajaString = "Este alimento contiene una cantidad baja de este nutriente";
-    private final String cantidadRegularString = "Este alimento contiene una cantidad regular de este nutriente";
-    private final String cantidadAltaString = "Este alimento contiene una cantidad alta de este nutriente, considera reducir su consumo";
+
+
+    private final String cantidadBajaString = "Este alimento contiene una cantidad baja de: ";
+    private final String cantidadRegularString = "Este alimento contiene una cantidad regular de: ";
+    private final String cantidadAltaString = "Este alimento contiene una cantidad alta de: ";
+
+    private final String [] nutrimentNotes = new String[]{cantidadBajaString, cantidadRegularString, cantidadAltaString};
+
     private final String cantidadExcesivaString = "Este alimento contiene una dosis superior a la recomendada para el consumo diario, considera reducir la porción";
     ArrayList<TipoPorcion> tiposPorciones;
     int position = 0;
@@ -64,8 +70,7 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_nutrients);
-        //foodItem = new FoodItem("Doritos", 100, 3, 400, 3, 120, 20, 12, 20, 6);
+
         foodItem = new FoodItem();
 
         Bundle extras = getIntent().getExtras();
@@ -73,7 +78,7 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
             System.out.println(foodItem.getProduct_name());
-            // and get whatever type user account id is
+
         }
 
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
@@ -81,6 +86,8 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
         setContentView(binding.root3);
+
+        /*
         SpinnerValues();
         binding.root3.setOnClickListener(this);
         binding.cantidadEditText.setText("1");
@@ -99,14 +106,14 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                     Float unit = tiposPorciones.get(position).getValorEnGramos();
                     tamPorcionEnG = amount * unit;
                     System.out.println("SELECTED" + tamPorcionEnG);
-                    updateUIUnits();
+                    //updateUIUnits();
                 }
                 else{
                     Float amount = 0f;
                     Float unit = tiposPorciones.get(position).getValorEnGramos();
                     tamPorcionEnG = amount * unit;
                     System.out.println("SELECTED" + tamPorcionEnG);
-                    updateUIUnits();
+                   // updateUIUnits();
                 }
             }
 
@@ -114,8 +121,12 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
-    }
+        */
 
+
+        setBindingStatus();
+    }
+    /*
     @Override
     public void onResume(){
         super.onResume();
@@ -336,5 +347,54 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
+    }
+
+     */
+
+
+    private void setBindingStatus(){
+        Log.d("FOOD_ITEM", "AZUCAR = " + foodItem.getSugar() + " | Porcion = " + foodItem.getPortion_size());
+
+        binding.azucarNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSugar(), foodItem.getPortion_size()), 10)]);
+
+    }
+
+    //recibe gramos de los nutrientes y el tamaño de la porcion y retorna el porcentaje
+    private float getNutrimentPercentage(float nutrientG, float serving){
+
+
+        return (nutrientG / serving) * 100;
+    }
+
+    private int getNutrimentStatus(float percentage, float limit){
+        // 0 bajo
+        // 1 moderado
+        // 2 alto
+        Log.d("FOOD_ITEM", percentage + "<---" + " | " + limit + "<--");
+        if(percentage >= limit){
+            return 2;
+        }
+        else if(percentage >= limit / 2){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
