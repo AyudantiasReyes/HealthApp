@@ -12,6 +12,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -105,12 +107,11 @@ public class JsonParser extends Thread{
                        //Los nutrientes existen
                         for(int i = 0; i < SIZE; i++){
                             if(fields[i].equals("serving_size") || fields[i].equals("serving_quantity")){
-                                //Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], product));
+
                                 label_data[i] = getNutrient(fields[i], product);
                             }
                             else{
                                 assert nutriments != null;
-                                //Log.d("NUTRIENT", fields[i] + " " + getNutrient(fields[i], nutriments));
                                 label_data[i] = getNutrient(fields[i], nutriments);
                             }
                         }
@@ -142,6 +143,7 @@ public class JsonParser extends Thread{
     private float getNutrient(String nutrient, JSONObject json){
 
         try{
+
             if(json.get(nutrient) != null)
                 return Float.parseFloat(json.get(nutrient).toString().replace("g", ""));
             else

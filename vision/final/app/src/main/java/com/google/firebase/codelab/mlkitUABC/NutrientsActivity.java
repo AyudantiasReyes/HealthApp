@@ -46,10 +46,10 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
     private static final String URL = "http://conisoft.org/HealthApp/App/insertFood.php";
     private ActivityNutrientsBinding binding;
     private FoodItem foodItem;
-    private String cantidadBajaString = "Este alimento contiene una cantidad baja de este nutriente";
-    private String cantidadRegularString = "Este alimento contiene una cantidad regular de este nutriente";
-    private String cantidadAltaString = "Este alimento contiene una cantidad alta de este nutriente, considera reducir su consumo";
-    private String cantidadExcesivaString = "Este alimento contiene una dosis superior a la recomendada para el consumo diario, considera reducir la porción";
+    private final String cantidadBajaString = "Este alimento contiene una cantidad baja de este nutriente";
+    private final String cantidadRegularString = "Este alimento contiene una cantidad regular de este nutriente";
+    private final String cantidadAltaString = "Este alimento contiene una cantidad alta de este nutriente, considera reducir su consumo";
+    private final String cantidadExcesivaString = "Este alimento contiene una dosis superior a la recomendada para el consumo diario, considera reducir la porción";
     ArrayList<TipoPorcion> tiposPorciones;
     int position = 0;
     private float tamPorcionEnG;

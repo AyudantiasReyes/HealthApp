@@ -457,7 +457,7 @@
                     android:background="@drawable/round_button2"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:text="Lipidos"
+                    android:text="Grasa"
                     app:layout_constraintStart_toEndOf="@+id/lipidosBar"
                     app:layout_constraintTop_toTopOf="@+id/lipidosBar" />
 

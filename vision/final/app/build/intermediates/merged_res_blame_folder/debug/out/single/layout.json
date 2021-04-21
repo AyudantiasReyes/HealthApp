@@ -1,46 +1,46 @@
 [
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_screen.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\layout_screen.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\progress_layout.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\progress_layout.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_screen.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\layout_screen.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\spinner_item.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\spinner_item.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_nutrients.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_nutrients.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main_menu.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_main_menu.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\spinner_item.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\spinner_item.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_data_entry.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_data_entry.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_camera.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_camera.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_product_list.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_product_list.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_camera.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_camera.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main_menu.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_register.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_intro.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_intro.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\list_item.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_product_list.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_product_list.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_intro.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_intro.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_data_entry.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_data_entry.xml"
     },
     {
-        "merged": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_nutrients.xml",
-        "source": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_nutrients.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\progress_layout.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\progress_layout.xml"
     }
 ]

@@ -19,11 +19,12 @@ public class Calculator {
     }
 
     private void calculateCaloriesPerNutrient(int calories){
-        caloriesPerNutrient[nonSaturatedFat] = (int)(calories*0.2);
-        caloriesPerNutrient[saturatedFat] = (int)(calories*0.07);
-        caloriesPerNutrient[carbs] = (int)(calories*0.49);
-        caloriesPerNutrient[sugar] = (int)(calories*0.1);
-        caloriesPerNutrient[protein] = (int)(calories*0.14);
+        caloriesPerNutrient[nonSaturatedFat] = (int)(calories*0.2); //20%
+        caloriesPerNutrient[saturatedFat] = (int)(calories*0.07); //7%
+        caloriesPerNutrient[carbs] = (int)(calories*0.49); //49%
+        caloriesPerNutrient[sugar] = (int)(calories*0.1); //10%
+        caloriesPerNutrient[protein] = (int)(calories*0.14); //14%
+        //sodio por si las moscas no va
     }
 
     private void calculateGramsPerNutrient(){

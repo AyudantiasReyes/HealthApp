@@ -71,7 +71,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         User user = LoadSharedPreferences();
         labelAnalyzer = new LabelAnalyzer();
 
-        jsonParser = new JsonParser();
+
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -137,8 +137,8 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         IntentResult resultBarcode = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);//get the bar code scanned
+
 
         if ((requestCode == PICK_IMAGE_REQUEST) && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
@@ -177,10 +177,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if(resultBarcode != null){//check if there's data in result
+
             if(resultBarcode.getContents() != null){//check the data is not empty
                 //codigo de barras escaneado
                 Toast.makeText(this, resultBarcode.getContents(), Toast.LENGTH_LONG).show();
-
+                jsonParser = new JsonParser();
                 jsonParser.setBarUrl(resultBarcode.getContents());
                 jsonParser.start();
 
@@ -189,6 +190,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
 
                 Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
                 dataEntryActivity.putExtra("nutrientes", jsonParser.getLabel_data());
