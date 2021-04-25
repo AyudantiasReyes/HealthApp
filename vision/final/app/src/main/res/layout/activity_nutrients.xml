@@ -439,6 +439,8 @@
                     android:id="@+id/proteinaBar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     app:cpb_background_progressbar_color="#b6bbd8"
                     app:cpb_background_progressbar_width="1dp"
                     app:cpb_progress_direction="to_right"

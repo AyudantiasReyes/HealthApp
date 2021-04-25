@@ -1,5 +1,6 @@
 package com.google.firebase.codelab.mlkitUABC;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -39,6 +40,7 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import static android.view.View.GONE;
@@ -52,9 +54,15 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
     private final String cantidadBajaString = "Este alimento contiene una cantidad baja de ";
     private final String cantidadRegularString = "Este alimento contiene una cantidad regular de ";
     private final String cantidadAltaString = "Este alimento contiene una cantidad alta de ";
-
     private final String [] nutrimentNotes = new String[]{cantidadBajaString, cantidadRegularString, cantidadAltaString};
+    private int [] statusColors = new int[]{Color.GREEN, Color.YELLOW, Color.RED};
+    private int [] proteinStatusColors = new int[]{Color.rgb(152, 251, 152), Color.rgb(0, 250, 14), Color.rgb(0, 255, 0)};
 
+
+    private SharedPreferences preferences;
+    String id;
+
+    /*
     private final String cantidadExcesivaString = "Este alimento contiene una dosis superior a la recomendada para el consumo diario, considera reducir la porción";
     ArrayList<TipoPorcion> tiposPorciones;
     int position = 0;
@@ -63,9 +71,11 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
                     //gramos            //kcal                  //gramos            //gramos                //gramos            //gramos
 
     ArrayAdapter<TipoPorcion> spinnerAdapter;
-    private SharedPreferences preferences;
     private ProgressDialog progressDialog;
-    String id;
+
+    */
+    //suponiendo que llegan las calorias al mero millon
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +88,6 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
             System.out.println(foodItem.getProduct_name());
-
         }
 
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
@@ -87,7 +96,17 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
         setContentView(binding.root3);
 
-        /*
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        setBindingStatus();
+    }
+    /*
         SpinnerValues();
         binding.root3.setOnClickListener(this);
         binding.cantidadEditText.setText("1");
@@ -124,9 +143,6 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         */
 
 
-        setBindingStatus();
-    }
-    /*
     @Override
     public void onResume(){
         super.onResume();
@@ -138,9 +154,10 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
             System.out.println(foodItem.getProduct_name());
             // and get whatever type user account id is
         }
-        updateUI();
+        //updateUI();
     }
 
+    /*
     private void updateUI(){
         binding.nombreAlimento.setText(foodItem.getProduct_name());
         binding.azucarLayout.setVisibility(GONE);
@@ -352,18 +369,56 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
      */
 
 
+    @SuppressLint("SetTextI18n")
     private void setBindingStatus(){
 
         float servingSize = foodItem.getPortion_size();
         float sodiumPerDay = 2300;
 
-        binding.lipidosNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getTotalFat(), servingSize), 20)]+"azucar.");
-        binding.carbsNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getCarbs(), servingSize), 49)]+"carbohidratos.");
-        binding.azucarNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSugar(), servingSize), 10)]+"azucar.");
-        binding.proteinaNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getProtein(), servingSize), 10)]+"proteina.");
-        binding.sodioNotes.setText(nutrimentNotes[getNutrimentStatus(getNutrimentPercentage(foodItem.getSodium(), sodiumPerDay), 20)]+"proteina.");
+        int fatPercentage = (int) getNutrimentPercentage(foodItem.getTotalFat(), servingSize);
+        int carbsPercentage = (int)getNutrimentPercentage(foodItem.getCarbs(), servingSize);
+        int sugarPercentage = (int)getNutrimentPercentage(foodItem.getSugar(), servingSize);
+        int proteinPercentage = (int)getNutrimentPercentage(foodItem.getProtein(), servingSize);
+        float sodiumPercentage = getNutrimentPercentage(foodItem.getSodium(), sodiumPerDay);
+
+        binding.lipidosNotes.setText(nutrimentNotes[getNutrimentStatus(fatPercentage, 20)]+"grasa.");
+        binding.carbsNotes.setText(nutrimentNotes[getNutrimentStatus(carbsPercentage, 49)]+"carbohidratos.");
+        binding.azucarNotes.setText(nutrimentNotes[getNutrimentStatus(sugarPercentage, 10)]+"azucar.");
+        binding.proteinaNotes.setText(nutrimentNotes[getNutrimentStatus(proteinPercentage, 14)]+"proteina.");
+        binding.sodioNotes.setText(nutrimentNotes[getNutrimentStatus(sodiumPercentage, 20)]+"sodio.");
+
+
+        binding.lipidosPercentage.setText(String.format(Locale.getDefault(), "%d",fatPercentage) + "%");
+        binding.carbsPercentage.setText(String.format(Locale.getDefault(), "%d",carbsPercentage) + "%");
+        binding.azucarPercentage.setText(String.format(Locale.getDefault(), "%d",sugarPercentage) + "%");
+        binding.proteinaPercentage.setText(String.format(Locale.getDefault(), "%d",proteinPercentage) + "%");
+        binding.sodioPercentage.setText(String.format(Locale.getDefault(), "%d", (int)Math.ceil(sodiumPercentage)) + "%");
+
+        setProgressBarStatus(binding.lipidosBar, fatPercentage, 20);
+        setProgressBarStatus(binding.carbsBar, carbsPercentage, 49);
+        setProgressBarStatus(binding.azucarBar, sugarPercentage, 10);
+        setProgressBarStatus(binding.sodioBar, (int) sodiumPercentage, 20);
+        binding.proteinaBar.setProgressBarColor(proteinStatusColors[getNutrimentStatus(proteinPercentage, 14)]);
+        binding.proteinaBar.setProgress(proteinPercentage);
+
+
+        binding.lipidosAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getTotalFat()));
+        binding.carbsAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getCarbs()));
+        binding.azucarAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getSugar()));
+        binding.proteinaAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getProtein()));
+        binding.sodioAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getSodium()));
+
+
+
+
 
     }
+
+    private void setProgressBarStatus(CircularProgressBar nutrientBar, int percentage, int limit){
+        nutrientBar.setProgress(percentage);
+        nutrientBar.setProgressBarColor(statusColors[getNutrimentStatus(percentage, limit)]);
+    }
+
 
     //recibe gramos de los nutrientes y el tamaño de la porcion y retorna el porcentaje
     private float getNutrimentPercentage(float nutrientG, float serving){
