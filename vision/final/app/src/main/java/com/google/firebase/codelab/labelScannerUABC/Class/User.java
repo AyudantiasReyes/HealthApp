@@ -7,14 +7,22 @@ public class User {
     private String email;
     private String password;
     private String gen;
+    private String estatura;
+    private String edad;
+    private String peso;
 
-    public User(String id, String name, String lastname, String email, String password, String gen) {
+    public User(String id, String name, String lastname, String email, String password) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.gen = gen;
+    }
+
+    public User(String estatura, String edad, String peso){
+        this.estatura = estatura;
+        this.edad = edad;
+        this.peso = peso;
     }
 
     public String getId() {
@@ -60,4 +68,16 @@ public class User {
     public String getGen() { return gen; }
 
     public void setGen(String gender) { this.gen = gen; }
+
+    public void setEstatura(String estatura) { this.estatura = estatura; }
+
+    public void setEdad(String edad) { this.edad = edad; }
+
+    public void setPeso(String peso) { this.peso = peso; }
+
+    public String getEstatura() { return estatura; }
+
+    public String getEdad() { return edad; }
+
+    public String getPeso() { return peso; }
 }

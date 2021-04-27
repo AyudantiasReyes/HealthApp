@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(!response.isEmpty()) {
                     try {
                         JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"),jsonObj.getString("gen"));
+                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
                         SaveSharedPreferences();
                         startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                         finish();
