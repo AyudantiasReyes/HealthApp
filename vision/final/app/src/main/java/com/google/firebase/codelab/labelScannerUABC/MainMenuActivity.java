@@ -42,6 +42,8 @@ import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -55,10 +57,11 @@ import java.util.regex.Pattern;
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
+    private final int REQUEST_BARCODE_CAPTURE = 3;
+
     private SharedPreferences preferences;
     private LabelAnalyzer labelAnalyzer;
     private JsonParser jsonParser;
-
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -68,15 +71,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         User user = LoadSharedPreferences();
         labelAnalyzer = new LabelAnalyzer();
 
-        jsonParser = new JsonParser();
-        jsonParser.execute(this);
+
 
         //Checamos permisos de la camara
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             //Pedimos permiso si no lo tenemos
             requestPermissions(new String[]{Manifest.permission.CAMERA}, 101);
         }
-
 
         Log.d("name",user.getName());
         Log.d("email",user.getEmail());
@@ -90,12 +91,14 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.buttonLogout.setOnClickListener(this);
         binding.textView14.setText(user.getEmail());
         binding.textView15.setText(user.getName());
+
     }
 
     public void openCamera(View view) {
         //Abrimos la camara
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        new IntentIntegrator(this).initiateScan();//initialize camera bar scanner
+        //Intent intent = new Intent(this, CameraActivity.class);
+        //startActivity(intent);
     }
 
 
@@ -121,6 +124,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 logout();
                 break;
         }
+
     }
 
     void getImage(){
@@ -133,7 +137,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("EXITO", "onActivityResult: ENTER");
+        IntentResult resultBarcode = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);//get the bar code scanned
+
+
         if ((requestCode == PICK_IMAGE_REQUEST) && resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
 
@@ -168,11 +174,38 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 e.printStackTrace();
 
             }
+        }
 
+        if(resultBarcode != null){//check if there's data in result
+
+            if(resultBarcode.getContents() != null){//check the data is not empty
+                //codigo de barras escaneado
+                Toast.makeText(this, resultBarcode.getContents(), Toast.LENGTH_LONG).show();
+                jsonParser = new JsonParser();
+                jsonParser.setBarUrl(resultBarcode.getContents());
+                jsonParser.start();
+
+                try {
+                    jsonParser.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+                Intent dataEntryActivity = new Intent(this, DataEntryActivity.class);
+                dataEntryActivity.putExtra("nutrientes", jsonParser.getLabel_data());
+                startActivity(dataEntryActivity);
+
+            }
+
+            else{
+
+                Toast.makeText(this, "No se escaneo", Toast.LENGTH_SHORT).show();
+            }
 
         }
-    }
 
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public String extractText(Text result) {

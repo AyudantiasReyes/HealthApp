@@ -182,14 +182,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/azucarLayout"
+                android:id="@+id/lipidosLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:clickable="true"
                 android:padding="16dp">
 
                 <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                    android:id="@+id/azucarBar"
+                    android:id="@+id/lipidosBar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     app:cpb_background_progressbar_color="#b6bbd8"
@@ -202,20 +201,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/azucarTextView"
-                    android:textSize="14dp"
+                    android:id="@+id/lipidosTextView"
+                    android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:background="@drawable/round_button2"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:text="@string/azucares"
-                    app:layout_constraintStart_toEndOf="@+id/azucarBar"
-                    app:layout_constraintTop_toTopOf="@+id/azucarBar" />
+                    android:text="Grasa"
+                    app:layout_constraintStart_toEndOf="@+id/lipidosBar"
+                    app:layout_constraintTop_toTopOf="@+id/lipidosBar" />
 
                 <TextView
-                    android:id="@+id/azucarAmount"
+                    android:id="@+id/lipidosAmount"
                     style="@style/bolds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -224,45 +223,44 @@
                     android:paddingRight="4dp"
                     android:text="0"
                     android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/azucarTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/azucarTextView" />
+                    app:layout_constraintStart_toStartOf="@+id/lipidosTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/lipidosTextView" />
 
                 <TextView
-                    android:id="@+id/azucarUnit"
+                    android:id="@+id/lipidosUnit"
                     style="@style/regular_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
-                    android:text="@string/miligramos"
-                    app:layout_constraintBottom_toBottomOf="@+id/azucarAmount"
-                    app:layout_constraintStart_toEndOf="@+id/azucarAmount" />
+                    android:text="@string/gramos"
+                    app:layout_constraintBottom_toBottomOf="@+id/lipidosAmount"
+                    app:layout_constraintStart_toEndOf="@+id/lipidosAmount" />
 
                 <TextView
-                    android:id="@+id/azucarNotes"
+                    android:id="@+id/lipidosNotes"
                     style="@style/regular_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
-                    android:gravity="left"
                     android:paddingLeft="4dp"
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/azucarTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/azucarAmount" />
+                    app:layout_constraintStart_toStartOf="@+id/lipidosTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/lipidosAmount" />
 
                 <TextView
-                    android:id="@+id/azucarPercentage"
+                    android:id="@+id/lipidosPercentage"
                     style="@style/bolds"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/azucarBar"
-                    app:layout_constraintEnd_toEndOf="@+id/azucarBar"
-                    app:layout_constraintStart_toStartOf="@+id/azucarBar"
-                    app:layout_constraintTop_toTopOf="@+id/azucarBar" />
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/lipidosBar"
+                    app:layout_constraintEnd_toEndOf="@+id/lipidosBar"
+                    app:layout_constraintStart_toStartOf="@+id/lipidosBar"
+                    app:layout_constraintTop_toTopOf="@+id/lipidosBar" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -348,6 +346,90 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/azucarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="16dp">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/azucarBar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cpb_background_progressbar_color="#b6bbd8"
+                    app:cpb_background_progressbar_width="1dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#00C4FF"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/azucarTextView"
+                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/round_button2"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="@string/azucares"
+                    app:layout_constraintStart_toEndOf="@+id/azucarBar"
+                    app:layout_constraintTop_toTopOf="@+id/azucarBar" />
+
+                <TextView
+                    android:id="@+id/azucarAmount"
+                    style="@style/bolds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="0"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/azucarTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/azucarTextView" />
+
+                <TextView
+                    android:id="@+id/azucarUnit"
+                    style="@style/regular_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/miligramos"
+                    app:layout_constraintBottom_toBottomOf="@+id/azucarAmount"
+                    app:layout_constraintStart_toEndOf="@+id/azucarAmount" />
+
+                <TextView
+                    android:id="@+id/azucarNotes"
+                    style="@style/regular_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="left"
+                    android:paddingLeft="4dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/azucarTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/azucarAmount" />
+
+                <TextView
+                    android:id="@+id/azucarPercentage"
+                    style="@style/bolds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/azucarBar"
+                    app:layout_constraintEnd_toEndOf="@+id/azucarBar"
+                    app:layout_constraintStart_toStartOf="@+id/azucarBar"
+                    app:layout_constraintTop_toTopOf="@+id/azucarBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/proteinaLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -357,6 +439,8 @@
                     android:id="@+id/proteinaBar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     app:cpb_background_progressbar_color="#b6bbd8"
                     app:cpb_background_progressbar_width="1dp"
                     app:cpb_progress_direction="to_right"
@@ -428,89 +512,6 @@
                     app:layout_constraintStart_toStartOf="@+id/proteinaBar"
                     app:layout_constraintTop_toTopOf="@+id/proteinaBar" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/lipidosLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                    android:id="@+id/lipidosBar"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    app:cpb_background_progressbar_color="#b6bbd8"
-                    app:cpb_background_progressbar_width="1dp"
-                    app:cpb_progress_direction="to_right"
-                    app:cpb_progressbar_color="#00C4FF"
-                    app:cpb_progressbar_width="10dp"
-                    app:cpb_round_border="true"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/lipidosTextView"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/round_button2"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:text="Lipidos"
-                    app:layout_constraintStart_toEndOf="@+id/lipidosBar"
-                    app:layout_constraintTop_toTopOf="@+id/lipidosBar" />
-
-                <TextView
-                    android:id="@+id/lipidosAmount"
-                    style="@style/bolds"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:text="0"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/lipidosTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/lipidosTextView" />
-
-                <TextView
-                    android:id="@+id/lipidosUnit"
-                    style="@style/regular_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="2dp"
-                    android:text="@string/gramos"
-                    app:layout_constraintBottom_toBottomOf="@+id/lipidosAmount"
-                    app:layout_constraintStart_toEndOf="@+id/lipidosAmount" />
-
-                <TextView
-                    android:id="@+id/lipidosNotes"
-                    style="@style/regular_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="16dp"
-                    android:paddingLeft="4dp"
-                    android:text="TextView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/lipidosTextView"
-                    app:layout_constraintTop_toBottomOf="@+id/lipidosAmount" />
-
-                <TextView
-                    android:id="@+id/lipidosPercentage"
-                    style="@style/bolds"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/lipidosBar"
-                    app:layout_constraintEnd_toEndOf="@+id/lipidosBar"
-                    app:layout_constraintStart_toStartOf="@+id/lipidosBar"
-                    app:layout_constraintTop_toTopOf="@+id/lipidosBar" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/sodioLayout"

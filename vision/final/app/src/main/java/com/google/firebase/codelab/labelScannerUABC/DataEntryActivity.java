@@ -33,7 +33,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         binding = ActivityDataEntryBinding.inflate(getLayoutInflater());
         setContentView(binding.root1);
 
-        int [] nutrientes = getIntent().getIntArrayExtra("nutrientes");
+        float [] nutrientes = getIntent().getFloatArrayExtra("nutrientes");
         if(nutrientes != null)
             setDataFromCamaraCapture(nutrientes);
 
@@ -48,7 +48,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
     }
 
     //recibir los nutrientes capturados
-    public void setDataFromCamaraCapture(int [] nutrientes){
+    public void setDataFromCamaraCapture(float [] nutrientes){
         binding.cuerpoTamPorcion.setText(String.valueOf(nutrientes[LabelAnalyzer.TAM_PORCION]));
         binding.cuerpoPorciones.setText(String.valueOf(nutrientes[LabelAnalyzer.PORCIONES]));
         binding.cuerpoCalorias.setText(String.valueOf(nutrientes[LabelAnalyzer.CALORIAS]));
@@ -57,8 +57,8 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         binding.cuerpoGrasaTrans.setText(String.valueOf(nutrientes[LabelAnalyzer.GRASAS_TRANS]));
         binding.cuerpoCarbohidratos.setText(String.valueOf(nutrientes[LabelAnalyzer.CARBOHIDRATOS]));
         binding.cuerpoAzucar.setText(String.valueOf(nutrientes[LabelAnalyzer.AZUCARES]));
-        binding.cuerpoColesterol.setText(String.valueOf(nutrientes[LabelAnalyzer.COLESTEROL]));
-        binding.cuerpoSodio.setText(String.valueOf(nutrientes[LabelAnalyzer.SODIO]));
+        binding.cuerpoColesterol.setText(String.valueOf(nutrientes[LabelAnalyzer.COLESTEROL] * 1000.f));
+        binding.cuerpoSodio.setText(String.valueOf(nutrientes[LabelAnalyzer.SODIO] * 1000.f));
         binding.cuerpoProteina.setText(String.valueOf(nutrientes[LabelAnalyzer.PROTEINAS]));
 
         Log.d("SETDATA", "setDataFromCamaraCapture: ");
@@ -69,34 +69,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
         super.onSaveInstanceState(outState);
     }
 
-
-    //En caso de tener haber recibido un FoodItem, llenamos todas las TextBoxes posibles
-    public void setData(FoodItem foodItem){
-
-        binding.cuerpoNombreProducto.setText(foodItem.getProduct_name());
-        if(foodItem.getPortion_size() != 0)
-            binding.cuerpoTamPorcion.setText(String.valueOf(foodItem.getPortion_size()));
-        if(foodItem.getPortions() != 0)
-            binding.cuerpoPorciones.setText(String.valueOf(foodItem.getPortions()));
-        if(foodItem.getCalories() != 0)
-            binding.cuerpoCalorias.setText(String.valueOf(foodItem.getCalories()));
-        if(foodItem.getTotalFat() != 0)
-            binding.cuerpoGrasaTotal.setText(String.valueOf(foodItem.getTotalFat()));
-        if(foodItem.getSaturatedFat() != 0)
-            binding.cuerpoGrasaSaturada.setText(String.valueOf(foodItem.getTotalFat()));
-        if(foodItem.getTransFat() != 0)
-            binding.cuerpoGrasaTrans.setText(String.valueOf(foodItem.getTotalFat()));
-        if(foodItem.getCarbs() != 0)
-            binding.cuerpoCarbohidratos.setText(String.valueOf(foodItem.getCarbs()));
-        if(foodItem.getSugar() != 0)
-            binding.cuerpoAzucar.setText(String.valueOf(foodItem.getSugar()));
-        if(foodItem.getCholeresterol() != 0)
-            binding.cuerpoSodio.setText(String.valueOf(foodItem.getSodium()));
-        if(foodItem.getSodium() != 0)
-            binding.cuerpoSodio.setText(String.valueOf(foodItem.getSodium()));
-        if(foodItem.getProtein() != 0)
-            binding.cuerpoProteina.setText(String.valueOf(foodItem.getProtein()));
-    }
 
     @Override
     public void onClick(View view) {
@@ -126,7 +98,6 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
                     if(binding.cuerpoTamPorcion.getText().toString().length() > 0){
 
                         foodItem.setPortion_size(Float.parseFloat(binding.cuerpoTamPorcion.getText().toString()));
-                        System.out.println("*******TEST:"+binding.cuerpoTamPorcion.getText().toString());
                     }
                     if(binding.cuerpoPorciones.getText().toString().length() > 0)
                         foodItem.setPortions(Float.parseFloat(binding.cuerpoPorciones.getText().toString()));
@@ -143,7 +114,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
                     if(binding.cuerpoAzucar.getText().toString().length() > 0)
                         foodItem.setSugar(Float.parseFloat(binding.cuerpoAzucar.getText().toString()));
                     if(binding.cuerpoColesterol.getText().toString().length() > 0)
-                        foodItem.setCholeresterol(Float.parseFloat(binding.cuerpoColesterol.getText().toString()));
+                        foodItem.setCholesterol(Float.parseFloat(binding.cuerpoColesterol.getText().toString()));
                     if(binding.cuerpoSodio.getText().toString().length() > 0)
                         foodItem.setSodium(Float.parseFloat(binding.cuerpoSodio.getText().toString()));
                     if(binding.cuerpoProteina.getText().toString().length() > 0)

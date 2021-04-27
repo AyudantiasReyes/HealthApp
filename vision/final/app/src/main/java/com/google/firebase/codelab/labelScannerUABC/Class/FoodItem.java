@@ -13,7 +13,7 @@ public class FoodItem implements Serializable {
     private float transFat;
     private float carbs;
     private float sugar;
-    private float choleresterol;
+    private float cholesterol;
     private float sodium;
     private float protein;
     private long dateAdded;
@@ -30,7 +30,7 @@ public class FoodItem implements Serializable {
             float transfat,
             float carbs,
             float sugar,
-            float choleresterol,
+            float cholesterol,
             float sodium,
             float protein,
             long dateAdded,
@@ -46,7 +46,7 @@ public class FoodItem implements Serializable {
         this.transFat = transfat;
         this.carbs = carbs;
         this.sugar = sugar;
-        this.choleresterol = choleresterol;
+        this.cholesterol = cholesterol;
         this.sodium = sodium;
         this.protein = protein;
         this.dateAdded = dateAdded;
@@ -72,6 +72,10 @@ public class FoodItem implements Serializable {
     @Override
     public String toString(){
         return product_name;
+    }
+
+    public String getMeasurementUnit() {
+        return "g";
     }
 
     //getters & setters
@@ -155,12 +159,12 @@ public class FoodItem implements Serializable {
         this.saturatedFat = saturatedFat;
     }
 
-    public float getCholeresterol() {
-        return choleresterol;
+    public float getCholesterol() {
+        return cholesterol;
     }
 
-    public void setCholeresterol(float choleresterol) {
-        this.choleresterol = choleresterol;
+    public void setCholesterol(float cholesterol) {
+        this.cholesterol = cholesterol;
     }
 
     public float getProtein() {
