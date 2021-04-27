@@ -95,9 +95,6 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
         setContentView(binding.root3);
-
-
-
     }
 
     @Override
@@ -380,6 +377,58 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         int sugarPercentage = (int)getNutrimentPercentage(foodItem.getSugar(), servingSize);
         int proteinPercentage = (int)getNutrimentPercentage(foodItem.getProtein(), servingSize);
         float sodiumPercentage = getNutrimentPercentage(foodItem.getSodium(), sodiumPerDay);
+
+        //Set de calorias en base a los etiquetados de aliments
+
+        //Mostramos calorias
+        binding.caloriasAmount.setText(String.format(Locale.getDefault(), "%d", (int)foodItem.getCalories()));
+
+        //Un producto que por cada 100g contiene 275kcal o mas es alto en calorias
+        //Un producto que por cada 100ml contiene 70kcal o mas es alto en calorias
+        //Un producto que por cada 100g no supera las 40 kcal es bajo en calorias
+        //Un producto que por cada 100ml no supera las 20kcal es bajo en calorias
+
+        //Si el producto se mide en gramos
+        if(foodItem.getMeasurementUnit() == "g") {
+            //Calculamos las calorias por cada 100g para categorizar
+            int caloriesPer100g = (int) ((foodItem.getCalories()*100) / foodItem.getPortion_size());
+            Log.d("CALORIAS", caloriesPer100g+"");
+            //Si el product excede o es equivalente a 275 calorias
+            if(caloriesPer100g >= 275) {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad alta de calorías.");
+                binding.caloriasPercentage.setText("ALTO");
+                setProgressBarStatus(binding.caloriasBar, 275,275);
+            //Si el producto excede o es equivalente a 40 calorias
+            } else if(caloriesPer100g >= 40) {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad regular de calorías.");
+                binding.caloriasPercentage.setText("REGULAR");
+                setProgressBarStatus(binding.caloriasBar, caloriesPer100g,275);
+            //Si el producto no califica en las anteriores es bajo en calorias
+            } else {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad baja de calorías.");
+                binding.caloriasPercentage.setText("Baja");
+                setProgressBarStatus(binding.caloriasBar, caloriesPer100g,275);
+            }
+        } else if(foodItem.getMeasurementUnit() == "ml") {
+            //Calculamos las calorias por cada 100ml para categorizar
+            int caloriesPer100ml = (int) ((foodItem.getCalories()*foodItem.getPortion_size()) / 100);
+            //Si el product excede o es equivalente a 70 calorias
+            if(caloriesPer100ml >= 275) {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad alta de calorías.");
+                binding.caloriasPercentage.setText("ALTO");
+                setProgressBarStatus(binding.caloriasBar, 70,70);
+                //Si el producto excede o es equivalente a 20 calorias
+            } else if(caloriesPer100ml >= 20) {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad regular de calorías.");
+                binding.caloriasPercentage.setText("REGULAR");
+                setProgressBarStatus(binding.caloriasBar, caloriesPer100ml,275);
+                //Si el producto no califica en las anteriores es bajo en calorias
+            } else {
+                binding.caloriasNotes.setText("Este producto tiene una cantidad baja de calorías.");
+                binding.caloriasPercentage.setText("Baja");
+                setProgressBarStatus(binding.caloriasBar, caloriesPer100ml,275);
+            }
+        }
 
         binding.lipidosNotes.setText(nutrimentNotes[getNutrimentStatus(fatPercentage, 20)]+"grasa.");
         binding.carbsNotes.setText(nutrimentNotes[getNutrimentStatus(carbsPercentage, 49)]+"carbohidratos.");

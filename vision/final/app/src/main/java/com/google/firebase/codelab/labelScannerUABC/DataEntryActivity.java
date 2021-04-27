@@ -114,7 +114,7 @@ public class DataEntryActivity extends AppCompatActivity implements View.OnClick
                     if(binding.cuerpoAzucar.getText().toString().length() > 0)
                         foodItem.setSugar(Float.parseFloat(binding.cuerpoAzucar.getText().toString()));
                     if(binding.cuerpoColesterol.getText().toString().length() > 0)
-                        foodItem.setCholeresterol(Float.parseFloat(binding.cuerpoColesterol.getText().toString()));
+                        foodItem.setCholesterol(Float.parseFloat(binding.cuerpoColesterol.getText().toString()));
                     if(binding.cuerpoSodio.getText().toString().length() > 0)
                         foodItem.setSodium(Float.parseFloat(binding.cuerpoSodio.getText().toString()));
                     if(binding.cuerpoProteina.getText().toString().length() > 0)
