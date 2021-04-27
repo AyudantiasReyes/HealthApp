@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ricar\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
+            "outputFile": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-v4\\values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ricar\\.gradle\\caches\\transforms-2\\files-2.1\\975cbd320fcc7de131c627de39e7fc0a\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\Omar Valdivia\\.gradle\\caches\\transforms-2\\files-2.1\\975cbd320fcc7de131c627de39e7fc0a\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
