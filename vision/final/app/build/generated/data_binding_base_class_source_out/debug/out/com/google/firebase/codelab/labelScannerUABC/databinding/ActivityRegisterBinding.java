@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,10 +21,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button button;
-
-  @NonNull
-  public final EditText editTextEdad;
+  public final Button buttonSiguiente;
 
   @NonNull
   public final EditText editTextTextEmailAddress;
@@ -41,25 +36,13 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final EditText editTextTextPersonName2;
 
   @NonNull
-  public final RadioGroup radioGroup;
-
-  @NonNull
-  public final RadioButton radioHombre;
-
-  @NonNull
-  public final RadioButton radioMujer;
-
-  @NonNull
   public final ConstraintLayout registerContainer;
 
   @NonNull
-  public final TextView textView;
+  public final TextView textGenero;
 
   @NonNull
-  public final TextView textView16;
-
-  @NonNull
-  public final TextView textView4;
+  public final TextView textRegistro;
 
   @NonNull
   public final TextView textView5;
@@ -68,36 +51,25 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final TextView textView6;
 
   @NonNull
-  public final TextView textView7;
-
-  @NonNull
   public final TextView textView8;
 
-  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull Button button,
-      @NonNull EditText editTextEdad, @NonNull EditText editTextTextEmailAddress,
+  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView,
+      @NonNull Button buttonSiguiente, @NonNull EditText editTextTextEmailAddress,
       @NonNull EditText editTextTextPassword, @NonNull EditText editTextTextPersonName,
-      @NonNull EditText editTextTextPersonName2, @NonNull RadioGroup radioGroup,
-      @NonNull RadioButton radioHombre, @NonNull RadioButton radioMujer,
-      @NonNull ConstraintLayout registerContainer, @NonNull TextView textView,
-      @NonNull TextView textView16, @NonNull TextView textView4, @NonNull TextView textView5,
-      @NonNull TextView textView6, @NonNull TextView textView7, @NonNull TextView textView8) {
+      @NonNull EditText editTextTextPersonName2, @NonNull ConstraintLayout registerContainer,
+      @NonNull TextView textGenero, @NonNull TextView textRegistro, @NonNull TextView textView5,
+      @NonNull TextView textView6, @NonNull TextView textView8) {
     this.rootView = rootView;
-    this.button = button;
-    this.editTextEdad = editTextEdad;
+    this.buttonSiguiente = buttonSiguiente;
     this.editTextTextEmailAddress = editTextTextEmailAddress;
     this.editTextTextPassword = editTextTextPassword;
     this.editTextTextPersonName = editTextTextPersonName;
     this.editTextTextPersonName2 = editTextTextPersonName2;
-    this.radioGroup = radioGroup;
-    this.radioHombre = radioHombre;
-    this.radioMujer = radioMujer;
     this.registerContainer = registerContainer;
-    this.textView = textView;
-    this.textView16 = textView16;
-    this.textView4 = textView4;
+    this.textGenero = textGenero;
+    this.textRegistro = textRegistro;
     this.textView5 = textView5;
     this.textView6 = textView6;
-    this.textView7 = textView7;
     this.textView8 = textView8;
   }
 
@@ -128,15 +100,9 @@ public final class ActivityRegisterBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.button;
-      Button button = rootView.findViewById(id);
-      if (button == null) {
-        break missingId;
-      }
-
-      id = R.id.editTextEdad;
-      EditText editTextEdad = rootView.findViewById(id);
-      if (editTextEdad == null) {
+      id = R.id.button_siguiente;
+      Button buttonSiguiente = rootView.findViewById(id);
+      if (buttonSiguiente == null) {
         break missingId;
       }
 
@@ -164,45 +130,21 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.radioGroup;
-      RadioGroup radioGroup = rootView.findViewById(id);
-      if (radioGroup == null) {
-        break missingId;
-      }
-
-      id = R.id.radio_hombre;
-      RadioButton radioHombre = rootView.findViewById(id);
-      if (radioHombre == null) {
-        break missingId;
-      }
-
-      id = R.id.radio_mujer;
-      RadioButton radioMujer = rootView.findViewById(id);
-      if (radioMujer == null) {
-        break missingId;
-      }
-
       id = R.id.register_container;
       ConstraintLayout registerContainer = rootView.findViewById(id);
       if (registerContainer == null) {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = rootView.findViewById(id);
-      if (textView == null) {
+      id = R.id.text_genero;
+      TextView textGenero = rootView.findViewById(id);
+      if (textGenero == null) {
         break missingId;
       }
 
-      id = R.id.textView16;
-      TextView textView16 = rootView.findViewById(id);
-      if (textView16 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView4;
-      TextView textView4 = rootView.findViewById(id);
-      if (textView4 == null) {
+      id = R.id.text_registro;
+      TextView textRegistro = rootView.findViewById(id);
+      if (textRegistro == null) {
         break missingId;
       }
 
@@ -218,22 +160,16 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView7;
-      TextView textView7 = rootView.findViewById(id);
-      if (textView7 == null) {
-        break missingId;
-      }
-
       id = R.id.textView8;
       TextView textView8 = rootView.findViewById(id);
       if (textView8 == null) {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ConstraintLayout) rootView, button, editTextEdad,
+      return new ActivityRegisterBinding((ConstraintLayout) rootView, buttonSiguiente,
           editTextTextEmailAddress, editTextTextPassword, editTextTextPersonName,
-          editTextTextPersonName2, radioGroup, radioHombre, radioMujer, registerContainer, textView,
-          textView16, textView4, textView5, textView6, textView7, textView8);
+          editTextTextPersonName2, registerContainer, textGenero, textRegistro, textView5,
+          textView6, textView8);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

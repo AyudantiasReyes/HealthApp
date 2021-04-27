@@ -12,6 +12,7 @@
     <color name="white">#FFF</color>
 
     <!-- Color of UI register-->
+    <color name="lightBlue">#B0E0E6</color>
     <color name="charcoal">#2F4858</color>
     <color name="honey_yellow">#F6AE2D</color>
     <color name="platinum">#E8E8E8</color>

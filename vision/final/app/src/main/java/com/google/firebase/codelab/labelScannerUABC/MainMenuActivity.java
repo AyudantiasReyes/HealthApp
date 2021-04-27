@@ -276,6 +276,6 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         id = preferences.getString(SharedPreference.KeyName,null);
         pass = preferences.getString(SharedPreference.KeyLastname,null);
         gen = preferences.getString(SharedPreference.KeyGen,null);
-        return new User(id,name,lastname,email,pass,gen);
+        return new User(id,name,lastname,email,pass);
     }
 }

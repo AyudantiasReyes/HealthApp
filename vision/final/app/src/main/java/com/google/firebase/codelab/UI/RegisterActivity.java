@@ -52,27 +52,20 @@ public class RegisterActivity extends AppCompatActivity {
         edtLastName = findViewById(R.id.editTextTextPersonName2);
         edtEmail = findViewById(R.id.editTextTextEmailAddress);
         edtPass = findViewById(R.id.editTextTextPassword);
-        edtEdad = findViewById(R.id.editTextEdad);
 
         //Get the BUTTONS from the Layout
-        Button btnRegister = findViewById(R.id.button);
-
-        //Get the RadioGroup from the layout
-        radioGroup = findViewById(R.id.radioGroup);
-        radioButton = findViewById(R.id.radio_hombre);
+        Button btnSiguiente = findViewById(R.id.button_siguiente);
 
 
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        btnSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name = edtName.getText().toString();
                 lastname = edtLastName.getText().toString();
                 email = edtEmail.getText().toString();
                 pass = edtPass.getText().toString();
-                gen = radioButton.getText().toString();
-                //Log.d("gen",gen + "onClick");
                 if(name.isEmpty() || lastname.isEmpty() || email.isEmpty() || pass.isEmpty())
                     Toast.makeText(RegisterActivity.this,R.string.error1,Toast.LENGTH_SHORT).show();
                 else{
@@ -83,11 +76,10 @@ public class RegisterActivity extends AppCompatActivity {
                             progressDialog.setContentView(R.layout.progress_layout);
                             progressDialog.setCancelable(false);
                             progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                            Log.d("gen",gen + "onClick");
                             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    RegisterUser(name,lastname,email,pass,gen);
+                                    RegisterUser(name,lastname,email,pass);
                                 }
                             }, 1000);
                         }
@@ -101,19 +93,13 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void checkButton(View v){
-        int radioId = radioGroup.getCheckedRadioButtonId();
-
-        radioButton = findViewById(radioId);
-    }
-
     public static boolean isValidEmail(CharSequence email) {
         if (email == null)
             return false;
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private void RegisterUser(final String name, final String lastname, final String email, final String password, final String gen){
+    private void RegisterUser(final String name, final String lastname, final String email, final String password){
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
 
             @Override
@@ -125,10 +111,10 @@ public class RegisterActivity extends AppCompatActivity {
                     try {
                         Log.d("response",response);
                         JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"),jsonObj.getString("gen"));
+                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
                         SaveSharedPreferences();
                         Toast.makeText(RegisterActivity.this,R.string.msjRegister,Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, MainMenuActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, RegisterData.class));
                         finish();
                     } catch (JSONException e) {
                         e.printStackTrace();

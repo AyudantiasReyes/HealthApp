@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
@@ -20,10 +19,10 @@
 
         <TextView
             android:id="@+id/textView13"
-            android:padding="30dp"
-            android:background="@drawable/gradient_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient_bg"
+            android:padding="30dp"
             android:text="@string/welcome"
             android:textColor="@color/white"
             android:textSize="35sp"
@@ -84,35 +83,63 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/round_button"
-        android:elevation="@dimen/default_stroke_width"
         android:padding="30sp"
-        android:translationZ="@dimen/default_stroke_width"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/button_container"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/toolButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_button2"
+                android:padding="30dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_tool"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/inputButton"
+                app:layout_constraintTop_toBottomOf="@+id/galleryButton" />
+
+            <ImageButton
+                android:id="@+id/inputButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_button2"
+                android:padding="30dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/edit"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/inputButton2"
+                app:layout_constraintTop_toBottomOf="@+id/galleryButton" />
 
             <ImageButton
                 android:id="@+id/cameraButton"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="top|center_vertical|fill_vertical"
-                android:layout_marginTop="16dp"
                 android:background="@drawable/round_button2"
                 android:padding="30dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/photo"
                 android:text="Button"
-                app:layout_constraintEnd_toStartOf="@+id/galleryButton"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,39 +147,23 @@
                 android:id="@+id/galleryButton"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/round_button2"
                 android:padding="30dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/gallery"
-                app:layout_constraintEnd_toStartOf="@+id/inputButton"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cameraButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/inputButton"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/round_button2"
-                android:padding="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/edit"
-                android:text="Button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/galleryButton"
-                app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <Button
             android:id="@+id/productoButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="64dp"
             android:layout_marginBottom="32dp"
             android:background="@drawable/round_button2"
             android:fontFamily="@font/montserrat_bold"
@@ -177,15 +188,16 @@
         android:layout_marginBottom="52dp"
         android:background="@drawable/round_button2"
         android:elevation="@dimen/default_stroke_width"
-        android:translationZ="@dimen/default_stroke_width"
         android:paddingRight="10dp"
         android:text="@string/logout"
         android:textAllCaps="false"
         android:textColor="@color/cream"
+        android:translationZ="@dimen/default_stroke_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuLayout"
         app:layout_constraintVertical_bias="0.994" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
