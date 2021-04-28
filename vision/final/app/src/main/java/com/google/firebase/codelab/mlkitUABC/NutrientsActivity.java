@@ -27,7 +27,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.codelab.UI.RegisterActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
+import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.DataEntryActivity;
 import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
@@ -35,7 +37,11 @@ import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityNutrient
 import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Porciones;
 import com.google.firebase.codelab.labelScannerUABC.TipoPorcion;
+import com.google.firebase.codelab.textExtractor.BarcodeAnalyzer.JsonParser;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -46,7 +52,7 @@ import java.util.Map;
 import static android.view.View.GONE;
 
 public class NutrientsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
-    private static final String URL = "http://conisoft.org/HealthApp/App/insertFood.php";
+    private static final String URL = "http://conisoft.org/HealthAppV2/insertProduct.php";
     private ActivityNutrientsBinding binding;
     private FoodItem foodItem;
 
@@ -87,7 +93,6 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
-            System.out.println(foodItem.getProduct_name());
         }
 
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
@@ -95,6 +100,13 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
         binding = ActivityNutrientsBinding.inflate(getLayoutInflater());
         setContentView(binding.root3);
+
+        binding.acceptButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerProduct();
+            }
+        });
     }
 
     @Override
@@ -140,6 +152,45 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
         */
 
 
+    private void registerProduct(){
+        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                if(!response.equals("0")){
+                    Toast.makeText(getApplicationContext(), "Insertado correctamente", Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+
+                    Toast.makeText(getApplicationContext(), "No se pudo insertar" + response, Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.d("STATUS_REQUEST", "ERROR ");
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String,String> parametros = new HashMap<>();
+
+
+                parametros.put("id", id);
+                parametros.put("barcode", JsonParser.url);
+                parametros.put("Nombre", foodItem.getProduct_name());
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
     @Override
     public void onResume(){
         super.onResume();
@@ -148,10 +199,10 @@ public class NutrientsActivity extends AppCompatActivity implements View.OnClick
 
         if (extras != null) {
             foodItem = (FoodItem) extras.getSerializable("foodItem");
-            System.out.println(foodItem.getProduct_name());
-            // and get whatever type user account id is
+
+
         }
-        //updateUI();
+
     }
 
     /*

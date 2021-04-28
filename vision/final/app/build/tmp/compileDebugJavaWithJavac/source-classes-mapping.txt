@@ -18,23 +18,20 @@ labelParser/labelGrammarBaseListener.java
  labelParser.labelGrammarBaseListener
 com/google/firebase/codelab/textExtractor/BarcodeAnalyzer/JsonParser.java
  com.google.firebase.codelab.textExtractor.BarcodeAnalyzer.JsonParser
- com.google.firebase.codelab.textExtractor.BarcodeAnalyzer.JsonParser$1
- com.google.firebase.codelab.textExtractor.BarcodeAnalyzer.JsonParser$2
 com/google/firebase/codelab/mlkitUABC/NutrientsActivity.java
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$1
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$2
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$3
  com.google.firebase.codelab.mlkitUABC.NutrientsActivity$4
- com.google.firebase.codelab.mlkitUABC.NutrientsActivity$5
 com/google/firebase/codelab/labelScannerUABC/databinding/LayoutScreenBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.LayoutScreenBinding
+com/google/firebase/codelab/labelScannerUABC/DataEntryActivity.java
+ com.google.firebase.codelab.labelScannerUABC.DataEntryActivity
 com/google/firebase/codelab/labelScannerUABC/MainMenuActivity.java
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$1
  com.google.firebase.codelab.labelScannerUABC.MainMenuActivity$2
-com/google/firebase/codelab/labelScannerUABC/DataEntryActivity.java
- com.google.firebase.codelab.labelScannerUABC.DataEntryActivity
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityIntroBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityIntroBinding
 com/google/firebase/codelab/textExtractor/groups/Occurrence.java
@@ -43,14 +40,14 @@ com/google/firebase/codelab/textExtractor/groups/TextElements.java
  com.google.firebase.codelab.textExtractor.groups.TextElements
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityMainMenuBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityMainMenuBinding
-com/google/firebase/codelab/labelScannerUABC/databinding/ActivityRegisterDataBinding.java
- com.google.firebase.codelab.labelScannerUABC.databinding.ActivityRegisterDataBinding
 com/google/firebase/codelab/labelScannerUABC/Class/User.java
  com.google.firebase.codelab.labelScannerUABC.Class.User
 com/google/firebase/codelab/UI/ScreenItem.java
  com.google.firebase.codelab.UI.ScreenItem
 com/google/firebase/codelab/textExtractor/listeners/LabelDataListener.java
  com.google.firebase.codelab.textExtractor.listeners.LabelDataListener
+com/google/firebase/codelab/labelScannerUABC/nutrimentsCalculator/Calculator.java
+ com.google.firebase.codelab.labelScannerUABC.nutrimentsCalculator.Calculator
 com/google/firebase/codelab/textExtractor/analyzer/LabelCleaner.java
  com.google.firebase.codelab.textExtractor.analyzer.LabelCleaner
 com/google/firebase/codelab/labelScannerUABC/databinding/ProgressLayoutBinding.java
@@ -92,10 +89,10 @@ com/google/firebase/codelab/UI/LoginActivity.java
  com.google.firebase.codelab.UI.LoginActivity$5
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityProductListBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding
-com/google/firebase/codelab/UI/IntroViewPageAdapter.java
- com.google.firebase.codelab.UI.IntroViewPageAdapter
 com/google/firebase/codelab/textExtractor/analyzer/LabelAnalyzer.java
  com.google.firebase.codelab.textExtractor.analyzer.LabelAnalyzer
+com/google/firebase/codelab/UI/IntroViewPageAdapter.java
+ com.google.firebase.codelab.UI.IntroViewPageAdapter
 labelParser/labelGrammarParser.java
  labelParser.labelGrammarParser
  labelParser.labelGrammarParser$Azucar_statementContext
@@ -126,10 +123,10 @@ com/google/firebase/codelab/labelScannerUABC/TipoPorcion.java
  com.google.firebase.codelab.labelScannerUABC.TipoPorcion
 com/google/firebase/codelab/labelScannerUABC/labelscanner/ImagePicker.java
  com.google.firebase.codelab.labelScannerUABC.labelscanner.ImagePicker
-com/google/firebase/codelab/labelScannerUABC/databinding/ActivityRegisterBinding.java
- com.google.firebase.codelab.labelScannerUABC.databinding.ActivityRegisterBinding
 com/google/firebase/codelab/labelScannerUABC/databinding/ActivityLoginBinding.java
  com.google.firebase.codelab.labelScannerUABC.databinding.ActivityLoginBinding
+com/google/firebase/codelab/labelScannerUABC/databinding/ActivityRegisterBinding.java
+ com.google.firebase.codelab.labelScannerUABC.databinding.ActivityRegisterBinding
 labelParser/labelGrammarListener.java
  labelParser.labelGrammarListener
 com/google/firebase/codelab/labelScannerUABC/FoodAdapter.java
@@ -139,15 +136,6 @@ com/google/firebase/codelab/labelScannerUABC/FoodAdapter.java
  com.google.firebase.codelab.labelScannerUABC.FoodAdapter$ViewHolder
 com/google/firebase/codelab/labelScannerUABC/CloudTextGraphic.java
  com.google.firebase.codelab.labelScannerUABC.CloudTextGraphic
-com/google/firebase/codelab/UI/RegisterData.java
- com.google.firebase.codelab.UI.RegisterData
- com.google.firebase.codelab.UI.RegisterData$1
- com.google.firebase.codelab.UI.RegisterData$1$1
- com.google.firebase.codelab.UI.RegisterData$2
- com.google.firebase.codelab.UI.RegisterData$3
- com.google.firebase.codelab.UI.RegisterData$4
-com/google/firebase/codelab/labelScannerUABC/databinding/StyleSpinnerBinding.java
- com.google.firebase.codelab.labelScannerUABC.databinding.StyleSpinnerBinding
 com/google/firebase/codelab/UI/RegisterActivity.java
  com.google.firebase.codelab.UI.RegisterActivity
  com.google.firebase.codelab.UI.RegisterActivity$1

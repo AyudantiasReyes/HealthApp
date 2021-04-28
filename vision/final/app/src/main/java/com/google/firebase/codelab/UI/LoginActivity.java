@@ -31,7 +31,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     private EditText edt_email, edt_pass;
     private String email, pass;
-    private static final String URL = "http://conisoft.org/HealthApp/App/LoginUser.php";
+    private static final String URL = "http://conisoft.org/HealthAppV2/login.php";
     private SharedPreferences preferences;
     private User user;
     private ProgressDialog progressDialog;
@@ -92,10 +92,10 @@ public class LoginActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(!response.isEmpty()) {
+                if(!response.equals("0")) {
                     try {
                         JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
+                        user = new User(jsonObj.getString("id"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
                         SaveSharedPreferences();
                         startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                         finish();

@@ -25,6 +25,7 @@ import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.MainMenuActivity;
 import com.google.firebase.codelab.labelScannerUABC.R;
+import com.google.firebase.codelab.mlkitUABC.NutrientsActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private String name, lastname, email, pass, gen;
-    private static final String URL = "http://conisoft.org/HealthApp/App/RegisterUser.php";
+    private static final String URL = "http://conisoft.org/HealthAppV2/userRegister.php";
     private SharedPreferences preferences;
     private User user;
     private ProgressDialog progressDialog;
@@ -53,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtLastName = findViewById(R.id.editTextTextPersonName2);
         edtEmail = findViewById(R.id.editTextTextEmailAddress);
         edtPass = findViewById(R.id.editTextTextPassword);
+
 
         //Daily Intakes of calories and macros
         dailyMacros = new int[3];
@@ -108,29 +110,31 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-                if(response.equals("false")){
-                    Toast.makeText(RegisterActivity.this,R.string.msjRegister2,Toast.LENGTH_SHORT).show();
-                }
-                else{
+                if(!response.equals("0")){
+                    progressDialog.dismiss();
+
                     try {
-                        Log.d("response",response);
-                        JSONObject jsonObj = new JSONObject(response);
-                        user = new User(jsonObj.getString("id_user"), jsonObj.getString("name"),jsonObj.getString("lastname"), jsonObj.getString("email"),jsonObj.getString("pass"));
+                        JSONObject user = new JSONObject(response);
+                        String id = user.get("id").toString();
+
+                        RegisterActivity.this.user = new User(id,(String) user.get("name"), (String) user.get("lastname"), (String) user.get("email"),(String) user.get("pass") );
                         SaveSharedPreferences();
-                        Toast.makeText(RegisterActivity.this,R.string.msjRegister,Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, RegisterData.class));
-                        finish();
+
+                        startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
+
                     } catch (JSONException e) {
                         e.printStackTrace();
+                        Log.d("STATUS_REQUEST", "Cannot pass json");
                     }
                 }
-                progressDialog.dismiss();
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressDialog.dismiss();
-                Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Log.d("STATUS_REQUEST", "ERROR ");
+                //Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -140,7 +144,6 @@ public class RegisterActivity extends AppCompatActivity {
                 parametros.put("lastname",lastname);
                 parametros.put("email",email);
                 parametros.put("pass",password);
-                parametros.put("gen",gen);
                 return parametros;
             }
         };
@@ -153,9 +156,8 @@ public class RegisterActivity extends AppCompatActivity {
         edit.putString(SharedPreference.KeyId,user.getId());
         edit.putString(SharedPreference.KeyName,user.getName());
         edit.putString(SharedPreference.KeyLastname,user.getLastname());
-        edit.putString(SharedPreference.KeyEmail,user.getEmail());
+        edit.putString(SharedPreference.KeyEmail, user.getEmail());
         edit.putString(SharedPreference.KeyPassword,user.getPassword());
-        edit.putString(SharedPreference.KeyGen,user.getGen());
         edit.apply();
     }
 

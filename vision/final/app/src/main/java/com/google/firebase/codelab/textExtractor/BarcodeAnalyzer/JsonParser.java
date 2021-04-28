@@ -22,7 +22,7 @@ import org.json.simple.parser.JSONParser;
 public class JsonParser extends Thread{
     //https://world.openfoodfacts.org/api/v0/product/[barcode].json
 
-    private String url;
+    public static String url;
     private volatile boolean isFinished;
 
     public int TAMANO_PORCION = 0;
@@ -61,7 +61,7 @@ public class JsonParser extends Thread{
     }
 
     public void setBarUrl(String barcode) {
-        this.url = "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
+        url = "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
     }
 
     public boolean isFinished() {

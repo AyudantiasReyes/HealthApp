@@ -59,13 +59,16 @@ public final class ActivityMainMenuBinding implements ViewBinding {
   @NonNull
   public final TextView textView15;
 
+  @NonNull
+  public final ImageButton toolButton;
+
   private ActivityMainMenuBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout buttonContainer, @NonNull Button buttonLogout,
       @NonNull ImageButton cameraButton, @NonNull ConstraintLayout constraintLayout2,
       @NonNull ImageButton galleryButton, @NonNull ConstraintLayout greetingContainer,
       @NonNull ImageButton inputButton, @NonNull ConstraintLayout menuLayout,
       @NonNull Button productoButton, @NonNull ConstraintLayout root, @NonNull TextView textView13,
-      @NonNull TextView textView14, @NonNull TextView textView15) {
+      @NonNull TextView textView14, @NonNull TextView textView15, @NonNull ImageButton toolButton) {
     this.rootView = rootView;
     this.buttonContainer = buttonContainer;
     this.buttonLogout = buttonLogout;
@@ -80,6 +83,7 @@ public final class ActivityMainMenuBinding implements ViewBinding {
     this.textView13 = textView13;
     this.textView14 = textView14;
     this.textView15 = textView15;
+    this.toolButton = toolButton;
   }
 
   @Override
@@ -183,9 +187,15 @@ public final class ActivityMainMenuBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toolButton;
+      ImageButton toolButton = rootView.findViewById(id);
+      if (toolButton == null) {
+        break missingId;
+      }
+
       return new ActivityMainMenuBinding((ConstraintLayout) rootView, buttonContainer, buttonLogout,
           cameraButton, constraintLayout2, galleryButton, greetingContainer, inputButton,
-          menuLayout, productoButton, root, textView13, textView14, textView15);
+          menuLayout, productoButton, root, textView13, textView14, textView15, toolButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

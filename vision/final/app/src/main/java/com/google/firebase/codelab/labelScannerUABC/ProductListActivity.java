@@ -59,17 +59,11 @@ public class ProductListActivity extends AppCompatActivity{
         binding = ActivityProductListBinding.inflate(getLayoutInflater());
         setContentView(binding.root4);
         mydb = new DBHelper(this);
-        //porcionSpinner = binding.porcionSpinner;
         recyclerView = binding.myRecyclerView;
 
-        //test insertions
-        //FoodItem foodItem = new FoodItem("AntiChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
-        //FoodItem foodItem2 = new FoodItem("BetaChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
-        //FoodItem foodItem3 = new FoodItem("ChocoChoco", 100, 3, 400, 3, 120, 20, 12, 20, 6);
+
         foodItems = new ArrayList<FoodItem>();
-        //mydb.insertFood(foodItem);
-        //mydb.insertFood(foodItem2);
-        //mydb.insertFood(foodItem3);
+
         allProduct();
         updateRecyclerView(DATE_MODIFIED_RECENT);
         SpinnerValues();
