@@ -53,7 +53,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-
+//Hola omar, whamuuuu mezame tame waga aruji tachi!
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private final int PICK_IMAGE_REQUEST= 1;
     private static final int REQUEST_IMAGE_CAPTURE = 2;
@@ -306,9 +306,8 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         name = preferences.getString(SharedPreference.KeyName,null);
         lastname = preferences.getString(SharedPreference.KeyLastname,null);
         email = preferences.getString(SharedPreference.KeyEmail,null);
-        id = preferences.getString(SharedPreference.KeyName,null);
-        pass = preferences.getString(SharedPreference.KeyLastname,null);
-        gen = preferences.getString(SharedPreference.KeyGen,null);
+        id = preferences.getString(SharedPreference.KeyId,null);
+        pass = preferences.getString(SharedPreference.KeyPassword,null);
         return new User(id,name,lastname,email,pass);
     }
 }
