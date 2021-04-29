@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     private SharedPreferences preferences;
     private User user;
     private ProgressDialog progressDialog;
-    private int[] dailyMacros;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtPass = findViewById(R.id.editTextTextPassword);
 
 
-        //Daily Intakes of calories and macros
-        dailyMacros = new int[3];
+
 
         //Get the BUTTONS from the Layout
         Button btnSiguiente = findViewById(R.id.button_siguiente);
@@ -143,7 +142,6 @@ public class RegisterActivity extends AppCompatActivity {
                 parametros.put("name",name);
                 parametros.put("lastname",lastname);
                 parametros.put("email",email);
-                parametros.put("pass",password);
                 return parametros;
             }
         };
@@ -159,24 +157,5 @@ public class RegisterActivity extends AppCompatActivity {
         edit.putString(SharedPreference.KeyEmail, user.getEmail());
         edit.putString(SharedPreference.KeyPassword,user.getPassword());
         edit.apply();
-    }
-
-    private int calculateDailyCalories(char gender, float weight, float height, int age) {
-        int calories = (int) ((10 * weight) + (6.25 * height) - (5 * age));
-        if(gender == 'H') {
-            return calories+5;
-        } else if(gender == 'M') {
-            return calories-161;
-        } else
-            return 0;
-    }
-
-    private void calculateDailyIntakes(int calories, int weight) {
-        int FAT = 0;
-        int CARBS = 1;
-        int PROTEIN = 2;
-        dailyMacros[PROTEIN] = weight;
-        dailyMacros[FAT] = (int) ((calories*0.25) / 9) ;
-        dailyMacros[CARBS] = (calories - (dailyMacros[PROTEIN]*4) - (dailyMacros[FAT]*9)) / 4;
     }
 }

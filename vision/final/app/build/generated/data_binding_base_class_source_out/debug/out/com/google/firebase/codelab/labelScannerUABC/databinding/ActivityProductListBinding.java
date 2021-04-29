@@ -4,6 +4,7 @@ package com.google.firebase.codelab.labelScannerUABC.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,21 +23,21 @@ public final class ActivityProductListBinding implements ViewBinding {
   public final ConstraintLayout buttonLayout;
 
   @NonNull
-  public final ConstraintLayout constraintLayout;
+  public final TextView productListHeader;
 
   @NonNull
-  public final RecyclerView myRecyclerView;
+  public final RecyclerView recyclerView;
 
   @NonNull
   public final ConstraintLayout root4;
 
   private ActivityProductListBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout buttonLayout, @NonNull ConstraintLayout constraintLayout,
-      @NonNull RecyclerView myRecyclerView, @NonNull ConstraintLayout root4) {
+      @NonNull ConstraintLayout buttonLayout, @NonNull TextView productListHeader,
+      @NonNull RecyclerView recyclerView, @NonNull ConstraintLayout root4) {
     this.rootView = rootView;
     this.buttonLayout = buttonLayout;
-    this.constraintLayout = constraintLayout;
-    this.myRecyclerView = myRecyclerView;
+    this.productListHeader = productListHeader;
+    this.recyclerView = recyclerView;
     this.root4 = root4;
   }
 
@@ -73,22 +74,22 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.constraintLayout;
-      ConstraintLayout constraintLayout = rootView.findViewById(id);
-      if (constraintLayout == null) {
+      id = R.id.productListHeader;
+      TextView productListHeader = rootView.findViewById(id);
+      if (productListHeader == null) {
         break missingId;
       }
 
-      id = R.id.my_recycler_view;
-      RecyclerView myRecyclerView = rootView.findViewById(id);
-      if (myRecyclerView == null) {
+      id = R.id.recyclerView;
+      RecyclerView recyclerView = rootView.findViewById(id);
+      if (recyclerView == null) {
         break missingId;
       }
 
       ConstraintLayout root4 = (ConstraintLayout) rootView;
 
       return new ActivityProductListBinding((ConstraintLayout) rootView, buttonLayout,
-          constraintLayout, myRecyclerView, root4);
+          productListHeader, recyclerView, root4);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

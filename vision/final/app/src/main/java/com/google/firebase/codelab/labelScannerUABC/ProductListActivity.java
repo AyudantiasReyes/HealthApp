@@ -1,18 +1,24 @@
 package com.google.firebase.codelab.labelScannerUABC;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -22,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
+import com.google.firebase.codelab.labelScannerUABC.Class.ProductAdapter;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.databinding.ActivityProductListBinding;
@@ -39,31 +46,26 @@ import java.util.Map;
 
 public class ProductListActivity extends AppCompatActivity{
 
-
-    ActivityProductListBinding binding;
-    RecyclerView recyclerView;
-    private List<FoodItem> foodItems;
     private SharedPreferences preferences;
     private String URL = "http://conisoft.org/HealthAppV2/getProducts.php";
     private  User user;
 
-    private ArrayList<String> productNames;
+    private RecyclerView recyclerView;
+    public ArrayList<String> productNames;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityProductListBinding.inflate(getLayoutInflater());
-        setContentView(binding.root4);
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
-
-        recyclerView = binding.myRecyclerView;
-        foodItems = new ArrayList<FoodItem>();
         user = LoadSharedPreferences();
-
+        recyclerView = findViewById(R.id.recyclerView);
         productNames = new ArrayList<>();
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
 
-
+        //ProductAdapter productAdapter = new ProductAdapter(productNames, getApplicationContext());
+        //recyclerView.setAdapter(productAdapter);
     }
 
     @Override

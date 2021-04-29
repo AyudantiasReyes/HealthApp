@@ -13,4 +13,8 @@ public class SharedPreference {
     public static final String KeyEstatura = "estatura";
     public static final String KeyEdad = "edad";
     public static final String KeyPeso = "peso";
+    public static final String KeyCalorias = "dailyCalories";
+    public static final String KeyGrasas = "dailyFat";
+    public static final String KeyCarbs = "dailyCarbs";
+    public static final String KeyProtein = "dailyProtein";
 }

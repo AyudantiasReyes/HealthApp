@@ -1971,7 +1971,6 @@ id clockwise
 id collapseActionView
 id compatible
 id confirm_button
-id constraintLayout
 id constraintLayout2
 id container
 id content
@@ -2184,7 +2183,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
-id my_recycler_view
 id nameTextView
 id navigation_header_container
 id never
@@ -2216,6 +2214,8 @@ id porcionSpinner
 id position
 id postLayout
 id previewView
+id productListHeader
+id productNameTextView
 id productoButton
 id progressBar
 id progress_circular
@@ -2230,6 +2230,7 @@ id proteinaUnit
 id radio
 id ratio
 id rectangles
+id recyclerView
 id register_container
 id reverseSawtooth
 id right
@@ -2573,6 +2574,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout product
 layout progress_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
