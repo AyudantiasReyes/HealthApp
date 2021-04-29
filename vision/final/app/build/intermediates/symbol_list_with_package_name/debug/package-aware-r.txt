@@ -1928,6 +1928,7 @@ id button_login
 id button_logout
 id button_register
 id button_registro
+id button_save
 id button_siguiente
 id cache_measures
 id caloriasAmount
@@ -2032,6 +2033,7 @@ id editTextTextEmailAddress
 id editTextTextPassword
 id editTextTextPersonName
 id editTextTextPersonName2
+id edit_cal
 id edit_edad
 id edit_est
 id edit_peso
@@ -2079,6 +2081,8 @@ id guideline
 id guideline3
 id guideline4
 id guideline5
+id guideline7
+id guideline8
 id header_title
 id hideable
 id home
@@ -2286,7 +2290,10 @@ id sodioPercentage
 id sodioTextView
 id sodioUnit
 id sp_actividad
+id sp_carbs
+id sp_fat
 id sp_genero
+id sp_proteina
 id spacer
 id spline
 id split_action_bar
@@ -2341,13 +2348,19 @@ id textView6
 id textView8
 id textView9
 id text_actividad
+id text_cal
+id text_carbs
 id text_edad
 id text_estatura
 id text_genero
+id text_grasa
+id text_info
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_obj
 id text_peso
+id text_prot
 id text_registro
 id textinput_counter
 id textinput_error
@@ -2476,6 +2489,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_camera
+layout activity_daily_intake
 layout activity_data_entry
 layout activity_intro
 layout activity_login

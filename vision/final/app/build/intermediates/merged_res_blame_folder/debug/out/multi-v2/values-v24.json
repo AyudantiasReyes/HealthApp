@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "/Users/navarro/StudioProjects/HealthApp/vision/final/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Omar Valdivia\\.gradle\\caches\\transforms-2\\files-2.1\\fdb6d6573041c7bc76c93c8669328a78\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "/Users/navarro/.gradle/caches/transforms-2/files-2.1/fdb6d6573041c7bc76c93c8669328a78/media-1.0.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Omar Valdivia\\.gradle\\caches\\transforms-2\\files-2.1\\975cbd320fcc7de131c627de39e7fc0a\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
+                    "source": "/Users/navarro/.gradle/caches/transforms-2/files-2.1/975cbd320fcc7de131c627de39e7fc0a/appcompat-1.2.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
