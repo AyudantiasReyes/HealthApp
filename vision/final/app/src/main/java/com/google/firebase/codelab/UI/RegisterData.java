@@ -47,6 +47,12 @@ public class RegisterData extends AppCompatActivity {
     private Spinner sp_genero;
     private Spinner sp_actividad;
     private HashMap<String, Integer> activity_map;
+    private int[] dailyMacros;
+    private String calories, fats, carbs, proteins;
+
+    private final int FAT = 0;
+    private final int CARBS = 1;
+    private final int PROTEIN = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,9 @@ public class RegisterData extends AppCompatActivity {
         //Get the Spinners from the Layout
         sp_genero = findViewById(R.id.sp_genero);
         sp_actividad = findViewById(R.id.sp_actividad);
+
+        //Daily Intakes of calories and macros
+        dailyMacros = new int[3];
 
         //prepare the hasmap
         activity_map = new HashMap<String, Integer>();
@@ -99,6 +108,11 @@ public class RegisterData extends AppCompatActivity {
                 gen = sp_genero.getSelectedItem().toString().charAt(0) + "";
                 actividad = activity_map.get(sp_actividad.getSelectedItem().toString()).toString();
 
+                calories = String.valueOf(calculateDailyCalories(gen.charAt(0),Integer.parseInt(peso),Integer.parseInt(estatura),Integer.parseInt(edad)));
+                calculateDailyIntakes(Integer.parseInt(calories), Integer.parseInt(peso));
+                fats = String.valueOf(dailyMacros[FAT]);
+                carbs = String.valueOf(dailyMacros[CARBS]);
+                proteins = String.valueOf(dailyMacros[PROTEIN]);
 
                 if(estatura.isEmpty()  || edad.isEmpty() || peso.isEmpty())
                     Toast.makeText(RegisterData.this,R.string.error1,Toast.LENGTH_SHORT).show();
@@ -151,6 +165,10 @@ public class RegisterData extends AppCompatActivity {
                 parametros.put("peso",peso);
                 parametros.put("actividad", actividad);
                 parametros.put("id", user.getId());
+                parametros.put("calories", calories);
+                parametros.put("dailyFat", fats);
+                parametros.put("dailyCarbs", carbs);
+                parametros.put("dailyProtein", proteins);
                 return parametros;
             }
         };
@@ -177,6 +195,30 @@ public class RegisterData extends AppCompatActivity {
 
         return new User(id, name, lastname ,email, pass);
 
+    }
+
+    private int calculateDailyCalories(char gender, int weight, int height, int age) {
+        //Log.d("daily","Gender: " +gender);
+        //Log.d("daily","Weight: " +weight);
+        //Log.d("daily","Height: " +height);
+        //Log.d("daily","Age: " +age);
+        int calories = (int) ((10 * weight) + (6.25 * height) - (5 * age));
+        if(gender == 'H') {
+            //Log.d("daily","Calories: "+calories);
+            return calories+5;
+        } else if(gender == 'M') {
+            return calories-161;
+        } else
+            return 0;
+    }
+
+    private void calculateDailyIntakes(int calories, int weight) {
+        dailyMacros[PROTEIN] = weight;
+        dailyMacros[FAT] = (int) ((calories*0.25) / 9) ;
+        dailyMacros[CARBS] = (calories - (dailyMacros[PROTEIN]*4) - (dailyMacros[FAT]*9)) / 4;
+        //Log.d("daily","Fat: " + dailyMacros[FAT]);
+        //Log.d("daily","Carbs: " + dailyMacros[CARBS]);
+        //Log.d("daily","Protein: " + dailyMacros[PROTEIN]);
     }
 
 }

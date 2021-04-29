@@ -59,6 +59,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private static final int REQUEST_IMAGE_CAPTURE = 2;
     private final int REQUEST_BARCODE_CAPTURE = 3;
 
+
     private SharedPreferences preferences;
     private LabelAnalyzer labelAnalyzer;
     private JsonParser jsonParser;
