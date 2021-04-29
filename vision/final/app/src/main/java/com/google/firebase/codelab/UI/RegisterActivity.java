@@ -120,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
                         RegisterActivity.this.user = new User(id,(String) user.get("name"), (String) user.get("lastname"), (String) user.get("email"),(String) user.get("pass") );
                         SaveSharedPreferences();
 
-                        startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
+                        startActivity(new Intent(getApplicationContext(), RegisterData.class));
 
                     } catch (JSONException e) {
                         e.printStackTrace();

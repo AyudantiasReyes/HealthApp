@@ -1,5 +1,7 @@
 package com.google.firebase.codelab.labelScannerUABC.Class;
 
+import androidx.annotation.NonNull;
+
 public class User {
     private String id;
     private String name;
@@ -79,5 +81,21 @@ public class User {
 
     public String getEdad() { return edad; }
 
+
     public String getPeso() { return peso; }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", gen='" + gen + '\'' +
+                ", estatura='" + estatura + '\'' +
+                ", edad='" + edad + '\'' +
+                ", peso='" + peso + '\'' +
+                '}';
+    }
 }

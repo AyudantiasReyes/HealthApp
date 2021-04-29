@@ -170,19 +170,7 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edit_est"
-            app:layout_constraintTop_toBottomOf="@+id/text_peso" /><![CDATA[
-
-
-
-
-
-        />
-
-
-
-
-
-    ]]>
+            app:layout_constraintTop_toBottomOf="@+id/text_peso" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
