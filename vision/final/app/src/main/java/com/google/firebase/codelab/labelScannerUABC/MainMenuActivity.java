@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.codelab.UI.DailyIntakeActivity;
 import com.google.firebase.codelab.UI.LoginActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
@@ -90,6 +91,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         binding.inputButton.setOnClickListener(this);
         binding.galleryButton.setOnClickListener(this);
         binding.buttonLogout.setOnClickListener(this);
+        binding.toolButton.setOnClickListener(this);
         binding.textView14.setText(user.getEmail());
         binding.textView15.setText(user.getName());
 
@@ -124,6 +126,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             case R.id.button_logout:
                 logout();
                 break;
+            case R.id.toolButton:
+                 startActivity(new Intent(this, DailyIntakeActivity.class));
+                 break;
         }
 
     }

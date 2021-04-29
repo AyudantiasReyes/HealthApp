@@ -57,6 +57,9 @@ public class ProductListActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_product_list);
+
+
         preferences = getSharedPreferences(SharedPreference.namePreference, MODE_PRIVATE);
         user = LoadSharedPreferences();
         recyclerView = findViewById(R.id.recyclerView);
@@ -64,14 +67,20 @@ public class ProductListActivity extends AppCompatActivity{
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
 
-        //ProductAdapter productAdapter = new ProductAdapter(productNames, getApplicationContext());
-        //recyclerView.setAdapter(productAdapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         getProducts();
+    }
+
+    private void setAdapter(){
+        ProductAdapter productAdapter = new ProductAdapter(productNames, getApplicationContext());
+        recyclerView.setAdapter(productAdapter);
     }
 
     private void getProducts(){
@@ -95,6 +104,7 @@ public class ProductListActivity extends AppCompatActivity{
                         }
 
                         Log.d("NAMES_PRODUCT", productNames.toString());
+                        setAdapter();
 
 
                     } catch (JSONException e) {
