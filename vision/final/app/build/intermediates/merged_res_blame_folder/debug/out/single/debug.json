@@ -28,12 +28,12 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_camera.xml"
     },
     {
-        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_diet.png.flat",
-        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\diet.png"
-    },
-    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_nutrition_table.jpg.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\nutrition_table.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_diet.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\diet.png"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_product_list.xml.flat",
@@ -48,16 +48,28 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\layout_screen.xml"
     },
     {
-        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_back.png.flat",
-        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\back.png"
-    },
-    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_back.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\back.png"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_tool.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-xhdpi\\ic_tool.png"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register_data.xml.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_register_data.xml"
+    },
+    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_button2.xml.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\round_button2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_tool.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-hdpi\\ic_tool.png"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
@@ -96,6 +108,14 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\green_circle.xml"
     },
     {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout_style_spinner.xml.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\style_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_down.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-hdpi\\ic_down.png"
+    },
+    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edit.png.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\edit.png"
     },
@@ -110,6 +130,14 @@
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_bg.xml.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\gradient_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_down.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-mdpi\\ic_down.png"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_down.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-xhdpi\\ic_down.png"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout_progress_layout.xml.flat",
@@ -130,6 +158,10 @@
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_style_spinner.xml.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\style_spinner.xml"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_activity_login.xml.flat",
@@ -184,6 +216,10 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-v24\\camera.png"
     },
     {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_tool.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-mdpi\\ic_tool.png"
+    },
+    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_nutrients.xml.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_nutrients.xml"
     },
@@ -204,6 +240,10 @@
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\btn_gradient_style.xml"
     },
     {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_down.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-xxhdpi\\ic_down.png"
+    },
+    {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_input_field.xml.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable\\round_input_field.xml"
     },
@@ -218,5 +258,9 @@
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_tool.png.flat",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\drawable-xxhdpi\\ic_tool.png"
     }
 ]
