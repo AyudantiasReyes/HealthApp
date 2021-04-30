@@ -2,6 +2,8 @@ package com.google.firebase.codelab.UI;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,9 +35,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DailyIntakeActivity extends AppCompatActivity {
+public class DailyIntakeActivity extends AppCompatActivity{
     private String URL_GET_PERCENTAGES = "http://conisoft.org/HealthAppV2/getPercentages.php";
-    private EditText edtCal;
+    private String URL_SET_PERCENTAGES = "http://conisoft.org/HealthAppV2/setPercentages.php";
+
+    private EditText edtCal, edit_fatGrams, edit_carbsGrams, edit_proteinGrams;
     private Spinner sp_carbs, sp_prot, sp_fat;
     private SharedPreferences preferences;
     private String calorias, carbs, protein, fat;
@@ -50,7 +54,6 @@ public class DailyIntakeActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,15 @@ public class DailyIntakeActivity extends AppCompatActivity {
 
         //Get the EditText from the layout
         edtCal = findViewById(R.id.edit_cal);
+        edit_fatGrams = findViewById(R.id.edit_fatGrams);
+        edit_fatGrams.setKeyListener(null);
+
+        edit_carbsGrams = findViewById(R.id.edit_carbsGrams);
+        edit_carbsGrams.setKeyListener(null);
+
+        edit_proteinGrams = findViewById(R.id.edit_proteinGrams);
+        edit_proteinGrams.setKeyListener(null);
+
 
         //Get the Spinners from the layout
         sp_carbs = findViewById(R.id.sp_carbs);
@@ -84,6 +96,7 @@ public class DailyIntakeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 carbs = sp_carbs.getItemAtPosition(i).toString();
+                updateNutrients();
             }
 
             @Override
@@ -95,6 +108,7 @@ public class DailyIntakeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 protein = sp_prot.getItemAtPosition(i).toString();
+                updateNutrients();
             }
 
             @Override
@@ -106,6 +120,7 @@ public class DailyIntakeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 fat = sp_fat.getItemAtPosition(i).toString();
+                updateNutrients();
             }
 
             @Override
@@ -115,6 +130,23 @@ public class DailyIntakeActivity extends AppCompatActivity {
         });
         //Get the BUTTONS from the Layout
         Button btnSave = findViewById(R.id.button_save);
+
+        edtCal.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateNutrients();
+            }
+        });
 
         btnSave.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -127,8 +159,8 @@ public class DailyIntakeActivity extends AppCompatActivity {
                 }
                 else if(suma != 100){
                     Toast.makeText(DailyIntakeActivity.this,"La suma de los porcentajes debe de ser 100%",Toast.LENGTH_SHORT).show();
-                }else{
-
+                }else if(suma == 100){
+                    setPercentages();
                 }
 
             }
@@ -150,6 +182,11 @@ public class DailyIntakeActivity extends AppCompatActivity {
                         int dailyFat = Integer.parseInt((String) nutrients.get("dailyFat"));
                         int dailyCarbs = Integer.parseInt((String) nutrients.get("dailyCarbs"));
                         int dailyProtein = Integer.parseInt ((String) nutrients.get("dailyProtein"));
+
+                        edit_carbsGrams.setText(String.valueOf(dailyCarbs));
+                        edit_fatGrams.setText(String.valueOf(dailyFat));
+                        edit_proteinGrams.setText(String.valueOf(dailyProtein));
+
 
                         dailyCalories = Integer.parseInt((String) nutrients.get("dailyCalories"));
                         dailyFatPercentage = (int) Math.ceil(((dailyFat * 9.f) / dailyCalories) * 100);
@@ -193,6 +230,53 @@ public class DailyIntakeActivity extends AppCompatActivity {
         requestQueue.add(request);
     }
 
+    private void setPercentages(){
+
+        StringRequest request = new StringRequest(Request.Method.POST, URL_SET_PERCENTAGES, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(!response.equals("0")) {
+
+                    Toast.makeText(getApplicationContext(), "ACTUALIZADO", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), R.string.errorUser, Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+
+        }){
+            @Override
+            protected Map<String, String> getParams() {             //parametros que se envian con metodo POST
+                Map<String,String> parametros = new HashMap<>();
+
+                int newCalories = Integer.parseInt(edtCal.getText().toString());
+                int newDailyFat = (int) (((sp_fat.getSelectedItemPosition() / 100.f) * newCalories)/9.f);
+                int newDailyCarbs = (int) (((sp_carbs.getSelectedItemPosition() / 100.f) * newCalories)/4.f);
+                int newDailyProtein = (int) (((sp_prot.getSelectedItemPosition() / 100.f) * newCalories)/4.f);
+
+
+                parametros.put("id", user.getId());
+                parametros.put("dailyFat", String.valueOf(newDailyFat));
+                parametros.put("dailyCarbs", String.valueOf(newDailyCarbs));
+                parametros.put("dailyProtein", String.valueOf(newDailyProtein));
+                parametros.put("dailyCalories", String.valueOf(newCalories));
+
+
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
     private User getUser(){
 
         String id = preferences.getString(SharedPreference.KeyId, null);
@@ -204,6 +288,22 @@ public class DailyIntakeActivity extends AppCompatActivity {
 
         return new User(id, name, lastname ,email, pass);
 
+    }
+
+    private void updateNutrients(){
+        try {
+            int newCalories = Integer.parseInt(edtCal.getText().toString());
+            int newDailyFat = (int) (((sp_fat.getSelectedItemPosition() / 100.f) * newCalories) / 9.f);
+            int newDailyCarbs = (int) (((sp_carbs.getSelectedItemPosition() / 100.f) * newCalories) / 4.f);
+            int newDailyProtein = (int) (((sp_prot.getSelectedItemPosition() / 100.f) * newCalories) / 4.f);
+
+
+            edit_fatGrams.setText(String.valueOf(newDailyFat));
+            edit_proteinGrams.setText(String.valueOf(newDailyProtein));
+            edit_carbsGrams.setText(String.valueOf(newDailyCarbs));
+        }catch (Exception e){
+
+        }
     }
 
     public static float roundToHalf(float x) {

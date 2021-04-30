@@ -1944,6 +1944,7 @@ id cancel_button
 id cantidadEditText
 id carbsAmount
 id carbsBar
+id carbsGramsTV
 id carbsLayout
 id carbsNotes
 id carbsPercentage
@@ -2033,9 +2034,12 @@ id editTextTextPassword
 id editTextTextPersonName
 id editTextTextPersonName2
 id edit_cal
+id edit_carbsGrams
 id edit_edad
 id edit_est
+id edit_fatGrams
 id edit_peso
+id edit_proteinGrams
 id edit_query
 id elastic
 id end
@@ -2049,6 +2053,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id fatGramsTV
 id fill
 id fillCenter
 id fillEnd
@@ -2220,6 +2225,7 @@ id productoButton
 id progressBar
 id progress_circular
 id progress_horizontal
+id proteinGramsTV
 id proteinaAmount
 id proteinaBar
 id proteinaLayout
