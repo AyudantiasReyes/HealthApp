@@ -1921,6 +1921,7 @@ id bounce
 id btn_get_started
 id btn_next
 id btn_skip
+id button2
 id buttonLayout
 id buttonPanel
 id button_container
@@ -1996,6 +1997,9 @@ id custom
 id customPanel
 id cut
 id cv
+id da_tv_consumedCalories
+id da_tv_dailyCalories
+id da_tv_remainingCalories
 id dark
 id dateAdded
 id date_picker_actions
@@ -2262,6 +2266,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollView2
+id scrollView3
 id scrollable
 id search_badge
 id search_bar
@@ -2345,11 +2350,16 @@ id textStart
 id textTop
 id textView10
 id textView11
+id textView12
 id textView13
 id textView14
 id textView15
+id textView16
+id textView18
+id textView19
 id textView2
 id textView3
+id textView4
 id textView5
 id textView6
 id textView8
@@ -2498,6 +2508,7 @@ layout abc_tooltip
 layout activity_camera
 layout activity_daily_intake
 layout activity_data_entry
+layout activity_diary
 layout activity_intro
 layout activity_login
 layout activity_main_menu

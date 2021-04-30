@@ -64,6 +64,10 @@ public class JsonParser extends Thread{
         url = "https://world.openfoodfacts.org/api/v0/product/" + barcode + ".json";
     }
 
+    public void setCompleteUrl(String url){
+        JsonParser.url = url;
+    }
+
     public boolean isFinished() {
         return isFinished;
     }

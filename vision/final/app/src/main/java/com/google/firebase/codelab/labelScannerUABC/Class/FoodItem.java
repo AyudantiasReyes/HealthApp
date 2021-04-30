@@ -19,6 +19,14 @@ public class FoodItem implements Serializable {
     private long dateAdded;
     private long dateModified;
 
+    public FoodItem(String name, float calories, float totalFat, float carbs, float protein){
+        this.product_name = name;
+        this.calories = calories;
+        this.totalFat = totalFat;
+        this.carbs = carbs;
+        this.protein = protein;
+    }
+
     public FoodItem(
             int id,
             String product_name,
@@ -70,8 +78,14 @@ public class FoodItem implements Serializable {
     }
 
     @Override
-    public String toString(){
-        return product_name;
+    public String toString() {
+        return "FoodItem{" +
+                "product_name='" + product_name + '\'' +
+                ", calories=" + calories +
+                ", totalFat=" + totalFat +
+                ", carbs=" + carbs +
+                ", protein=" + protein +
+                '}';
     }
 
     public String getMeasurementUnit() {

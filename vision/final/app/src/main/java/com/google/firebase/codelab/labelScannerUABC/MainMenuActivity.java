@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.codelab.UI.DailyIntakeActivity;
+import com.google.firebase.codelab.UI.DiaryActivity;
 import com.google.firebase.codelab.UI.LoginActivity;
 import com.google.firebase.codelab.labelScannerUABC.Class.FoodItem;
 import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
@@ -114,7 +115,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 break;
             case R.id.inputButton:
-                intent = new Intent(this, DataEntryActivity.class);
+                intent = new Intent(this, DiaryActivity.class);
                 startActivity(intent);
                 break;
             case R.id.cameraButton:

@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_screen.xml",
-        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\layout_screen.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\spinner_item.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\spinner_item.xml"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_nutrients.xml",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_nutrients.xml"
     },
     {
-        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\spinner_item.xml",
-        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\spinner_item.xml"
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_screen.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\layout_screen.xml"
     },
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\product.xml",
@@ -58,5 +58,9 @@
     {
         "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_daily_intake.xml",
         "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_daily_intake.xml"
+    },
+    {
+        "merged": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_diary.xml",
+        "source": "C:\\Users\\Omar Valdivia\\Documents\\GitHub\\HealthApp\\vision\\final\\app\\src\\main\\res\\layout\\activity_diary.xml"
     }
 ]

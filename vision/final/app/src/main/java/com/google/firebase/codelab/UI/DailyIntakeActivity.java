@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,7 +25,6 @@ import com.google.firebase.codelab.labelScannerUABC.Class.SharedPreference;
 import com.google.firebase.codelab.labelScannerUABC.Class.User;
 import com.google.firebase.codelab.labelScannerUABC.R;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,7 +48,7 @@ public class DailyIntakeActivity extends AppCompatActivity{
     @Override
     protected void onStart() {
         super.onStart();
-        updatePercentages();
+        getPercentages();
     }
 
 
@@ -166,7 +164,7 @@ public class DailyIntakeActivity extends AppCompatActivity{
             }
         });
     }
-    private void updatePercentages(){
+    private void getPercentages(){
 
         StringRequest request = new StringRequest(Request.Method.POST, URL_GET_PERCENTAGES, new Response.Listener<String>() {
             @Override
